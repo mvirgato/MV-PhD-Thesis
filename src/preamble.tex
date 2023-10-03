@@ -1,0 +1,144 @@
+%%
+%% VERSION HISTORY
+%%    22 May 2006 - John Papandriopoulos - Original version
+%%    12 Jul 2007 - John Papandriopoulos - Converted into template
+%%    30 Sep 2015 - Maoyuan Liu - Draft version
+%%    08 Aug 2020 - John Gargalionis - Draft version
+%%    25 Sep 2023 - Michael Virgato - Draft version
+
+% -----
+% Basic
+% -----
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{epsfig}
+\usepackage{graphicx}
+%Change to biblatex?
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{color}
+\usepackage{hyperref}
+
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{mathtools}
+% \usepackage{simplewick}
+% \usepackage{simpler-wick}
+\usepackage{pifont}
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage[version=3]{mhchem}
+
+\usepackage{array}
+\usepackage{makecell}
+\newcolumntype{B}{>{\centering\arraybackslash}m{6cm}}
+\newcolumntype{M}{>{\centering\arraybackslash}m{3cm}}
+\newcolumntype{S}{>{\centering\arraybackslash}m{1.5cm}}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{tablefootnote}
+
+% math
+\usepackage{slashed}
+
+% For sans serif figure captions
+\usepackage[font=sf]{caption}
+
+% Index
+\usepackage{makeidx}
+% \makeindex
+
+% Glossary --> defitions of symbols and acronyms
+\usepackage[toc,nonumberlist,nopostdot,abbreviations]{glossaries-extra}
+\usepackage{glossary-mcols}
+\makeglossaries
+\setglossarystyle{treegroup}
+
+% ------
+% Layout
+% ------
+
+% Suppress "This page intentionally left blank."
+\newcommand*\markblankpages{}
+
+% set page margins
+%   these margins are set by the A4 paper ratios, 1:sqrt(2)
+%   paperheight/paperwidth = paperwidth/textwidth = paperheight/textheight = sqrt(2)
+%   outer/inner = bottom/top = sqrt(2)
+
+%   Original version (top and bottom values for \symmetricmargin and \bookmargin
+%   all the same)
+%   \usepackage[outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm]{geometry}
+\usepackage[outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm]{geometry}
+
+%% For pdf copy
+\newcommand*\symmetricmargin{
+    \newgeometry{outer=30.7534mm,inner=30.7534mm,top=36.0317mm,bottom=50.9565mm}
+  }
+
+%% For book
+\newcommand*\bookmargin{
+  \newgeometry{outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm}
+}
+
+% For testing the formatting
+\usepackage{lipsum}
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+% ---------
+% Eye candy
+% ---------
+\usepackage[
+labelfont={bf,singlespacing},
+textfont={singlespacing},
+% justification={justified,RaggedRight},
+singlelinecheck=false,
+margin=0pt,
+figurewithin=chapter,
+tablewithin=chapter]
+{caption}
+    
+\usepackage[titletoc]{appendix}
+
+% fancy chapter titles and quotes at beginning of title
+\usepackage[helvetica]{quotchap} 
+
+
+% Draft watermark
+\usepackage[contents={}]{background}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+\newcommand*\DraftText{Draft compiled on \today\ at \currenttime}
+\newcommand*\draft{
+  \newcommand*{\archivalpapernote}{}
+  \backgroundsetup{
+    color=lightgray,
+    position=current page.center,
+    angle=90,
+    vshift=0.45\paperwidth,
+    opacity=1,
+    scale=1,
+    contents={\LARGE\ttfamily\DraftText}
+  }
+}
+
+% -----
+% My Colours
+% -----
+
+\definecolor{bluemv}{HTML}{2a67bd}
+\definecolor{darkbluemv}{HTML}{064789}
+\definecolor{lightbluemv}{HTML}{80DEEA}
+\definecolor{magentamv}{HTML}{EC407A}
+\definecolor{greenmv}{HTML}{00796B}
+
+
+\hypersetup{colorlinks, citecolor=bluemv, linkcolor=bluemv, urlcolor=magentamv, linktocpage=true}

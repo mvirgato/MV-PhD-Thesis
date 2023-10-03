@@ -1,0 +1,13 @@
+% --------------------------
+% Macros and useful commands
+% --------------------------
+
+\newcommand*\myglossaryentry[4]{
+    % \index{#2@#1}
+    \newglossaryentry{#2}{name={#1}, description={#3}, sort={#2}, #4}
+}
+
+\newcommand*\myacronym[2]{
+    % \index{#1}
+    \newacronym{#1}{#1}{#2}
+}

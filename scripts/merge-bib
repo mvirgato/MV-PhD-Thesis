@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bibtool -s -d $1 $2 -o output.bib

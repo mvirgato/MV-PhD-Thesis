@@ -1,0 +1,94 @@
+\documentclass[12pt,a4paper,twoside,titlepage,openright,fleqn]{book}
+
+\usepackage{thesis}
+
+% User defined commands
+\input{macro}
+\input{preamble}
+
+% set draft watermark
+% \draft
+
+\newcommand{\Ncomm}[1]{{\footnotesize\color{red}\bf NB: #1}}
+
+\begin{document}
+
+%%
+%% Front matter
+%%
+\begin{frontmatter}
+  \frontmatterheadings
+  \input{frontmatter/metadata.tex}
+  % the title page is centered horizontally
+  \symmetricmargin
+  \maketitle
+  %% Toggle this for pdf vs book
+  % \bookmargin
+  \input{frontmatter/abstract.tex}
+  \input{frontmatter/publications.tex}
+  \makedeclaration
+  % \input{frontmatter/statementofcontribution.tex}
+  \input{frontmatter/preface.tex}
+  \input{frontmatter/acknowledgements.tex}
+  % \input{frontmatter/dedication.tex}
+  {\singlespacing
+    \tableofcontents
+    \clearpage
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
+    \clearpage
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables
+  }
+\end{frontmatter}
+
+%%
+%% Main matter
+%%
+\begin{mainmatter}
+  \mainmatterheadings
+  \symmetricmargin
+  %% General background
+  \include{chapters/chapter_1}
+  
+  %% 
+  \include{chapters/chapter_2}
+
+  \include{chapters/chapter_3}
+
+  \include{chapters/chapter_4}
+
+  \include{chapters/chapter_5}
+
+  \include{chapters/chapter_6}
+
+  %% Glossary
+  \include{indices}
+\end{mainmatter}
+
+%%
+%% Appendix
+%%
+\begin{appendices}
+  \symmetricmargin
+
+    %% Kinematics
+    \input{src/backmatter/appendic_kinematics}
+\end{appendices}
+
+%%
+%% Back matter
+%%
+\glsaddall
+\begin{backmatter}
+    \symmetricmargin
+    \frontmatterheadings
+    \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
+    \clearpage
+    % \addcontentsline{toc}{chapter}{Index}
+    % \printindex
+    \bibliographystyle{JHEP}
+    \bibliography{main}
+\end{backmatter}
+
+\end{document}
