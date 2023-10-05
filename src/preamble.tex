@@ -23,12 +23,12 @@
 
 \usepackage{url}
 \usepackage{enumitem}
-\usepackage{mathtools}
 % \usepackage{simplewick}
 % \usepackage{simpler-wick}
 \usepackage{pifont}
 \newcommand{\cmark}{\text{\ding{51}}}
 \newcommand{\xmark}{\text{\ding{55}}}
+\usepackage{bm}
 
 \usepackage{caption}
 \usepackage{subcaption}
@@ -57,7 +57,7 @@
 % \makeindex
 
 % Glossary --> defitions of symbols and acronyms
-\usepackage[toc,nonumberlist,nopostdot,abbreviations]{glossaries-extra}
+\usepackage[toc,nonumberlist,nopostdot,abbreviations,automake]{glossaries-extra}
 \usepackage{glossary-mcols}
 \makeglossaries
 \setglossarystyle{treegroup}
@@ -93,7 +93,7 @@
 \usepackage{lipsum}
 
 \usepackage{tikz}
-\usepackage{tikz-feynman}
+% \usepackage{tikz-feynman}
 
 % ---------
 % Eye candy
@@ -136,11 +136,13 @@ tablewithin=chapter]
 % My Colours
 % -----
 
-\definecolor{bluemv}{HTML}{2a67bd}
-\definecolor{darkbluemv}{HTML}{064789}
+\definecolor{bluemv}{HTML}{2F76DC}
+\definecolor{lightbluemv}{HTML}{62C3F8}
+\definecolor{darkbluemv}{HTML}{003870}
 \definecolor{lightbluemv}{HTML}{80DEEA}
 \definecolor{magentamv}{HTML}{EC407A}
 \definecolor{greenmv}{HTML}{00796B}
+\definecolor{redmv}{HTML}{FF1929}
 
 
-\hypersetup{colorlinks, citecolor=bluemv, linkcolor=bluemv, urlcolor=magentamv, linktocpage=true}
+\hypersetup{colorlinks, citecolor=bluemv, linkcolor=bluemv, urlcolor=bluemv, linktocpage=true}
