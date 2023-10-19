@@ -20,6 +20,9 @@
 *.mtc
 *.mtc1
 *.out
+*.xml
+*.xdv
+*.bbl
 *.synctex.gz
 *_view.pdf
 .DS_Store

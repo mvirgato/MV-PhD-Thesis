@@ -1,12 +1,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kinetic Heating}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Kinetic Heating}
+\label{appendix:kin_heating}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{DM Orbits in General Isometric Metric}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The metric at any point inside or outside the NS can be written as 
 \begin{equation}
     ds^2 = B(r) dt^2 - A(r) dr^2 - r^2( d\phi + \sin\theta d\theta^2)
 \end{equation}
-Along an orbit, the conserved conjugate momenta are the angular momentum per unit mass, $p_\phi = -L$ and the energy per unit mass $p_t = E_\chi$, and taking the orbit to lie in the $\theta = \pi/2$ plane leads to $p_\theta = 0$. 
+Along an orbit, the conserved conjugate momenta are the angular momentum per unit mass, $p_\phi = -L$ 
+and the energy per unit mass $p_t = E_\chi$, and taking the orbit to lie in the $\theta = \pi/2$ plane 
+leads to $p_\theta = 0$. 
 
 The equation which describes the orbit can be obtained from the square of the energy-momentum 4-vector,
 \begin{align}
@@ -49,13 +58,17 @@ For simplicity, consider orbits that are a straight line ($\tilde L = 0$), which
 \end{gather}
 using $B(r>R_\star) = 1 - 2 G M_\star /r$.
 
-It is important to note that $E_\chi$ so far has been the \textit{conserved} energy along the orbit, which for the initial approach is $E_\chi = m_\chi + \frac{1}{2}m_\chi u^2\sim m_\chi$. We now call this energy $E_\chi^{\rm orbit}$, which is related to the DM energy as seen by a distant observer, $E_\chi^{\rm int}$, and is the energy used in calculating the interaction rates, through 
+It is important to note that $E_\chi$ so far has been the \textit{conserved} energy along the orbit, 
+which for the initial approach is $E_\chi = m_\chi + \frac{1}{2}m_\chi u^2\sim m_\chi$. 
+We now call this energy $E_\chi^{\rm orbit}$, which is related to the DM energy as seen by a distant observer, $E_\chi^{\rm int}$, 
+and is the energy used in calculating the interaction rates, through 
 \begin{equation}
     E_\chi^{\rm orbit} = \sqrt{g_{tt}} E_\chi^{\rm int} = \sqrt{B(r)}E_\chi^{\rm int}
 \end{equation}
 and as $E_\chi^{\rm orbit} < m_\chi$ for all subsequent scatters after capture, eq.~\ref{eq:MaxRadius} is always positive.
 
-These ``orbits" are straight lines that pass through the star's centre and extend an amount $R - R_\star$ on either side. Due to the symmetry of the motion, the period of the orbit is then
+These ``orbits" are straight lines that pass through the star's centre and extend an amount $R - R_\star$ on either side. 
+Due to the symmetry of the motion, the period of the orbit is then
 \begin{equation}
     T_{\rm orbit} = 4 \int_0^R \frac{1}{dr/dt}dr
 \end{equation}
@@ -65,33 +78,38 @@ More relevant to this application is the time spent inside and outside the star,
     T_{\rm inside} & = 4 \int_{R_\star}^R \frac{1}{dr/dt}dr\label{eq:timeoutside}
 \end{align}
 
-\subsection{Keeping Angular Dependence}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For $\tilde L \neq 0$, we need the equation of motion for the angular coordinate $\phi$,
+% \section{Keeping Angular Dependence}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{align}
-    \frac{d \phi}{d\tau } & = g^{\phi\phi}p_\phi = \frac{\tilde L}{r^2}\\
-    \implies \frac{d\phi}{dt} & = \frac{B(r)}{\tilde E_\chi}\frac{\tilde L^2}{r^2}
-\end{align}
-The maximum value of  $\tilde L^2$ is  given by
-\begin{equation}
-    \tilde L^2_{\rm MAX} = \frac{ \tilde E_\chi^2 - B(r)}{B(r)}r^2
-\end{equation}
-and we parameterise the possible angular momentum along the orbit as 
-\begin{equation}
-    \tilde L^2 = y \tilde L^2_{\rm MAX} ,\quad 0<y<1.
-\end{equation}
-leading to the equation for $dr/dt$ simplifying to 
-\begin{equation}
-    \frac{dr}{dt} = \frac{B(r)}{\tilde E_\chi^2 A(r)}\left( \tilde E_\chi^2 - B(r) \right)(1 - y)
-\end{equation}
-showing that the maximum radius of the orbit does not change from the $\tilde L = 0$ case, only the time spent outside the star changes.
+% For $\tilde L \neq 0$, we need the equation of motion for the angular coordinate $\phi$,
 
 % \begin{align}
-%     \frac{dt}{d\phi} & = \left( \frac{dt}{dr}\right)
+%     \frac{d \phi}{d\tau } & = g^{\phi\phi}p_\phi = \frac{\tilde L}{r^2}\\
+%     \implies \frac{d\phi}{dt} & = \frac{B(r)}{\tilde E_\chi}\frac{\tilde L^2}{r^2}
 % \end{align}
+% The maximum value of  $\tilde L^2$ is  given by
+% \begin{equation}
+%     \tilde L^2_{\rm MAX} = \frac{ \tilde E_\chi^2 - B(r)}{B(r)}r^2
+% \end{equation}
+% and we parameterise the possible angular momentum along the orbit as 
+% \begin{equation}
+%     \tilde L^2 = y \tilde L^2_{\rm MAX} ,\quad 0<y<1.
+% \end{equation}
+% leading to the equation for $dr/dt$ simplifying to 
+% \begin{equation}
+%     \frac{dr}{dt} = \frac{B(r)}{\tilde E_\chi^2 A(r)}\left( \tilde E_\chi^2 - B(r) \right)(1 - y)
+% \end{equation}
+% showing that the maximum radius of the orbit does not change from the $\tilde L = 0$ case, only the time spent outside the star changes.
 
-\subsection{Checking Newtonian/Non-Relativistic Limit}
+% % \begin{align}
+% %     \frac{dt}{d\phi} & = \left( \frac{dt}{dr}\right)
+% % \end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Checking Newtonian/Non-Relativistic Limit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the Newtonian limit, we take 
 \begin{align}
@@ -109,7 +127,7 @@ with $\varepsilon$ the non-relativistic energy per unit mass. Then expanding Eq.
 \end{align}
 which is the standard result for a Newtonian orbit.
 
-\subsection{Procedure for calculating kinetic heating time}
+\section{Procedure for calculating kinetic heating time}
 
 \begin{itemize}
     \item Select a point in the star for the DM to scatter off, $r_{\rm scatter, 0}$. 
