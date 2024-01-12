@@ -11,7 +11,7 @@
 % -----
 
 \usepackage{amsmath}
-\usepackage{mathtools}
+% \usepackage{mathtools}
 \usepackage{epsfig}
 \usepackage{graphicx}
 %Change to biblatex?
@@ -45,7 +45,7 @@
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{tablefootnote}
-\usepackage{csquotes } 
+\usepackage{csquotes} 
 
 % math
 \usepackage{slashed}
@@ -112,8 +112,15 @@ tablewithin=chapter]
 \usepackage[titletoc]{appendix}
 
 % fancy chapter titles and quotes at beginning of title
-\usepackage[helvetica]{quotchap} 
+\usepackage[charter]{quotchap} 
 
+\makeatletter
+\renewcommand*{\sectfont}{\bfseries}
+\renewcommand*{\chapnumfont}{%
+  \usefont{T1}{\@defaultcnfont}{b}{n}\fontsize{100}{80}\selectfont% Default: 100/130
+  \color{chaptergrey}%
+}
+\makeatother
 
 % Draft watermark
 \usepackage[contents={}]{background}
