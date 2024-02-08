@@ -266,7 +266,12 @@ In broad terms, there are three main ways that we can search for evidence of dar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If dark matter is produced in a collider, it will simply leave the detector without depositing any energy. In order to determine if such an invisible particle was produced, conservation of energy-momentum is used to determine if there are any events that are missing energy. In practice, what is searched for is missing momentum that is transverse to the beamline.
+If dark matter is produced in a collider, it will simply leave the 
+detector without depositing any energy. 
+In order to determine if such an invisible particle was produced, 
+conservation of energy-momentum is used to determine if 
+there are any events that are missing energy. In practice, what 
+is searched for is missing momentum that is transverse to the beamline.
 
 Currently, dark matter has not been observed to be produced in particle colliders. This non-observation has instead been used to constrain the dark matter mass and production cross sections or couplings of various models. 
 These limits are typically interpreted in a model-dependent manner, as different dark matter - Standard model couplings can significantly alter the production rates.
@@ -283,25 +288,41 @@ However, many applications of this nature did not hold up to scrutiny, as the EF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Direct detection experiments vary wildly depending on the dark matter mass range they are trying to probe. ALP dark matter haloscope experiments such as ADMX~\cite{ADMX:2009iij} and MADMAX~\cite{MADMAX:2019pub_mar_Newexperimentalapproach} attempt to convert ALPs to photons via the Primakoff effect. 
-Searches for WIMP dark matter search for the recoil of some detector material, usually nuclei or electrons, due to its scattering with a dark matter particle passing through the Earth. The differential scattering rate as a function of the recoil energy of the target, $E_R$, is 
+Direct detection experiments vary wildly depending on the dark matter 
+mass range they are trying to probe. For ALP dark matter that is wavelike, haloscope experiments 
+such as ADMX~\cite{ADMX:2009iij} and MADMAX~\cite{MADMAX:2019pub_mar_Newexperimentalapproach} 
+attempt to convert ALPs to photons via the Primakoff effect. 
+Searches for WIMP dark matter look for the dark matter scattering with some detector
+material, causing it to recoil and release some energy. Given our focus on WIMP dark matter, 
+this section will review the experimental status of these detectors.
+
+The differential rate in which the incoming flux of dark matter will scatter
+within a detector with $N_T$ targets, as a function of the recoil energy, $E_R$,
+is given by
 \begin{equation}
     \frac{d R(E_R, t)}{dE_R} = N_T \frac{\rho_\mathrm{DM}}{m_\mathrm{DM}}\int_{v>v_\mathrm{min}}^{v_\mathrm{esc}}v f(\Vec{v} + \vec{v}_E)\frac{d\sigma}{dE_R}\,d^3v,
 \end{equation}
- given in terms of the following quantities:
+ and depends on the quantities:
 \begin{itemize}
-    \item $N_T$ is the number of targets in the detector;
     % \item $\rho_\mathrm{DM}$ is the ambient dark matter density;
     % \item $m_\mathrm{DM}$ is the dark matter mass;
-    \item  $v_\mathrm{min}$ is the minimum dark matter velocity required by kinematics for a scattering event to occur;
+    \item $v_\mathrm{min}$ is the minimum dark matter velocity required by kinematics for a scattering event to occur;
     \item $v_\mathrm{esc} = 528\km\s^{-1}$ is the Milky Way escape velocity;
-    \item $\vec{v}_E$ is the velocity of the Earth through the dark matter halo\footnote{This accounts for the expected annual modulation of the dark matter flux due to the Earth's orbit around the Sun.};
+    \item $\vec{v}_E$ is the velocity of the Earth through the dark matter halo\footnote{This accounts for the orbit of the Earth around the Sun, which induces an annual modulation in the flux of DM.};
     \item $f(\vec{v} - \vec{v}_E)$ is the dark matter velocity distribution in the Earth's frame;
     \item $d\sigma/dE_R$ is the differential scattering cross-section.
 \end{itemize}
-The overall rate is expected to be extremely small at around one event per day, per kilogram of target material, per kiloelectronvolt deposited. Having such a low event rate requires the detector to be situated in an extremely low background environment, such as underground laboratories. 
+Given the low interaction rate of dark matter, the expected event rate in 
+detectors is very low, around one event per day, per kilogram of target material, per kiloelectronvolt deposited.
+Having such a low event rate requires the detector to be situated in 
+an extremely low background environment, such as underground laboratories. 
 
-
+Direct detection experiments aim to probe two main types of dark matter interactions:
+spin-dependent (SD) and spin-independent (SI) scattering. SD interactions couple
+to the overall spin of the target, while SI interactions are agnostic to this.
+Therefore, experiments searching for SI interactions benefit from using nuclei with a large atomic number, $A$,
+as the interaction cross-section will involve a coherent sum over all nucleons.
+This leads to an $A^2$ enhancement of SI interactions compared to SD ones.
 
 \begin{figure}
     \centering
@@ -310,6 +331,27 @@ The overall rate is expected to be extremely small at around one event per day, 
     \caption{Current status of direct detection searches for dark matter. \textbf{Top:} Spin-independent dark matter-nucleon scattering. \textbf{Bottom:} Spin-dependent dark matter-proton scattering.}
     \label{fig:direct_detection_lims}
 \end{figure}
+
+The current leading constraints on the dark matter-nucleon scattering cross-section
+are shown in Fig.~\ref{fig:direct_detection_lims}, with SI in the top panel and SD in the bottom.
+The SI limits come from the liquid noble gas experiments (LZ~\cite{LZ:2022lsv_jul_FirstDarkMatter}, 
+XENON-1T~\cite{XENON:2020gfr_mar_SearchCoherentElastic}, PandaX-II~\cite{PandaX-4T:2021bab_dec_DarkMatterSearch},
+and DarkSide-50~\cite{DarkSide:2022dhx_mar_SearchDarkMatterNucleon}), solid-state cryogenic detectors (CRESST-III~\cite{CRESST:2019jnq_nov_FirstresultsCRESSTIII}, and CDMSlite~\cite{SuperCDMS:2023sql_jun_SearchLowmassDark}), 
+and room temperature crystals (DAMA/LIBRA~\cite{Savage:2008er_CompatibilityDAMALIBRA}, and COSINE-100~\cite{COSINE-100:2021xqn_nov_StrongconstraintsCOSINE100}). 
+
+The SD experiments require their targets to carry non-zero spin for the dark matter to couple to. 
+$\ce{^{19}F}$ is the favourable choice proton scattering, as it has an unpaired proton giving it its overall spin.
+The leading constraints come from superheated liquid experiments such as the PICO-60~\cite{PICO:2019vsc_jul_Darkmattersearch} as well as PICASSO~\cite*{Behnke:2016lsk_apr_FinalResultsPICASSO}
+In terms of the SD proton scattering shown in Fig~\ref{fig:direct_detection_lims},
+These interations are also searched for by many of the same experiments in the SI case, with the inclusion of
+LZ's predecessor LUX~\cite{LUX:2017ree_jun_LimitsspindependentWIMPnucleon}.
+
+\commMV{neutrino floor}
+
+\commMV{shortfalls: min thresholds, decreas sensitity to hogher masses}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Indirect Detection}
