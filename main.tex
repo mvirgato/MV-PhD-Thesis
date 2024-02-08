@@ -1,10 +1,10 @@
 \documentclass[12pt,a4paper,twoside,titlepage,openright,fleqn]{book}
 
-\usepackage{thesis}
+\usepackage{src/thesis}
 
 % User defined commands
-\input{macro}
-\input{preamble}
+\input{src/macro}
+\input{src/preamble}
 
 % set draft watermark
 % \draft
@@ -18,18 +18,18 @@
 %%
 \begin{frontmatter}
   \frontmatterheadings
-  \input{frontmatter/metadata.tex}
+  \input{src/frontmatter/metadata.tex}
   % the title page is centered horizontally
   \symmetricmargin
   \maketitle
   %% Toggle this for pdf vs book
   % \bookmargin
-  \input{frontmatter/abstract.tex}
-  \input{frontmatter/publications.tex}
+  \input{src/frontmatter/abstract.tex}
+  \input{src/frontmatter/publications.tex}
   \makedeclaration
   % \input{frontmatter/statementofcontribution.tex}
-  \input{frontmatter/preface.tex}
-  \input{frontmatter/acknowledgements.tex}
+  \input{src/frontmatter/preface.tex}
+  \input{src/frontmatter/acknowledgements.tex}
   % \input{frontmatter/dedication.tex}
   {\singlespacing
     \tableofcontents
@@ -49,7 +49,7 @@
   \mainmatterheadings
   \symmetricmargin
   %% General background
-  \include{chapters/chapter_1}
+  \include{src/chapters/chapter_1}
   
   %% 
   % \include{chapters/chapter_2}
@@ -63,7 +63,7 @@
   % \include{chapters/chapter_6}
 
   %% Glossary
-  \include{indices}
+  \include{src/indices}
 \end{mainmatter}
 
 %%
