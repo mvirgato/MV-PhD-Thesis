@@ -190,11 +190,11 @@ Generally, an EFT will have fewer free parameters than the underlying UV theorie
 \subsection{Dimension 6 EFT Operators for Dirac Fermion Dark Matter}
 This work's approach will focus on dimension 6 EFT operators that describe the interactions of Dirac fermion dark matter with standard model fermions. These operators will have a structure 
 \begin{equation}
-    \mathcal{L}_\mathrm{EFT}^{(6)} \sim \frac{1}{\Lambda^2}(\bar{\chi}\Gamma_\chi \chi)(\bar{f}\Gamma_{\mathrm{SM}}f),
+    \mathcal{L}_\mathrm{EFT}^{(6)} \sim \frac{1}{\Lambda^2}(\bar{\chi}\Gamma_\mathrm{DM} \chi)(\bar{f}\Gamma_{\mathrm{SM}}f),
 \end{equation}
 where the $\Gamma_i$ determines the Lorentz structure of the interaction by taking appropriate combinations from the set
 \begin{equation}
-    \Gamma_i\in \{1, i\gamma_5, \gamma^\mu, i\gamma^\mu \gamma^5, \sigma^{\mu\nu}, i\gamma^5 \sigma^{\mu\nu}\}.
+    \Gamma_i\in \{1, i\gamma_5, \gamma^\mu, i\gamma^\mu \gamma^5, \sigma^{\mu\nu}, i \sigma^{\mu\nu}\gamma^5\}.
 \end{equation}
 For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar currents for both the DM and SM fermions and would correspond to integrating out a heavy scalar mediator in the UV theory. There are 10 such operators at dimension six that form a linearly independent basis. These are given in Table~\ref{tab:opers_defn_full}, along with spin-averaged squared matrix element for dark matter scattering with a fermion. The coupling constants, $g_f$, are given in terms of the fermion Yukawa couplings, $y_f$, and the EFT cutoff scale, $\Lambda_f$. Hence, these operators describe interactions between dark matter and the elementary fermions of the Standard Model: the leptons and quarks. 
 
@@ -278,7 +278,7 @@ These limits are typically interpreted in a model-dependent manner, as different
 As mentioned above, EFTs can be used to explore a variety of interactions in a somewhat model-independent way.
 However, many applications of this nature did not hold up to scrutiny, as the EFTs were being applied at energies outside their regions of validity~\cite{Busoni:2013lha_jan_ValidityEffectiveField, Buchmueller:2013dya_EffectiveFieldTheory, Busoni:2014haa_ValidityEffectiveField, Busoni:2014sya_ValidityEffectiveField}, and so care is needed when applying such methods. 
 
- The ATLAS and CMS experiments at the LHC have performed analyses on various dark matter production mechanisms, including the exchange of a $Z/Z'$ or Higgs, EFTs and heavy mediators, and mono-jet searches\footnote{These searches refer to a single jet being produced alongside a pair of dark matter particles. This jet could be of Standard Model or dark sector origin, with the latter commonly referred to as ``mono-X" searches.}\cite{CMS:2017jdm_jul_Searchdarkmatter, CMS:2017jdm_jul_Searchdarkmattera}. Collider searches also offer complimentary probes of the dark matter-nucleon scattering cross-section~\cite{Ruppin:2014bra_oct_Complementaritydarkmatter}. 
+ The ATLAS and CMS experiments at the LHC have performed analyses on various dark matter production mechanisms, including the exchange of a $Z/Z'$ or Higgs, EFTs and heavy mediators, and mono-jet searches~\cite{CMS:2017jdm_jul_Searchdarkmatter, CMS:2017jdm_jul_Searchdarkmattera} \footnote{These searches refer to a single jet being produced alongside a pair of dark matter particles. This jet could be of Standard Model or dark sector origin, with the latter commonly referred to as ``mono-X" searches.}. Collider searches also offer complimentary probes of the dark matter-nucleon scattering cross-section~\cite{Ruppin:2014bra_oct_Complementaritydarkmatter}. 
  
  It is important to note that an observation of an invisible massive particle at a collider is not enough to infer that it is dark matter. Such an observation only tells us that such a particle exists but nothing about its abundance, meaning it could just be a sub-component of a larger dark sector. In order to identify whether or not this was a dark matter detection, complimentary observations from direct or indirect detectors would be required. 
  
@@ -318,11 +318,11 @@ Having such a low event rate requires the detector to be situated in
 an extremely low background environment, such as underground laboratories. 
 
 Direct detection experiments aim to probe two main types of dark matter interactions:
-spin-dependent (SD) and spin-independent (SI) scattering. SD interactions couple
+Spin-dependent (SD) and spin-independent (SI) scattering. SD interactions couple
 to the overall spin of the target, while SI interactions are agnostic to this.
 Therefore, experiments searching for SI interactions benefit from using nuclei with a large atomic number, $A$,
 as the interaction cross-section will involve a coherent sum over all nucleons.
-This leads to an $A^2$ enhancement of SI interactions compared to SD ones.
+This leads to an $A^2$ enhancement of SI interactions compared to the SD counterpart.
 
 \begin{figure}
     \centering
@@ -334,32 +334,43 @@ This leads to an $A^2$ enhancement of SI interactions compared to SD ones.
 
 The current leading constraints on the dark matter-nucleon scattering cross-section
 are shown in Fig.~\ref{fig:direct_detection_lims}, with SI in the top panel and SD in the bottom.
-The SI limits come from the liquid noble gas experiments (LZ~\cite{LZ:2022lsv_jul_FirstDarkMatter}, 
+The SI limits are set by liquid noble gas experiments (LZ~\cite{LZ:2022lsv_jul_FirstDarkMatter}, 
 XENON-1T~\cite{XENON:2020gfr_mar_SearchCoherentElastic}, PandaX-II~\cite{PandaX-4T:2021bab_dec_DarkMatterSearch},
-and DarkSide-50~\cite{DarkSide:2022dhx_mar_SearchDarkMatterNucleon}), solid-state cryogenic detectors (CRESST-III~\cite{CRESST:2019jnq_nov_FirstresultsCRESSTIII}, and CDMSlite~\cite{SuperCDMS:2023sql_jun_SearchLowmassDark}), 
+and DarkSide-50~\cite{DarkSide:2022dhx_mar_SearchDarkMatterNucleon}), solid-state cryogenic detectors (CRESST-III~\cite{CRESST:2019jnq_nov_FirstresultsCRESSTIII}, CDMSlite~\cite{SuperCDMS:2023sql_jun_SearchLowmassDark}, with projected DARWIN sensitivities~\cite{Aalbers:2022dzr_dec_Nextgenerationliquidxenon}), 
 and room temperature crystals (DAMA/LIBRA~\cite{Savage:2008er_CompatibilityDAMALIBRA}, and COSINE-100~\cite{COSINE-100:2021xqn_nov_StrongconstraintsCOSINE100}). 
 
 The SD experiments require their targets to carry non-zero spin for the dark matter to couple to. 
 $\ce{^{19}F}$ is the favourable choice proton scattering, as it has an unpaired proton giving it its overall spin.
 The leading constraints come from superheated liquid experiments such as the PICO-60~\cite{PICO:2019vsc_jul_Darkmattersearch} as well as PICASSO~\cite*{Behnke:2016lsk_apr_FinalResultsPICASSO}
 In terms of the SD proton scattering shown in Fig~\ref{fig:direct_detection_lims},
-These interations are also searched for by many of the same experiments in the SI case, with the inclusion of
+These interactions are also searched for by many of the same experiments in the SI case, with the inclusion of
 LZ's predecessor LUX~\cite{LUX:2017ree_jun_LimitsspindependentWIMPnucleon}.
 
-\commMV{neutrino floor}
+The orange dashed line represents the neutrino floor\footnote{Calling this the ``neutrino fog" rather than floor has been gaining traction in recent years~\cite{OHare:2021utq_dec_Foghorizonnew}}, a theoretical lower limit on the discoverability of WIMP-like dark matter. In this region of parameter space, doctors will become sensitive to the irreducible background from neutrino scattering, which will produce signals almost indistinguishable from a true dark matter interaction. A significant amount of effort is being put toward overcoming this hindrance, with the main strategy being to take advantage of the directionality of dark matter flux~\cite{Grothaus:2014hja_jun_DirectionalDarkMatter}.
 
-\commMV{shortfalls: min thresholds, decreas sensitity to hogher masses}
+Many experiments begin to lose sensitivity to low-mass dark matter ($m_\mathrm{DM}\lesssim 10\GeV$) as the targets recoil with energies below the detector threshold. Current energy thresholds can reach as low as $\sim {\cal O} (100\eV)$, which is on the same order of magnitude as the recoil energy due to a $1\GeV$ dark matter collision. The sensitivity also falls off at a slower rate at larger masses, though this is due to the number of dark matter particles that pass through the detector given $N_\mathrm{DM} = \rho_\mathrm{DM}/m_\mathrm{DM}$, and the dark matter density is known to be $0.4\GeV \cm^{-3}$.
 
+Direct detection limits also assume that the scattering cross-section is independent of the dark matter velocity and momentum transfer in the interaction. Given that the local dark matter dispersion velocity is predicted to be $v_d = 270\km\s^{-1} \approx 10^{-3}c$, a back-of-the-envelope estimation for the momentum transfer gives $q_\mathrm{tr}\lesssim 100 \MeV$. Therefore, cross-sections proportional to $v_\mathrm{DM}$ or $q_\mathrm{tr}$ will result in significantly lower event rates and hence much weaker limits than the unsuppressed interactions. 
 
-
+This leads us to indirect detection methods, which can provide complementary probes to direct detection while also exploring interactions that are difficult, if not impossible, for terrestrial-based detectors to observe.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Indirect Detection}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Indirect detection experiments aim to infer the presence of dark matter through their annihilation to Standard Model states. These searches look for anomalies in astrophysical data, though dark matter accumulating within the Earth's core can also produce a detectable signal~\cite{Lee:2013iua_jan_Constrainingdarkmatter, ANTARES:2016bxz_SearchDarkMatter}. The signals searched for include: 
+\begin{itemize}
+    \item Gamma-rays at terrestrial-based telescopes such as HESS~\cite{HESS:2018cbt_may_SearchgRayLine, Montanari:2023bzn_jul_Searchdarkmatter, HESS:2006zwn_ObservationsGalacticCenter}, VERITAS~\cite{VERITAS:2017tif_apr_DarkMatterConstraints, Ryan:2023yzu_jul_SearchDarkMatter, McGrath:2023oto_jul_IndirectsearchDark, McGrath:2023oto_IndirectsearchDarkMcGrath:2023btk_IndirectsearchDark, Ryan:2023yzu_jul_SearchDarkMatter}, MAGIC~\cite{MAGIC:2009tyk_MAGICGammaRayTelescope, MAGIC:2011nta_SearchesDarkMatter, MAGIC:2011nta_SearchesDarkMatter, MAGIC:2009tyk_MAGICGammaRayTelescope} and HAWC~\cite{HAWC:2017mfa_feb_DarkMatterLimits, HAWC:2017udy_feb_SearchDarkMatter, HAWC:2017udy_feb_SearchDarkMatter, HAWC:2017mfa_feb_DarkMatterLimits, Proper:2015xya_jul_FirstLimitsDark, Harding:2015bua_jul_DarkMatterAnnihilation} as well as the Fermi-LAT~\cite{Fermi-LAT:2015att_nov_SearchingDarkMatter, Fermi-LAT:2015att_nov_SearchingDarkMatterFermi-LAT:2015kyq_nov_SearchingDarkMatter, Fermi-LAT:2012ugx_FermiLATSearch, Fermi-LAT:2010qeq_ConstraintsCosmologicalDark, Fermi-LAT:2015att_nov_SearchingDarkMatterFermi-LAT:2015kyq_nov_SearchingDarkMatter, Fermi-LAT:2015att_nov_SearchingDarkMatter, Su:2010qj_GiantGammarayBubbles} satellite;
+    \item  Neutrinos IceCube, ANTARES, 
+    \item Cosmic-Rays
+\end{itemize}
 
-It is this route that we will follow to explore dark matter EFTs.
+
+Signals from dark matter annihilation are best searched for by looking at regions where the dark matter density is expected to be high, boosting the annihilation rate. Natural places to look include the Galactic Centre, dwarf-spheroidal galaxies, and celestial bodies where dark matter can accumulate over time.
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
