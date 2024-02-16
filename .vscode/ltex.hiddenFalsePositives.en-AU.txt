@@ -1,2 +1,3 @@
 {"rule":"MASS_AGREEMENT","sentence":"^\\QThe Bullet Cluster.\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QBelow this mass, the dark matter will be efficiently evaporated out of the Sun at the same rate it is captured, thus no annihilation can take place .\\E$"}
+{"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\QFor the remainder of this thesis, we will use the term “compact object\" to refer to white dwarfs and neutron stars, and not black holes.\\E$"}
