@@ -23,41 +23,90 @@ Heavy stars, $\gtrsim 8\Msun$, spectacularly end their lives in a type-II supern
 
 These three stellar corpses (white dwarfs, neutron stars, and black holes) are collectively known as compact objects, as they have masses similar to or larger than our Sun, compressed into much smaller bodies with significantly larger surface gravities. These objects do not have a source of fuel, and spend the rest of their lives cooling down. For the remainder of this thesis, we will only be interested in white dwarfs and neutron stars and refer to these collectively as compact objects, excluding black holes from this term. 
 
-This chapter is dedicated to discussing the structure and composition of these objects, to the level of detail needed from a particle physics persepctive\footnote{As this work is written by a particle physicist, I wish to apologise to my astrophysics colleagues for what is to come.}.
+This chapter is dedicated to discussing the structure and composition of these objects\footnote{As this work is written by a particle physicist, I wish to apologise to my astrophysics colleagues for what is to come.}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Internal structure}
+\section{Structure Equations from General Relativity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this thesis, we will only be considering spherically symmetric and static stars. 
-The internal structure of 
+The highly dense matter comprising neutron stars and white dwarfs leads to extremely strong gravitational fields being produced by the stars. As such, modeling the structure of these objects falls into the domain of General Relativity (GR). Here we review the structure of static, spherically symmetric stars. 
 
-For non-relativistic stars, such as our Sun, the structure equations are
-rather simple, them being
+The assumption that the mass distribution of the star is spherically symmetric leads to the metric taking the form
+\begin{equation}
+    ds^2 = -d\tau^2 = -B(r) dt^2 + A(r) dr^2 + r^2 d\Omega^2,
+\end{equation}
+with $d\tau$ the proper time interval, and $A(r),\;B(r)$ are functions only of the radial coordinate and are often written as 
+\begin{equation}
+    A(r) = e^{2\Lambda(r)},\quad B(r) = e^{2\Phi(r)}.
+\end{equation}
+These functions are subject to the condition that at distances far from the star space-time becomes flat, leading to the boundary conditions 
+\begin{equation}
+    \lim_{r\rightarrow \infty} A(r) = \lim_{r\rightarrow \infty} B(r)  = 1.
+\end{equation}
+
+The matter that comprises the star is modeled as a perfect fluid, meaning we are neglecting any shear stresses and energy transport within the star. Such a fluid is described by its pressure $P(r)$, density $\rho(r)$, and number density, $n(r)$, as well as the 4-velocity of the fluid $u^\mu(r)$. Being a static fluid, the only non-zero component of this velocity is the time component, which is fixed through $g_{\mu\nu}u^\mu u^\nu = -1$ to be $u^t = 1/\sqrt{B(r)}$.
+These quantities are then used to construct the stress-energy tensor for the star, which takes the form
+\begin{equation}
+    T^{\mu\nu} = (\rho + P)u^\mu u^\nu + P g^{\mu\nu}.
+\end{equation}
+The microphysics underlying the matter interactions are encoded in an equation of state (EoS) that relates the various thermodynamic quantities. This is typically given by expressing the pressure as a function of the density, $P(\rho)$. It is often more convienient to parameterise the EoS by the number density of baryons, $n_b$, and the entropy per baryon, $s$, such that 
+\begin{equation}
+    P=P(n, s), \quad \rho = \rho(n, s).
+\end{equation}
+The dependence on $s$ turns out to be trivial in most scenarios involving compact objects, such as those considered here. The pressure in these stars arises from the degeneracy of the nucleons in NSs or the electrons in WDs, as the thermal contributions from the motion of the constituents will be frozen out. This is the case for temperatures much lower than the Fermi energy of the system, with typical values of $E_F \sim 10\MeV$ in NSs or $\sim 1 \MeV$ in WDs, corresponding to temperatures of $T_\star\sim 10^{11}\K$ and $\sim 10^{10}\K$ respectivly. As these stars are expected to cool well below these temperatures quickly after formation, the entropy can be taken to be zero throughout the star. This allows us to reduce the two-parameter EoS to a simpler one-parameter one,
+\begin{equation}
+    P=P(n_b, s = 0) = P(n_b), \quad \rho = \rho(n_b, s=0) = \rho(n_b).\label{eq:1_param_EoS}
+\end{equation} 
+
+The structure of the star is therefore determined by the quantities $A(r)$, $B(r)$, $P(r)$, $\rho(r)$, and $n_b(r)$. This system is determined by applying the Einstein field equations, $G^{\mu\nu} = 8\pi T^{\mu\nu}$, together with the conservation of energy-momentum, $T^{\mu\nu}_{\quad;\nu}=0$, the EoS relations Eqs.~\ref{eq:1_param_EoS}, and the appropriate boundary conditions. The structure equations that come out of this analysis were first discovered concurrently by Tolman~\cite{Tolman:1939jz_StaticSolutionsEinstein} and by Oppenheimer and Volkoff~\cite{Oppenheimer:1939ne_MassiveNeutronCores}, and so are known as the TOV equations. They take the form
 \begin{align}
-\frac{d M}{dr}  &= 4 \pi r^2,\\
-\frac{d P }{dr} &= -\rho(r) G M(r) r^2,
+    \frac{dP}{dr} &= -\rho(r) c^2  \left[ 1 + \frac{P(r)}{\rho(r) c^2} \right]\frac{d\Phi}{dr},\label{eq:TOV_1}\\
+    \frac{d\Phi}{dr} & = \frac{G M(r)}{c^2 r^2} \left[ 1 + \frac{4\pi r^3 P(r)}{M(r)c^2} \right] \left[ 1 - \frac{2 G M(r)}{c^2 r}\right]^{-1}\label{eq:TOV_2},\\
+    \frac{dB}{dr} & = 2B(r) \frac{d\Phi}{dr},\label{eq:TOV_3}
 \end{align}
-where $M$ is the mass of the star at radius $r$, $P$ is the pressure,
-and $\rho(r)$ is the density.
-The first equation is known as the mass equation, and the second is the
-condition for hydrostatic equilibrium. 
+where $M(r)$ is related to the metric factor $A(r)$ through
+\begin{equation}
+    A(r) = \left[ 1 - \frac{G M(r)}{c^2 r} \right]^{-1},
+\end{equation}
+and is interpreted as the mass contained within a radius $r$. It obeys the mass equation 
+\begin{equation}
+    \frac{dM}{dr} = 4\pi r^2 \rho(r),\quad M(0) = 0,
+\end{equation}
+that arises from the $\mu = \nu = 0$ component of the Einstein field equiations. 
+These equations are the general relativistic versions of the hydrostatic equilibrium equations of regular stellar structure, with Eq.~\ref{eq:TOV_1} reducing to the familiar 
+\begin{equation}
+    \frac{dP}{dr} = -\frac{GM(r)}{r^2}\rho(r),
+\end{equation}
+in the Newtonian limit, $GM(r)/c^2 r \ll 1$.
 
-We are instead interested in compact objects, where the extreme densities 
-of these stars 
+The boundary between the stellar interior and exterior is determined when the pressure and density vanish, $P(R_\star) = \rho(R_\star) = 0$, defining the radius of the star. For $r>R_\star$, the total mass remains constant at the total mass of the star, $M(r>R_\star) = M_\star$.
+Therefore the only non-trivial structure functions are the metric factors. Solving Eq.~\ref{eq:TOV_3} with $P(r)=0$ and constant $M(r)$ for $B(r)$ becomes elementary while the result for $A(r)$ is trivial, giving
+\begin{align}
+    A(r) & = \left[ 1 - \frac{G M_\star}{c^2 r} \right]^{-1},\\
+    B(r) & = 1 - \frac{G M_\star}{c^2 r} ,\quad\mathrm{for}\;r > R_\star,
+\end{align}
+and the metric reduces to the familiar Schwarzschild metric outside the star. 
+Continuity of the metric at $r= R_\star$ enforces a second boundary condition for $B(r)$,
+\begin{equation}
+    B(R_\star) = 1 - \frac{G M_\star}{c^2 R_\star}.
+\end{equation}
+The final boundary condition required to uniquely specify the internal structure of the star is the central pressure $P(0) = P_c$, or equivalently the central density/baryon number density. For a given EoS, varying this value generates stars of various masses, and is what ultimately produces the mass-radius relation for the EoS.
 
-In order to solve this system, 
-The equation of state describes the relation between the pressure 
-and energy of the constituent matter.
-
+From this information, constructing a relativistic star can be boiled down to a few simple steps:
+\begin{enumerate}
+    \item Specify an EoS for the constituent matter.
+    \item 
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{White Dwarfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{White Dwarfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -65,29 +114,23 @@ FMT equation of state
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Neutron Stars}
+\subsection{Observational Status}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Neutron Stars}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Beta Equlibrium
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Observational Status}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{White Dwarfs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Neutron Stars}
+\subsection{Observational Status}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
