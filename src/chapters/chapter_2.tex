@@ -17,7 +17,7 @@ Within the cores of stars exists a delicate balance between the gravitational fo
 This cycle continues as heavier and heavier elements are formed within the ever-increasingly hot stellar core.
 If the star is heavy enough, iron will eventually be formed from the burning of silicon. As the fusion of iron nuclei is an endothermic process, it will not occur spontaneously. Whatever the mass of the star, eventually it will no longer be able to support the fusion of these heavier elements. Without a sufficient fuel source, the core will collapse under its own gravity leading to the death of the star.  
 
-What comes after this depends on the mass of the progenitor stars. Very light stars, $\lesssim 0.5 \Msun$, have lifetimes much longer than the age of the universe, and so are uninteresting to our current discussion. Moderately heavy stars, $1\Msun\lesssim M_\star \lesssim 8\Msun$, will continue burning fuel until the outer layers of the star are dispersed as it expands, leaving a carbon-oxygen (CO) core. The core will begin to collapse until the Fermi degeneracy of the ultrarelativistic electrons is great enough to reestablish equilibrium, resulting in a White Dwarf (WD).
+What comes after this depends on the mass of the progenitor stars. Very light stars, $\lesssim 0.5 \Msun$, have lifetimes much longer than the age of the universe, and so are uninteresting to our current discussion. Moderately heavy stars, $1\Msun\lesssim \Mstar \lesssim 8\Msun$, will continue burning fuel until the outer layers of the star are dispersed as it expands, leaving a carbon-oxygen (CO) core. The core will begin to collapse until the Fermi degeneracy of the ultrarelativistic electrons is great enough to reestablish equilibrium, resulting in a White Dwarf (WD).
 
 Heavy stars, $\gtrsim 8\Msun$, spectacularly end their lives in a type-II supernova event. This occurs when the core of the star exceeds the Chandrashekhar mass of $1.4\Msun$, which cannot be supported by electron degeneracy pressure. The core itself will then collapse, leading to a shockwave that ejects the majority of the mass of the star. All that will remain is an extremely dense core supported by neutron degeneracy pressure, a Neutron Star (NS). If the star was so massive that the gravitational forces overcome even the neutron degeneracy pressure, then the core collapses into a black hole. 
 
@@ -85,14 +85,14 @@ These equations are the general relativistic versions of the hydrostatic equilib
 \end{equation}
 in the Newtonian limit, $GM(r)/c^2 r \ll 1$.
 
-The radius of the star, $R_\star$, is identified as the point at which the pressure and density vanish, $P(R_\star) = \rho(R_\star) = 0$. In the region outside the star, $r>R_\star$, the total mass remains constant at the total mass of the star, $M(r \geq  R_\star) = M_\star$, and so the only non-trivial structure functions are the metric factors. Solving Eq.~\ref{eq:TOV_3} with $P(r)=0$ and constant $M(r)$ for $B(r)$ becomes elementary while the result for $A(r)$ is trivial, leaving us with
+The radius of the star, $\Rstar$, is identified as the point at which the pressure and density vanish, $P(\Rstar) = \rho(\Rstar) = 0$. In the region outside the star, $r>\Rstar$, the total mass remains constant at the total mass of the star, $M(r \geq  \Rstar) = \Mstar$, and so the only non-trivial structure functions are the metric factors. Solving Eq.~\ref{eq:TOV_3} with $P(r)=0$ and constant $M(r)$ for $B(r)$ becomes elementary while the result for $A(r)$ is trivial, leaving us with
 \begin{equation}
-    A(r) = \left[ 1 - \frac{G M_\star}{c^2 r} \right]^{-1}, \quad B(r) = 1 - \frac{G M_\star}{c^2 r} ,\quad\mathrm{for}\;r > R_\star,
+    A(r) = \left[ 1 - \frac{G \Mstar}{c^2 r} \right]^{-1}, \quad B(r) = 1 - \frac{G \Mstar}{c^2 r} ,\quad\mathrm{for}\;r > \Rstar,
 \end{equation}
 and the metric reduces to the familiar Schwarzschild metric outside the star. 
-Continuity of the metric at $r= R_\star$ enforces a second boundary condition for $B(r)$,
+Continuity of the metric at $r= \Rstar$ enforces a second boundary condition for $B(r)$,
 \begin{equation}
-    B(R_\star) = 1 - \frac{G M_\star}{c^2 R_\star}.
+    B(\Rstar) = 1 - \frac{G \Mstar}{c^2 \Rstar}.
     \label{eq:B_boundary_condition}
 \end{equation}
 
@@ -115,64 +115,60 @@ In general, additional quantities will be present in the EoS, such as chemical p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The fate of main sequence stars of mass below $M_\star \lesssim 8 - 10 \Msun$ is to end their life cycles as a white dwarf. Consequently, these compact stellar remnants, which are supported against gravitational collapse by electron degeneracy pressure, are the most abundant stars in the Galaxy ($\gtrsim 90\%$). They are born at very high temperatures and cool down over billions of years. Observations of the coldest WDs therefore contain information on the star formation history of the Galaxy.
+The fate of main sequence stars of mass below $\Mstar \lesssim 8 - 10 \Msun$ is to end their life cycles as a white dwarf. Consequently, these compact stellar remnants, which are supported against gravitational collapse by electron degeneracy pressure, are the most abundant stars in the Galaxy ($\gtrsim 90\%$). They are born at very high temperatures and cool down over billions of years. Observations of the coldest WDs therefore contain information on the star formation history of the Galaxy.
 
 The vast majority of observed WDs are composed primarily of carbon and oxygen, plus small traces of elements heavier than helium. 
 At the extremely high densities found in WDs $\sim10^6-10^{10}\g\cm^{-3}$, electrons are strongly degenerate and determine the WD equation of state (EoS) and internal structure.  The stellar core resembles a Coulomb lattice of ions surrounded by degenerate electrons, which implies that the WD core is isothermal and a very good thermal conductor. 
 The degenerate core is enclosed by a thin envelope that accounts for $\lesssim 1\%$  of the total mass~\cite{Fontaine_apr_Potentialwhitedwarf}. 
 
-\begin{comment}
 The outer layers form an atmosphere that is rich in lighter elements such as hydrogen or helium, where the exact composition depends on the evolution of the WD progenitor and changes as the WD cools. 
 This atmosphere is non-degenerate and extremely opaque to radiation, with an EoS that is subject to finite temperature effects. 
 
-In the limit of zero temperature, the simplest way to obtain the WD EoS is to assume an ideal Fermi gas of degenerate electrons, for a WD that is primarily composed of a single element. Corrections to the non-interacting electron picture were introduced early by Salpeter~\cite{Salpeter:1961}. By introducing the Wigner-Seitz (WS) cell approximation and assuming point-like nuclei, Salpeter obtained an analytical EoS that accounts  for interactions between electrons and ions as well as other Coulomb corrections. These corrections, in general, depend on the chemical composition of the star. 
+In the limit of zero temperature, the simplest way to obtain the WD EoS is to assume an ideal Fermi gas of degenerate electrons, for a WD that is primarily composed of a single element. Corrections to the non-interacting electron picture were introduced early by Salpeter~\cite{Salpeter:1961zz_nov_Energypressurezerotemperature}. By introducing the Wigner-Seitz (WS) cell approximation and assuming point-like nuclei, Salpeter obtained an analytical EoS that accounts for interactions between electrons and ions as well as other Coulomb corrections. These corrections, in general, depend on the chemical composition of the star. 
 
-More recently, it has been shown that the treatment of matter at high pressures presented by Feynman, Metropolis and Teller~\cite{Feynman:1949zz} can be extended to consistently take into account weak interactions and relativistic effects \cite{Rotondo:2009cr, Rotondo:2011zz}, and incorporates Coulomb corrections in a more natural manner than the Salpeter EoS. The resulting Feynman-Metropolis-Teller (FMT) EoS is obtained by considering a relativistic Thomas-Fermi model within Wigner-Seitz cells of radius $R_{WS}$. 
+More recently, it has been shown that the treatment of matter at high pressures presented by Feynman, Metropolis and Teller~\cite{Feynman:1949zz_Equationsstateelements} can be extended to consistently take into account weak interactions and relativistic effects \cite{Rotondo:2009cr_RelativisticThomasFermitreatment,Rotondo:2011zz_RelativisticFeynmanMetropolisTellertheory}, and incorporates Coulomb corrections in a more natural manner than the Salpeter EoS. The resulting Feynman-Metropolis-Teller (FMT) EoS is obtained by considering a relativistic Thomas-Fermi model within Wigner-Seitz cells of radius $R_{\mathrm WS}$. 
 For degenerate, relativistic, electrons, the equilibrium condition is that the Fermi energy, $E_e^F$, is constant within the cell,
 \begin{equation}\label{eq:rel_equil}
 E_e^F=\sqrt{(p_e^F)^2+m_e^2}-m_e-eV(r) = \rm{constant},
 \end{equation}
-where $V(r)$ is the Coulomb potential inside the cell, $p_e^F$ is the electron Fermi momentum, $m_e$ is the electron mass and $e$ is the electric charge. In order to obtain an integrable solution for the energy density near the origin, it is necessary to introduce a finite size for the nucleus, with radius $ R_c = \Delta\lambda_{\pi} Z^{1/3}$, 
+where $V(r)$ is the Coulomb potential inside the cell, $p_e^F$ is the electron Fermi momentum, $m_e$ is the electron mass and $e$ is the electric charge. To obtain an integrable solution for the energy density near the origin, it is necessary to introduce a finite size for the nucleus, with radius $ R_c = \Delta\lambda_{\pi} Z^{1/3}$, 
 where $\lambda_\pi$ is the pion Compton wavelength, $\Delta \approx (r_0 /\lambda_\pi)(A/Z)^{1/3}$, $Z$ is the proton number, $A$ is the atomic mass, and $r_0$ is an empirical constant $\sim 1.2\;\text{fm}$. The proton and electron number densities inside the cell are then given by
 \begin{align}
-    n_p &=  \frac{(p^F_p)^3}{3\pi^2} =\frac{3Z}{4\pi R_c^3}\theta( R_c - r ) = \frac{3}{4\pi} \left( \frac{1}{\Delta \lambda_\pi} \right)^3 \theta(R_c -r), \label{eq:prot_dens}\\
-    n_e &= \frac{(p^F_e)^3}{3\pi^2} = \frac{1}{3\pi^2}\left[ \hat{V}^2(r) + 2m_e \hat{V}(r)\right]^{3/2},\label{eq:elec_dens}
+    n_p &=  \frac{(p^F_p)^3}{3\pi^2} =\frac{3Z}{4\pi R_c^3}\theta( R_c - r ) = \frac{3}{4\pi} \left( \frac{1}{\Delta \lambda_\pi} \right)^3 \theta(R_c -r), \label{eq:prot_dens_FMT}\\
+    n_e &= \frac{(p^F_e)^3}{3\pi^2} = \frac{1}{3\pi^2}\left[ \hat{V}^2(r) + 2m_e \hat{V}(r)\right]^{3/2},\label{eq:elec_dens_FMT}\\
+    \hat{V}(r) &= eV(r) + E_e^F. \label{eq:vhat}
 \end{align}
-where 
-\begin{equation}
-    \hat{V}(r) = eV(r) + E_e^F. \label{eq:vhat}
-\end{equation}
 Using these expressions in the Poisson equation for the Coulomb potential results in the relativistic Thomas-Fermi equation
 \begin{equation}
     \frac{1}{3x}\frac{d^2\beta}{dx^2} = -\frac{\alpha}{\Delta^3}\theta(x_c -x) + \frac{4\alpha}{9\pi}\left[ \frac{\beta^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\beta(x)}{x}\right]^{3/2},\label{eq:FMT_DE}
 \end{equation}
-which is written in terms of the dimensionless quantities $x = r/\lambda_\pi$ and $\beta(r) = r\hat{V}(r)$, such that $x_c = R_c/\lambda_\pi$ and $x_{WS} = R_{WS}/\lambda_\pi$, and $\alpha$ is the fine structure constant.
-The requirement of global charge neutrality imposes the conditions $dV/dr |_{r=R_{WS}} =0$ and $V(R_{WS}) = 0$, which translate to the boundary conditions
+which is written in terms of the dimensionless quantities $x = r/\lambda_\pi$ and $\beta(r) = r\hat{V}(r)$, such that $x_c = R_c/\lambda_\pi$ and $x_{\mathrm WS} = R_{\mathrm WS}/\lambda_\pi$, and $\alpha$ is the fine structure constant.
+The requirement of global charge neutrality imposes the conditions $dV/dr |_{r=R_{\mathrm WS}} =0$ and $V(R_{\mathrm WS}) = 0$, which translate to the boundary conditions
 \begin{equation}
-  \beta(0) = 0, \qquad
-  \left. \frac{d\beta}{dx}\right|_{x_{WS}} = \frac{\beta(x_{WS})}{x_{WS}}. \label{eq:TF_bc}
+    \beta(0) = 0, \qquad
+    \left. \frac{d\beta}{dx}\right|_{x_{\mathrm WS}} = \frac{\beta(x_{\mathrm WS})}{x_{\mathrm WS}}. \label{eq:TF_bc}
 \end{equation}
-By solving these equations, we are able to obtain the relevant thermodynamic quantities, namely the electron and proton  number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression
+
+By solving these equations, we can obtain the relevant thermodynamic quantities, namely the electron and proton number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression
 \begin{equation}
     \mu_{F,e} = \sqrt{(p_e^F)^2+m_e^2}-m_e.\label{eq:mufe}
 \end{equation}
-The energy and pressure of the cell can then be obtained following the analysis presented in~ref.~\cite{Rotondo:2011zz}. The cell energy gains contributions from the nuclear mass, electron kinetic energy and Coulomb interactions, such that
+The energy and pressure of the cell can then be obtained following the analysis presented in~ref.~\cite{Rotondo:2011zz_RelativisticFeynmanMetropolisTellertheory}. The cell energy gains contributions from the nuclear mass, electron kinetic energy, and Coulomb interactions, such that
 \begin{align}
-    E_{tot} & = M_N + E_k + E_C,\\
-    E_k & = \int_0^{R_{WS}}4\pi r^2 (\mathcal{E}_e(r) - m_e n_e(r))\;dr,\\
-    E_C & = \frac{1}{2}\int_{R_c}^{R_{WS}}4\pi r^2 e(n_p(r) - n_e(r))V(r)\;dr,
+    E_\mathrm{tot} & = M_N + E_k + E_C,\\
+    E_k & = \int_0^{R_{\mathrm WS}}4\pi r^2 (\mathcal{E}_e(r) - m_e n_e(r))\;dr,\\
+    E_C & = \frac{1}{2}\int_{R_c}^{R_{\mathrm WS}}4\pi r^2 e(n_p(r) - n_e(r))V(r)\;dr,
 \end{align}
 where 
 \begin{equation}
     \mathcal{E}_e(r) = \frac{1}{\pi^2}\int_0^{p_e^F}p^2\sqrt{p^2 + m_e^2}\;dp,
 \end{equation}
-is the electron energy density, and  $M_N$ the mass of the nucleus. The only contribution to the internal cell pressure comes from the electrons,
+is the electron energy density, and  $M_N$ is the mass of the nucleus. The only contribution to the internal cell pressure comes from the electrons,
 \begin{equation}
     P_e(r) = \frac{1}{3\pi^2}\int_0^{p_e^F}\frac{p^4}{\sqrt{p^2+m_e^2}}\;dp,
 \end{equation}
-with the total pressure of the cell being $P_{tot} = P_e(R_{WS})$.
-Finally, the EoS is then obtained by solving Eq.~\ref{eq:FMT_DE} for various cell radii, yielding a relation between $E_{tot}$ and $P_{tot}$ paramaterised by the radius of the Wigner-Seitz cell. 
-
+with the total pressure of the cell being $P_\mathrm{tot} = P_e(R_{\mathrm WS})$.
+Finally, the EoS is then obtained by solving Eq.~\ref{eq:FMT_DE} for various cell radii, yielding a relation between $E_\mathrm{tot}$ and $P_\mathrm{tot}$ parameterised by the radius of the Wigner-Seitz cell. 
 
 
 \begin{table}[t]
@@ -181,28 +177,35 @@ Finally, the EoS is then obtained by solving Eq.~\ref{eq:FMT_DE} for various cel
     \hline
       \textbf{EoS} & \textbf{WD}$_\mathbf{1}$  & \textbf{WD}$_\mathbf{2}$&\textbf{WD}$_\mathbf{3}$ &\textbf{WD}$_\mathbf{4}$\\
       \hline
-     $\rho_c\,[\g\cm^{-3}]$ &  $1.98\times10^{6}$ & $3.46\times10^{7} $ & $3.02\times 10^{8}$ & $1.14\times10^{10}$\\
-     $M_\star\,[M_\odot]$ & $0.490$ &  $1.000 $ & $1.252$ &$1.384$\\
-     $R_\star\,[\km]$ & $9.39\times10^{3}$ &  $5.38\times10^{3}$ & $3.29\times 10^3$ & $1.25\times10^3$\\
-     $\vesc(\Rstar) \, [\km/\s]$ & $3.72\times10^{3}$ & $7.03\times10^{3}$ & $1.01\times10^{4}$ & $1.71\times10^{4}$ \\
+     $\rho_c\,[\g\cm^{-3}]$ &  $1.47\times 10^{6}$ & $3.84\times 10^{7} $ & $3.13\times 10^{8}$ & $2.31\times 10^{10}$\\
+     $\Mstar\,[M_\odot]$ & $0.440$ &  $1.000 $ & $1.252$ & $1.384$\\
+     $\Rstar\,[\km]$ & $9.39\times 10^{3}$ &  $5.38\times 10^{3}$ & $3.29\times 10^3$ & $1.25\times 10^3$\\
+     $\vesc(\Rstar) \, [\km/\s]$ & $3.72\times 10^{3}$ & $7.03\times 10^{3}$ & $1.01\times 10^{4}$ & $1.71\times 10^{4}$ \\
       \hline
     \end{tabular}
-  \caption{Four configurations for white dwarfs composed of carbon, with a FMT EoS, where $\rho_c$ is the  central density. }
+  \caption{Four configurations for white dwarfs composed of carbon, with an FMT EoS. Shown are the central densities, $\rho_c$, stellar mass $\Mstar$ and radius $\Rstar$, and escape velocity at the edge of the WD, $\vesc$. }
     \label{tab:WDs}
 \end{table}
  
 
 
 Different WD configurations can be obtained, assuming a non-rotating spherically symmetric star, by solving the
-Tolman-Oppenheimer-Volkoff (TOV) equations~\cite{Tolman:1939jz,Oppenheimer:1939ne} coupled to the FMT EoS with different initial conditions for the pressure at the centre of the star. In Fig.~\ref{fig:WDradprofs} we show radial profiles for $n_e$ (top left), $\muFe$ (top right) and escape velocity $\vesc$ (bottom) for the carbon WDs in Table~\ref{tab:WDs}. Note that the difference in radius between the lightest and heaviest WD in Table~\ref{tab:WDs} spans almost one order of magnitude, while the electron number densities in the core can vary up to 4 orders of magnitude (see top left panel). As expected, electrons are more degenerate in more compact WDs and become relativistic (see top right panel). The escape velocity can reach ${\cal O}(0.1\,c)$ at the interior of the most compact WDs, while for very low mass WDs 
+Tolman-Oppenheimer-Volkoff (TOV) equations~\cite{Tolman:1939jz_StaticSolutionsEinstein,Oppenheimer:1939ne_MassiveNeutronCores} coupled to the FMT EoS with different initial conditions for the pressure at the centre of the star. In Fig.~\ref{fig:WDradprofs} we show radial profiles for $n_e$ (top left), $\muFe$ (top right), and escape velocity $\vesc$ (bottom) for the carbon WDs in Table~\ref{tab:WDs}. Note that the difference in radius between the lightest and heaviest WD in Table~\ref{tab:WDs} spans almost one order of magnitude, while the electron number densities in the core can vary up to 4 orders of magnitude (see top left panel). As expected, electrons are more degenerate in more compact WDs and become relativistic (see top right panel). The escape velocity can reach ${\mathcal{O}}(0.1\,c)$ at the interior of the most compact WDs, while for very low mass WDs 
 it can be as low as $\sim0.003\,c$. 
 
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width = 0.495\textwidth]{ne_prof.pdf}  
+    \includegraphics[width = 0.495\textwidth]{muFe_prof.pdf}  
+    \includegraphics[width = 0.67\textwidth]{vesc_prof.pdf}
+    \caption{Electron number density (top left), chemical potential (top right) and escape velocity (bottom) radial profiles for the carbon WDs with FMT EoS in Table~\ref{tab:WDs}. The radial distance of each profile has been normalised to the radius of the star.}
+    \label{fig:WDradprofs}
+\end{figure}
 
-The mass-radius relations obtained from a zero-temperature EoS begin to deviate from observations for low mass WDs. To address this discrepancy, finite temperature effects can be introduced to the EoS~\cite{deCarvalho:2013rea}. When calculating the effects for carbon WDs with core temperatures $\Tstar=10^6-10^7$K, we find that the chemical potential is smaller by only $\sim16\%$, and the number density by $\sim~35\%$.
-As we shall focus on old WDs, we shall assume $\Tstar=10^5\K$, for which the zero-temperature regime holds. Note that finite temperature effects on the EoS may be more pronounced for light WDs composed of helium~\cite{deCarvalho:2013rea}. 
+\fixMV{Discuss finite T corrections}
+The mass-radius relations obtained from a zero-temperature EoS begin to deviate from observations for low-mass WDs. To address this discrepancy, finite temperature effects can be introduced to the EoS~\cite{deCarvalho:2013rea_Relativisticfeynmanmetropolistellertreatment}. When calculating the effects for carbon WDs with core temperatures $\Tstar=10^6-10^7   $K, we find that the chemical potential is smaller by only $\sim16\%$, and the number density by $\sim~35\%$.
+As we shall focus on old WDs, we shall assume $\Tstar=10^5\K$, for which the zero-temperature regime holds. Note that finite temperature effects on the EoS may be more pronounced for light WDs composed of helium~\cite{deCarvalho:2013rea_Relativisticfeynmanmetropolistellertreatment}. 
 
-
-\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Observational Status}
