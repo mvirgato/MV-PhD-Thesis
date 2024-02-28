@@ -23,7 +23,7 @@
   \symmetricmargin
   \maketitle
   %% Toggle this for pdf vs book
-  % \bookmargin
+  \bookmargin
   \input{src/frontmatter/abstract.tex}
   \input{src/frontmatter/publications.tex}
   \makedeclaration
@@ -47,20 +47,20 @@
 %%
 \begin{mainmatter}
   \mainmatterheadings
-  \symmetricmargin
+  % \symmetricmargin
   %% General background
-  \include{src/chapters/chapter_1}
+  % \include{src/chapters/chapter_1}
   
   %% Compact Objects 
   \include{src/chapters/chapter_2}
 
-  \include{src/chapters/chapter_3}
+  % \include{src/chapters/chapter_3}
 
-  \include{src/chapters/chapter_4}
+  % \include{src/chapters/chapter_4}
 
-  \include{src/chapters/chapter_5}
+  % \include{src/chapters/chapter_5}
 
-  \include{src/chapters/chapter_6}
+  % \include{src/chapters/chapter_6}
 
   %% Glossary
   \include{src/indices}
@@ -70,11 +70,11 @@
 %% Appendix
 %%
 \begin{appendices}
-  \symmetricmargin
+  % \symmetricmargin
 
     %% Kinematics
-    \include{src/backmatter/appendix_kinematics}
-    \include{src/backmatter/appendix_kin_heating.tex}
+    % \include{src/backmatter/appendix_kinematics}
+    % \include{src/backmatter/appendix_kin_heating.tex}
 \end{appendices}
 
 %%
@@ -82,7 +82,7 @@
 %%
 \glsaddall
 \begin{backmatter}
-    \symmetricmargin
+    % \symmetricmargin
     \frontmatterheadings
     \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
     \clearpage

@@ -233,13 +233,13 @@ distributions. Now, the electron chemical potential is no longer simply the Ferm
 \end{equation}
 where we define the dimensionless quantities 
 \begin{align}
-    t & = \frac{E_e - m_e c^2}{k_B \Tstar},\\
-    \eta & = \frac{\varepsilon_{F,e}}{k_B \Tstar},\\
-    \beta & = \frac{k_B \Tstar}{m_e c^2},
+    t & = \frac{E_e - m_e}{\Tstar},\\
+    \eta & = \frac{\varepsilon_{F,e}}{\Tstar},\\
+    \beta & = \frac{\Tstar}{m_e},
 \end{align}
 for a star at temperature $\Tstar$. The Thomas-Fermi equilibrium condition within the WS cell is now given by 
 \begin{equation}
-    \varepsilon_{F,e}(r) - e V(r) = k_B \Tstar \eta(r) - e V(r) = \mathrm{constant},
+    \varepsilon_{F,e}(r) - e V(r) = \Tstar \eta(r) - e V(r) = \mathrm{constant},
 \end{equation}
 with the Coulpmb potential vanishing at the boundary of the cell as before. We now make the change of variables into the dimensionless quantities $\chi/r = \varepsilon_{F,e} / (\hbar c)$ and $x = x/x_\mathrm{WS}$ so that the Poisson equation~\ref{eq:poisson_WS_cell} becomes
 \begin{align}
@@ -250,7 +250,7 @@ with the same boundary conditions as in Eq.~\ref{eq:TF_bc}.
 
 The total energy of the cell remains very similar to the zero-temperature case, the main differences being it gains a contribution from the thermal motion of the nucleus, 
 \begin{equation}
-    E_\mathrm{th} = \frac{3}{2}k_B \Tstar,
+    E_\mathrm{th} = \frac{3}{2}\Tstar,
 \end{equation} 
 and that the electron energy density is now given by
 \begin{equation}
@@ -322,7 +322,7 @@ while beta-equilibrium refers to the balance between the weak decays of neutrons
     n \rightarrow p + \ell^- +\bar{\nu}_\ell,\\
     p + \ell^- \rightarrow n + \nu_\ell,
 \end{gather}
-with $\ell = e, \mu$. Muons will begin to replace electrons in these reactions once the electron chemical potential exceeds the mass of the muon, $\mu_{F,e \gtrsim m_\mu = 105.7\MeV}$. As the species are all degenerate, muons cannot decay into electrons, imposing the constraint 
+with $\ell = e, \mu$. Muons will begin to replace electrons in these reactions once the electron chemical potential exceeds the mass of the muon, $\mu_{F,e} \gtrsim m_\mu = 105.7\MeV$. As the species are all degenerate, muons cannot decay into electrons, imposing the constraint 
 \begin{equation}
     \mu_{F,e} = \mu_{F,\mu},
 \end{equation}
@@ -336,12 +336,20 @@ The densities within the inner cores of NSs extend between $2\rho_0 \lesssim \rh
     \item A quark-gluon plasma comprised of deconfined quarks ($u,\; d$ and $s$) and gluons.
 \end{itemize}
 
-Unlike the WDs discussed above, there are far fewer observations of NSs that allow us to constrain the various EoS models. However, the onset of gravitational wave astronomy has begun to see more and more constraints being placed on these models. 
-\commMV{talk about the largest NS mass and the grav wave observations that constrain the EoS}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Observational Status}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Unlike the WDs discussed above, there are much fewer NS observations that constrain the EoS. However, recent years have seen significant strides in furthering our understanding of matter at super-nuclear densities, both from a theory and observational standpoint. On the theoretical side, these advances come from developments in chiral EFT allowing more detailed modelling of nuclear interactions~\cite{Hebeler:2009iv_Chiralthreenucleonforces, Tews:2012fj_jan_NeutronMatterNexttoNexttoNexttoLeading, Tews:2018kmu_jun_Constrainingspeedsound}, while the observational data has been bolstered thanks to the onset of gravitational wave astronomy due to the LIGO-VIRGO experiment~\cite{LIGOScientific:2017zic_Gravitationalwavesgammarays, LIGOScientific:2018cki_oct_GW170817MeasurementsNeutron, LIGOScientific:2018hze_Propertiesbinaryneutron} and the launch of the Neutron star Interior Composition Explorer (NICER) X-ray timing instrument. 
+
+Ultimately, what is needed to further constrain the NS EoS are more precise observations of NS masses and radii, which can be obtained from various observational techniques. NS masses have historically been much easier to measure than their radii. In particular, masses of NSs in binary systems can be precisely determined as the underlying gravitational theories are well-understood today~\cite{Steiner:2010fz_EquationStateObserved, Steiner:2010fz_EquationStateObserved, Lattimer:2013hma_mar_NeutronStarMasses, Ozel:2015fia_mar_DenseMatterEquation,Ozel:2016oaf_jul_MassesRadiiEquation, Miller:2016pom_mar_ObservationalConstraintsNeutron}. The radii must be determined by assuming the NSs emit a blackbody spectrum, however, this method is only reliable for cool NSs where the atmospheric models are well understood~\cite{Miller:2016pom_mar_ObservationalConstraintsNeutron}. 
+
+Nowadays, the NICER experiment can provide much more precise measurements of the NS radii than previous methods. This is achieved ny measuring the X-ray pulse profiles of pulsars, that are sensitive to how light bends around the star. This provides information on the compactness of the star, $G M_\star/R_\star c^2$, that can be used to determine $M_\star$ and $R_\star$ given that the mass can usually be determined through other means. As an example, the heaviest NS observed to date, the millisecond pulsar PSR J0740+6620~\cite{Miller:2021qha_sep_RadiusPSRJ0740, Riley:2021pdl_sep_NICERViewMassive}, had its mass determined by measuring the relativistic Shapiro time delay~\cite{Shapiro:1964uw_FourthTestGeneral} of the radio signal, allowing the radius to be obtained once the compactness was measured~\cite{NANOGrav:2019jur_sep_RelativisticShapirodelay}. Refined analyses resulted in an observed mass of 2.08$\pm$0.07$\Msun$~\cite{Fonseca:2021wxt_jul_RefinedMassGeometric} and a radius of $12.39^{+1.30}_{-0.98} \km$~\cite{Riley:2021pdl_sep_NICERViewMassive} or $13.71^{+2.61}_{-1.50} \km$~\cite{Miller:2021qha_sep_RadiusPSRJ0740} at 68\% confidence levels. 
+
+
+\commMV{Grav waves}
+
 
