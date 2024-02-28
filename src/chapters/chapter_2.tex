@@ -115,7 +115,7 @@ In general, additional quantities will be present in the EoS, such as chemical p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The fate of main sequence stars of mass below $\Mstar \lesssim 8 - 10 \Msun$ is to end their life cycles as a white dwarf. Consequently, these compact stellar remnants, which are supported against gravitational collapse by electron degeneracy pressure, are the most abundant stars in the Galaxy ($\gtrsim 90\%$). They are born at very high temperatures and cool down over billions of years. Observations of the coldest WDs therefore contain information on the star formation history of the Galaxy.
+The fate of main sequence stars of mass below $\Mstar \lesssim 8 \Msun$ is to end their life cycles as a white dwarf. Consequently, these compact stellar remnants, which are supported against gravitational collapse by electron degeneracy pressure, are the most abundant stars in the Galaxy ($\gtrsim 90\%$). They are born at very high temperatures and cool down over billions of years. Observations of the coldest WDs therefore contain information on the star formation history of the Galaxy.
 
 The vast majority of observed WDs are composed primarily of carbon and oxygen, plus small traces of elements heavier than helium. 
 At the extremely high densities found in WDs $\sim10^6-10^{10}\g\cm^{-3}$, electrons are strongly degenerate and determine the WD equation of state (EoS) and internal structure.  The stellar core resembles a Coulomb lattice of ions surrounded by degenerate electrons, which implies that the WD core is isothermal and a very good thermal conductor. 
@@ -123,6 +123,13 @@ The degenerate core is enclosed by a thin envelope that accounts for $\lesssim 1
 
 The outer layers form an atmosphere that is rich in lighter elements such as hydrogen or helium, where the exact composition depends on the evolution of the WD progenitor and changes as the WD cools. 
 This atmosphere is non-degenerate and extremely opaque to radiation, with an EoS that is subject to finite temperature effects. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The FMT Equation of State}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 In the limit of zero temperature, the simplest way to obtain the WD EoS is to assume an ideal Fermi gas of degenerate electrons, for a WD that is primarily composed of a single element. Corrections to the non-interacting electron picture were introduced early by Salpeter~\cite{Salpeter:1961zz_nov_Energypressurezerotemperature}. By introducing the Wigner-Seitz (WS) cell approximation and assuming point-like nuclei, Salpeter obtained an analytical EoS that accounts for interactions between electrons and ions as well as other Coulomb corrections. These corrections, in general, depend on the chemical composition of the star. 
 
@@ -138,32 +145,46 @@ where $\lambda_\pi$ is the pion Compton wavelength, $\Delta \approx (r_0 /\lambd
     n_e &= \frac{(p^F_e)^3}{3\pi^2} = \frac{1}{3\pi^2}\left[ \hat{V}^2(r) + 2m_e \hat{V}(r)\right]^{3/2},\label{eq:elec_dens_FMT}\\
     \hat{V}(r) &= eV(r) + E_e^F. \label{eq:vhat}
 \end{align}
-Using these expressions in the Poisson equation for the Coulomb potential results in the relativistic Thomas-Fermi equation
+The Coulomb potential satisfies the Poisson equation 
 \begin{equation}
-    \frac{1}{3x}\frac{d^2\beta}{dx^2} = -\frac{\alpha}{\Delta^3}\theta(x_c -x) + \frac{4\alpha}{9\pi}\left[ \frac{\beta^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\beta(x)}{x}\right]^{3/2},\label{eq:FMT_DE}
+    \nabla^2 V(r) = -4\pi e[n_p(r) - n_e(r)],
+    \label{eq:poisson_WS_cell}
+\end{equation} 
+with requiring global charge neutrality of the cell enforcing the boundary conditions
+\begin{equation}
+    \left.\frac{dV}{dr}\right|_{r = R_\mathrm{WS}} = V(R_\mathrm{WS}) = 0.
 \end{equation}
-which is written in terms of the dimensionless quantities $x = r/\lambda_\pi$ and $\beta(r) = r\hat{V}(r)$, such that $x_c = R_c/\lambda_\pi$ and $x_{\mathrm WS} = R_{\mathrm WS}/\lambda_\pi$, and $\alpha$ is the fine structure constant.
-The requirement of global charge neutrality imposes the conditions $dV/dr |_{r=R_{\mathrm WS}} =0$ and $V(R_{\mathrm WS}) = 0$, which translate to the boundary conditions
+In practice, it is beneficial to work with dimensionless quantities, and so we define $x = r/\lambda_\pi$ and $\chi(r) = r\hat{V}(r)$, such that $x_c = R_c/\lambda_\pi$ and $x_{\mathrm WS} = R_{\mathrm WS}/\lambda_\pi$.
+Using these expressions results in the relativistic Thomas-Fermi equation
 \begin{equation}
-    \beta(0) = 0, \qquad
-    \left. \frac{d\beta}{dx}\right|_{x_{\mathrm WS}} = \frac{\beta(x_{\mathrm WS})}{x_{\mathrm WS}}. \label{eq:TF_bc}
+    \frac{1}{3x}\frac{d^2\chi}{dx^2} = -\frac{\alpha_{\mathrm{EM}}}{\Delta^3}\theta(x_c -x) + \frac{4\alpha_\mathrm{EM}}{9\pi}\left[ \frac{\chi^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\chi(x)}{x}\right]^{3/2},\label{eq:FMT_DE}
+\end{equation}
+with the boundary conditions
+\begin{equation}
+    \chi(0) = 0, \qquad
+    \left. \frac{d\chi}{dx}\right|_{x_{\mathrm{WS}}} = \frac{\chi(x_{\mathrm WS})}{x_{\mathrm{WS}}}. \label{eq:TF_bc}
 \end{equation}
 
-By solving these equations, we can obtain the relevant thermodynamic quantities, namely the electron and proton number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression
+By solving these equations, we can obtain the relevant thermodynamic quantities, namely the electron and proton number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression\footnote{We use the symbol $\varepsilon_{F,i}$ to represent the chemical potential minus the mass of a particle species $i$, reserving $\mu_{F,i}$ for the full chemical potential.}
 \begin{equation}
-    \mu_{F,e} = \sqrt{(p_e^F)^2+m_e^2}-m_e.\label{eq:mufe}
+    \varepsilon_{F,e} = \sqrt{(p_e^F)^2+m_e^2}-m_e.\label{eq:mufe}
 \end{equation}
 The energy and pressure of the cell can then be obtained following the analysis presented in~ref.~\cite{Rotondo:2011zz_RelativisticFeynmanMetropolisTellertheory}. The cell energy gains contributions from the nuclear mass, electron kinetic energy, and Coulomb interactions, such that
 \begin{align}
-    E_\mathrm{tot} & = M_N + E_k + E_C,\\
-    E_k & = \int_0^{R_{\mathrm WS}}4\pi r^2 (\mathcal{E}_e(r) - m_e n_e(r))\;dr,\\
-    E_C & = \frac{1}{2}\int_{R_c}^{R_{\mathrm WS}}4\pi r^2 e(n_p(r) - n_e(r))V(r)\;dr,
+    E_\mathrm{tot} & = M_N + E_k + E_C,\label{eq:total_E_cell}\\
+    E_k & = \int_0^{R_{\mathrm WS}}4\pi r^2 [\mathcal{E}_e(r) - m_e n_e(r)]\;dr,\label{eq:kinetic_E_cell}\\
+    E_C & = \frac{1}{2}\int_{R_c}^{R_{\mathrm WS}}4\pi r^2 e[n_p(r) - n_e(r)]V(r)\;dr,\label{eq:Coulomb_E_cell}
 \end{align}
 where 
 \begin{equation}
     \mathcal{E}_e(r) = \frac{1}{\pi^2}\int_0^{p_e^F}p^2\sqrt{p^2 + m_e^2}\;dp,
 \end{equation}
-is the electron energy density, and  $M_N$ is the mass of the nucleus. The only contribution to the internal cell pressure comes from the electrons,
+is the electron energy density, and  $M_N$ is the mass of the nucleus. The energy density of the cell is then simply
+\begin{equation}
+    \rho_\mathrm{WS} = \frac{E_\mathrm{tot}}{V_\mathrm{WS}},
+\end{equation} 
+where $V_\mathrm{WS} = 4\pi R_\mathrm{WS}/3$ is the volume of the WS cell. 
+The only contribution to the internal cell pressure comes from the electrons,
 \begin{equation}
     P_e(r) = \frac{1}{3\pi^2}\int_0^{p_e^F}\frac{p^4}{\sqrt{p^2+m_e^2}}\;dp,
 \end{equation}
@@ -198,13 +219,62 @@ it can be as low as $\sim0.003\,c$.
     \includegraphics[width = 0.495\textwidth]{ne_prof.pdf}  
     \includegraphics[width = 0.495\textwidth]{muFe_prof.pdf}  
     \includegraphics[width = 0.67\textwidth]{vesc_prof.pdf}
-    \caption{Electron number density (top left), chemical potential (top right) and escape velocity (bottom) radial profiles for the carbon WDs with FMT EoS in Table~\ref{tab:WDs}. The radial distance of each profile has been normalised to the radius of the star.}
+    \caption{Electron number density (top left), chemical potential (top right), and escape velocity (bottom) radial profiles for the carbon WDs with FMT EoS in Table~\ref{tab:WDs}. The radial distance of each profile has been normalised to the radius of the star.}
     \label{fig:WDradprofs}
 \end{figure}
 
-\fixMV{Discuss finite T corrections}
-The mass-radius relations obtained from a zero-temperature EoS begin to deviate from observations for low-mass WDs. To address this discrepancy, finite temperature effects can be introduced to the EoS~\cite{deCarvalho:2013rea_Relativisticfeynmanmetropolistellertreatment}. When calculating the effects for carbon WDs with core temperatures $\Tstar=10^6-10^7   $K, we find that the chemical potential is smaller by only $\sim16\%$, and the number density by $\sim~35\%$.
-As we shall focus on old WDs, we shall assume $\Tstar=10^5\K$, for which the zero-temperature regime holds. Note that finite temperature effects on the EoS may be more pronounced for light WDs composed of helium~\cite{deCarvalho:2013rea_Relativisticfeynmanmetropolistellertreatment}. 
+
+The mass-radius relations obtained from a zero-temperature EoS begin to deviate from observations for low-mass WDs. 
+To address this discrepancy, finite temperature effects can be introduced to the EoS~\cite{deCarvalho:2013rea_Relativisticfeynmanmetropolistellertreatment}. 
+The extension to finite temperatures is made by reintroducing the temperature dependence in the Fermi-Dirac
+distributions. Now, the electron chemical potential is no longer simply the Fermi energy of the system due to thermal corrections. Define the finite temperature Fermi-Dirac integrals of degree $s$ as
+\begin{equation}
+    F_s (\eta, \beta) = \int_0^\infty \frac{t^s\sqrt{1 + (\beta/2)t}}{1 + e^{t - \eta}}dt,
+\end{equation}
+where we define the dimensionless quantities 
+\begin{align}
+    t & = \frac{E_e - m_e c^2}{k_B \Tstar},\\
+    \eta & = \frac{\varepsilon_{F,e}}{k_B \Tstar},\\
+    \beta & = \frac{k_B \Tstar}{m_e c^2},
+\end{align}
+for a star at temperature $\Tstar$. The Thomas-Fermi equilibrium condition within the WS cell is now given by 
+\begin{equation}
+    \varepsilon_{F,e}(r) - e V(r) = k_B \Tstar \eta(r) - e V(r) = \mathrm{constant},
+\end{equation}
+with the Coulpmb potential vanishing at the boundary of the cell as before. We now make the change of variables into the dimensionless quantities $\chi/r = \varepsilon_{F,e} / (\hbar c)$ and $x = x/x_\mathrm{WS}$ so that the Poisson equation~\ref{eq:poisson_WS_cell} becomes
+\begin{align}
+    \frac{d^2 \chi}{dx^2} &= -4 \pi \alpha_\mathrm{EM} x \left( \frac{3}{4\pi \Delta^3} \theta(x_c - x) - \frac{\sqrt{2}}{\pi^2} \left( \frac{m_e}{m_\pi} \right)^2\left[ F_{1/2}(\eta, \beta) + \beta  F_{3/2}(\eta, \beta) \right] \right),\\
+    \eta(x) & = \left(\frac{1}{\lambda_\pi \Tstar}\right)\frac{\chi(x)}{x},
+\end{align}
+with the same boundary conditions as in Eq.~\ref{eq:TF_bc}.
+
+The total energy of the cell remains very similar to the zero-temperature case, the main differences being it gains a contribution from the thermal motion of the nucleus, 
+\begin{equation}
+    E_\mathrm{th} = \frac{3}{2}k_B \Tstar,
+\end{equation} 
+and that the electron energy density is now given by
+\begin{equation}
+    \mathcal{E}_e = m_e n_e + \frac{\sqrt{2}}{\pi^2} m_e^4 \beta^{5/2} \left[ F_{3/2}(\eta, \beta) + \beta F_{5/2}(\eta, \beta) \right].
+\end{equation}
+
+The pressure of the cell will now gain contributions from the motion of the nucleus as well as the electron, such that the total pressure is
+\begin{align}
+    P_\mathrm{tot} & = P_N + P_e,\\
+    P_N & = \frac{2}{3}\frac{E_\mathrm{th}}{V_\mathrm{WS}} = \frac{\Tstar}{V_\mathrm{WS}},\\
+    P_e & = \frac{2^{3/2}}{3\pi} me^4 \beta^{5/2}\left[  F_{3/2}(\eta(x_\mathrm{WS}), \beta) + \beta F_{5/2}(\eta(x_\mathrm{WS}), \beta)  \right].
+\end{align}
+
+In Fig.~\ref{fig:WD_mass_radius} we show the Mass-Radius relations obtained from the zero temperature FMT EoS together with several finite temperature configurations. As can be seen, the deviations from the zero temperature approximation begin at rather high temperatures, $\Tstar\gtrsim 10^7\K$, for masses $\lesssim 0.6 \Msun$. Additionally, we show observations of WDs from the Gaia early data release 2 (EDR2) report~\cite{GentileFusillo_feb_GaiaDataRelease} as the blue dots. As mentioned above, the Mass-Radius relation seen from these observations significantly deviates from the zero temperature EoS as low masses. Note that while not represented in this figure, the temperature of the WDs increases in a similar gradient as would be expected from the FMT EoS.
+
+Given the non-linear nature of the differential equations that describe the FMT EoS (both at zero and finite temperatures), solving the system is a numerically challenging task. As there are no publically available resources to help solve these systems, a significant amount of time was put into solving this problem. As such, we have outlined in Appendix~\fixMV{ADD THIS APPENDIX} the method employed in numerically solving the differential equations. 
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics{WD_mass_radius.pdf}
+    \caption{Mass-Radius relation of WDs calculated from the FMT EoS in the zero temperature approximation (dark blue), at $10^{5}\K$ (yellow), $10^{7}\K$ (orange), and $10^{8}\K$ (red), together with observed WDs from Gaia EDR2 observations~\cite{GentileFusillo_feb_GaiaDataRelease} (light blue dots).}
+    \label{fig:WD_mass_radius}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,7 +290,54 @@ As we shall focus on old WDs, we shall assume $\Tstar=10^5\K$, for which the zer
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Beta Equlibrium
+\commMV{Add some intro remarks}
+
+The internal structure of an NS is significantly more complicated than that of a WD. Broadly speaking, an NS can be divided into five main regions. Working from the outside in, these are:
+
+\subsubsection*{Atmosphere}
+The atmosphere is an extremely thin layer of plasma that makes up less than 1\% of the NS mass. However, it plays an extremely important role as the observed spectrum radiation emitted by the star must pass through this star. This radiation contains valuable information about various properties of the star.
+
+\subsubsection*{Outer Crust}
+The outer crust is the thin layer of ionized Iron-56 nuclei that extends down until the density reaches the neutron drip point, $\rho_\star = \rho_\mathrm{ND} \sim 4.3\times 10^{11}\g\cm^{-3}$. This is the density at which neutrons begin to drip from the nuclei as their chemical potentials approach zero. The ionized electrons form a non-relativistic but degenerate gas, with their chemical potentials increasing as the density increases. This leads to the ``neutronisation'' of the nuclei as the beta-capture of electrons by protons increases.
+
+\subsubsection*{Inner Crust}
+The density within the inner crust spans the range between $\rho_\mathrm{ND}\lesssim \rho_\star \lesssim 0.5\rho_0$, with $\rho_0 \sim 2.8\times 10^{14}\g\cm^{-3}$ the nuclear saturation density (i.e. the density of nuclear matter). Here, the neutrons that have dripped from the nuclei will potentially form a superfluid. Towards the crust-core boundary, the nuclear lattice begins taking on interesting topological structures that are distinguished by the configuration of the voids in the lattice. These are known as the so-called \textit{pasta phases} of nuclear matter:
+\begin{itemize}
+    \item 2D void cylinders creating spaghetti structures of nuclei
+    \item Planar voids with slabs of nuclei forming lasagna sheets
+    \item 3D cylindrical voids leading to thin 2D cylinders of nuclear ziti
+    \item 3D spherical voids enclosed by ravioli
+    \item 2D circular voids in sheets of Swiss cheese
+\end{itemize}
+Eventually, the nuclear matter becomes a uniform medium\footnote{The nuclear marinara sauce, if you will}. 
+
+\subsubsection*{Outer Core}
+Once densities go above $0.5\rho_0$, the nuclear clusters will dissolve into a homogenous fluid that is composed of neutrons, protons, electrons, and muons known as $npeu$ matter. The relative abundances of the species, $Y_i=n_i/n_b$, are dictated by the conditions of electrical neutrality and beta-equilibrium.
+Charge neutrality dictates that the abundances of the charged particles obeys
+\begin{equation}
+    Y_p = Y_e + Y_\mu,
+\end{equation}
+while beta-equilibrium refers to the balance between the weak decays of neutrons and the electron/muon capture by the protons,
+\begin{gather}
+    n \rightarrow p + \ell^- +\bar{\nu}_\ell,\\
+    p + \ell^- \rightarrow n + \nu_\ell,
+\end{gather}
+with $\ell = e, \mu$. Muons will begin to replace electrons in these reactions once the electron chemical potential exceeds the mass of the muon, $\mu_{F,e \gtrsim m_\mu = 105.7\MeV}$. As the species are all degenerate, muons cannot decay into electrons, imposing the constraint 
+\begin{equation}
+    \mu_{F,e} = \mu_{F,\mu},
+\end{equation}
+on the chemical potentials. The outer core region ends once the density reaches $\rho_\star \sim 2\rho_0$, and we transition into the inner core.
+
+\subsubsection*{Inner Core}
+The densities within the inner cores of NSs extend between $2\rho_0 \lesssim \rho_\star \lesssim (10-15)\rho_0$ and are hence a mystery to this day. As the density exceeds well above any material that can be produced in a laboratory, the exact composition of this region is unknown and depends on the equation of state one adopts to describe it. Some of the more well-known candidates are
+\begin{itemize}
+    \item The appearance of hyperonic matter, i.e. nucleons containing a valence strange quark. These being to appear once the neutron chemical potential equals the $\Lambda^0$ hyperon, with the $\Xi^-$ appearing once its chemical potential equals the sum of the chemical potentials of the neutrons and electrons. 
+    \item Pion/Kaon condensates. These are Bose-Einstein condensates of pion/kaon-like excitations, with the kaon also containing a valence strange quark. 
+    \item A quark-gluon plasma comprised of deconfined quarks ($u,\; d$ and $s$) and gluons.
+\end{itemize}
+
+Unlike the WDs discussed above, there are far fewer observations of NSs that allow us to constrain the various EoS models. However, the onset of gravitational wave astronomy has begun to see more and more constraints being placed on these models. 
+\commMV{talk about the largest NS mass and the grav wave observations that constrain the EoS}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
