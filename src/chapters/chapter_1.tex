@@ -15,10 +15,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dark Matter is an enigma in modern physics. Despite the significant scientific
-effort that has gone into trying to discern its nature, a definitive detection
-proving its existence eludes us. Nevertheless, dark matter's influence 
-on our Universe is undeniable, with evidence supporting its existence arising on \fixMV{all} scales, large and small.
+% Dark Matter is an enigma in modern physics. Despite the significant scientific % effort that has gone into trying to discern its nature, a definitive detection % proving its existence eludes us. Nevertheless, dark matter's influence % on our Universe is undeniable, with evidence supporting its existence arising on \fixMV{all} scales, large and small.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,7 +26,7 @@ on our Universe is undeniable, with evidence supporting its existence arising on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Today, the amount of evidence in support of dark matter's existence is overwhelming. This evidence comes from astrophysical and cosmological observations inconsistent with a universe composed entirely of visible matter. This section serves as a review of this evidence. 
+Today, the amount of evidence in support of dark matter's existence is overwhelming. This evidence comes from astrophysical and cosmological observations that are inconsistent with a universe composed entirely of visible matter. This section serves as a review of this evidence. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,25 +36,25 @@ Today, the amount of evidence in support of dark matter's existence is overwhelm
 
 \subsubsection*{Galaxy Clusters}
 
-Some of the first hints of dark matter's existence came from observations of galaxy clusters. Perhaps the most famous analysis was performed by Fritz Zwicky~\cite{Zwicky:1937zza_MassesNebulaeClusters}, who was puzzled by the high rotational velocities of galaxies within the Coma Cluster. By applying the virial theorem, equating the cluster's kinetic and gravitational potential energies, he found that the cluster would need to contain a much more significant amount of \textit{dunkle materie} (dark matter) than visible matter to accommodate these high velocities.
+Some of the first hints for the existence of dark matter came from observations of galaxy clusters. Perhaps the most famous analysis was performed by Fritz Zwicky~\cite{Zwicky:1937zza_MassesNebulaeClusters}, who was puzzled by the high rotational velocities of galaxies within the Coma Cluster. By applying the virial theorem, equating the cluster's kinetic and gravitational potential energies, he found that the cluster would need to contain a much more significant amount of \textit{dunkle materie} (dark matter) than visible matter to accommodate these high velocities.
 
 \subsubsection*{Rotation Curves of Spiral Galaxies}
 
-The anomalous rotational velocities observed in galaxy clusters can also be observed at the galactic scale. The rotation curves of spiral galaxies, which relate the rotational velocities of stars to their distance from the galactic centre, were observed to be flat at large distances. From the observed distribution of visible matter, Newtonian mechanics predicts that the orbital velocity of a star a distance $r$ from the galactic centre, $v_\star(r)$, is related to the mass of the galaxy, $M(r)$, through
+The anomalous rotational velocities observed in galaxy clusters can also be observed at the galactic scale. The rotation curves of spiral galaxies, which relate the rotational velocities of stars to their distance from the galactic centre, were observed to be flat at large distances. From the observed distribution of visible matter, Newtonian mechanics predicts that the orbital velocity of a star a distance $r$ from the galactic centre, $v_\star(r)$, is related to the mass contained within a radius $r$, $M(r)$, through
 \begin{equation}
     v_\star(r) = \sqrt{\frac{G M(r)}{r}},
 \end{equation}
 indicating that the velocity should fall off as $1/\sqrt{r}$ at the outer regions of the galaxy where $M(r)$ is constant. Instead, observations of many spiral galaxies indicate that this velocity remains constant out to the galaxy's edge. 
 
-A simple way to produce such a rotation curve is to introduce a spherically symmetric distribution of dark matter around the galaxy,
+A simple way to produce such a rotation curve is to introduce a spherically symmetric distribution of dark matter surrounding the galaxy,
 \begin{equation}
     \rho_{\mathrm{DM}}(r) = \frac{v_0^2}{4 \pi G r^2},
 \end{equation}
-that results in a constant rotational velocity of $v_0$ out to the galaxy edge. Detailed simulations of structure formation in a Cold Dark Matter (CDM) Universe indicate that the dark matter halo follows a Navaro-Frenk-White (NFW) profile, \fixMV{cite for NFW}
-\begin{equation}
-    \rho_{\mathrm{DM}}(r) = \frac{\rho_0}{\left( \frac{r}{r_\mathrm{s}}\right)\left( 1 + \frac{r}{r_\mathrm{s}}\right)^2},
-\end{equation}
-where $\rho_0$ and $r_\mathrm{s}$ are free parameters that must be fit to each halo. 
+which results in a constant rotational velocity of $v_0$ out to the galaxy edge. Detailed simulations of structure formation in a Cold Dark Matter (CDM) Universe indicate that the true distribution is better represented by distribution functions such as the Navaro-Frenk-White (NFW) profile~\cite{Navarro:1995iw_StructureColdDark,Navarro:1996gj_UniversalDensityProfile} or Einasto~\cite{Einasto_jan_ConstructionCompositeModel} profiles, which are commonly used in the literature.
+% \begin{equation}
+%     \rho_{\mathrm{DM}}(r) = \frac{\rho_0}{\left( \frac{r}{r_\mathrm{s}}\right)\left( 1 + \frac{r}{r_\mathrm{s}}\right)^2},
+% \end{equation}
+% respectivley, where $\rho_0$ and $r_\mathrm{s}$ are free parameters that must be fit to each halo. 
 % More detailed simulations show that the true profile deviates slightly from an NFW, instead being more appropriately modelled by an Einasto profile. However, both profiles are observationally indistinguishable.
 
 An example rotation curve for galaxy NGC 6503 is presented in Fig.~\ref{fig:gal_rotn_curve}, with the contributions from each of the matter components to the rotational velocity shown~\cite{Freese:2008cz_may_ReviewObservationalEvidence, Lelli:2016zqa_SPARCMassModels}. As can be seen, the visible matter constituting disk and gas components does not explain the observed rotational velocity. 
@@ -71,16 +68,17 @@ An example rotation curve for galaxy NGC 6503 is presented in Fig.~\ref{fig:gal_
 
 \subsubsection*{Gravitational Lensing}
 
-As General Relativity describes, the curvature of space-time around massive entities causes light to travel along curved paths. As such, the mass of astrophysical structures can be deduced from the extent to which objects in the background are gravitationally lensed. The disparity between the mass obtained from gravitational lensing and the mass of visible matter in the system is further evidence of dark matter's existence. 
+As described by General Relativity, the curvature of space-time around massive entities causes light to travel along curved paths. 
+As such, the mass of astrophysical structures can be deduced from the extent to which they distort the images of objects in the background. The extent of the distortions depends on how massive the foreground object is, ranging from the shearing of the background image (weak lensing), to multiple copies of the background object appearing (strong lensing)~\cite{Schneider_Gravitationallensingstrong}.  The disparity between the mass obtained from gravitational lensing and the mass of visible matter in the system is further evidence of dark matter's existence~\cite{SDSS:2005sxd_FourthDataRelease, Mandelbaum:2005nx_Galaxyhalomasses}. 
 
 \subsubsection*{The Bullet Cluster}
-
-The bullet cluster is the result of two colliding galaxy clusters which the Chandra X-ray telescope imaged. When viewed in the X-ray, the smearing of the visible matter after the collision is clearly seen, as shown in the red regions of Fig.~\ref{fig:bullet_cluster}, which is expected from such a collision. However, when the gravitational potential was mapped using gravitational lensing, it was clear that the majority of the mass was displaced relative to the visible matter. This mass is attributed to the dark matter components of the original clusters. As indicated by the purple regions in Fig.~\ref{fig:bullet_cluster}, the dark matter halos seem to have passed through each other mostly unperturbed. This tells us that not only is the majority of the mass comprised of dark matter, but that the dark matter has extremely small interactions with both the visible matter and itself. 
+The merging galaxy cluster 1E 0657-56, commonly referred to as the ``bullet-cluster'', is the result of the collision of two galaxy clusters. 
+The bullet-cluster was imaged by the Chandra X-ray telescope, proving information about the resulting mass distribution after the collision. The baryonic matter, being comprised of a strongly interacting gas, was smeared and slowed down due to friction, as shown by the red regions of Fig.~\ref{fig:bullet_cluster}.  However, when the gravitational potential was mapped using gravitational lensing, it was clear that the majority of the mass was displaced relative to the visible matter. This mass is attributed to the dark matter components of the original clusters. As indicated by the purple regions in Fig.~\ref{fig:bullet_cluster}, the dark matter halos seem to have passed through each other mostly unperturbed. This tells us that not only is the majority of the mass comprised of dark matter, but that the dark matter has extremely weak interactions with both the visible matter and itself. 
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width = 0.75\textwidth]{bullet_cluster}
-    \caption{Image of the Bullet Cluster with contours of the gravitational potential superposed. The red regions indicate the baryonic matter after the collision, while the purple regions are the expected DM components deduced from gravitational lensing. \fixMV{cite}}
+    \caption{Image of the Bullet Cluster with contours of the gravitational potential superposed. The red regions indicate the baryonic matter after the collision, while the purple regions are the expected DM components deduced from gravitational lensing. \cite{Randall:2008ppe_ConstraintsSelfInteractionCrossSection}}
     \label{fig:bullet_cluster}
 \end{figure}
 
@@ -90,7 +88,7 @@ The bullet cluster is the result of two colliding galaxy clusters which the Chan
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dark matter has played a major role in the cosmological history of our Universe. The current best cosmological model is the $\Lambda$-Cold Dark Matter model ($\Lambda$CDM), in which cold (i.e. non-relativistic) dark matter plays a prominent role. The relative amount of dark matter present in our Universe can be determined with measurements of the light element abundances produced via Big Bang Nucleosynthesis (BBN).
+Dark matter has played a major role in the cosmological history of our Universe. The current best cosmological model is the $\Lambda$-Cold Dark Matter model ($\Lambda$CDM), with $\Lambda$ referring to the cosmological constant associated with dark energy, and in which cold (i.e. non-relativistic) dark matter plays a prominent role. The relative amount of dark matter present in our Universe can be determined with measurements of the light element abundances produced via Big Bang Nucleosynthesis (BBN).
 
 \subsubsection*{The Cosmic Microwave Background}
 One of the best probes of cosmological models is the Cosmic Microwave Background (CMB). The CMB is the radiation that was emitted during recombination when the Universe had cooled enough for electrons and protons to combine and not be ionised by the photon bath. While the CMB temperature looks isotropic on large scales, fluctuations around the average value of $T_\mathrm{CMB} \sim 2.73\K$ are observed at very small scales. 
