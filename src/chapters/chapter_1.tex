@@ -17,7 +17,7 @@
 
 % Dark Matter is an enigma in modern physics. Despite the significant scientific % effort that has gone into trying to discern its nature, a definitive detection % proving its existence eludes us. Nevertheless, dark matter's influence % on our Universe is undeniable, with evidence supporting its existence arising on \fixMV{all} scales, large and small.
 
-
+\commMV{Cold collisionless fluid that explains many observations in astrophysics and cosmology. It's existence shouldn't be questioned, only its micro-physical constitution. }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,13 +72,14 @@ As described by General Relativity, the curvature of space-time around massive e
 As such, the mass of astrophysical structures can be deduced from the extent to which they distort the images of objects in the background. The extent of the distortions depends on how massive the foreground object is, ranging from the shearing of the background image (weak lensing), to multiple copies of the background object appearing (strong lensing)~\cite{Schneider_Gravitationallensingstrong}.  The disparity between the mass obtained from gravitational lensing and the mass of visible matter in the system is further evidence of dark matter's existence~\cite{SDSS:2005sxd_FourthDataRelease, Mandelbaum:2005nx_Galaxyhalomasses}. 
 
 \subsubsection*{The Bullet Cluster}
-The merging galaxy cluster 1E 0657-56, commonly referred to as the ``bullet-cluster'', is the result of the collision of two galaxy clusters. 
-The bullet-cluster was imaged by the Chandra X-ray telescope, proving information about the resulting mass distribution after the collision. The baryonic matter, being comprised of a strongly interacting gas, was smeared and slowed down due to friction, as shown by the red regions of Fig.~\ref{fig:bullet_cluster}.  However, when the gravitational potential was mapped using gravitational lensing, it was clear that the majority of the mass was displaced relative to the visible matter. This mass is attributed to the dark matter components of the original clusters. As indicated by the purple regions in Fig.~\ref{fig:bullet_cluster}, the dark matter halos seem to have passed through each other mostly unperturbed. This tells us that not only is the majority of the mass comprised of dark matter, but that the dark matter has extremely weak interactions with both the visible matter and itself. 
+The galaxy cluster 1E 0657-56, commonly referred to as the ``bullet-cluster'', was formed by the collision of two separate galaxy clusters. 
+The baryonic matter in these clusters is mostly composed of a strongly interacting gas, and as expected produced a significant amount of X-rays during the collision. These X-rays were imaged by the Chandra X-Ray telescope~\cite{Clowe:2003tk_Weaklensingmass}, providing information on the resulting distribution of the visible matter. This is shown by the red regions of Fig.~\ref{fig:bullet_cluster}, where it can be seen how the visible matter has been smeared due to the collision. 
+However, when the gravitational potential was mapped using gravitational lensing, it was clear that the majority of the mass was displaced relative to the visible matter. This mass is attributed to the dark matter components of the original clusters. As indicated by the purple regions in Fig.~\ref{fig:bullet_cluster}, the dark matter halos seem to have passed through each other mostly unperturbed. This tells us that not only is the majority of the mass comprised of dark matter, but that the dark matter has extremely weak interactions with both the visible matter and itself. 
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width = 0.75\textwidth]{bullet_cluster}
-    \caption{Image of the Bullet Cluster with contours of the gravitational potential superposed. The red regions indicate the baryonic matter after the collision, while the purple regions are the expected DM components deduced from gravitational lensing. \cite{Randall:2008ppe_ConstraintsSelfInteractionCrossSection}}
+    \caption{Image of the Bullet Cluster with contours of the gravitational potential superposed. The red regions indicate the baryonic matter after the collision, while the purple regions are the expected DM components deduced from gravitational lensing. \cite{Clowe:2003tk_Weaklensingmass,Randall:2008ppe_ConstraintsSelfInteractionCrossSection}}
     \label{fig:bullet_cluster}
 \end{figure}
 
@@ -87,27 +88,42 @@ The bullet-cluster was imaged by the Chandra X-ray telescope, proving informatio
 \subsection{Cosmological Evidence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+The current best cosmological model is the $\Lambda$-Cold Dark Matter model ($\Lambda$CDM), in which $\Lambda$ refers to the cosmological constant associated with dark energy, and as the name suggests, cold (i.e. non-relativistic) dark matter plays a prominent role. The key components of this model are the aforementioned dark energy and dark matter, along with baryonic matter, and assumes that gravity is described by Einstein's General Relativity. The total energy density of the universe, $\rho_\mathrm{Univ.}$, is broken down into three components based on how their density redshifts with the expansion of the Universe. In the $\Lambda$CDM model, these components are matter, radiation, and the vacuum energy $\Lambda$. The cosmological abundances of each component, ($\Omega_\mathrm{m}$, $\Omega_\mathrm{r}$, $\Omega_\Lambda$ respectively), are expressed as a fraction of the critical density, $\rho_\mathrm{crit}$,     
+\begin{align}
+    \rho_\mathrm{crit}   & = \frac{H^2}{8 \pi G_N},\\
+    \Omega_i & = \frac{\rho_i}{\rho_\mathrm{crit}},
+\end{align}
+where $H$ is the Hubble parameter, such that the total energy density of the Universe satisfies
+\begin{equation}
+    \Omega_\mathrm{m} + \Omega_\mathrm{r} + \Omega_\Lambda = \frac{\rho_\mathrm{Univ.}}{\rho_\mathrm{crit}}.
+\end{equation}
+The ratio $\rho_\mathrm{Univ.}/\rho_\mathrm{crit}$ determines the curvature of the universe, with values greater than 1 corresponding to a closed universe, less than 1 to an open universe, and equal to 1 to a spatially flat universe. Current observations are consistent with a spatially flat universe, and so we have $\sum_i \Omega_i = 1$.
 
-Dark matter has played a major role in the cosmological history of our Universe. The current best cosmological model is the $\Lambda$-Cold Dark Matter model ($\Lambda$CDM), with $\Lambda$ referring to the cosmological constant associated with dark energy, and in which cold (i.e. non-relativistic) dark matter plays a prominent role. The relative amount of dark matter present in our Universe can be determined with measurements of the light element abundances produced via Big Bang Nucleosynthesis (BBN).
+
+The $\Lambda$CDM model has seen huge success as it provides explanations for observed the power spectrum of the Cosmic Microwave Background (CMB), the large-scale structure of the Universe, the abundances of light elements (hydrogen, deuterium, helium, and lithium), and the accelerated expansion rate of the Universe. These observations constrain the parameters of the model, and hence provide a complimentary probe of the properties of dark matter to the astronomical observations discussed above.
 
 \subsubsection*{The Cosmic Microwave Background}
-One of the best probes of cosmological models is the Cosmic Microwave Background (CMB). The CMB is the radiation that was emitted during recombination when the Universe had cooled enough for electrons and protons to combine and not be ionised by the photon bath. While the CMB temperature looks isotropic on large scales, fluctuations around the average value of $T_\mathrm{CMB} \sim 2.73\K$ are observed at very small scales. 
-These anisotropies are the result of oscillations in the baryonic matter known as Baryon Acoustic Oscillations (BAO). These oscillations were produced due to the interplay between the outward pressure caused by matter interactions and the pull of gravitation due to dark matter. 
+One of the strongest probes of cosmological models is the Cosmic Microwave Background (CMB), relic photons from the time epoch of last scattering. This occurred after recombination, at a temperature of around $\sim 3000 \K$, once the photons had decoupled from the baryonic matter and could freely propagate through the universe. The photons observed today have been redshifted by the expansion of the Universe, and are well described by a blackbody spectrum with a temperature of $T_\mathrm{CMB} = 2.73\pm 0.0006\K$. Observations of the CMB temperature reveal that it is not exactly isotropic, with anisotropies at the level of $\delta T_\mathrm{CMB}/T_\mathrm{CMB}\sim 10^{-5} - 10^{-6} $ seen on a range of angular scales in the sky. These anisotropies were seeded by the primordial density perturbations that arise during inflation. These perturbations evolve due to the acoustic oscillations of the photon-baryon plasma driven by the interplay between the pressure from the photons and the gravitational attraction of the matter. The oscillations cease once the photons decouple, freezing in their temporal phases that are observed as peaks in the angular power spectrum of the temperature anisotropies. 
 
-Measuring the angular power spectra of these anisotropies and fitting the cosmological parameters of the $\Lambda$CDM model tell us how the Universe's energy density ($\Omega_\mathrm{total}$), is partitioned between the matter ($\Omega_\mathrm{m}$), radiation  ($\Omega_\mathrm{rad}$), and dark energy  ($\Omega_\Lambda$) components. In a flat universe, of which we believe ours to be, these components should sum to $\Omega_\mathrm{tot} = 1$.
-The Planck collaboration most recently performed a precise measurement of the CMB power spectrum in 2018, obtaining best-fit parameters
+Measurements of the CMB power spectrum provide information on many of the cosmological parameters. The locations of the acoustic peaks depend on the spatial geometry of the Universe and hence constrains $\Omega_\mathrm{tot}$. The total matter density, $\Omega_\mathrm{m}$, affects how the CMB spectrum is gravitationally lensed.  The relative amplitudes of the peaks probe the baryon-to-photon ratio and hence the baryon density, $\Omega_\mathrm{b}$. Finally, the density of dark matter, $\Omega_\mathrm{DM}$, is obtained by fitting the cosmological parameters to the exact shape of the spectrum~\cite{Freese:2008cz_may_ReviewObservationalEvidence, Planck:2018vyg_sep_Planck2018results}. 
+
+The Planck collaboration most recently performed a precise measurement of the CMB power spectrum in 2018, obtaining best-fit parameters~\cite{Planck:2018vyg_sep_Planck2018results,Planck:2019nip_sep_Planck2018results}
 \begin{equation}
-    \Omega_\mathrm{m} = 0.311 \pm 0.006,\quad \Omega_\Lambda = 0.689 \pm 0.006.
+     \Omega_\mathrm{m} = 0.311 \pm 0.006,\quad \Omega_\Lambda = 0.689 \pm 0.006,
 \end{equation}
-
-Combining the predicted baryon density from BBN with the CMB observations breaks down the matter abundance into the dark ($\Omega_\mathrm{DM}$)  and baryonic ($\Omega_\mathrm{b}$) components yielding
+for the matter and dark energy densities. They obtained a total energy density of $\Omega_\mathrm{tot} = 1.011 \pm 0.006$ at $68\%$ confidence level, providing strong evidence for a spatially flat Universe. 
+The contributions to the matter density from the dark and baryonic components were found to be
 \begin{equation}
-    \Omega_\mathrm{DM}h^2 = 0.1193 \pm 0.0009,\quad \Omega_\mathrm{DM}h^2 = 0.02242 \pm 0.00014,
+    \Omega_\mathrm{DM}h^2 = 0.1193 \pm 0.0009,\quad \Omega_\mathrm{b}h^2 = 0.02242 \pm 0.00014,
 \end{equation}
 where $h$ is the dimensionless Hubble constant such that the Hubble parameter today is $H_0 = 100\, h\km\s^{-1}\;\mathrm{Mpc}$. 
 
+% The result for the baryon density is consistent with the value obtained from Big Bang Nucleosynthesis (BBN), the process in which light elements are formed in the early universe. BBN gives a baryon density of $\Omega_\mathrm{b} = 0.0220 \pm 0.0004$, in good agreement with the CMB result.
+
+
 \subsubsection*{Large Scale Structure}
-After recombination, the pressure on the baryonic matter from photons subsided, allowing the small density perturbations to grow. This would lead to the growth of stars, galaxies, and the large-scale structure we observe today~\cite{Springel:2006vs_LargescalestructureUniverse}. N-body simulations of the Universe's evolution require a cold dark matter component for this structure to form. While a small component of the dark matter can be warm, hot dark matter would wash out small-scale structures~\cite{Springel:2005nw_Simulatingjointevolution}.  
+After recombination, the pressure on the baryonic matter from photons began to decrease, eventually allowing the small density perturbations to grow. This led to the growth of stars, galaxies, and the large-scale structure we observe today~\cite{Springel:2006vs_LargescalestructureUniverse}. N-body simulations of the Universe's evolution require a cold dark matter component for this structure to form. While a small component of the dark matter can be warm, hot dark matter would wash out small-scale structures~\cite{Springel:2005nw_Simulatingjointevolution}.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,19 +133,22 @@ After recombination, the pressure on the baryonic matter from photons subsided, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The general consensus amongst physicists is that dark matter has a particle nature, similar to the visible matter of the Standard Model. Models may be as simple as dark matter being described by a single field or there could be an extensive hidden sector with complicated symmetry structures. Given the few details we know about dark matter, there exists an enormous library of models that can produce a viable dark matter candidate. However, there are generic properties a good dark matter candidate must satisfy, namely:
+Given that baryonic matter is composed of particles described by the Standard Model (SM) of particle physics, it is a fair assumption that dark matter will also have a particle nature. Therefore, models of particle dark matter are built by extending the SM in a way consistent with its symmetries. 
+Such models may be as simple as introducing a single new field into the SM, or there may be a more extensive hidden sector with a complicated symmetry structure. Additionally, there are compelling theories in which dark matter is not a fundamental particle, such as primordial black holes (PBHs) formed in the early universe. Given the few details we know about dark matter, there exists an enormous library of viable dark matter candidates. However, there are generic properties a good dark matter candidate must satisfy, namely:
 \begin{itemize}
-    \item \textbf{Stable on Cosmological Timescales:} Dark matter must either be stable or have a lifetime significantly longer than the age of the Universe in order to be present in its current abundance. 
+    \item \textbf{Stable on Cosmological Timescales:} Dark matter must either be stable or have a lifetime significantly longer than the age of the Universe to be present in its current abundance. 
     
-    \item \textbf{Neutral or milli-charged under Electromagnetism:} Dark matter, as its name suggests, does not significantly interact with light. By requiring that dark matter be completely decoupled from the Standard Model plasma by the time of recombination yields an upper bound on the milli-charge dark matter can carry of~\cite{McDermott:2010pa_TurningLightsHow} 
+    \item \textbf{Neutral or milli-charged under Electromagnetism:} Dark matter, as its name suggests, does not significantly interact with light. Requiring that dark matter be completely decoupled from the Standard Model plasma by the time of recombination yields an upper bound on the electric charge of dark matter~\cite{McDermott:2010pa_TurningLightsHow} 
     \begin{equation}
         q_\mathrm{DM}/e < \begin{cases}
             3.5\times10^{-7} \left( \frac{m_\mathrm{DM}}{1\GeV}\right)^{0.58},\quad m_\mathrm{DM} > 1\GeV\\
-            4.0\times 10^{-7}\left( \frac{m_\mathrm{DM}}{1\GeV}\right)^{0.35},\quad m_\mathrm{DM} <1\GeV,
+            4.0\times 10^{-7}\left( \frac{m_\mathrm{DM}}{1\GeV}\right)^{0.35},\quad m_\mathrm{DM} <1\GeV
         \end{cases}
     \end{equation}
     
-    \item \textbf{Small Self-Interactions:} The standard $\Lambda$CDM cosmology assumes that the dark matter is collisionless. However, small dark matter self-interactions can help resolve existing small-scale structure issues~\cite{Tulin:2017ara_feb_DarkMatterSelfinteractions, Spergel:1999mh_Observationalevidenceselfinteracting}. Current limits on the self-interaction cross section are $\sigma_{\mathrm{DM-DM}}/m_\mathrm{DM} < 0.48\cm^2/\mathrm{g}$ come from merging galaxy clusters~\cite{Randall:2008ppe_ConstraintsSelfInteractionCrossSection} and the ellipticity of galaxies obtained from X-ray observations~\cite{Buote:2002wd_ChandraEvidenceFlattened}.
+    \item \textbf{Small Self-Interactions:} The standard $\Lambda$CDM cosmology assumes that the dark matter is collisionless. However, small dark matter self-interactions can help resolve existing small-scale structure issues~\cite{Tulin:2017ara_feb_DarkMatterSelfinteractions, Spergel:1999mh_Observationalevidenceselfinteracting}. Current limits on the self-interaction cross-section are $\sigma_{\mathrm{DM-DM}}/m_\mathrm{DM} < 0.48\cm^2/\mathrm{g}$ come from merging galaxy clusters~\cite{Randall:2008ppe_ConstraintsSelfInteractionCrossSection} and the ellipticity of galaxies obtained from X-ray observations~\cite{Buote:2002wd_ChandraEvidenceFlattened}.
+
+    \item \textbf{Cold:} Dark matter is required to be non-relativistic at the time of structure formation. At most, a small component of the dark matter can be warm (semi-relativistic).
 \end{itemize}
 A selection of the more prominent dark matter candidates is shown in Fig.~\ref{fig:DM_models_landscape}. The key features of a few of these models are discussed below.
 
@@ -141,7 +160,14 @@ A selection of the more prominent dark matter candidates is shown in Fig.~\ref{f
 \end{figure}
 
 \subsubsection*{WIMPs}
-The Weakly Interacting Massive Particle (WIMP) is perhaps the most well-known dark matter candidate. WIMPs rose to fame thanks to the so-called ``WIMP miracle"~\cite{Feng:2010gw_DarkMatterCandidates}. This refers to the fact that particles with weak scale masses and annihilation cross sections just so happen to have the correct relic abundance of dark matter when produced via the freeze-out mechanism~\cite{Jungman:1995df_Supersymmetricdarkmatter}. In this scenario, the final WIMP abundance depends on the total annihilation cross-section, $\langle\sigma v\rangle$, with only a very mild dependence on the DM mass~\cite{Steigman:2012nb_PreciseRelicWIMP}, 
+ Weakly Interacting Massive Particles (WIMPs) are a class of dark matter candidates that 
+ These particles arose naturally in many extensions of the SM that 
+
+ The most common class of WIMPs are ``thermal WIMPs" that were at one point in thermal equilibrium with the Standard Model bath. 
+
+As the Universe expands and the temperature drops, the interactions that keep the WIMP in thermal equilibrium with the bath slow down. Eventually, the interactions will freeze out once they occur at a slower rate than that of the expansion. Once this occurs, the WIMPs can no longer efficiently annihilate and their abundance becomes ``frozen in" to the value we observe today. 
+ 
+is perhaps the most well-known dark matter candidate. WIMPs rose to fame thanks to the so-called ``WIMP miracle"~\cite{Feng:2010gw_DarkMatterCandidates}. This refers to the fact that particles with weak scale masses and annihilation cross-sections just so happen to have the correct relic abundance of dark matter when produced via the freeze-out mechanism~\cite{Jungman:1995df_Supersymmetricdarkmatter}. In this scenario, the final WIMP abundance depends on the total annihilation cross-section, $\langle\sigma v\rangle$, with only a very mild dependence on the DM mass~\cite{Steigman:2012nb_PreciseRelicWIMP}, 
 \begin{equation}
     \Omega_{\mathrm{DM}}h^2 \sim 0.12 \; \left(\frac{2.2\times 10^{-26}\cm^3 \s^{-1}}{\langle \sigma v\rangle}\right).
 \end{equation}
