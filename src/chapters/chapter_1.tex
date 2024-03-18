@@ -152,12 +152,14 @@ Such models may be as simple as introducing a single new field into the SM, or t
 \end{itemize}
 A selection of the more prominent dark matter candidates is shown in Fig.~\ref{fig:DM_models_landscape}. The key features of a few of these models are discussed below.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
     \centering
     \includegraphics{DM_model_landscape}
-    \caption{Illustrative landscape of dark matter models and the mass range for which they predict a valid candidate.}
+    \caption{Illustrative landscape of dark matter models and the mass range for which they predict a valid candidate. Details can be found in the Dark Matter chapter of the PDG~\cite{ParticleDataGroup:2022pth_aug_ReviewParticlePhysics}.}
     \label{fig:DM_models_landscape}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{WIMPs}
 Weakly Interacting Massive Particles (WIMPs) are a class of dark matter candidates that generically have masses and interaction strengths around the weak scale. Many extensions of the SM naturally predict the existence of such a particle, with famous examples being the lightest supersymmetric particle in supersymmetric theories~\cite{Goldberg:1983nd_ConstraintPhotinoMass}, or the lightest stable Kaluza-Klein mode in theories with extra dimensions~\cite{Kolb:1983fm_DimensionalReductionEarly}. 
@@ -166,20 +168,23 @@ Nowadays, WIMP dark matter is used almost synonymously to mean thermal relic, re
 In this paradigm, the WIMP is initially in thermal equilibrium with the Standard Model bath. This equilibrium is maintained as long as the interaction rates of the WIMP with the bath, denoted $\Gamma$, remain faster than the Hubble expansion of the universe, $H$. As the universe continues to expand, the temperature of the bath drops slowing down the interaction rates. Eventually, the expansion rate overtakes the interaction rates, $\Gamma/H\lesssim 1$, and the interactions ``freeze-out'' causing the WIMP to fall out of equilibrium with the bath. At this point, the WIMPs can no longer efficiently annihilate, and their abundance gets ``frozen-in'' to the value it had at freeze-out, leading to the abundance observed today. 
 
 
-A cold thermal relic, such as dark matter, will freeze-out after it has become non-relativistic. In this scenario, the interaction rates become Boltzmann suppressed\footnote{The number density of a non-relativistic species in thermal equilibrium with the bath will follow $n \propto \left(m T_\mathrm{bath}\right)^{3/2} \exp\left(-m /T_\mathrm{bath}\right)$. Once the temperature falls below the mass of the species, the number density becomes exponentially suppressed. This suppression is what is known as ``Boltzmann suppression''.}, and the species rapidly freezes-out. The relic density is therefore sensitive to the annihilation cross-section of the species, $\langle \sigma_\mathrm{ann} v\rangle$. More efficient annihilations correspond to larger cross-sections, resulting in the species remaining in equilibrium for longer times. This allows the number density to continue following the exponentially decreasing Boltzmann distribution and yield a smaller relic abundance. The evolution of the WIMP abundance is shown in Fig.~\ref{fig:WIMP_freezeout} for three values of the annihilation cross-section.  For a Majorana WIMP, the resulting relic abundance is 
-\begin{equation}
-    \Omega_{\mathrm{DM}}h^2 \sim 0.12 \; \left(\frac{2.2\times 10^{-26}\cm^3 \s^{-1}}{\langle \sigma v\rangle}\right).
-\end{equation}
+A cold thermal relic, such as dark matter, will freeze-out after it has become non-relativistic. In this scenario, the interaction rates become Boltzmann suppressed\footnote{The number density of a non-relativistic species in thermal equilibrium with the bath will follow $n \propto \left(m T_\mathrm{bath}\right)^{3/2} \exp\left(-m /T_\mathrm{bath}\right)$. Once the temperature falls below the mass of the species, the number density becomes exponentially suppressed. This is what is known as ``Boltzmann suppression''.}, and the species rapidly freezes-out. The relic density is therefore sensitive to the annihilation cross-section of the species, $\langle \sigma_\mathrm{ann} v\rangle$. More efficient annihilations correspond to larger cross-sections, resulting in the species remaining in equilibrium for longer times. This allows the number density to continue following the exponentially decreasing Boltzmann distribution and yield a smaller relic abundance. The evolution of the abundance of a Majorana fermion WIMP of mass $m_\mathrm{WIMP} = 100\GeV$ is shown in Fig.~\ref{fig:WIMP_freezeout} for three values of the annihilation cross-section. A simple expression  relating the annihilation cross-section and the abundance that is correct to $\sim5\%$ can be obtained~\cite{Steigman:2012nb_PreciseRelicWIMP} 
+\begin{align}
+    \Omega_{\mathrm{DM}}h^2 & = \frac{10^{-27}\cm^3\s^{-1}}{\sigmav} \frac{x_*}{g_*^{1/2}}\\
+     &\sim 0.12 \; \left(\frac{2.2\times 10^{-26}\cm^3 \s^{-1}}{\langle \sigma v\rangle}\right),\quad m_\chi\gtrsim 10\GeV,
+\end{align}
+where $x_* = m_\mathrm{WIMP}/T_*$ is evaluated as an intermediate temperature between equilibrium and freeze-out, with $g_*$ the effective number of relativistic degrees of freedom present at this time. 
 
 \begin{figure}[t!]
     \centering
     \includegraphics{fig_dm_freezeout.pdf}
-    \caption{Evolution of the DM abundance, $Y_\mathrm{DM}$, as a function of $x = m_\mathrm{DM}/T$. The red line represents the equilibrium abundance. The relic abundance for three different annihilation cross-sections is shown in blue, orange, and yellow for $\langle \sigma_\mathrm{ann} v\rangle = 10^{-25},\;10^{-26},$ and $10^{-27}$ cm$^{3}$s$^{-1}$ respectively.}
+    \caption{Evolution of the DM abundance as a function of $x = m_\mathrm{DM}/T$. The red line tracks the abundance if the WIMP remained in equilibrium with the bath. The relic abundance for three different annihilation cross-sections is shown in blue, orange, and yellow for $\langle \sigma_\mathrm{ann} v\rangle = 2.2\times10^{-25},\;2.2\times10^{-26},$ and $2.2\times10^{-27}$ cm$^{3}$s$^{-1}$ respectively.}
     \label{fig:WIMP_freezeout}
 \end{figure}
 
 The allowed mass range for a thermal WIMP is between $10\MeV\lesssim m_\mathrm{WIMP} \lesssim 100\TeV$. Lighter WIMPs will have non-negligible contributions to the effective number of neutrino species at the time of Big Bang Nucleosynthesis, $N^\mathrm{BBN}_{eff} = 3.044$~\cite{Yeh:2022heq_oct_Probingphysicsstandard}. The CMB probes $N_\mathrm{eff}$ at the time of recombination and can be combined with the BBN result leading to the value $N_{eff} = 2.99 \pm 0.17$~\cite{Planck:2018vyg_sep_Planck2018results}. 
- Masses larger than $\sim 100\TeV$ are excluded from partial wave unitarity~\cite{Griest:1989wd_UnitarityLimitsMass}. 
+At the high end of this range, masses larger than $\sim 100\TeV$ are excluded from partial wave unitarity~\cite{Griest:1989wd_UnitarityLimitsMass}. 
+ 
 
 \subsubsection{Axions}
 The axion originally arose from the Pecci-Quinn solution to the Strong CP problem. This refers to the lack of observed CP-violation in the QCD sector of the Standard Model that arises from the topological term in the Lagrangian
@@ -191,9 +196,17 @@ where $g_s$ is the QCD coupling constant, $G_{\mu\nu}$ is the gluon field streng
 The Peccei-Quinn solution to this problem introduces a new, anomalous, global  $U(1)_{\mathrm{PQ}}$ symmetry and promotes $\theta_\mathrm{QCD}$ to be a dynamical field.
 Wilczck~\cite{Wilczek:1977pj_ProblemStrongInvariance} and Weinberg~\cite{Weinberg:1977ma_NewLightBoson} showed that the axion emerges as the pseudo-Goldstone boson associated with the breaking of $U(1)_\mathrm{PQ}$. Though the original axion was quickly out, many modern extensions of the SM predict the existence of a QCD axion. Two of the most prominent UV completions of the axion are the KSVZ~\cite{Kim:1979if_WeakInteractionSinglet, Shifman:1979if_CanConfinementEnsure} and DFSZ~\cite{_PossibleSuppressionAxion, Dine:1981rt_SimpleSolutionStrong} models. In these models, the axion produced in the early Universe can serve the role of cold dark matter today. This makes it a very compelling dark matter candidate, as it solves two of the biggest mysteries of physics in one neat package. 
 
-However, solving the Strong CP problem can be rather restrictive on the model parameters. For example, the QCD axion's coupling to the photon is not a free parameter and depends on the scale at which the PQ symmetry is broken. Many models introduce a light pseudoscalar particle that is not associated with a solution to the Strong CP problem but has a coupling to the photon that takes the same form as the QCD axion. Such pseudoscalars are known as ``Axion Like Particles" (ALPs) and can similarly make a good dark matter candidate.
+However, solving the Strong CP problem can be rather restrictive on the model parameters. For example, the QCD axion's coupling to the photon, $g_{a\gamma\gamma}$, is not a free parameter and depends on the scale at which the PQ symmetry is broken. Many models introduce a light pseudoscalar particle, say $a$, that couples to the photon in the same way as the QCD axion,  
+\begin{equation}
+    \mathcal{L}_{a\gamma\gamma} = -\frac{g_{a\gamma\gamma}}{4} a F_{\mu\nu}\tilde{F}^{\mu\nu},
+\end{equation}
+but is not associated with a solution to the Strong CP problem. Such pseudoscalars are known as ``Axion Like Particles" (ALPs) and can make a good dark matter candidate.
 
 \subsubsection*{Primordial Black Holes}
+
+Primordial black holes (PBHs) are formed during the early Universe through various mechanisms. The simplest mechanism predicts that PBHs are produced from the gravitational collapse of superhorizon density fluctuations seeded during inflation~\cite{Hawking:1971ei_apr_Gravitationallycollapsedobjects, Carr:1974nx_Blackholesearly,Carr:1975qj_Primordialblackhole}. 
+Unlike black holes that originate from stellar collapse, which have masses $\gtrsim 3\Msun$, the mass of a PBH can be arbitrary.  PBHs can also make a good dark matter candidate, satisfying all the criteria points outlined above. In fact, PBHs with a mass between $\sim (10^{-17} - 10^{-12})\;\Msun$, dubbed ``asteroid mass PBHs'', can account for 100\% of the dark matter content in the Universe~\cite{Montero-Camacho:2019jte_aug_Revisitingconstraintsasteroidmass}. Outside this range, PBHs can still make up a small fraction of dark matter~\cite{Villanueva-Domingo:2021spv_may_Briefreviewprimordial}. 
+% As opposed to the WIMPs and ALPs above, PBHs are macroscopic objects, that is, they are not themselves fundamental particles. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,7 +216,7 @@ However, solving the Strong CP problem can be rather restrictive on the model pa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Overview of Effective Field Theory}
-Given the sheer quantity of potential dark matter models and candidates, a model-independent approach for analysing experimental results is often desired. An economic analysis method is to use an Effective Field Theory (EFT) to describe the dark matter-Standard Model interactions. Effective theories are prevalent in all of physics, e.g., describing light using ray optics vs Maxwell's equations or the orbits of planets using Newtonian gravity vs General relativity. The delineating factor in choosing a formalism is the scale (energy, length, etc.) we are interested in. 
+Given the sheer quantity of potential dark matter models and candidates, a model-independent approach for analysing experimental results is often desired. An economic analysis method is to use an Effective Field Theory (EFT) to describe the dark matter-Standard Model interactions. Effective theories are prevalent in all physics, e.g., describing light using ray optics vs Maxwell's equations or the orbits of planets using Newtonian gravity vs General relativity. The delineating factor in choosing a formalism is the scale (energy, length, etc.) we are interested in. 
 \commMV{Add in the usual EFT diagram}
 Experiments will only be sensitive to interactions that can occur below some energy scale, i.e. $13.6\TeV$ at the LHC or $~1\GeV$ in direct detection experiments; we are only interested in describing the interactions that occur below this scale.
 
@@ -220,9 +233,8 @@ In the context of dark matter, there are many EFTs describing the interaction at
 
 Generally, an EFT will have fewer free parameters than the underlying UV theories, typically the dark matter mass and the high energy cutoff scale. This is in contrast with the dozens or so parameters often present in complete models. This allows for a simpler interpretation of experimental results as you will be fitting to a lower dimensional parameter space. 
 
-\commMV{Move the next sections later?}
 \subsection{Dimension 6 EFT Operators for Dirac Fermion Dark Matter}
-This work's approach will focus on dimension 6 EFT operators that describe the interactions of Dirac fermion dark matter with standard model fermions. These operators will have a structure 
+This work will focus on dimension 6 EFT operators that describe the interactions of Dirac fermion dark matter with standard model fermions. These operators will have a structure 
 \begin{equation}
     \mathcal{L}_\mathrm{EFT}^{(6)} \sim \frac{1}{\Lambda^2}(\bar{\chi}\Gamma_\mathrm{DM} \chi)(\bar{f}\Gamma_{\mathrm{SM}}f),
 \end{equation}
@@ -230,7 +242,8 @@ where the $\Gamma_i$ determines the Lorentz structure of the interaction by taki
 \begin{equation}
     \Gamma_i\in \{1, i\gamma_5, \gamma^\mu, i\gamma^\mu \gamma^5, \sigma^{\mu\nu}, i \sigma^{\mu\nu}\gamma^5\}.
 \end{equation}
-For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar currents for both the DM and SM fermions and would correspond to integrating out a heavy scalar mediator in the UV theory. There are 10 such operators at dimension six that form a linearly independent basis. These are given in Table~\ref{tab:opers_defn_full}, along with spin-averaged squared matrix element for dark matter scattering with a fermion. The coupling constants, $g_f$, are given in terms of the fermion Yukawa couplings, $y_f$, and the EFT cutoff scale, $\Lambda_f$. Hence, these operators describe interactions between dark matter and the elementary fermions of the Standard Model: the leptons and quarks. 
+For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar currents for both the DM and SM fermions and would correspond to integrating out a heavy scalar mediator in the UV theory. Under the assumption of minimal flavour violation (MFV)\footnote{MFV is the assumption that the only source of flavour violation in the quark sector comes from the SM Yukawa matrices and not from any new physics introduced at a highter scale.} are ten such operators at dimension six that form a linearly independent basis. These are given in Table~\ref{tab:opers_defn_full}, along with spin-averaged squared matrix element for dark matter scattering with a fermion. 
+The coupling constant, $g_f$, for operators that involve the scalar (S) and pseudoscalar (P) fermion bilinears (operators D1-4) are normalised by the corresponding Yukawa couplings. This is because, in a UV complete theory, these bilinears would couple to the new scalar/pseudoscalar field that mediates the interactions with the dark matter. In many models, this new field will mix with the SM Higgs field, leading to couplings that depend on the fermion masses. The remaining vector (V), axial vector (A), and tensor (T) bilinears have coupling constants that depend only on the cutoff scale, $\Lambda_f$.
 
 
 
@@ -256,7 +269,7 @@ For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar cu
 \label{tab:opers_defn_full} }
 \end{table}
 
-\subsection{Going from DM-Quark to DM-Nucleon Interactions}
+\subsection{From DM-Quark to DM-Nucleon Interactions}
 
 The operators in Table~\ref{tab:opers_defn_full} describe dark matter interactions at the quark level, as these are the degrees of freedom most models are formulated with. However, we will primarily be interested in dark matter scattering with baryons, which requires taking the matrix element of the quark operators between baryon states, i.e. $\langle {\cal B} | \bar q \, \Gamma_q q| {\cal B}\rangle$. These matrix elements can be calculated through the application of Chiral Perturbation Theory (ChPT), giving a baryon level EFT. The operators of this EFT will have the same form as those in Table~\ref{tab:opers_defn_full}, with the obvious replacement of $f\rightarrow \cal B$, as well as additional form factors that take into account the structure of the baryons.
 
@@ -312,7 +325,7 @@ These limits are typically interpreted in a model-dependent manner, as different
 As mentioned above, EFTs can be used to explore a variety of interactions in a somewhat model-independent way.
 However, many applications of this nature did not hold up to scrutiny, as the EFTs were being applied at energies outside their regions of validity~\cite{Busoni:2013lha_jan_ValidityEffectiveField, Buchmueller:2013dya_EffectiveFieldTheory, Busoni:2014haa_ValidityEffectiveField, Busoni:2014sya_ValidityEffectiveField}, and so care is needed when applying such methods. 
 
- The ATLAS and CMS experiments at the LHC have performed analyses on various dark matter production mechanisms, including the exchange of a $Z/Z'$ or Higgs, EFTs and heavy mediators, and mono-jet searches~\cite{CMS:2017jdm_jul_Searchdarkmatter} \footnote{These searches refer to a single jet being produced alongside a pair of dark matter particles. This jet could be of Standard Model or dark sector origin, with the latter commonly referred to as ``mono-X" searches.}. Collider searches also offer complimentary probes of the dark matter-nucleon scattering cross-section~\cite{Ruppin:2014bra_oct_Complementaritydarkmatter}. 
+ The ATLAS and CMS experiments at the LHC have performed analyses on various dark matter production mechanisms, including the exchange of a $Z/Z'$ or Higgs, EFTs and heavy mediators, and mono-jet searches~\cite{CMS:2017jdm_jul_Searchdarkmatter}\footnote{These searches refer to a single jet being produced alongside a pair of dark matter particles. This jet could be of Standard Model or dark sector origin, with the latter commonly referred to as ``mono-X" searches.}. Collider searches also offer complimentary probes of the dark matter-nucleon scattering cross-section~\cite{Ruppin:2014bra_oct_Complementaritydarkmatter}. 
  
  It is important to note that an observation of an invisible massive particle at a collider is not enough to infer that it is dark matter. Such an observation only tells us that such a particle exists but nothing about its abundance, meaning it could just be a sub-component of a larger dark sector. In order to identify whether or not this was a dark matter detection, complimentary observations from direct or indirect detectors would be required. 
  
