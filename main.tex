@@ -68,7 +68,7 @@
   % \include{src/chapters/chapter_6}
 
   %% Glossary
-  % \include{src/indices}
+  \include{src/indices}
 \end{mainmatter}
 
 %%
@@ -85,17 +85,17 @@
 %%
 %% Back matter
 %%
-% \glsaddall
-% \begin{backmatter}
-%     % \symmetricmargin
-%     \frontmatterheadings
-%     \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
-%     \clearpage
-%     % \addcontentsline{toc}{chapter}{Index}
-%     % \printindex
-%     % \bibliographystyle{utphys}
-%     % \bibliography{src/refs_main}
-%     \printbibliography
-% \end{backmatter}
+\glsaddall
+\begin{backmatter}
+    % \symmetricmargin
+    \frontmatterheadings
+    \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
+    \clearpage
+    % \addcontentsline{toc}{chapter}{Index}
+    % \printindex
+    % \bibliographystyle{utphys}
+    % \bibliography{src/refs_main}
+    \printbibliography
+\end{backmatter}
 
 \end{document}
