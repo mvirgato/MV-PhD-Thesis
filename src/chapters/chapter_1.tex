@@ -215,7 +215,7 @@ Unlike black holes that originate from stellar collapse, which have masses $\gtr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-For a dark matter candidate to be truly compelling, it should be able to be embedded into an ultraviolet (UV) complete theory. Such theories are renormalisable\footnote{In a renormalisable theory, the infinities that arise from UV divergences can be absorbed by fixing a finite number of parameters to experimentally observed values.} and gauge invariant under the SM gauge group $SU(3)_\mathrm{colour}\otimes SU(2)_L\otimes U(1)_Y$. This allows them to be predictive up to arbitrarily high energies. These theories are typically quite complex, requiring the introduction of multiple new fields and many more free parameters. As an example, consider the phenomenological Minimal Supersymmetric Standard Model (pMSSM)~\cite{Villanueva-Domingo:2021spv_may_Briefreviewprimordial} in which the lightest neutralino\footnote{The neutralinos are the mass eigenstates of the supersymmetric partners of the neutral gauge bosons and the higgsino.} can be a thermal WIMP dark matter candidate. In this theory, 19 free parameters are introduced on top of the free parameters in the SM, requiring 38 independent experimental observations to fully constrain the model. Given that at this point in time, all good dark matter candidates are equally likely to be the correct one, a model-independent approach to interpreting experimental results is desirable. This is achieved by describing the interactions of dark matter with the SM through an effective field theory (EFT).
+For a dark matter candidate to be truly compelling, it should be able to be embedded into an ultraviolet (UV) complete theory. Such theories are renormalisable\footnote{In a renormalisable theory, the infinities that arise from UV divergences can be absorbed by fixing a finite number of parameters to experimentally observed values.} and gauge invariant under the SM gauge group $SU(3)_\mathrm{colour}\otimes SU(2)_L\otimes U(1)_Y$. This allows them to be predictive up to arbitrarily high energies. These theories are typically quite complex, requiring the introduction of multiple new fields and many more free parameters. As an example, consider the phenomenological Minimal Supersymmetric Standard Model (pMSSM)~\cite{Villanueva-Domingo:2021spv_may_Briefreviewprimordial} in which the lightest neutralino\footnote{The neutralinos are the mass eigenstates of the supersymmetric partners of the neutral gauge bosons and the higgsino.} can be a thermal WIMP dark matter candidate. In this theory, 19 free parameters are introduced on top of the free parameters in the SM, requiring 38 independent experimental observations to fully constrain the model. Given that at this time, all good dark matter candidates are equally likely to be the correct one, a model-independent approach to interpreting experimental results is desirable. This is achieved by describing the interactions of dark matter with the SM through an effective field theory (EFT).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Overview of Effective Field Theory}
@@ -223,7 +223,7 @@ For a dark matter candidate to be truly compelling, it should be able to be embe
 
 Modern physics can be thought of as a ladder of theories that are designed to describe the physics present at a given energy (or length) scale. For example, Newtonian mechanics is a sufficient description of the physics experienced in our everyday lives. However, in situations where the energy is comparable to the mass of the system, Newtonian mechanics breaks down, and Special Relativity must be used to describe the physics. In particle physics, the Standard Model provides an excellent description of particle interactions up to the energies reached at LHC, 13.6$\TeV$, and perhaps even further beyond. However, even it is expected to break down at higher energy scales, in particular at the Planck scale where a quantum theory of gravity is required. Hence, both Newtonian mechanics and the SM are low-energy, effective descriptions of a more complete theory.
 
-This philosophy based on only describing the physics relevant below some energy scale, $\Lambda$, is the core principle of EFTs. The Lagrangian for the effective theory only contains the degrees of freedom that can be produced below the scale $\Lambda$, i.e. fields that have masses lower than this scale. This way, the EFT is agnostic to the details of any particular UV theory and only cares about how the UV dynamics modify the physics observed at low energies, i.e. the infrared (IR).
+This philosophy based on only describing the physics relevant below some energy scale, $\Lambda$, is the core principle of EFTs. The Lagrangian for the effective theory only contains the degrees of freedom that can be produced below the scale $\Lambda$, i.e. fields that have masses less than this scale. This low-energy regime described by the EFT is often called the infrared (IR) regime. 
 
 In general, the EFT Lagrangian will contain renormalizable terms, $\mathcal{L}_\mathrm{renorm.}$,  built out of operators that have mass dimension $\leq 4$, as well as operators with mass dimension $n> 4$, $\mathcal{O}_i^{(n)}$, that encapsulate the contributions from the UV physics. Each of these higher dimensional operators will be suppressed by the scale of new physics, $\Lambda^{4-n}$. 
 The effective Lagrangian can then be written as
@@ -234,16 +234,16 @@ The effective Lagrangian can then be written as
 where we sum over all $j_n$ operators present at mass dimension $n$. The expansion coefficients, $C_i^{(n)}$, are the Wilson coefficients that contain the effects of the UV physics. In general, the Wilson coefficients run with the energy scale they are evaluated at, $\tilde{\mu}$, described by the renormalisation group equations (RGEs).
 The sum over the mass dimension of the operators is typically terminated at some sensible value, as higher dimensional operators get increasingly suppressed by the cutoff scale $\Lambda$.
 
-The series of operators in Eq.~\ref*{eq:EFT_Lagrangian} can be constructed in two different ways. First, we assume some prior knowledge of the underlying UV theory. The heavy degrees of freedom in the theory can then be explicitly integrated out. There are various methods for performing this process, the simplest being expanding the propagator of the heavy fields in powers of the momenta over the heavy mass, $(p/M)^2$. For the simple case of a heavy scalar, this corresponds to 
+The series of operators in Eq.~\ref*{eq:EFT_Lagrangian} can be constructed in two different ways. First, we assume some prior knowledge of the underlying UV theory. Then, for a given energy scale $\Lambda$, the heavy degrees of freedom are known, and can be explicitly integrated out. There are various methods for performing this process, the simplest being expanding the propagator of the heavy fields in powers of the momenta over the heavy mass, $(p/M)^2$. For the simple case of a heavy scalar, this corresponds to 
 \begin{equation}
     \frac{i}{p^2 - M^2} = \frac{-i}{M^2}\left(\frac{1}{1 - (p/M)^2}\right)\approx \frac{-i}{M^2}\left( 1 + \left(\frac{p}{M}\right)^2 + \mathcal{O}\left(\left(\frac{p}{M}\right)^4\right)\right).
 \end{equation}
-An alternate, more robust method, is to replace the heavy fields with their linearised classical equations of motion. The resulting Lagrangian will contain all the interactions generated at tree-level by the UV fields. Quantum correction to the UV theory will also generate contributions to the EFT at loop-level. These contributions can be calculated from the path integral. 
-This method is called the \textit{top-down} approach to EFTs. This method is useful when performing calculations at low energies where the heavy fields only complicate the required calculations. 
+An alternate, more robust method, is to replace the heavy fields in the Lagrangian with their classical equations of motion. The resulting effective Lagrangian will contain all the operators generated by the UV theory at tree-level.
+Constructing an EFT in this way is called the \textit{top-down} method.
 
-The second method of generating the EFT asks us to assume nothing about the UV physics. Instead, simply write down all possible operators that can be constructed from the IR fields that obey the symmetries of the system, as well as any other constraints one wishes to impose. This is the \textit{bottom-up} approach, offering a more model-independent approach than the top-down method. 
+The second method of constructing an EFT is to be agnostic to the UV physics and write down all possible operators that can be constructed from the IR degrees of freedom. These operators must obey the symmetries of the IR theory, as well as any other constraints one wishes to impose\footnote{For example, one might require that no flavour changing processes are present at dimension 5, despite such operator being allowed by the symmetries.}. This is the \textit{bottom-up} approach, offering a more model-independent approach than the top-down method. The Wilson coefficients in this case will be arbitrary functions of the energy scale, determined by solving the RGEs.
 
-In general, the parameter space of the EFT will be lower dimensional than those of the UV models that generate it, allowing for an easier comparison with experimental results. Furthermore, as many UV complete theories can correspond to the same EFT, constraining the Wilson coefficients allows one to simultaneously constrain a whole class of UV models. The constraints on the Wilson coefficients at the low energies of the experiments can then be translated into constraints on the UV model parameters through the running of the coefficients.
+In general, the parameter space of the EFT will be lower dimensional than those of the corresponding UV models. This allows for an easier comparison with experimental results, as there are fewer parameters to fit to the data. Once the Wilson coefficients have been constrained at the low energy scale of the experiments, they can be matched to the coefficients generated by some UV theory at another scale, thereby constraining the UV parameters. 
 
 \subsection{Dimension 6 EFT Operators for Dirac Fermion Dark Matter}
 This work will focus on dimension 6 EFT operators that describe the interactions of Dirac fermion dark matter with standard model fermions. These operators will have a structure 
@@ -254,7 +254,7 @@ where the $\Gamma_i$ determines the Lorentz structure of the interaction by taki
 \begin{equation}
     \Gamma_i\in \{1, i\gamma_5, \gamma^\mu, i\gamma^\mu \gamma^5, \sigma^{\mu\nu}, i \sigma^{\mu\nu}\gamma^5\}.
 \end{equation}
-For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar currents for both the DM and SM fermions and would correspond to integrating out a heavy scalar mediator in the UV theory. Under the assumption of minimal flavour violation (MFV)\footnote{MFV is the assumption that the only source of flavour violation in the quark sector comes from the SM Yukawa matrices and not from any new physics introduced at a highter scale.} are ten such operators at dimension six that form a linearly independent basis. These are given in Table~\ref{tab:opers_defn_full}, along with spin-averaged squared matrix element for dark matter scattering with a fermion. 
+For example, the case of $\Gamma_\chi = \Gamma_\mathrm{SM} = 1$ yields scalar currents for both the DM and SM fermions and would correspond to integrating out a heavy scalar mediator in the UV theory. Under the assumption of minimal flavour violation (MFV)\footnote{MFV is the assumption that the only source of flavour violation in the quark sector comes from the SM Yukawa matrices and not from any new physics introduced at a higher scale.} are ten such operators at dimension six that form a linearly independent basis. These are given in Table~\ref{tab:opers_defn_full}, along with spin-averaged squared matrix element for dark matter scattering with a fermion. 
 The operators are classified based on the Lorentz nature of the SM fermion bilinear; D1-2: Scalar (S), D3-4: Pseudoscalar (P), D5-6: Vector (V), D7-8: Axial-vector (A), and D9-10: tensor (T).
 The coupling constant, $g_f$, for operators that involve the S and P fermion bilinears (operators D1-4) are normalised by the corresponding Yukawa couplings. This is because, in a UV complete theory, these bilinears would couple to the new scalar/pseudoscalar field that mediates the interactions with the dark matter. In many models, this new field will mix with the SM Higgs field, leading to couplings that depend on the fermion masses. The remaining bilinears have coupling constants that depend only on the cutoff scale, $\Lambda_f$.
 
@@ -406,7 +406,7 @@ LZ's predecessor LUX~\cite{LUX:2017ree_jun_LimitsspindependentWIMPnucleon}.
 
 The orange dashed line represents the neutrino floor\footnote{Calling this the ``neutrino fog" rather than floor has been gaining traction in recent years~\cite{OHare:2021utq_dec_Foghorizonnew}}, a theoretical lower limit on the discoverability of WIMP-like dark matter. In this region of parameter space, doctors will become sensitive to the irreducible background from neutrino scattering, which will produce signals almost indistinguishable from a true dark matter interaction. A significant amount of effort is being put toward overcoming this hindrance, with the main strategy being to take advantage of the directionality of dark matter flux~\cite{Grothaus:2014hja_jun_DirectionalDarkMatter}.
 
-Many experiments begin to lose sensitivity to low-mass dark matter ($m_\mathrm{DM}\lesssim 10\GeV$) as the targets recoil with energies below the detector threshold. Current energy thresholds can reach as low as $\sim {\cal O} (100\eV)$, which is on the same order of magnitude as the recoil energy due to a $1\GeV$ dark matter collision. The sensitivity also falls off at a slower rate at larger masses, though this is due to the number of dark matter particles that pass through the detector given $N_\mathrm{DM} = \rho_\mathrm{DM}/m_\mathrm{DM}$, and the dark matter density is known to be $0.4\GeV \cm^{-3}$.
+Many experiments begin to lose sensitivity to low-mass dark matter ($m_\mathrm{DM}\lesssim 10\GeV$) as the targets recoil with energies below the detector threshold. Current energy thresholds can reach as low as $\sim {\cal O} (100\eV)$, which is on the same order of magnitude as the recoil energy due to a $1\GeV$ dark matter collision. The sensitivity also falls off at a slower rate at larger masses, though this is due to the number of dark matter particles that pass through the detector given $\NDM = \rho_\mathrm{DM}/m_\mathrm{DM}$, and the dark matter density is known to be $0.4\GeV \cm^{-3}$.
 
 Direct detection limits also assume that the scattering cross-section is independent of the dark matter velocity and momentum transfer in the interaction. Given that the local dark matter dispersion velocity is predicted to be $v_d = 270\km\s^{-1} \approx 10^{-3}c$, a back-of-the-envelope estimation for the momentum transfer gives $q_\mathrm{tr}\lesssim 100 \MeV$. Therefore, cross-sections proportional to $v_\mathrm{DM}$ or $q_\mathrm{tr}$ will result in significantly lower event rates and hence much weaker limits than the unsuppressed interactions. 
 
@@ -429,22 +429,61 @@ These searches look for anomalies in astrophysical data, though dark matter accu
 
 Signals from dark matter annihilation are best searched for by looking at regions where the dark matter density is expected to be high, boosting the annihilation rate. 
 Natural places to look include the Galactic Centre~\cite{Ipek:2014gua_sep_RenormalizableModelGalactic,Fermi-LAT:2017opo_may_FermiGalacticCenter}, dwarf-spheroidal galaxies~\cite{Bonnivard:2015xpq_oct_Darkmatterannihilation}, and celestial bodies where dark matter can accumulate over time.
-This last option is of primary interest to this work.
 
-Stars have long been used to study various models of dark matter. 
-ALPs of dark photons can be produced within the plasma of stars, altering the energy transport properties within them.
-This can ultimately lead to deviations in the evolution of the star, which can be used to place some of the strongest constraints on these models~\cite{An:2013yfc_oct_Newstellarconstraints, Dolan:2022kul_oct_Advancingglobularcluster,Dolan:2023cjs_jun_ConstrainingDarkPhotons, }.
-WIMP-like dark matter from the halo that couples to visible matter can scatter within the objects. 
-The dark matter may lose enough energy in these interactions to become gravitationally bound to the object, leading to a population of dark matter being accumulated over time~\cite{Press:1985ug_Capturesungalactic, Gould:1987ju_WeaklyInteractingMassive, Gould:1987ir_ResonantEnhancementsWIMP,Jungman:1995df_Supersymmetricdarkmatter,Busoni:2017mhe_oct_Evaporationscatteringmomentum}. 
 
-The capture of dark matter within the Sun has been extensively studied. The formalism set up by Gould~\cite{Gould:1987ir_ResonantEnhancementsWIMP,Gould:1987ju_WeaklyInteractingMassive,Gould:1991va_Bigbangarcheology} has remained quite successful, with many authors building on these foundations over time~\cite{Busoni:2017mhe_oct_Evaporationscatteringmomentum,Garani:2017jcj_may_DarkmatterSun,Bramante:2017xlb_sep_Multiscatterstellarcapture}
-The captured dark matter can thermalise within the Sun's core, where it may annihilate and produce an observational signal. 
-This could be via direct annihilation to neutrinos~\cite{Super-Kamiokande:2011wjy_IndirectSearchWIMPs,Super-Kamiokande:2015xms_apr_Searchneutrinosannihilation,ANTARES:2016obx_may_SearchSecludedDark,ANTARES:2016xuh_aug_LimitsDarkMatter,IceCube:2016dgk_Searchannihilatingdark}, or to some other long-lived state that can escape the Sun and decay into visible states~\cite{Batell:2009zp_SolarGammaRays,Schuster:2009au_TerrestrialSolarLimits,Bell:2011sn_Enhancedneutrinosignals,Feng:2016ijc_jun_DarkSunshineDetecting,Leane:2017vag_jun_PowerfulSolarSignatures}.
-Additionally, WIMPs can also alter the energy transport within the Sun~\cite{Gould:1989hm_THERMALCONDUCTIONMASSIVE,Gould:1989ez_CosmionEnergyTransfer,Vincent:2013lua_apr_Thermalconductiondark,Geytenbeek:2016nfg_mar_Effectelectromagneticdipole}.
 
-In comparison to DD searches, interpretation of indirect detection data will require additional model-dependent assumptions, namely the relevant annihilation channels of the dark matter. 
-The most general limits can be placed by assuming that the dark matter only has a single annihilation channel, i.e. it annihilates to a $\tau^+\tau^-$ final state 100\% of the time. 
-Under these assumptions, limits on the SD dark matter-proton cross-section have been placed that exceed current DD constraints, due to the rather large abundance of Hydrogen within the Sun. Constraints from the IceCube collaboration are shown in Fig.~\ref{fig:IceCube_2016_SD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dark Matter Signals from the Sun}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Stars have a rich history of being used as astrophysical laboratories to help in the search for dark matter. Depending on the type of dark matter being searched for, there are various signals one can look for.
+Light bosonic dark matter, such as ALPs and dark photons, can be produced within the plasma of stars, altering the energy transport properties within them.
+This can ultimately lead to deviations in the evolution of the star, which can be used to place some of the strongest constraints on these models~\cite{An:2013yfc_oct_Newstellarconstraints, Dolan:2022kul_oct_Advancingglobularcluster,Dolan:2023cjs_jun_ConstrainingDarkPhotons}.
+WIMP-like dark matter in the halo that couples to visible matter can scatter within the stars as they pass through. 
+If the dark matter loses enough energy in these interactions, it can become gravitationally bound to the object and a population of dark matter will be accumulated within the star over time~\cite{Press:1985ug_Capturesungalactic, Gould:1987ju_WeaklyInteractingMassive, Gould:1987ir_ResonantEnhancementsWIMP,Jungman:1995df_Supersymmetricdarkmatter,Busoni:2017mhe_oct_Evaporationscatteringmomentum}. 
+
+This idea of WIMPs accumulating within the cores of stars has been applied extensively to the star closest to us, the Sun. The formalism for stellar capture of dark matter was set up by Gould~\cite{Gould:1987ir_ResonantEnhancementsWIMP,Gould:1987ju_WeaklyInteractingMassive,Gould:1991va_Bigbangarcheology} in the late 80's, and has remained quite successful to this day,  with many authors continuing to build upon these foundations over time~\cite{Busoni:2017mhe_oct_Evaporationscatteringmomentum,Garani:2017jcj_may_DarkmatterSun,Bramante:2017xlb_sep_Multiscatterstellarcapture}.
+
+Once the dark matter is captured, it will continue to scatter with the stellar constituents until it thermalises within the core of the Sun. Additionally, the dark matter can be ejected back out of the Sun if it scatters off a constituent and gains enough energy to escape the gravitational well. This process is known as evaporation and becomes increasingly important for lighter dark matter masses. Below a certain mass, the dark matter is evaporated at the same rate as it is captured, leading to a net-zero amount of dark matter being accumulated. This places a lower bound on the dark matter mass that can be probed through stellar capture, with this mass named the evaporation mass, $\mevap$.
+
+The time evolution of the number of captured dark matter particles, $\NDM$, is governed by the differential equation, 
+\begin{equation}
+    \frac{d \NDM}{dt} = C  - E \NDM- A \NDM^2,
+    \label{eq:DM_num_Sun}
+\end{equation}
+where $C$ and $E$ are the capture and evaporation rates respectively, with $A$ being related to the annihilation rate, $\GAnn$ through
+\begin{align}
+    \GAnn & = \frac{1}{2}\int\,dr^3 n_\mathrm{DM}^2(r) \sigmavdm\\
+    & \equiv \frac{1}{2}A \NDM^2,
+\end{align}
+where $n_\mathrm{DM}(r)$ is the dark matter number density profile, and the 1/2 accounts for each annihilation removing two dark matter particles from the Sun. If the dark matter has an isothermal distribution then the number density is by
+\begin{align}
+    n_\mathrm{DM}(r) & \equiv n_\mathrm{iso}(r) = n_0\exp\left( - \frac{\mdm \Phi(r)}{T_\odot}\right),\\
+    \Phi(r) & = -\int_r^\infty \,\frac{G M_\odot(r')}{r'^2}dt',
+\end{align}
+with $n_0$ a normalisation constant, $\Phi(r)$ the gravitational potential inside the Sun, and $T_\odot$ the core temperature. Assuming the isothermal sphere of dark matter is small enough such that the internal density, $\rho_\odot$ does not vary significantly, this simplifies to
+\begin{align}
+    n_\mathrm{iso}(r) & = n_0 \exp(-r^2/r_\mathrm{iso}^2),\\
+    r_\mathrm{iso}^2 & = \frac{3 T_\odot}{2\pi G \mdm \rho_\odot},
+\end{align}
+where $r_\mathrm{iso}$ is the radius of the isothermal sphere.
+
+There are two regimes we are interested in solving this equation for. First, assume that annihilations are negligible  ($\GAnn = 0$), and that the capture and evaporation rates are constant in time. The result is
+\begin{equation}
+    \NDM(t) = Ct\left(\frac{1 - e^{-E t}}{E t}\right), 
+\end{equation}
+where the first factor is the number of captured dark matter if evaporation is negligible. From this, we can estimate the evaporation mass by asking when the evaporation rate is large enough to cause a $50\%$ reduction in the number of captured dark matter particles relative to the $E=0$ case
+
+For dark matter masses $\gtrsim \mevap$, evaporation can be neglected, and we can set $E=0$. Before solving Eq.~\ref*{eq:DM_num_Sun} again, we need to 
+
+
+The signals searched for depend on whether the dark matter can annihilate or not. If the dark matter is asymmetric, it cannot annihilate, and we can set $A = 0$ in Eq.~\ref*{eq:DM_num_Sun}. This leads to the population continuing to grow over time, with $\NDM(t) = Ct$ if evporation is negligible. A large enough population of captured dark matter can alter the energy transport within the Sun, leading to the modifications of the solar neutrino flux, or even the solar structure itself~\cite{Franarin:2018gfk_jun_JUNOSensitivityResonant, Cumberbatch:2010hh_LightWIMPsSun, Vincent:2013lua_apr_Thermalconductiondark,Vincent:2015gqa_aug_Generalisedformfactor}. 
+
+Instead, if the dark matter can annihilate an equilibrium will eventually be reached between the capture and annihilation rates, and the total number of dark matter particles will be constant. If the annihilation products can escape the Sun, they can be searched for by various experiments depending on the nature of the final states.
+These could be neutrinos produced from the decays of other charged annihilation products~\cite{Super-Kamiokande:2011wjy_IndirectSearchWIMPs,Super-Kamiokande:2015xms_apr_Searchneutrinosannihilation,ANTARES:2016obx_may_SearchSecludedDark,ANTARES:2016xuh_aug_LimitsDarkMatter,IceCube:2016dgk_Searchannihilatingdark}, or to some other long-lived state that can escape the Sun and decay into visible states~\cite{Batell:2009zp_SolarGammaRays,Schuster:2009au_TerrestrialSolarLimits,Bell:2011sn_Enhancedneutrinosignals,Feng:2016ijc_jun_DarkSunshineDetecting,Leane:2017vag_jun_PowerfulSolarSignatures}.
+
 
 \begin{figure}[!t]
     \centering
@@ -453,8 +492,11 @@ Under these assumptions, limits on the SD dark matter-proton cross-section have 
     \label{fig:IceCube_2016_SD}
 \end{figure}
 
-The smallest dark matter mass that can be probed using solar capture is determined by the evaporation mass of the Sun. Below this mass, the dark matter will be efficiently evaporated out of the Sun at the same rate it is captured, thus no annihilation can take place~\footnote{A more rigorous definition of evaporation and evaporation mass will be presented later in the thesis.}.
-Additionally, as with direct detection, the Sun will be far less sensitive to interactions that are proportional to the velocity/momentum transfer. 
+In comparison to DD searches, interpretation of indirect detection data will require additional model-dependent assumptions, namely the relevant annihilation channels of the dark matter. 
+The most general limits can be placed by assuming that the dark matter only has a single annihilation channel, i.e. annihilation to a $\tau^+\tau^-$ final state 100\% of the time. 
+Under these assumptions, limits on the SD dark matter-proton cross-section have been placed that exceed current DD constraints, due to the rather large abundance of Hydrogen within the Sun. Constraints from the IceCube collaboration are shown in Fig.~\ref{fig:IceCube_2016_SD}
+
+\commMV{Change}
 
 Overcoming the first issue requires either a colder star or one that is much heavier. The second requires dark matter to scatter with the constituent material at relativistic energies to overcome the suppression in the cross-sections. 
 Fortunately, there exists objects that meet all these criteria, allowing for a wider variety of dark matter models to be explored then direct detection or traditional indirect detection experiments: compact objects.
@@ -501,6 +543,12 @@ This heating occurs in two stages. The dark matter will first deposit its kineti
 
 In order to accurately determine the limits on dark matter interactions that such an observation could place, one first requires an accurate calculation of the capture rate. However, all previous calculations relied on the formalism set up by Gould for capture in the Sun, with only minor modifications made to accommodate the extreme nature of the compact objects. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Thesis Outline}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Chapters~\ref{chapter:capture_1} and~\ref{chapter:capture_2} of this thesis are devoted to reformulating Gould's capture formalism to account for the physics specific to compact objects in a self-consistent manner. These include a relativistic treatment of the kinematics, using General Relativity to calculate the correct dark matter flux passing through the star, and accounting for Pauli blocking of the final state target using Fermi-Dirac statistics for the stellar constituents. In addition, we incorporate the internal structure of these objects by calculating the radial profiles for the relevant microscopic quantities (e.g., chemical potentials and number densities) via the adoption of a realistic equation of state.
 
 Further considerations are required when considering dark matter interactions with the baryonic matter inside NSs. Due to the high density of the NS interior, the baryonic matter undergoes strong interactions amongst themselves and should not be treated as a free Fermi gas. Instead, adopting an equation of state that accounts for these interactions is required. These interactions modify the mass of the baryons, leading them to obtain an effective mass smaller than their vacuum mass. Furthermore, as we will see, the dark matter may interact with the baryons with momentum transfers on the order of $10\GeV$. This is high enough that the dark matter will begin to resolve the internal structure of the baryon. To account for this, the momentum dependence of the baryon form factors that are typically neglected in direct detection and solar capture must be reintroduced.
@@ -508,4 +556,4 @@ Further considerations are required when considering dark matter interactions wi
 This formalism is made in preparation for a thorough analysis of the timescales involved in the dark matter heating of compact objects. The enrgy deposited in both the kinetic and annihilation heating stages does not occur instantaneously, and the timescales involved in them need to be compared to the age of the star in question. We will define kinetic heating timescale as the time required for dark matter to deposit 99\% of its initial kinetic energy into the star. For annihilation heating to occur, the dark matter must reach a state of capture-annihilation equilibrium within the stellar core. In standard calculations of this timescale, the dark matter must first become thermalised with the star. Only then can annihilations occur efficiently enough to heat the star. 
 
 
-We will work with the EFT operators in Table~\ref{tab:opers_defn_full} that describe Dirac fermion dark matter interacting with Standard Model leptons. Each operator will be studied in isolation, i.e., by considering a Lagrangian that contains only one of the operators rather than a linear superposition of multiple. This way, we can analyse specific types of interactions independently, allowing us to take as model-independent an approach to phenomenology as possible. 
+We will work with the EFT operators in Table~\ref{tab:opers_defn_full} that describe Dirac fermion dark matter interacting with Standard Model leptons. Each operator will be studied in isolation, i.e., by considering a Lagrangian that contains only one of the operators rather than a linear superposition of multiple. This way, we can analyse specific types of interactions independently, allowing us to take as model-independent an approach to the phenomenology as possible. 
