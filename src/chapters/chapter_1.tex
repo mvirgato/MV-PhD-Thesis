@@ -434,7 +434,7 @@ Natural places to look include the Galactic Centre~\cite{Ipek:2014gua_sep_Renorm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dark Matter Signals from the Sun}
+\section{Dark Matter Signals from the Sun}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -446,38 +446,65 @@ If the dark matter loses enough energy in these interactions, it can become grav
 
 This idea of WIMPs accumulating within the cores of stars has been applied extensively to the star closest to us, the Sun. The formalism for stellar capture of dark matter was set up by Gould~\cite{Gould:1987ir_ResonantEnhancementsWIMP,Gould:1987ju_WeaklyInteractingMassive,Gould:1991va_Bigbangarcheology} in the late 80's, and has remained quite successful to this day,  with many authors continuing to build upon these foundations over time~\cite{Busoni:2017mhe_oct_Evaporationscatteringmomentum,Garani:2017jcj_may_DarkmatterSun,Bramante:2017xlb_sep_Multiscatterstellarcapture}.
 
-Once the dark matter is captured, it will continue to scatter with the stellar constituents until it thermalises within the core of the Sun. Additionally, the dark matter can be ejected back out of the Sun if it scatters off a constituent and gains enough energy to escape the gravitational well. This process is known as evaporation and becomes increasingly important for lighter dark matter masses. Below a certain mass, the dark matter is evaporated at the same rate as it is captured, leading to a net-zero amount of dark matter being accumulated. This places a lower bound on the dark matter mass that can be probed through stellar capture, with this mass named the evaporation mass, $\mevap$.
+Once the dark matter is captured, it will continue to scatter with the stellar constituents until it thermalises within the core of the Sun, collecting with an isothermal sphere. The radius of this sphere can be found by applying the virial theorem, with the gravitational potential given by
+\begin{align}
+    \Phi(r) & = -\int_r^\infty \,\frac{G M_\odot(r')}{r'^2}dt',\\
+    &\approx \frac{2}{3}\pi G \rho_{\odot,c} r^2,
+\end{align}
+assuming the density of the Sun within this region is constant, $\rho_{\odot,c}$. The resulting radius is
+\begin{equation}
+    r_\mathrm{iso}^2 = \frac{3 T_\odot}{2\pi G \mdm \rho_\odot}.
+\end{equation}
+The dark matter number density will follow a Gaussian profile, 
+\begin{align}
+    n_\mathrm{iso}(r) &= n_0\exp\left( - \frac{\mdm \Phi(r)}{T_\odot}\right),\\
+     & = n_0 \exp(-r^2/r_\mathrm{iso}^2),
+\end{align}
+where $n_0$ is a normalistion constant fixed by requiring that the total number of dark matter particles is 
+\begin{equation}
+    \NDM = \int d^3 r\, \niso(r).
+\end{equation}
+In addition, dark matter velocity will follow a Maxwell-Boltzmann distribution, 
+\begin{equation}
+    \fMB(v) = 4\pi\left(\frac{\mdm}{4\pi T_\odot}\right)^{3/2}v^2\exp\left[-\frac{\mdm v^2}{4 T_\odot}\right].
+\end{equation}
 
-The time evolution of the number of captured dark matter particles, $\NDM$, is governed by the differential equation, 
+The time evolution of the total number of dark matter particles within the Sun is governed by three processes. Capture acts to increase the number over time, while annihilation and evaporation will reduce this number over time. This is described by the differential equation
 \begin{equation}
     \frac{d \NDM}{dt} = C  - E \NDM- A \NDM^2,
     \label{eq:DM_num_Sun}
 \end{equation}
 where $C$ and $E$ are the capture and evaporation rates respectively, with $A$ being related to the annihilation rate, $\GAnn$ through
 \begin{align}
-    \GAnn & = \frac{1}{2}\int\,dr^3 n_\mathrm{DM}^2(r) \sigmavdm\\
+    \GAnn & = \frac{1}{2}\int\,dr^3 n_\mathrm{iso}^2(r) \sigmavdm\\
     & \equiv \frac{1}{2}A \NDM^2,
 \end{align}
-where $n_\mathrm{DM}(r)$ is the dark matter number density profile, and the 1/2 accounts for each annihilation removing two dark matter particles from the Sun. If the dark matter has an isothermal distribution then the number density is by
-\begin{align}
-    n_\mathrm{DM}(r) & \equiv n_\mathrm{iso}(r) = n_0\exp\left( - \frac{\mdm \Phi(r)}{T_\odot}\right),\\
-    \Phi(r) & = -\int_r^\infty \,\frac{G M_\odot(r')}{r'^2}dt',
-\end{align}
-with $n_0$ a normalisation constant, $\Phi(r)$ the gravitational potential inside the Sun, and $T_\odot$ the core temperature. Assuming the isothermal sphere of dark matter is small enough such that the internal density, $\rho_\odot$ does not vary significantly, this simplifies to
-\begin{align}
-    n_\mathrm{iso}(r) & = n_0 \exp(-r^2/r_\mathrm{iso}^2),\\
-    r_\mathrm{iso}^2 & = \frac{3 T_\odot}{2\pi G \mdm \rho_\odot},
-\end{align}
-where $r_\mathrm{iso}$ is the radius of the isothermal sphere.
+where the factor of 1/2 accounts for each annihilation removing two dark matter particles from the Sun. 
 
-There are two regimes we are interested in solving this equation for. First, assume that annihilations are negligible  ($\GAnn = 0$), and that the capture and evaporation rates are constant in time. The result is
+In this context, evaporation refers to the process in which dark matter can be ejected back out of the Sun by up-scattering\footnote{Up-scattering refers to the interactions in which the dark matter gains rather than loses energy. } off an energetic constituent. This becomes increasingly important for lighter dark matter masses, as less energy will be required to boost the dark matter above the local escape velocity. Below a certain mass, the capture and evaporation come into equilibrium, and a net-zero amount of dark matter is contained within the Sun.
+This critical mass places a lower bound on the dark matter mass that can be probed through stellar capture and is named the evaporation mass, $\mevap$. 
+
+There are three regimes we are interested in solving this equation for. The simplest case is if both evaporation and annihilation are negligible, or at least have characteristic timescales longer than the age of the Sun. Then the solution is just, 
 \begin{equation}
-    \NDM(t) = Ct\left(\frac{1 - e^{-E t}}{E t}\right), 
+    \NDM(t) = C t,
 \end{equation}
-where the first factor is the number of captured dark matter if evaporation is negligible. From this, we can estimate the evaporation mass by asking when the evaporation rate is large enough to cause a $50\%$ reduction in the number of captured dark matter particles relative to the $E=0$ case
+indicating that the dark matter will simply continue to grow over time.
 
-For dark matter masses $\gtrsim \mevap$, evaporation can be neglected, and we can set $E=0$. Before solving Eq.~\ref*{eq:DM_num_Sun} again, we need to 
+Next, assume that annihilations are negligible  ($A = 0$) and that the capture and evaporation rates are constant in time. The result is
+\begin{equation}
+    \NDM(t) = Ct\left(\frac{1 - e^{-E t}}{E t}\right),  
+\end{equation}
+where the first factor is the number of captured dark matter if evaporation is negligible. From this, we can estimate the evaporation mass by asking when the evaporation rate is large enough to cause a significant reduction in the number of captured dark matter particles relative to the $E=0$ case. This can be expressed formally as~\cite{Garani:2017jcj_may_DarkmatterSun}
+\begin{equation}
+    \frac{1}{\NDM(\mevap)}\left| \NDM(\mevap) - \frac{C(\mevap)}{E(\mevap)} \right| = \alpha,
+\end{equation} 
+where $\alpha$ is the fraction of evaporated dark matter. 
 
+Finally, consider the case in which evaporation can be neglected, $\mdm\gtrsim \mevap$. The solution in this regime is
+\begin{equation}
+    \NDM(t) = \sqrt{\frac{C}{A}}\tanh(\sqrt{CA}t)\overset{t\rightarrow\infty}{\longrightarrow} \sqrt{\frac{C}{A}},
+\end{equation}
+that reaches an equilibrium state between capture and annihilation for times longer than the characteristic scale, $\teq = 1/\sqrt{CA}$. This state is known as capture-annihilation equilibrium.
 
 The signals searched for depend on whether the dark matter can annihilate or not. If the dark matter is asymmetric, it cannot annihilate, and we can set $A = 0$ in Eq.~\ref*{eq:DM_num_Sun}. This leads to the population continuing to grow over time, with $\NDM(t) = Ct$ if evporation is negligible. A large enough population of captured dark matter can alter the energy transport within the Sun, leading to the modifications of the solar neutrino flux, or even the solar structure itself~\cite{Franarin:2018gfk_jun_JUNOSensitivityResonant, Cumberbatch:2010hh_LightWIMPsSun, Vincent:2013lua_apr_Thermalconductiondark,Vincent:2015gqa_aug_Generalisedformfactor}. 
 
@@ -499,7 +526,7 @@ Under these assumptions, limits on the SD dark matter-proton cross-section have 
 \commMV{Change}
 
 Overcoming the first issue requires either a colder star or one that is much heavier. The second requires dark matter to scatter with the constituent material at relativistic energies to overcome the suppression in the cross-sections. 
-Fortunately, there exists objects that meet all these criteria, allowing for a wider variety of dark matter models to be explored then direct detection or traditional indirect detection experiments: compact objects.
+Fortunately, there exist objects that meet all these criteria, allowing for a wider variety of dark matter models to be explored than direct detection or traditional indirect detection experiments: compact objects.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -522,7 +549,7 @@ Compact objects offer a unique laboratory for studying dark matter and its inter
 
 \item \textbf{Large Number of Targets:} The extremely high densities of these objects correspond to a considerable number of targets for scattering to occur. This allows these objects to probe very small scattering cross-sections, with NSs in particular expected to reach as low as $\sim 10^ {-45}\cm^2$. 
 
-\item \textbf{\fixMV{Forgot the last point....}}
+\item \textbf{Low Evpaortion Masses}: Relative to the Sun, the evaporation mass in compact objects can be quite low, on the order of keV in some cases. This is due to in part to the increased gravitational strength, but main to the significantly lower temperatures in old compact objects. 
 \end{itemize}
 
 In the past, capture in NSs has been applied primarily in the context of sending gravitational collapse into black holes~\cite{McDermott:2011jp_ConstraintsScalarAsymmetric,Kouvaris:2011fi_ExcludingLightAsymmetric,Guver:2012ba_may_Capturedarkmatter, Garani:2018kkd_may_NewAnalysisNeutron,Bramante:2013nma_jan_Boundsselfinteractingfermion,Bertoni:2013bsa_dec_DarkMatterThermalization,Bell:2013xk_jun_Realisticneutronstar}, and the modifications of NS merger rates as well as the gravitational wave signatures of these mergers~\cite{Bramante:2017ulk_mar_SearchingDarkMatter, Ellis:2017jgp_jun_SearchDarkMatter, Ellis:2018bkr_jun_DarkMatterEffects,Nelson:2018xtr_jul_Darkhalosneutron}. Capture in WDs has also been considered, with a variety of different applications of the capture process~\cite{Steigerwald:2019efv_dec_DarkMatterThermonuclear, Panotopoulos:2020kuo_jun_Constraintslightdark, McCullough:2010ai_CaptureInelasticDark, Hooper:2010es_InelasticDarkMatter, Bramante:2015cua_sep_Darkmatterignition, Bertone:2007ae_CompactStarsDark}. 
