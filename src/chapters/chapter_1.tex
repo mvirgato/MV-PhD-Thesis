@@ -17,7 +17,7 @@
 
 % Dark Matter is an enigma in modern physics. Despite the significant scientific % effort that has gone into trying to discern its nature, a definitive detection % proving its existence eludes us. Nevertheless, dark matter's influence % on our Universe is undeniable, with evidence supporting its existence arising on \fixMV{all} scales, large and small.
 
-\commMV{Cold collisionless fluid that explains many observations in astrophysics and cosmology. It's existence shouldn't be questioned, only its micro-physical constitution. }
+% \commMV{Cold collisionless fluid that explains many observations in astrophysics and cosmology. It's existence shouldn't be questioned, only its micro-physical constitution. }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -562,7 +562,9 @@ In recent years, dark matter induced heating of NSs has reemerged as a potential
 The aim is to locate the NSs with radio telescopes such as the Square-Kilometer-Array (SKA), and determine their age through their spin-down rate. 
 Once located, the star's temperature can be determined through observations from infrared telescopes such as the James Webb Space Telescope (JWST). Knowing the age of the star allows us to compare its observed temperature to that predicted by models of neutron star cooling. A discrepancy between these two temperatures can indicate whether an additional heating source is present within the star. 
 
-This heating occurs in two stages. The dark matter will first deposit its kinetic energy into the star through the scatterings required for capture and its subsequent thermalisation within the NS core, with this process called \textit{kinetic heating}. If the dark matter can annihilate, it will deposit its mass energy, assuming the products are trapped within the star, termed \textit{annihilation heating}. These processes are illustrated in Fig.~\ref{fig:cartoon_NS_heat}, with the temperatures shown assume a NS in our local neighbourhood.
+This heating occurs in two stages. The dark matter will first kinetically heat the star through the scattering events that result in both its capture and thermalisation. We define \textit{kinetic hearing} to have been achieved once the dark matter has deposited $99\%$ of its initial kinetic energy into the star.
+If the dark matter can annihilate, and assuming these annihilation products remain trapped within the star, its mass energy will be transferred to the star, further increasing the temperature of the star. In order for this \textit{annihilation heating} to be efficient, capture-annihilation equilibrium must be achieved on a timescale shorter than the age of the star. These processes are illustrated in Fig.~\ref{fig:cartoon_NS_heat}, with the temperatures shown assume a NS in our local neighbourhood.
+
 
 \begin{figure}[!t]
     \centering
@@ -572,7 +574,9 @@ This heating occurs in two stages. The dark matter will first deposit its kineti
     \label{fig:cartoon_NS_heat}
 \end{figure}
 
-To accurately determine the limits on dark matter interactions that such an observation could place, one first requires an accurate calculation of the capture rate. However, existing calculations have relied on the formalism set up by Gould for capture in the Sun, without fully accounting for the extreme physics present in these objects. Developing a consistent formalism for dark matter capture in compact objects, based on the Gould formalism, and applying this to dark matter induced heating is at the heart of this thesis.  
+It is important to keep track of all the timescales involved in the heating process so that we can accurately determine the full extent of dark matter-induced heating. These timescales are the age of the star, $\tstar$, the kinetic heating time, $\tkin$, and the capture-annihilation heating timescale, $\teq$. In order for maximal heating to be achieved, we require $\tkin + \teq < \tstar$. 
+
+To accurately project how sensitive neutron star heating to dark matter interactions, one first requires an accurate calculation of the capture rate. However, existing calculations have relied on the formalism set up by Gould for capture in the Sun without fully accounting for the extreme physics present in these objects. Developing a consistent formalism for dark matter capture in compact objects, based on the Gould formalism, and applying this to dark matter induced heating is at the heart of this thesis.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -580,11 +584,16 @@ To accurately determine the limits on dark matter interactions that such an obse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Following this introduction, Chapter~\ref{chapter:capture_2} covers the prerequisite knowledge of compact objects
+required for the remainder of this work. This includes a detailed overview of the general structure equations of relativistic stars, followed by details of the internal structure of both white dwarfs and neutron stars. 
+
 Chapters~\ref{chapter:capture_1} and~\ref{chapter:capture_2} of this thesis are devoted to reformulating Gould's capture formalism to account for the physics specific to compact objects in a self-consistent manner. These include a relativistic treatment of the kinematics, using General Relativity to calculate the correct dark matter flux passing through the star, and accounting for Pauli blocking of the final state target using Fermi-Dirac statistics for the stellar constituents. In addition, we incorporate the internal structure of these objects by calculating the radial profiles for the relevant microscopic quantities (e.g., chemical potentials and number densities) via the adoption of a realistic equation of state.
 
 Further considerations are required when considering dark matter interactions with the baryonic matter inside NSs. Due to the high density of the NS interior, the baryons undergo strong self-interactions and should not be treated as a free Fermi gas. Instead, adopting an equation of state that accounts for these interactions is required. These interactions modify the mass of the baryons, leading them to obtain an effective mass smaller than their value in vacuum. Furthermore, as we will see, the dark matter may interact with the baryons with momentum transfers on the order of $10\GeV$. This is high enough that the dark matter will begin to resolve the internal structure of the baryon. To account for this, the momentum dependence of the baryon form factors that are typically neglected in direct detection and solar capture must be reintroduced.
 
-This formalism is made in preparation for a thorough analysis of the timescales involved in the dark matter heating of compact objects. The energy deposited in both the kinetic and annihilation heating stages does not occur instantaneously, and the timescales involved in them need to be compared to the age of the star in question. We will define kinetic heating timescale as the time required for dark matter to deposit 99\% of its initial kinetic energy into the star. For annihilation heating to occur, the dark matter must reach a state of capture-annihilation equilibrium within the stellar core. In standard calculations of this timescale, the dark matter must first become thermalised with the star. Only then can annihilations occur efficiently enough to heat the star. 
+This formalism is made in preparation for a thorough analysis of the timescales involved in the dark matter heating of compact objects, covered in Chapter~\ref{chapter:capture_5}. The energy deposited in both the kinetic and annihilation heating stages does not occur instantaneously, and the timescales involved in them need to be compared to the age of the star in question. We will define kinetic heating timescale as the time required for dark matter to deposit 99\% of its initial kinetic energy into the star. For annihilation heating to occur, the dark matter must reach a state of capture-annihilation equilibrium within the stellar core. In standard calculations of this timescale, the dark matter must first become thermalised with the star. Only then can annihilations occur efficiently enough to heat the star. 
 
 
-We will work with the EFT operators in Table~\ref{tab:opers_defn_full} that describe Dirac fermion dark matter interacting with Standard Model leptons. Each operator will be studied in isolation, i.e., by considering a Lagrangian that contains only one of the operators rather than a linear superposition of multiple. This way, we can analyse specific types of interactions independently, allowing us to take as model-independent an approach to the phenomenology as possible. 
+We will work with the EFT operators in Table~\ref{tab:opers_defn_full} that describe Dirac fermion dark matter interacting with Standard Model fermions. Each operator will be studied in isolation, i.e., by considering a Lagrangian that contains only one of the operators rather than a linear superposition of multiple. This way, we can analyse specific types of interactions independently, allowing us to take as model-independent an approach to the phenomenology as possible. 
+
+We present our concluding remarks on this thesis in Chapter~\ref{chapter:capture_6}
