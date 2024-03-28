@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{QMC Equation of State Functionals}
+\label{app:QMC_details}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Under the assumption of beta equilibrium throughout the entire NS, the energy density functional, which is the sum of the Hartree and Fock terms, $\epsilon = \epsilon_{\rm Hartree} + \epsilon_\mathrm{Fock}$, in the QMC EoS was derived Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron}. The Hartree term is given by
+%
+\begin{equation}
+	\begin{split}
+		\epsilon_{\rm Hartree} & = \frac{m_\sigma^2\sigma^2}{2} + \frac{m_\omega^2\omega^2}{2}+ \frac{m_\rho^2b^2}{2} + \frac{m_\delta^2\delta^2}{2}\\
+		&+ \frac{1}{\pi^2}\sum_{\cal B}\int_{0}^{k_F^{\cal B}}{k^2}{\sqrt{k^2+\mbeff(\sigma,\delta)^2}dk}   \\
+		& + \frac{1}{\pi^2}\sum_L \int_{0}^{k_F^L}{k^2}{\sqrt{k^2+m_L^2}dk},
+	\end{split}
+\end{equation}
+%
+Here $\sigma, \omega, b$ and $\delta$ denote the isoscalar scalar and vector fields and the isovector vector and scalar fields, respectively. The sums run over the full baryon octet ${\cal B}=(n, p, \Lambda^0, \Sigma^{0,\pm},  \Xi^{0,-})$ and leptons 
+$L=(e^-, \mu^-)$. 
+The meson mean field equations are
+%
+\begin{align}
+\label{eq:mean-field}
+	m_\sigma^2\sigma  & = \frac{1}{\pi^2} \sum_{\cal B} \big(-\partial_\sigma 
+	\mbeff(\sigma,\delta)\big)
+	 \int_0^{k_F^{\cal B}} k^2 
+	\frac{\mbeff(\sigma,{\delta})}{\sqrt{k^2 + \mbeff(\sigma,{\delta})^2}}dk,  \\
+	m_\omega^2 \omega  & = \sum_{\cal B} n_{\cal B} g_\omega  \left( 1+\frac{s_{\cal B}}{3} \right) =
+	\sum_{\cal B}  n_{\cal B} g_\omega^{\cal B} , \\
+	m_\rho^2 b & = \sum_{\cal B}  n_{\cal B} g_\rho t_{3\cal B} =\sum_{\cal B}  n_{\cal B} g_\rho^{\cal B} , \label{eq:meanrho} \\
+	m_\delta^2{\delta}  & =  \sum_{\cal B} \big(-\partial_\delta \mbeff(\sigma,\delta)\big)
+	\frac{1}{\pi^2}\int_0^{k_F^{\cal B}} k^2 
+	\frac{\mbeff(\sigma,{\delta})}{\sqrt{k^2 + \mbeff(\sigma,{\delta})^2}}dk.
+\end{align}
+%. 
+The Fock terms take the form
+%
+\begin{equation}
+	\begin{split}
+		\epsilon_\text{Fock}  & = 
+		\frac{1}{(2\pi)^6} \sum_{\cal B} \int_{k_1,k_2} 
+		\frac{\partial_\sigma \mbeff(\sigma,\delta)^2}{(\vec{k_1}-\vec{k_2})^2+m_\sigma^2}
+		\left[\frac{\mbeff(\sigma,\delta)}{\sqrt{k_1^2+\mbeff(\sigma,\delta)^2}}\right] 
+		\left[\frac{m^{\rm eff}_{\cal B'}(\sigma,\delta)}
+		{\sqrt{k_2^2+m^{\rm eff}_{\cal B'}(\sigma,\delta)^2}}\right] \\
+		&+\frac{1}{(2\pi)^6} \sum_{\cal B,B'} \int_{k_1,k_2}  
+		\frac{Z_{t_{3\cal B} t_{3\cal B'}}}{(\vec{k_1}-\vec{k_2})^2+m_\delta^2}
+		\left[\frac{\mbeff(\sigma,\delta)}{\sqrt{k_1^2+\mbeff(\sigma,\delta)^2}}\right] 
+		\left[\frac{m^{\rm eff}_{\cal B'}(\sigma,\delta)}{\sqrt{k_2^2+m^{\rm eff}_{\cal B'}(\sigma,\delta)^2}}\right]\\
+		&-\frac{1}{(2\pi)^6} \sum_{\cal B} \int_{k_1,k_2}  
+		\frac{{g^{\cal B}_\omega}^2}{(\vec{k_1} - \vec{k_2})^2 + m_\omega^2} 
+		- \sum_{\cal B,B'} \int_{k_1,k_2}  \frac{g_\rho^2 I_{t_{3\cal B} t_{3\cal B'}}}{(\vec k_1 - \vec{k_2})^2 + m_\rho^2}  , 
+	\end{split}
+\end{equation}
+%
+where we have defined for convenience
+%
+	\begin{equation}
+	I_{t_{3\cal B} t_{3\cal B'}}
+	=  \delta_{t_{3\cal B} t_{3\cal B'}} + {(\delta_{t_{3\cal B}, t_{3\cal B'}+1}+\delta_{t_{3\cal B'}, t_{3\cal B}+1})}{t_{\cal B}} 
+	\end{equation}
+%
+and
+%
+\begin{equation}
+	\begin{split}
+		Z_{t_{3\cal B} t_{3\cal B'}}
+		&= \partial_\delta \mbeff(\sigma,\delta)\partial_\delta 
+		m^{\rm eff}_{\cal B'}(\sigma,\delta)  \delta_{t_{3\cal B} t_{3\cal B'}} \\
+		&+ g^{\cal B}_\delta(\delta,\sigma)g^{\cal B'}_\delta(\delta,\sigma)  {(\delta_{t_{3\cal B}, t_{3\cal B'}+1}+\delta_{t_{3\cal B'}, t_{3\cal B}+1})}{t_{\cal B}}.
+	\end{split}
+\end{equation}
+%
+The chemical potentials for each species are defined as 
+%
+\begin{equation}
+    \muFi = \frac{\partial \epsilon}{\partial n_i} .
+\end{equation}
+The relevant coupling constants of the scalar and vector mesons to the baryons, as well as the meson masses and the resulting nuclear matter properties are given in ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron}.
+
+The density dependent scalar couplings are calculated by solving the MIT bag model~\cite{Chodos:1974pn_Baryonstructurebag} equations of motion in the scalar fields and thus our calculation includes the self-consistent adjustment of the internal structure of the baryons in the medium at the corresponding local density~\cite{Guichon:1987jp_Possiblequarkmechanism,Guichon:1995ue_Rolenucleonstructure,Guichon:2018uew_QuarkMesonCouplingQMC}. The density dependence of these couplings is equivalent to the inclusion of repulsive three-body forces between all of the baryons, which arise naturally once allowance is made for the modification of baryon structure in the medium, without any new 
+parameters~\cite{Guichon:2004xg_Quarkstructurenuclear,Thomas:2021kio_jul_Rolequarksnuclear}.

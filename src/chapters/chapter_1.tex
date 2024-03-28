@@ -210,7 +210,7 @@ Unlike black holes that originate from stellar collapse, which have masses $\gtr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Dark Matter in an Effective Fields Theory Framework}
+\subsection{Dark Matter in an Effective Field Theory Framework}
 \label{subsec:DM_EFTs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,7 +234,7 @@ The effective Lagrangian can then be written as
 where we sum over all $j_n$ operators present at mass dimension $n$. The expansion coefficients, $C_i^{(n)}$, are the Wilson coefficients that contain the effects of the UV physics. In general, the Wilson coefficients run with the energy scale they are evaluated at, $\tilde{\mu}$, described by the renormalisation group equations (RGEs).
 The sum over the mass dimension of the operators is typically terminated at some sensible value, as higher dimensional operators get increasingly suppressed by the cutoff scale $\Lambda$.
 
-The series of operators in Eq.~\ref*{eq:EFT_Lagrangian} can be constructed in two different ways. First, we assume some prior knowledge of the underlying UV theory. Then, for a given energy scale $\Lambda$, the heavy degrees of freedom are known, and can be explicitly integrated out. There are various methods for performing this process, the simplest being expanding the propagator of the heavy fields in powers of the momenta over the heavy mass, $(p/M)^2$. For the simple case of a heavy scalar, this corresponds to 
+The series of operators in Eq.~\ref{eq:EFT_Lagrangian} can be constructed in two different ways. First, we assume some prior knowledge of the underlying UV theory. Then, for a given energy scale $\Lambda$, the heavy degrees of freedom are known, and can be explicitly integrated out. There are various methods for performing this process, the simplest being expanding the propagator of the heavy fields in powers of the momenta over the heavy mass, $(p/M)^2$. For the simple case of a heavy scalar, this corresponds to 
 \begin{equation}
     \frac{i}{p^2 - M^2} = \frac{-i}{M^2}\left(\frac{1}{1 - (p/M)^2}\right)\approx \frac{-i}{M^2}\left( 1 + \left(\frac{p}{M}\right)^2 + \mathcal{O}\left(\left(\frac{p}{M}\right)^4\right)\right).
 \end{equation}
@@ -286,13 +286,13 @@ The operators in Table~\ref{tab:opers_defn_full} describe dark matter interactio
 
 The required form factors for each operator have been calculated at zero momentum transfer in Ref.~\cite{Cirelli:2013ufw_oct_Toolsmodelindependentbounds} and are given by 
 \begin{align}
-c_{\cal B}^S(0) &= \frac{2 m_{\cal B}^2}{v^2}\left[\sum_{q=u,d,s}f_{T_q}^{(\cal B)}+\frac{2}{9}f_{T_G}^{(\cal B)}\right]^2,\\
-c_{\cal B}^P(0) &= \frac{2 m_{\cal B}^2}{v^2}\left[\sum_{q=u,d,s}\left(1-3\frac{\overline{m}}{m_q}\right)\Delta_q^{(\cal B)}\right]^2,\\
-c_{\cal B}^V(0) &= 9,\\
-c_{\cal B}^A(0) &=  \left[\sum_{q=u,d,s}\Delta_q^{(\cal B)}\right]^2,\\
-c_{\cal B}^T(0) &= \left[\sum_{q=u,d,s}\delta_q^{(\cal B)}\right]^2,
+c_{\cal B}^S(0) &= \frac{2 m_{\cal B}^2}{v^2}\left[\sum_{q=u,d,s}f_{T_q}^{(\cal B)}+\frac{2}{9}f_{T_G}^{(\cal B)}\right]^2,\label{eq:cBS}\\
+c_{\cal B}^P(0) &= \frac{2 m_{\cal B}^2}{v^2}\left[\sum_{q=u,d,s}\left(1-3\frac{\overline{m}}{m_q}\right)\Delta_q^{(\cal B)}\right]^2,\label{eq:cBP}\\
+c_{\cal B}^V(0) &= 9,\label{eq:cBV}\\
+c_{\cal B}^A(0) &=  \left[\sum_{q=u,d,s}\Delta_q^{(\cal B)}\right]^2,\label{eq:cBA}\\
+c_{\cal B}^T(0) &= \left[\sum_{q=u,d,s}\delta_q^{(\cal B)}\right]^2,\label{eq:cBT}
 \end{align}
-where  $v=246$ GeV is the vacuum expectation value of the SM Higgs field, $\cal B$ is the baryonic species,  $\overline{m}\equiv(1/m_u+1/m_d+1/m_s)^{-1}$ and $f_{T_q}^{(\cal B)}$, $f_{T_G}^{(\cal B)}=1-\sum_{q=u,d,s} f_{T_q}^{(\cal B)}$, $\Delta_q^{(\cal B)}$ and $\delta_q^{(\cal B)}$ are the hadronic matrix elements, determined either experimentally or by lattice QCD simulations\footnote{The superscript letters $S,\;P,\;V,\;A$ and $T$ stand for Scalar, Pseudoscalar, Vector, Axial-vector and Tensor interactions respectively. The corresponding operators are: D1-2 for $S$; D3-4 for $P$; D5-6 for $V$, D7-8 for $A$; and D9-10 for $T$.}. The specific values of these matrix elements for various baryons are provided in Appendix~\fixMV{ADD APPENDIX}.
+where  $v=246$ GeV is the vacuum expectation value of the SM Higgs field, $\cal B$ is the baryonic species,  $\overline{m}\equiv(1/m_u+1/m_d+1/m_s)^{-1}$ and $f_{T_q}^{(\cal B)}$, $f_{T_G}^{(\cal B)}=1-\sum_{q=u,d,s} f_{T_q}^{(\cal B)}$, $\Delta_q^{(\cal B)}$ and $\delta_q^{(\cal B)}$ are the hadronic matrix elements, determined either experimentally or by lattice QCD simulations. The specific values of these matrix elements for various baryons are provided in Appendix~\ref{app:hadronic_matrix_elements}.
 
 The assumption of zero-momentum transfer is valid when considering interactions with momentum transfers $\lesssim 1\GeV$, such as in direct detection experiments. Once the momentum transfer exceeds this, the internal structure of the baryon begins to be resolved, and an additional momentum-dependent form factor is required to account for this~\cite{_ElectromagneticStructureNucleon},
 \begin{equation}
@@ -410,7 +410,7 @@ A significant amount of effort is being put toward overcoming this limitation, w
 
 Many experiments begin to lose sensitivity to low-mass dark matter ($m_\mathrm{DM}\lesssim 10\GeV$) as the recoil energy of the targets falls below the threshold energy resolution of the detector. Current detectors can reach thresholds as low as $\sim {\cal O} (100\eV)$, which is on the same order of magnitude as the recoil energy due to a $1\GeV$ dark matter collision. 
 
-On the other hand, above $\sim 10\GeV$ the sensitivities of the experiments all decrease at a rate inversely proportional to the dark matter mass.  This is due to the interaction rate in Eq.~\ref*{eq:DD_rate} being proportional to the number of dark matter particles that pass through the detector, $\NDM = \rho_\mathrm{DM}/m_\mathrm{DM}$. As the local dark matter density is observed to be $\rho_\mathrm{DM} = 0.4\GeV \cm^{-3}$, $\NDM$ decreases as the dark matter mass increases, and hence so do the detector sensitivities. 
+On the other hand, above $\sim 10\GeV$ the sensitivities of the experiments all decrease at a rate inversely proportional to the dark matter mass.  This is due to the interaction rate in Eq.~\ref{eq:DD_rate} being proportional to the number of dark matter particles that pass through the detector, $\NDM = \rho_\mathrm{DM}/m_\mathrm{DM}$. As the local dark matter density is observed to be $\rho_\mathrm{DM} = 0.4\GeV \cm^{-3}$, $\NDM$ decreases as the dark matter mass increases, and hence so do the detector sensitivities. 
 
 Direct detection limits also assume that the scattering cross-section is independent of the dark matter velocity and momentum transfer in the interaction. Given that the local dark matter dispersion velocity is predicted to be $v_d = 270\km\s^{-1} \approx 10^{-3}c$, a back-of-the-envelope estimation for the momentum transfer gives $q_\mathrm{tr}\lesssim 100 \MeV$. Therefore, cross-sections proportional to $v_\mathrm{DM}$ or $q_\mathrm{tr}$ will result in significantly lower event rates and hence much weaker limits than the unsuppressed interactions. 
 
@@ -510,7 +510,7 @@ Finally, consider the case in which evaporation can be neglected, $\mdm\gtrsim \
 \end{equation}
 that reaches an equilibrium state between capture and annihilation for times longer than the characteristic scale, $\teq = 1/\sqrt{CA}$. This state is known as capture-annihilation equilibrium.
 
-The signals searched for depend on whether the dark matter can annihilate or not. If the dark matter is asymmetric, it cannot annihilate, and we can set $A = 0$ in Eq.~\ref*{eq:DM_num_Sun}. This leads to the population continuing to grow over time, with $\NDM(t) = Ct$ if evporation is negligible. A large enough population of captured dark matter can alter the energy transport within the Sun, leading to the modifications of the solar neutrino flux, or even the solar structure itself~\cite{Franarin:2018gfk_jun_JUNOSensitivityResonant, Cumberbatch:2010hh_LightWIMPsSun, Vincent:2013lua_apr_Thermalconductiondark,Vincent:2015gqa_aug_Generalisedformfactor}. 
+The signals searched for depend on whether the dark matter can annihilate or not. If the dark matter is asymmetric, it cannot annihilate, and we can set $A = 0$ in Eq.~\ref{eq:DM_num_Sun}. This leads to the population continuing to grow over time, with $\NDM(t) = Ct$ if evporation is negligible. A large enough population of captured dark matter can alter the energy transport within the Sun, leading to the modifications of the solar neutrino flux, or even the solar structure itself~\cite{Franarin:2018gfk_jun_JUNOSensitivityResonant, Cumberbatch:2010hh_LightWIMPsSun, Vincent:2013lua_apr_Thermalconductiondark,Vincent:2015gqa_aug_Generalisedformfactor}. 
 
 Instead, if the dark matter can annihilate an equilibrium will eventually be reached between the capture and annihilation rates, and the total number of dark matter particles will be constant. If the annihilation products can escape the Sun, they can be searched for by various experiments depending on the nature of the final states.
 These could be neutrinos produced from the decays of other charged annihilation products~\cite{Super-Kamiokande:2011wjy_IndirectSearchWIMPs,Super-Kamiokande:2015xms_apr_Searchneutrinosannihilation,ANTARES:2016obx_may_SearchSecludedDark,ANTARES:2016xuh_aug_LimitsDarkMatter,IceCube:2016dgk_Searchannihilatingdark}, or to some other long-lived state that can escape the Sun and decay into visible states~\cite{Batell:2009zp_SolarGammaRays,Schuster:2009au_TerrestrialSolarLimits,Bell:2011sn_Enhancedneutrinosignals,Feng:2016ijc_jun_DarkSunshineDetecting,Leane:2017vag_jun_PowerfulSolarSignatures}.

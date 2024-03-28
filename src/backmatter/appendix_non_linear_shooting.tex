@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Solving the FMT EoS}
+\label{app:FMT_solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Here we demonstrate how the nonlinear shooting method is used to solve the zero-temperature Feynman-Mettopolis-Teller equation of state for white dwarfs. The same algorithm can be used to solve the finite temperature EoS. 
+
+To begin, define a function $f(x, \chi, \chi')$ to be
+\begin{align}
+    f(x, \chi, \chi') & = \frac{d^2\chi}{dx^2}\\
+    & =  -\frac{3 x \alpha_\mathrm{EM}}{\Delta^3}\theta(x_c -x) + \frac{4 x\alpha_\mathrm{EM}}{3\pi}\left[ \frac{\chi^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\chi(x)}{x}\right]^{3/2},
+ \end{align}   
+with the domain $0 \leq x \leq x_\mathrm{WS}$.
+In general, the boundary conditions can be written as a set of linear equations
+\begin{align}
+    a_0 \chi(0) - a_1 \chi'(x_\mathrm{WS}) &= \gamma. \\ 
+    b_0 \chi(0) + b_1 \chi'(x_\mathrm{WS}) & = \beta
+\end{align}
+where in the present case the coefficients are simply
+\begin{equation}
+    a_0 = 1,\quad a_1 = 0,\quad b_0 = 1,\quad b_1 = -x_\mathrm{WS}, \quad \gamma =0,\quad \beta = 0.
+\end{equation}
+We will remain as general as possible so that this method can be adapted easily to other systems while highlighting the key results for the current application.
+
+This boundary value problem (BVP) can be related to an equivalent initial value problem (IVP) by parameterising the initial slope by the paramater $s$.  We define for the function $u(x)$ to be a solution to this IVP such that
+\begin{equation}
+    u''(x) = f(x, u, u'),
+\end{equation}
+with the initial conditions
+\begin{align}
+    u(0) & = a_1 s - c_1 \gamma \\
+    u'(0) & = a_0 s - c_0 \gamma 
+\end{align}
+where the coefficients $c_0$ and $c_0$ are any constants that satisfy 
+\begin{equation}
+    a_1 c_0 - a_0 c_1 = 1.
+\end{equation}
+For the FMT case, we have $c_1 = -1$, and $c_0$ is a free parameter that can be set to 0, leaving
+\begin{align}
+     u(0) & = 0\\
+     u'(0) & = s - c_0.
+\end{align}
+
+The solution to the IVP depends on the value of $s$, and so we write this as $u(x;s)$. This solution will also satisfy the original BVP if the $s$ is a root of
+\begin{align}
+    &b_0 u(b;s) + b_1 u'(b; s) - \beta = 0\\
+     \implies &  u(x_\mathrm{WS};s) - x_\mathrm{WS} u'(x_\mathrm{WS};s) = 0\quad\mathrm{(FMT\; EoS)}.
+\end{align}
+It will be convenient to express this condition in terms of the roots of a function $\phi(s)$ defined as 
+\begin{equation}
+    \phi(s) = b_0 u(b;s) + b_1 u'(b; s) - \beta = 0.
+\end{equation} 
+
+The IVP can be solved by reduction of order, changing it into a system of two first-order non-linear ODEs taken to be 
+\begin{align}
+    u(x)' & = v(x),\\
+    v'(x) & = f(x, u, v),
+\end{align}
+with the initial conditions given in general by
+\begin{align}
+    u(a) & = a_1 s - c_0 \gamma, \\
+    v(a) & = a_0 s - c_0 \gamma, 
+\end{align}
+and specifically here are
+\begin{align}
+    u(0) &= 1,\\
+    v(0) & = s - c_0.
+\end{align}
+We denote the solutions as $u(x;s)$ and $v(x;s)$, and re-express $\phi(s)$ in terms of these functions as
+\begin{align}
+     \phi(s) & = b_0 u(b;s) + b_1 v(b; s) - \beta = 0.
+\end{align}
+
+
+To solve the system numerically, we can define a grid consisting of $J$ points 
+\begin{equation}
+    0\leq x_j \leq x_\mathrm{WS},\quad 0\leq j\leq J,
+\end{equation}
+and solve the system on this grid for some initial choice of $s_0$. We represent the numerical solutions as vectors $U_j(s_0)$,  $V_j(s_0)$, with $\phi(s)$ is then simply
+\begin{align}
+    \phi(s_0) & = b_0 U_J(s_0) +b_1 V_J(s_0) - \beta.\\
+\end{align}
+As this choice of $s_0$ was essentially arbitrary, it will almost certainly not be a root. We can then use Newton's method to iteratively select the next $s$ used to solve the system. In general, the next iteration of $s$ given the previous choice is found through
+\begin{align}
+    s_{i+1} & = s_i - \frac{\phi(s_i)}{\dot{\phi}(s_i)}
+\end{align}
+where $\dot{\phi}(s) = \frac{\partial\phi}{\partial s}$.
+
+However, $\dot{\phi}(s)$ is trivial to calculate, as it depends on the functions $u(x;s)$ and $v(x;s)$. We must therefore define an additional set of functions, 
+\begin{align}
+    \xi(x) & = \frac{\partial u(x;s)}{\partial s},\\
+    \eta(x) & = \frac{\partial v(x;s)}{\partial s},
+\end{align}
+that results in the additional ODEs that must be solved alongside the original two,
+\begin{align}
+    \xi' & = \eta,\\
+    \eta' & = p(x;s)\eta +q(x;s) \xi,
+\end{align}
+with the $p$ and $q$ functions given by
+\begin{align}
+    p(x;s) & = \frac{\partial f}{\partial v},\\
+    q(x;s) & = \frac{\partial f}{\partial u}.
+\end{align}
+
+The initial conditions for these equations are 
+\begin{align}
+    \xi(a) & = a_1, \\
+    \eta(a) & = a_0,
+\end{align}
+
+For the application to the FMT EoS, these functions are given explicitly by
+\begin{align}
+    p(x;s) & = 0.\\
+    q(x;s) & = \frac{4\alpha_\mathrm{EM} }{\pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2}\left( \frac{u}{x} + \frac{m_e}{m_\pi} \right),
+\end{align}
+Thus we can now express $\dot \phi (x)$ in terms of these new functions as
+\begin{align}
+    \dot{\phi}(s) &= b_0 \xi(b;s) + b_1\eta(b;s).\\
+\end{align}
+The complete system of ODEs needed to solve the IVP is given by  
+\begin{align}
+    u' & = v,\\
+    v' & = -\frac{3 x \alpha_\mathrm{EM}}{\Delta^3}\theta(x_c -x) + \frac{4 x\alpha_\mathrm{EM}}{3\pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x}\right)^{3/2},\\
+    \xi' & = \eta\\
+    \eta' & = \frac{4\alpha_\mathrm{EM} }{\pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2}\left( \frac{u}{x} + \frac{m_e}{m_\pi} \right) \xi
+\end{align}
+with the conditions 
+\begin{align}
+    u(0) &=0,\quad v(0) =s_i,\\
+    \xi(0) &=0,\quad \eta(0) =1,
+\end{align}
+where $s_i$ is the $i$th iteration of $s$ found by via
+\begin{align}
+    s_{i+1} = s_i - \frac{u(x_\mathrm{WS};s_i) - x_\mathrm{WS} v(x_\mathrm{WS};s_i)}{\xi(x_\mathrm{WS};s_i) - x_\mathrm{WS} \eta(x_\mathrm{WS};s_i)}.
+\end{align}
+The initial ``guess'' of $s_0$ that starts the loop should be chosen wisely to be somewhat close to the true value. The final system is found once the absolute value of $\phi(s_i)$ falls below the tolerance specified, 
+\begin{equation}
+    |\phi(s_i)|<\varepsilon_\mathrm{tol},
+\end{equation}
+with standard values of $\varepsilon_\mathrm{tol} = 10^{-4}$.
+
+Once the system is solved, we re-associate $u(x)$ with $\chi(x)$ and the pressure, density and chemical potential profiles within the cell can be obtained.
+
+Depending on the algorithm used in solving the IVP, the Jacobian matrix may be required and is given by
+\begin{equation}
+    J = \begin{pmatrix}
+         0 & 1 & 0 & 0 \\ \frac{4\alpha_\mathrm{EM} }{\pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2}\left( \frac{u}{x} + \frac{m_e}{m_\pi} \right) & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ \frac{8\alpha_\mathrm{EM} \xi }{\pi x}\frac{\left( \frac{u^2}{x^2} + 2\frac{m_e u}{m_\pi x} +\frac{m_e^2}{2m_\pi^2} \right)}{\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2} } & 0 & \frac{4\alpha_\mathrm{EM} }{\pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2}\left( \frac{u}{x} + \frac{m_e}{m_\pi} \right) & 0
+    \end{pmatrix},
+\end{equation}
+as well as the vector of the second derivatives
+\begin{equation}
+    \frac{\partial}{\partial x}
+    \begin{pmatrix}
+        u' \\ v' \\ \xi' \\ \eta'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+         0 \\ -\frac{3\alpha_\mathrm{EM} }{\Delta^3}\theta(x_c - x) - \frac{8 \alpha_\mathrm{EM} }{3 \pi}\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2} \left( \frac{u^2}{x^2} + \frac{m_e}{2 m_\pi}\frac{u}{x} \right) \\ 0 \\ -\frac{8\alpha_\mathrm{EM} \xi }{\pi x^2}\frac{\left( \frac{u^2}{x^2} + 2\frac{m_e u}{m_\pi x} +\frac{m_e^2}{2 m_\pi^2} \right)}{\left( \frac{u^2}{x^2} + 2\frac{m_e}{m_\pi}\frac{u}{x} \right)^{1/2} })
+    \end{pmatrix}.
+\end{equation}
