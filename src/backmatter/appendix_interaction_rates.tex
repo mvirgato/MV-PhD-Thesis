@@ -1,0 +1,588 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Derivation of Dark Matter Interaction Rates in Degenerate Media}
+\label{app:interaction_rates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Interaction Rates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The most general form of the interaction rate, following Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, can be written as
+\begin{align}
+    \Gamma &= \int\frac{d^3 k'}{(2\pi)^3}\frac{1}{(2E_\chi)(2E_\chi')(2\mi)(2\mi)}\Theta(E_\chi' - \mchi)\Theta(\pm q_0)S(q_0, q),\\
+    \begin{split}
+        S(q_0, q) & = 2\int\frac{d^3 p}{(2\pi)^3}\int\frac{d^3 p'}{(2\pi)^3}\frac{\mi^2}{\Ei \Ei'}\Msq(2\pi)^4\delta^4\left( k_\mu + p_\mu - k_\mu' - p_\mu'\right)\\
+        &\hspace{5em}\times \fFD(\Ei)(1 - \fFD(\Ei'))\Theta(\Ei - \mi)\Theta(\Ei' - \mi),
+    \end{split}
+\end{align}
+The $\delta$-function can be used to perform the $d^3p'$ integrations, leaving
+\begin{equation}
+    \begin{split}
+        S(q_0, q) = \frac{1}{2\pi^2}\int d^3p \; \frac{\mi^2}{\Ei \Ei'}\Msq &\delta\left( q_0 + \Ei - \Ei'\right) \fFD(\Ei)(1 - \fFD(\Ei'))\\
+        &\times\Theta(\Ei- \mi)\Theta(\Ei' - \mi).
+    \end{split}
+\end{equation}
+After this, the final state target energy is fixed to
+\begin{align}
+    \Ei'(\Ei,q,\theta) &= \sqrt{\mi^2+(\vec{p}+\vec{q})^2}\\
+    &= \sqrt{\Ei^2+q^2+2qp\cos\theta} > \mi, \quad\forall p,q,\theta, |\cos\theta|<1,
+\end{align}
+where $\theta$ is the angle between the target initial momentum and the transferred momentum, $\vec{q}$, that is defined below. To perform the remaining integrals, we write $d^3 p  = p \Ei d\Ei\, d\cos\theta\,d\phi$. The kinematics of this interaction are depicted in Fig.~\ref{fig:kin_int_rates}, where the incoming momenta are defined relative to the momentum transfer that is set to lie along the $z$-axis.  In doing so, we must account for the fact that in this frame we cannot assume all three of the vectors are coplanar, and assign the additional azimuthal angle $\phi$ to the target momentum. 
+
+In general, the squared matrix elements we are interested in can be expressed as polynomials in the Mandalstam variables $s$ and $t$, such that
+\begin{equation}
+    \Msq = \sum_{n,m}\alpha_{n,m} t^n s^m.
+\end{equation}
+Writing $s = m_\chi^2 + \mi^2 + 2E_\chi \Ei - 2\vec{p}\cdot \vec{k}$, the quantity $\vec{k}\cdot\vec{p}$ is obtained by analysing the kinematics of the interaction. From the diagram in Fig.~\ref{fig:kin_int_rates}, we can write the inital momenta as
+\begin{align}
+    \vec{k} & = (k\sin\theta_\chi, 0, k\cos\theta_\chi),\\
+    \vec{p} & = (p\sin\theta \cos\phi, p\sin\theta \sin\phi, p\cos\theta).
+\end{align}
+
+\begin{figure}[t!bp]
+    \centering
+    \begin{tikzpicture}
+    \draw[->] (0, -0.5) -- (0, 4) coordinate (s);
+    \draw[->] (-4, 0) -- (4, 0) coordinate (x);
+    \draw[->] (-4, -1) -- (4,1);
+    \draw[dashed, bluemv] (-3,0) -- (-3,2);
+    
+    \draw[very thick, red, ->] (0,0) coordinate (O) -- (0,3) node [right] {$\vec{q}$};
+    \draw[very thick, bluemv, ->] (0,0) -- (-3, 2) coordinate  [label = above:$\vec{k}$] (t);
+    \draw[very thick, orangemv, ->] (0,0) -- (2.5, 1.5) coordinate [label = above:$\vec{p}$] (t');
+    \draw[dashed, orangemv] (2.5, 1.5) -- (2.5, -1) coordinate (z);
+    \draw[dashed, orangemv] (0,0) -- (2.5, -1);
+    
+    \pic [draw, orangemv,
+      angle radius=11mm, angle eccentricity=1.4,
+      "$\phi$"] {angle = z--O--x};
+      
+    \pic [draw, orangemv,
+      angle radius=6mm, angle eccentricity=1.4,
+      "$\theta$"] {angle = t'--O--s};
+      
+    \pic [draw, bluemv,
+      angle radius=8mm, angle eccentricity=1.4,
+      "$\theta_{\chi}$"] {angle = s--O--t};
+    \end{tikzpicture}
+    \caption{Schematic of kinematics for dark matter interacting with a target in the frame of the star. We set the momentum transfer to lie along the $z$-axis with the initial momenta defined relative to it. }
+    \label{fig:kin_int_rates}
+\end{figure}
+
+The angles can then be expressed in terms of the other kinematic quantities by noting that
+\begin{align}
+  E'_\chi & = \sqrt{m_\chi^2 + (\vec{k} - \vec{q})},\\
+  \implies (E_\chi - q_0)^2  & = m_\chi^2 + (k^2 +q^2 -2 k q \cos\theta_\chi)\\
+  \implies \cos\theta_\chi &= \frac{q^2 - q_0^2 +2 E_\chi q_0}{2 q \sqrt{E_\chi^2 - m_\chi^2}},\\
+  \Ei' & = \sqrt{\mi^2 + (\vec{p} + \vec{q})},\\
+\end{align}
+for the dark matter angle, and 
+\begin{align}
+  \implies (\Ei + q_0)^2  & = \mi^2 + (p^2 +q^2 +2 p q \cos\theta)\\
+  \implies \cos\theta &= \frac{q_0^2 - q^2 +2 \Ei q_0}{2 q \sqrt{\Ei^2 - \mi^2}}\label{eq:cosn}
+\end{align}
+for the target angle.
+These result in
+\begin{align}
+    \vec{k}\cdot \vec{p} & = kp\sin\theta_\chi\sin\theta\cos\phi + k p \cos\theta_\chi \cos\theta\\
+    \begin{split}
+        & = kp\left[ \sqrt{1  - \frac{(q^2 - q_0^2 +2 E_\chi q_0)^2}{4 q^2 (E_\chi^2 - m_\chi^2)}}\sqrt{1 - \frac{(q_0^2 - q^2 +2 \Ei q_0)^2}{4 q^2 (\Ei^2 - \mi^2)}}\cos\phi \right. \\
+        &\hspace{6em} \left. + \frac{(q^2 - q_0^2 + 2E_\chi q_0)(q_0^2 - q^2 +2 \Ei q_0)}{4 q^2 \sqrt{E_\chi^2 -m_\chi^2}\sqrt{\Ei^2 -\mi^2}} \right]
+    \end{split}\\
+    \begin{split}
+        & = \frac{(q^2 - q_0^2 + 2E_\chi q_0)(q_0^2 - q^2 +2 \Ei q_0)}{4 q^2}\\ 
+        &+ \sqrt{E_\chi^2 - m_\chi^2  - \frac{(q^2 - q_0^2 +2 E_\chi q_0)^2}{4 q^2 }}\sqrt{\Ei^2 - \mi^2 - \frac{(q_0^2 - q^2 +2 \Ei q_0)^2}{4 q^2 }}\cos\phi.
+    \end{split}
+\end{align}
+This makes explicit that $s$ is now a function of the azimuthal angle $\phi$. 
+
+We then use the remaining delta function to integrate over $\theta$, giving rise to a step function $ \Theta(1-\cos^2\theta(q,q_0,\Ei))$, leaving the 
+\begin{equation}
+S(q_0,q) = \alpha t^n \frac{\mi^2}{2\pi^2 q}\int d\Ei d\phi s^m  \fFD(\Ei)(1-\fFD(\Ei+q_0))\Theta(\Ei)  \Theta(1-\cos^2\theta).
+\end{equation}
+It will be more convenient to work with the kinetic energies of the targets rather than their total energies, as we are only interested in elastic scattering. From here on out, $\Ei$ will refer to the kinetic energy of the target, i.e. $\Ei\rightarrow \Ei + \mi$. This is compensated by using the Fermi kinetic energy in the FD distributions, $\kinFi = \muFi - \mi$.
+
+The $\phi$ integrals can be easily computed for a given power of $s$, in general resulting in a messy function of the kinematic variables. However, we know that they will always be a polynomial of degree $m$, and so to make this explicit while keeping things as tidy as possible, we define the polynomials $\mathcal{U}_m(q^2, q_0, E_\chi, \Ei)$ as
+\begin{equation}
+    \mathcal{U}_m = \frac{q^{2m}}{2\pi}\int_0^{2\pi}d\phi\; s^m = \sum_{r}\mathcal{V}_{m,r}\Ei^r
+\end{equation}
+where the coefficients of the polynomial, $\mathcal{V}_{m,r}$, are functions of $q^2, q_0$, and $E_\chi$.
+The response function is then
+\begin{equation}
+    S(q_0, q) = \alpha t^n \frac{\mi^2}{\pi q}\int d\Ei\; \fFD(\Ei)(1 - \fFD(\Ei +q_0)) \frac{\mathcal{U}_m}{q^{2m}}\Theta(\Ei)\Theta(1 - \cos^2\theta).
+\end{equation}
+
+Therefore, the integrals we are interested in computing are over the FD distributions, which we call
+\begin{equation}
+    \mathcal{F}_r(\Ei, q_0) = \int d\Ei \Ei^r \fFD(\Ei)(1 - \fFD(\Ei + q_0)).
+\end{equation}
+To proceed, make the change to the dimensionless variables
+\begin{equation}
+    x = \frac{\Ei - \kinFi}{\Tstar}, \; z = \frac{q_0}{\Tstar},
+\end{equation}
+which we can use to write
+\begin{align}
+       \mathcal{F}_r(E_i, q_0) & = \Tstar\int dx \left( \kinFi + \Tstar x\right)^r \fFD(x)\fFD(-x-z)\\
+       & = \Tstar\int dx \sum_{j = 0}^r \binom{r}{j} \Tstar^j x^j \kinFi^{r-j}\fFD(x)\fFD(-x-z)\\
+       & = \sum_{j = 0}^r \Tstar^{j+1} \binom{r}{j}\kinFi^{r-j}\int dx x^j\fFD(x)\fFD(-x-z)\\
+       & =  \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j} \int d\Ei (\Ei - \kinFi)^j \fFD(\Ei)\fFD(-\Ei - q_0)\\ 
+    %   & = \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j} F_j(\Ei -\kinFi, q_0)\\
+       & = \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j} (-1)^{j} \frac{q_0^{j+1}}{j+1}g_j\left( \frac{\Ei - \kinFi}{q_0} \right),\quad\mathrm{for}\; \Tstar\rightarrow 0,
+\end{align}
+where the final line holds in the zero-temperature approximation in which the FD distributions become $\Theta$-functions, allowing the integrals to be expressed in terms of the function 
+\begin{equation}
+    g_j(x) = \begin{cases}
+        & 1, \quad x >0\\
+        & 1-(-x)^{j+1},\quad -1<x <0\\
+        & 0,\quad x<-1
+    \end{cases}.
+\end{equation}
+% For $i = 1, 2$ we have
+% \begin{align}
+%     \int d\Ei \Ei \fFD(\Ei)(1 - \fFD(\Ei + q_0)) & =F_1(\Ei -\kinFi, q_0) + \kinFi F_0(\Ei -\kinFi, q_0)\\
+%     \int d\Ei \Ei^2 \fFD(\Ei)(1 - \fFD(\Ei + q_0)) & = F_2(\Ei -\kinFi, q_0) + 2\kinFi F_1(\Ei -\kinFi, q_0) + \kinFi^2 F_0(\Ei -\kinFi, q_0)
+% \end{align}
+
+The integration range for $\Ei$ is obtained from the two $\Theta$-functions. There are two cases to be considered, $t<0$ and $t>0$. In the former case, the range become $\Ei^{t^-}<\Ei<\infty$ and for the latter $0<\Ei<\Ei^{t^+}$. These integration bounds are obtained from Eq.~\ref{eq:cosn}, by settting $\cos\theta = 1$, and are given by
+\begin{align}
+    \Ei^{t^-} & = -\left( \mi+\frac{q_0}{2}\right) + \sqrt{\left( \mi+\frac{q_0}{2}\right)^2 + \left( \frac{\sqrt{q^2 - q_0^2}}{2} - \frac{\mi q_0}{\sqrt{q^2 - q_0^2}}\right)^2}\\
+    \Ei^{t^+} & = -\left( \mi+\frac{q_0}{2}\right) + \sqrt{\left( \mi+\frac{q_0}{2}\right)^2 - \left( \frac{\sqrt{q_0^2 - q^2}}{2} + \frac{\mi q_0}{\sqrt{q_0^2 - q^2}}\right)^2}.
+\end{align}
+These are both the same root of Eq.~\ref{eq:cosn}, but with an interchange of $t\leftrightarrow -t$. We denote the response function for $t<0$ as $S^-$ and for $t>0$ as $S^+$. For $S^-$ we have
+\begin{align}
+    S^-_m & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r}\int_{\Ei^{t^-}}^\infty d\Ei \Ei^r \fFD(\Ei)(1 - \fFD(\Ei +q_0))\\
+    & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}\int_{\Ei^{t^-}}^\infty d\Ei (\Ei - \kinFi)^j \fFD(\Ei)\fFD(-\Ei - q_0)\\
+    & =  \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1}\left[ 1 - g_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right) \right]\\
+    & =  \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right),
+\end{align}
+while for $S^+$ the logic is
+\begin{align}
+    S^+_m & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r}\int_{0}^{\Ei^{t^+}} d\Ei \Ei^r \fFD(\Ei)(1 - \fFD(\Ei +q_0))\\
+    & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}\int_{0}^{\Ei^{t^+}} d\Ei (\Ei - \kinFi)^j \fFD(\Ei)\fFD(-\Ei - q_0)\\
+    & =  \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1}\left[ g_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right) -  g_j\left( \frac{ - \kinFi}{q_0}\right) \right]\\
+    & =  -\alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right)\quad \textrm{for}\; q_0<0,
+\end{align}
+with 
+\begin{equation}
+    h_j(x) = \begin{cases}
+        & 0, \quad x >0\\
+        & (-x)^{j+1},\quad -1<x <0\\
+        & 1,\quad x<-1
+    \end{cases}.
+\end{equation}
+
+The final step of the $S^+$ calculation holds only for up-scattering of the DM, i.e. $q_0<0$.
+% Some results
+% \begin{align}
+%      S_0 &= \alpha t^n \frac{\mi^2 q_0}{\pi q}h_0\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)\\
+%      S_1 &= \alpha t^n \frac{\mi^2}{\pi q^3}\left[ \mathcal{V}_{1,0} \left( q_0 h_0\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right) \right) + \mathcal{V}_{1,1} \left( \kinFi q_0 h_0\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right) -\frac{q_0^2}{2}h_1\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)  \right)\right]
+% \end{align}
+
+For matrix elements that are polynomials in $s$ and $t$, the full response function is simply the sum of the $n$ and $m$, giving
+\begin{align}
+    S^- & = \sum_{n,m}\alpha_{n,m} t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)\\
+    S^+ & = -\sum_{n,m}\alpha_{n,m} t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right)
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Elsatic Scattering}
+\label{sec:elastic_scatter_full}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Down-scattering Rate}
+\label{subsec:down_scatter_derivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Returning to the scattering rate, we first look at the case of down-scattering, where the DM loses energy, $q_0 > 0$. In this case, the interaction rate is given by
+\begin{equation}
+    \begin{split}
+        \Gamma^{-}(E_\chi) = \int \frac{d\cos\theta_\chi k^{'2}dk'}{64\pi^3 E_\chi E'_\chi } & \Theta(E_\chi-q_0-m_\chi)\Theta(q_0)\sum_{n,m} \frac{\alpha_{n,m} t^n}{ q^{2m + 1}}\\
+        &\times \sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)
+    \end{split}
+\end{equation}
+Change variables to $q_0$ and $q$ through
+\begin{align}
+    q_0 &= E_\chi - \sqrt{k'^2 +m_\chi^2},\\
+    q^2 &= k^2 + k'^2 -2kk'\cos\theta_\chi,\\
+    \implies dk' d\cos\theta_\chi  & = \frac{E_\chi' q}{kk'^2} dq_0 dq
+\end{align}
+To further simplify the notation we introduce $t_E = -t = q^2 - q_0^2$, $dq = dt_E/(2q)$, and exchange the $q$-integral for
+\begin{equation}
+    \implies dk' d\cos\theta_\chi = \frac{E_\chi' }{2kk'^2} dq_0 dt_E,
+\end{equation}
+giving the interaction rate as
+\begin{align}
+    \begin{split}
+        \Gamma^{-}(E_\chi)- & = \frac{1}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0 \int dt_E\sum_{n,m} \frac{\alpha_{n,m} (-1)^n t_E^n}{ (t_E+q_0^2)^{m + \frac{1}{2}}}\\
+        &\hspace{4em}\times\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)
+    \end{split}\\
+    \begin{split}
+        & = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int \frac{dt_E t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\\
+        &\hspace{4em}\times\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right)
+    \end{split}.
+    % \\
+    % \Gamma^+ & = \sum_{n,m}  \frac{ \alpha_{n,m}}{128\pi^3 E_\chi k }\int_{-\infty}^0 dq_0 \int \frac{dt\; t^n}{(q_0^2 - t)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right)
+\end{align}
+
+There are then two main cases to consider; when $h_j(x)$ is unity or when it is not. We denote the $t_E$ integrand in the former case as $f_1$ and $f_2$ for the latter, given explicitly as
+\begin{align}
+    f_1^{(m,n)}(t_E) & =  \frac{t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1},\\
+    f_2^{(m,n)}(t_E) & = \frac{-t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{1}{j+1} \left( \Ei^{t^-} - \kinFi\right)^{j+1},
+\end{align}
+where we suppress the explicit dependence on the other variables for brevity. We encode the integrals over $t_E$ within an operator 
+\begin{align}
+    \begin{split}
+        \mathcal{I}_{n,m}(f^{(m,n)}(t),t_1^+,t_2^+,t_1^-,t_2^-) &= \sum_{i=1,2}\sum_{j=1,2} \left(F^{(m,n)}(t_i^+)-F^{(m,n)}(t_j^-)\right)\\
+        &\hspace{2em}\times \Theta\left(t_{3-i}^+-t_i^+\right)\Theta\left(t_i^+-t_j^-\right)\Theta\left(t_j^--t_{3-j}^-\right),
+    \end{split}\\
+    F^{(m,n)}(t) &= \int dt \, f^{(m,n)}(t).
+\end{align}
+
+The full interaction rate is then written as
+\begin{align}
+    \begin{split}
+        \Gamma^{-}(E_\chi)  =& \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0  \\
+         \times & \left[ \mathcal{I}_{n,m}\left(f_1^{(m,n)}(t),t_E^+,t_{\mu^-}^+,t_E^-,t_{\mu^-}^-\right)\Theta(\kinFi-q_0)\right.\\
+        + & \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^-}^+\right)\Theta(\kinFi-q_0) \\
+        + & \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^-}^-,t_E^-,t_{\mu^+}^-\right)\Theta(\kinFi-q_0) \\
+        + & \left. \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{eq:gammafull_app}
+    \end{split}
+\end{align}
+where the $t_E$ integration limits are
+\begin{align}
+ t_E^\pm &= 2\left[E_\chi(E_\chi-q_0)-m_\chi^2\pm k\sqrt{(E_\chi-q_0)^2-m_\chi^2}\right],\\
+ \begin{split}
+    t_{\mu^{+}}^\pm &= 2\left[\kinFi(\kinFi+q_0)+\mi(2\kinFi+q_0) \right. \\
+    &\hspace{4em}\left.\pm \sqrt{\left(\kinFi(\kinFi+q_0)+\mi(2\kinFi+q_0)\right)^2-\mi^2q_0^2}\right],
+ \end{split}\\
+ \begin{split}
+    t_{\mu^{-}}^\pm &=  2\left[\kinFi(\kinFi-q_0)+\mi(2\kinFi-q_0)\right.\\
+    &\hspace{4em}\left.\pm\sqrt{\left(\kinFi(\kinFi-q_0)+\mi(2\kinFi-q_0)\right)^2-\mi^2q_0^2}\right], 
+ \end{split}
+\end{align}
+
+All interaction rate spectra will have an endpoint at $q_0 = \qomax$, the maximum amount of energy that can be lost in a single interaction.
+The value of $\qomax$ is shown in the left panel of Fig.~\ref{fig:q0max} as a function of $B$ in the case of large DM mass ($m_\chi = 1\TeV$), for several values of $\kinFn$. The endpoint can be found as the minimum between the DM kinetic energy and the root of one of the following two equations 
+\begin{eqnarray}
+    t_E^- = t_{\mu^+}^+,\\
+    t_E^+ = t_{\mu^+}^-.
+\end{eqnarray}
+Only one of these equations will have a positive root for a given choice of $m_\chi$, $\kinFn$ and $E_\chi$.
+For $m_\chi\gg \mi$, the second equation never has a solution, and the solution of the first equation is always much lower than the kinetic energy. This results in the value of $\qomax$ becoming independent of $m_\chi$ in this mass range.
+
+
+The shape of the differential interaction rate depends very weakly on $m_\chi$ and $B$ for $m_\chi\gg \mi$ and $m_\chi \ll \mi$, as seen by plotting it as a function of $\qonorm=q_0/\qomax$. Therefore, we use as a reference $m_\chi=1\TeV$ (left) and $m_\chi=10\MeV$ (right),  $B=0.5$, and show the normalised differential interaction rates in Fig.~\ref{fig:diffgamma} for $n=0,1,2$, and neutron targets.
+We observe in the left panels that for $n=0$ interaction rates are flat (or peaked, depending on $\kinFn$) at low energy and suppressed at high energies, while for $n=1,2$ the profiles become peaked at higher and higher energies. Conversely, for $m_\chi=10\MeV$ the peak of the spectrum is shifted to lower energies with increasing power of $t$ ($d\sigma\propto t^n$).
+
+\begin{figure}
+    \centering
+    \includegraphics{img/chapter_3/capture_1/norm_diff_intrate_n.pdf}
+    \caption{Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$. Top row: $n=0$, middle row: $n=1$, bottom row: $n=2$.}
+    \label{fig:diffgamma}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Up-scattering Rate}
+\label{subsec:up_scatter_derivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We now treat the case of $q_0<0$ applicable to up scattering and evaporation. Focusing on $s$-independent matrix elements for the moment, the response function is
+\begin{equation}
+    S^{-}_\mathrm{up}(q_0, q) = \frac{\mi^2}{\pi q}\int_{\Ei^{t^-}}^\infty\fFD(\Ei)(1 - \fFD(\Ei -|q_0|))
+\end{equation}
+and evaluate the integral, now with $q_0 <0$. If we attempt to take the $\Tstar\rightarrow 0$ limit as before, we find that there is no overlap of the FD distributions and the result vanishes. Instead, we keep the leading order thermal corrections, i.e. terms of order $e^{-|q_0|/\Tstar}$. The result is 
+\begin{equation}
+        \mathcal{F}_0(\Ei, -|q_0|) = \frac{\Tstar e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}} \left[ \log\left( 1 + e^{(\Ei-\kinFi)/\Tstar}\right) - \log\left( 1 + e^{(\Ei-|q_0|-\kinFi)/\Tstar}\right)\right],
+\end{equation}
+where after taking $\Tstar \rightarrow 0$ we recognise three regions of interest
+\begin{equation}
+    \lim_{\Tstar \rightarrow 0}\Tstar \mathcal{F}_0(\Ei, -|q_0|) = 
+    \begin{dcases}
+        \frac{|q_0| e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}},&\quad \Ei>\kinFi +|q_0|\\  
+        \frac{(\Ei-\kinFi) e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}},&\quad \kinFi + |q_0| > \Ei > \kinFi\\
+        0, & \quad \kinFi>\Ei
+    \end{dcases}
+\end{equation}
+and we can write this as
+\begin{equation}
+    \lim_{\Tstar \rightarrow 0}\Tstar \mathcal{F}_0(\Ei, -|q_0|) = \frac{|q_0| e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}}h_0\left(\frac{\kinFi - \Ei}{q_0}\right).
+\end{equation}
+% where
+% \begin{equation}
+%     g_+(x) = \begin{cases}
+%     1,\quad x<-1\\
+%     -x,\quad -1<x<0\\
+%     0, \quad x>0
+%     \end{cases}
+% \end{equation}
+
+The response function for upscattering is then
+\begin{align}
+    S^-_\mathrm{up}(q_0, q) &= \frac{\mi^2 q_0}{\pi q} \frac{ e^{-|q_0|/\Tstar}}{e^{-|q_0|/\Tstar} -1} \left[ 1 - h_0\left( \frac{\Ei^{t^-}-\kinFi}{q_0}\right)\right]\\
+    & = \frac{\mi^2 q_0}{\pi q} \frac{ e^{-|q_0|/\Tstar}}{e^{-|q_0|/\Tstar} -1}g_0\left( \frac{\kinFi - \Ei^{t^-}}{q_0}\right),
+\end{align}
+% \begin{equation}
+%     g_0(x) = \begin{cases}
+%     0,\quad x<-1\\
+%     1+x,\quad -1<x<0\\
+%     1, \quad x>0
+%     \end{cases}
+% \end{equation}
+leading to the corresponding up-scattering rate being
+\begin{align}
+    \Gamma_\mathrm{up}^-(E_\chi) &= \int \frac{k'^{2}d\cos\theta dk'}{64\pi^2\mi^2 E_\chi E'_\chi }\Msq\Theta(E_\chi+|q_0|-m_\chi) \Theta(q_0)S_\mathrm{up}^-(q_0, q)\\
+    & = \frac{ (-1)^n \alpha}{128\pi^3 E_\chi k}\int_{-\infty}^{0}dq_0\;\frac{q_0 e^{q_0/\Tstar}}{e^{q_0/\Tstar} -1}\int dt_E \; \frac{t_E^n}{\sqrt{t_E -|q_0|^2}} g_0\left( \frac{\kinFi - \Ei^{t^-}}{q_0}\right)
+\end{align}
+where we have substituted $\Msq = \alpha t^n$ as the matrix element. Typically, we expect to be in the regime where $g_0 = 1$, and so the differential up-scattering rate is related result for down-scattering through
+\begin{equation}
+    \frac{d\Gamma_\mathrm{up}^-}{dq_0} = \frac{e^{-|q_0|/\Tstar}}{e^{-|q_0|/\Tstar} - 1} \frac{d\Gamma_\mathrm{down}^-}{dq_0} 
+\end{equation}
+
+This result applies generally to all matrix elements, not just the ones $\propto t^n$. The result can be derived from the principle of detailed balance, and hence is true for all interactions we consider. To calculate the total interaction rate, the $t_E$ integrations can be performed in the same manner as in the previous section, with the $q_0$ integration bounds being $(-\infty, 0)$.
+
+% To get the full expression for the up-scattering rate, we need to consider the three possible values $g_0$ can take:
+% \begin{itemize}
+%     \item For $g_0 = 0$, we require $\Ei^{t^-} > \kinFi +|q_0|$, translating to
+%     \begin{equation}
+%         \frac{\mi^2q_0^2}{t_E} + \frac{t_E}{4} + \mi(q_0 - 2\kinFi) + (q_0 -\kinFi)>0,
+%         \label{eq:hp1}
+%     \end{equation}
+%     and since $t_E>0$, we look for values not between the roots of Eq.~\ref{eq:hp1}, which are the $\tmpm$ from before. 
+    
+%     \item For $g_0 = 1+x$, we require $\kinFi - q_0 > \Ei^{t^-} > \kinFi$, which requires 
+%     \begin{align}
+%         \frac{\mi^2q_0^2}{t_E} + \frac{t_E}{4} + \mi(q_0 - 2\kinFi) + (q_0 -\kinFi) & < 0,\\
+%         \frac{\mi^2q_0^2}{t_E} + \frac{t_E}{4} - \kinFi(q_0 + \kinFi) -\mi (q_0 + 2\kinFi) & > 0,
+%     \end{align}
+%     and so this region is between the roots $\tmpm$ and outside the roots $\tppm$. 
+    
+%     \item Finally, for $g_0 = 1$, we require $\Ei^{t^-} <\kinFi$, which can be obtained as the complement of the above regions, and is between the roots $\tppm$.
+% \end{itemize}
+
+% We also need to consider the hierarchy of the roots. For $q_0>-\kinFi$, all the roots exist and are in the order $\tmp \geq \tpp \geq \tpm \geq \tmm$. For $-\kinFi - 2\mi < q_0 <-\kinFi$, the $\tppm$ roots do not exist, and for $q_0 <-\kinFi -2\mi$, they are negative, so the order becomes $\tmp \geq \tmm$. We also need to take into account that the absolute bounds on $t_E$ are $\tep\geq t_E \geq \tem(\geq 0)$.
+% We can encode the $t_E$ integral in the operator as in the previous section, giving
+% \begin{equation}
+%     \begin{split}
+%         \Gamma^-_\mathrm{up}(E_\chi) =& \frac{ (-1)^n \alpha}{128\pi^3 E_\chi k}\int_{-\infty}^0 dq_0\frac{e^{q_0/\Tstar}}{e^{q_0/\Tstar} - 1}\\
+%         & \times\left[ \mathcal{I}\left( \tilde{f}_1(t),  \tep, \tpp, \tem, \tpm\right)\Theta(q_0+\kinFi)\right.\\
+%         &\left. + \mathcal{I}\left( \tilde{f}_2(t),  \tep, \tmp, \tem, \tpp\right)\Theta(q_0+\kinFi)\right.\\
+%          &\left. + \mathcal{I}\left( \tilde{f}_2(t),  \tep, \tpm, \tem, \tmm\right)\Theta(q_0+\kinFi)\right.\\
+%          &\left. + \mathcal{I}\left( \tilde{f}_2(t),  \tep, \tmp, \tem, \tmm\right)\Theta(|q_0|-\kinFi)\right]
+%     \end{split}
+% \end{equation}
+% \begin{align}
+%     \tilde{f}_1(t_E) & = \frac{-|q_0| t_E^n}{\sqrt{t_E -|q_0|^2}}\\
+%     \tilde{f}_2(t_E) & = \frac{t_E^n}{\sqrt{t_E -|q_0|^2}}(\Ei^{t^-} -|q_0| - \kinFi)
+% \end{align}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Inelastic Scattering }
+% \label{sec:inelastic_scatter_full}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For $t>0$, we instead have
+% \begin{equation}
+%     \Gamma^+ = -\int \frac{d\cos\theta k^{'2}dk'}{64\pi^3 E_\chi \Ei'_\chi }\Theta(E_\chi-q_0-m_\chi) \Theta(-q_0)\sum_{n,m} \frac{\alpha_{n,m} t^n}{ q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right).
+% \end{equation}
+% Again we change integration variables to $q$ and $q_0$ as above, but instead we make the substitution $q^2 = q_0^2-t$, such that $dq = -dt/(2q)$, 
+% \begin{equation}
+%     \implies dk' d\cos\theta = -\frac{E_\chi' }{2kk'^2} dq_0 dt
+% \end{equation}
+% giving the interaction rate as
+% \begin{align}
+%     \Gamma^+ & = \sum_{n,m}  \frac{ \alpha_{n,m}}{128\pi^3 E_\chi k }\int^{E_\chi -m_\chi}_0 dq_0 \int \frac{dt\; t^n}{(q_0^2 - t)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^+} - \kinFi}{q_0}\right)
+% \end{align}
+% with the $\mathcal{V}_{m,r} =\mathcal{V}_{m,r}(t_E, q_0, E_\chi)$ 
+% Again we need to consider the two cases when $h_j$ is unity or not, with the two integrands being
+% \begin{align}
+%     f_1^{(m,n)}(t) & =  \frac{t^n}{(q_0^2 - t)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1}\\
+%     f_2^{(m,n)}(t) & = \frac{t^n}{(q_0^2 - t)^{m+\frac{1}{2}}}\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{1}{j+1} \left( \Ei^{t^+} - \kinFi\right)^{j+1}
+% \end{align}
+% where we suppress the explicit dependence on the other variables for brevity. In general the integration limits on $t$ are given by combining the definitions of $q$ and $q_0$ with that of $t$, and are given by
+% \begin{equation}
+%     t^\pm = 2\left[ \mchi^2 - E_\chi(E_\chi - q_0) \pm k\sqrt{(E_\chi - q_0)^2 - \mchi^2}\right]
+% \end{equation}
+% \commMV{Remove $q_0<0$, make it > 0}
+% We now consider how to split the integral over the ranges of $h_j(x)$. For the case $h_j(x) = 0$, we require $\Ei^{t^+}-\kinFi <0$, as $q_0<0$, which translates to
+% \begin{equation}
+%     \frac{(2\mi q_0 + t)^2}{4t} +(2\mi +q_0)\kinFi +\kinFi^2 < 0\label{eq:tpp1}
+% \end{equation}
+% As $t>0$, this is the case when $t$ is between the two roots of Eq.~\ref{eq:tpp1}, given by
+% \begin{equation}
+%     t_\mu^{'\pm} = -2\left[ \kinFi (q_0 + \kinFi) + \mi (q_0 + 2\kinFi) \pm \sqrt{ (\kinFi (q_0 + \kinFi) + \mi (q_0 + 2\kinFi) )^2 - \mi^2 q_0^2} \right]
+% \end{equation}
+
+% If we look at the region $0< h_j(x)<1$, we require
+% \begin{align}
+%     \Ei^{t^+} - \kinFi & < 0\\
+%     \Ei^{t^+} - \kinFi + q_0 & > 0
+% \end{align}
+% which requires 
+% \begin{equation}
+%     -\frac{\mi^2 q_0^2}{t} - \frac{t}{4} + \mi(q_0 - 2\kinFi) + (q_0-\kinFi)\kinFi>0
+% \end{equation}
+% As $q_0<0$, this is never possible, and so we are never in this region. 
+% % We encode the integrals over $t$ within an operator 
+% % \begin{align}
+% %     \mathcal{I}_{n,m}(f^{(m,n)}(t),t_1^+,t_2^+,t_1^-,t_2^-) =& \sum_{i=1,2}\sum_{j=1,2} \left(F^{(m,n)}(t_i^+)-F^{(m,n)}(t_j^-)\right)\Theta\left(t_{3-i}^+-t_i^+\right)\Theta\left(t_i^+-t_j^-\right)\nonumber\\
+% %     &\times\Theta\left(t_j^--t_{3-j}^-\right),\\
+% %     F^{(m,n)}(t) =& \int dt \, f^{(m,n)}(t), 
+% % \end{align}
+% % The full interaction rate is then written as
+
+% % \begin{align}
+% % \Gamma^{-}(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0  & \left[ \mathcal{I}_{n,m}\left(f_1^{(m,n)}(t),t_E^+,t_{\mu^-}^+,t_E^-,t_{\mu^-}^-\right)\Theta(\kinFi-q_0)\right. \nonumber\\
+% % \;&\;+ \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^-}^+\right)\Theta(\kinFi-q_0)  \nonumber\\
+% % \;&\;+\mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^-}^-,t_E^-,t_{\mu^+}^-\right)\Theta(\kinFi-q_0)  \nonumber\\
+% % \;&\;\left. + \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{eq:gammafull}
+% % \end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Interaction Rate for Low Energies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Need to consider the case where $T_\chi = E_\chi - m_\chi <\mu_{F}$, with $0<q_0<T_\chi<\kinFi$. Then the $t_E$ integration limits follow the hierarchy; $t_{\mu^{+}}^{+} \sim t_{\mu^{-}}^{+} \ge t_{\mu^{-}}^{-} \sim t_{\mu^{+}}^{-} \gtrsim 0$, and $t_{\mu^{-}}^{+} \gg t_E^+ \ge t_E^- \gg t_{\mu^{-}}^{-}$. Then the only term in \ref{eq:gammafull} that remains is the first term, and only the $i=j=1$ term contributes, leaving
+\begin{equation}
+    \Gamma^-(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int_{t_E^-}^{t_E^+} d t_E\; f_1^{(m,n)}(t_E)
+\end{equation}
+At first order in $q_0$ and $K_\chi$, we have the following approximations
+\begin{align}
+    E_\chi &\approx m_\chi\\
+    k &\approx \sqrt{2m_\chi T_\chi}\\
+    t_E^\pm &\approx 4m_\chi T_\chi \left[ 1 - \frac{q_0}{2 K_\chi}\pm \sqrt{1 - \frac{q_0}{K_\chi}} \right]\\
+    \Gamma^- & \approx \sum_{n,m}\frac{(-1)^n \alpha_{n,m}}{128\sqrt{2} \pi^3 m_\chi^{3/2}K_\chi^{1/2}}\int_0^{K_\chi} dq_0\;\int_{t_E^-}^{t_E^+} dt_E\;f_1^{(m,n)}(t_E)
+\end{align}
+
+For single term matrix elements such that $\Msq = \alpha_{n,m}(-t)^n s^m$, the corresponding $\Gamma_{n,m}^-$ are
+\begin{align}
+    \Gamma^-_{0,0} & = \frac{\alpha_{0,0}}{120\pi^3 m_\chi}K_\chi^2\\
+    \Gamma^-_{1,0} & = \frac{2\alpha_{1,0}}{105\pi^3}K_\chi^3\\
+    \Gamma^-_{2,0} & = \frac{4\alpha_{2,0}m_\chi}{63\pi^3}K_\chi^4\\
+    \Gamma^-_{0,1} & = \frac{\alpha_{0,1}((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{120\pi^3}K_\chi^2\\
+    \Gamma^-_{1,1} & = \frac{2\alpha_{1,1}((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{105\pi^3}K_\chi^3\\
+    \Gamma^-_{0,2} & = \frac{\alpha_{0,2}((\mi + m_\chi)^2 + 2m_\chi \kinFi)^2}{120\pi^3}K_\chi^2
+\end{align}
+The $\alpha_{n,m}$ can be obtained at some reference point, taken to be the surface of the NS, from the differential cross-section,
+\begin{equation}
+    \frac{d \sigma }{d\cos\theta} = \frac{\alpha_{n,m}(-t)^n s^m}{32 \pi (\mi + m_\chi)^2}
+\end{equation}
+which gives
+\begin{align}
+    \sigma_{0,0} & = \frac{\alpha_{0,0}}{16 \pi (\mi + m_\chi)^2}\\
+    \sigma_{1,0} & = \frac{\alpha_{1,0} }{32 \pi (\mi + m_\chi)^2}t_{max}\\
+    \sigma_{2,0} & = \frac{1}{3}\frac{\alpha_{2,0} }{16 \pi (\mi + m_\chi)^2}t_{max}^2\\
+    \sigma_{0,1} & = \frac{\alpha_{0,1}}{16 \pi (\mi + m_\chi)^2}s\\
+    \sigma_{1,1} & = \frac{\alpha_{1,1} }{32 \pi (\mi + m_\chi)^2}t_{max}s\\
+    \sigma_{0,2} & = \frac{\alpha_{0,2}}{16 \pi (\mi + m_\chi)^2}s^2
+\end{align}
+where I have used 
+\begin{align}
+    t & = -\frac{t_{max}}{2}(1 - \cos\theta)\\
+    t_{max} & \sim \frac{4 \mi^2 m_\chi^2}{(\mi^2 + m_\chi^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\\
+    s & \sim \mi^2 + m_\chi^2 + \frac{2\mchi (\mi +\kinFi)}{\sqrt{B(\Rstar)}}\\
+    &\sim (\mi +\mchi)^2
+\end{align}
+Again introducing the correction 
+\begin{equation}
+    \zeta = \frac{n_n}{n_{free}} \sim \frac{3\pi^2}{(2\mi \kinFi)^{3/2}}n_n
+\end{equation}
+Then the interaction rates can be expressed with respect to the surface of the star as
+\begin{align}
+    \Gamma_{0,0}^- (K_\chi) & = \frac{\sqrt{2}}{10}\frac{(1 +\mu)^2}{\mu} \frac{\mi}{(\mi \kinFi)^{3/2}}\sigma_{surf} n_n K_\chi^2\\
+    \Gamma_{1,0}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(1 + \mu)^2 (1 + \mu^2)}{\mu^2}\frac{1}{(\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_n K_\chi^3\\
+    \Gamma_{2,0}^- (K_\chi) & =\frac{\sqrt{2}}{7}\frac{(1 + \mu)^2 (1 + \mu^2)^2}{\mu^3}\frac{1}{\mi(\mi\kinFi)^{3/2}}\left( \frac{B(\Rstar)}{(1 - B(\Rstar)}\right)^2\sigma_{surf} n_n K_\chi^4\\
+    \Gamma^-_{0,1}(K_\chi) & = \frac{\sqrt{2}}{10} \frac{(\mi(1 + \mu)^2 + 2 \mu \kinFi)}{\mu(\mi\kinFi)^{3/2}}\sigma_{surf} n_n K_\chi^2\\
+    \Gamma_{1,1}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(\mi(1 + \mu)^2 +2\mu\kinFi) (1 + \mu^2)}{\mu^2\mi (\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_n K_\chi^3\\
+    \Gamma_{0,2}^- (K_\chi) & =\frac{\sqrt{2}}{10}\frac{(\mi(\mu +1)^2 + 2 \mu  \kinFi)^2}{\mu(\mu+1)^2 \mi (\kinFi\mi)^{3/2}}\sigma_{surf} n_n K_\chi^2
+\end{align}
+The average energy loss per collision is given by
+\begin{equation}
+    \langle \Delta T \rangle = \frac{1}{\Gamma^-}\int_0^{K_\chi} dq_0\; q_0 \frac{d \Gamma^-}{d q_0}
+\end{equation}
+which gives the results
+\begin{align}
+    \langle \Delta T^{0,0} \rangle & = \frac{4}{7}K_\chi \sim \langle \Delta T^{0,1} \rangle \sim \langle \Delta T^{0,2} \rangle \\
+    \langle \Delta T^{1,0} \rangle & = \frac{5}{9}K_\chi \sim \langle \Delta T^{1,1} \rangle\\
+    \langle \Delta T^{2,0} \rangle & = \frac{28}{55}K_\chi 
+\end{align}
+The DM will reach thermal equilibrium with the targets when $K_\chi =\Tstar$. There are two stages to this process; one where the interactions are not affected by Pauli blocking which takes $N_1$ collisions, and the next $N_2$ collisions where Pauli blocking is in effect. The time it takes for thermalisation to occur is given by the sum of the average times between collisions
+\begin{equation}
+    \tth = \sum_{n=0}^{N_2} \frac{1}{\Gamma^-(T_n)} \sim \sum_{n=N_1}^{N_2} \frac{1}{\Gamma^-(T_n)}
+\end{equation}
+where $T_n$ is the DM kinetic energy after $n$ collisions. If Pauli blocking is in effect for the entire process, then $T_n$ is related to the initial kinetic energy, $T_0$ through
+\begin{equation}
+    T_n = T_0\left( 1 - \frac{\Delta T}{T}\right)^n.
+\end{equation}
+This result implies the following relation;
+\begin{equation}
+    \frac{T_N}{T_0} = \frac{T_{eq}}{T_0} = \left( 1 - \frac{\Delta T}{T}\right)^N
+\end{equation}
+Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have that 
+\begin{align}
+    \tth & \propto \sum_{n=N_1}^{N_2} (T_n)^{-p}\\
+    & = \frac{1}{T_{N_1}^{p}}\sum_{n=N_1}^{N_2}\left(\left( 1 - \frac{\Delta T}{T}\right)^{-p}\right)^n\\
+    & = \frac{1}{T_{N_1}^{p}}\frac{(1 - \Delta T/T)^{p(1-N_1)} - (1 -\Delta T/T)^{-p N_2}}{-1 + (1 - \Delta T/T)^p}\\
+    & \sim  \frac{1}{T_{N_1}^{p}} \frac{(1 -\Delta T/T)^{-p N_2}}{1 - (1 - \Delta T/T)^p}\quad \text{for}\quad N_2 > N_1\\
+    & =  \frac{1}{T_{N_1}^{p}} \left( \frac{T_{eq}}{T_{N_1}}\right)^{-p}\frac{1}{1 - (1 - \Delta T/T)^p}\\
+    & = \frac{1}{\Teq^p}\frac{1}{1 - (1 - \Delta T/T)^p}
+\end{align}
+% The resulting thermalisation times are then (setting $B(\Rstar)\sim 0.5$)
+% \begin{align}
+%     \tth^{0,0} & = \frac{49}{4\sqrt{2}}\frac{\mu}{(1 +\mu)^2}\frac{\sqrt{\mi \kinFi^3}}{n_n \sigma_{surf} \Teq^2}\\
+%     & \sim 1.427\times 10^8\yrs\frac{\mu}{(1 +\mu)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^2\\
+%     \tth^{1,0} & =  \frac{729}{76\sqrt{2}}\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\frac{(\mi \kinFi)^{3/2}}{n_n \sigma_{surf} \Teq^3}\\
+%     & \sim 1.217\times 10^{18}\yrs\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^3\\
+%     \tth^{2,0} & =  \frac{9150625}{1231312\sqrt{2}}\frac{\mu^3}{(1 +\mu)^2(1+\mu^2)^2}\left(\frac{1 - B(\Rstar)}{B(\Rstar)}\right)^2 \frac{\sqrt{\mi^5 \kinFi^3}}{n_n \sigma_{surf} \Teq^4}\\
+%     & \sim 1.027\times 10^{28}\yrs\frac{\mu^3}{(1 +\mu)^2(1 + \mu^2)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^4
+% \end{align}
+
+% Using Eq. 4.15 of the thermalisation paper, I get, for $\kinFi\sim 0.2$ GeV and $\mu = 10^{-3}$
+% \begin{align}
+%     \tth^{D1} & \sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D2} & \sim \tth^{1,0}\\
+%     \tth^{D3} & \sim \frac{5}{3} \tth^{1,0}\sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D4} & \sim \tth^{2,0}\\
+%     \tth^{D5} & \sim \frac{13}{8} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\   
+%     \tth^{D6} & \sim 3 \tth^{0,0}\\
+%     \tth^{D7} & \sim 5 \tth^{0,0}\\
+%     \tth^{D8} & \sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D9} & \sim \frac{8}{5} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D10} & \sim  \frac{7}{2} \tth^{0,0}\\
+% \end{align}
+% High mass, $\mu = 10^{3}$;
+% \begin{align}
+%     \tth^{D1} & \sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D2} & \sim \frac{5}{3}\tth^{1,0}\sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D3} & \sim \tth^{1,0}\\
+%     \tth^{D4} & \sim \tth^{2,0}\\
+%     \tth^{D5} & \sim \frac{13}{8} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\   
+%     \tth^{D6} & \sim 5 \tth^{0,0}\\
+%     \tth^{D7} & \sim 3 \tth^{0,0}\\
+%     \tth^{D8} & \sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D9} & \sim \frac{8}{5} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\
+%     \tth^{D10} & \sim  \frac{7}{2} \tth^{0,0}\\
+% \end{align}
+
+% For matrix elements that are linear combinations of $t^n$, we have
+% \begin{align}
+%     \Msq & = a_0 + a_1 t + a_2 t^2\\
+%     \Gamma^- &=  a_0\left.\Gamma^-_{0,0}\right|_{\alpha_{0,0}=1} + a_1 \left.\Gamma^-_{1,0}\right|_{\alpha_{1,0}=1} + a_2
+%     \left.\Gamma^-_{2,0}\right|_{\alpha_{2,0}=1}\\
+%     \frac{1}{\tth}  & = \left.\frac{a_0}{\tth^{0,0}}\right|_{\alpha_{0,0}=1} + \left.\frac{a_1}{\tth^{1,0}}\right|_{\alpha_{1,0}=1} + \left.\frac{a_2}{\tth^{2,0}}\right|_{\alpha_{2,0}=1} \label{eq:reicptherm}
+% \end{align}
+% For the operators D1-10, $a_i \propto \Lambda^{-4}$, and we set $\Lambda$ such that the total cross-section is equal to $\sigma_{surf}\sim 2\times10^{-45}\cm^2$, i.e.
+% \begin{equation}
+% \Lambda^4 = \frac{\sigma(\Lambda = 1)}{\sigma_{surf}}
+% \end{equation}

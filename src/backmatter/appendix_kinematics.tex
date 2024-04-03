@@ -1,9 +1,139 @@
-\graphicspath{{img/appendix_1/}}
+\graphicspath{{img/appendix_kinematics/}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Kinematics}
-\label{appendix:Kinematics}
+\label{appendix:kinematics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 \begin{synopsis}
-  Derivation of $E_f^{'}$ as needed for capture and other kinematics
+  Kinematics
 \end{synopsis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{DM Orbits in General Isometric Metric}
+\label{sec:DM_orbits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As stated in section~\ref{sec:CO_general_structure}, the most general spherically symmetric, static metric is given by
+\begin{equation}
+    -ds^2 = B(r) dt^2 - A(r) dr^2 - r^2( d\theta + \sin\theta d\phi^2).
+\end{equation}
+We wish to study the properties of a particle moving along some orbit governed by this metric. 
+Along an orbit, the conserved conjugate momenta are the angular momentum per unit mass, $p_\phi = -L$ 
+and the energy per unit mass $p_t = E_\chi$, and taking the orbit to lie in the $\theta = \pi/2$ plane 
+leads to $p_\theta = 0$. 
+
+The equation which describes the orbit can be obtained from the square of the energy-momentum 4-vector,
+\begin{align}
+    g_{\alpha\beta} p^\alpha p^\beta - m_\chi^2 & = 0,\\
+    \implies g^{\alpha\beta} p_\alpha p_\beta - m_\chi^2 & = 0,
+\end{align}
+with
+\begin{equation}    
+g^{tt} = 1/B(r),\quad g^{rr} = -1/A(r),\quad g^{\phi \phi} = -1/r^2.
+\end{equation}
+
+Changing from the 4-momenta $p^\mu$ to the conserved momenta, $p_\mu$ gives
+\begin{align}
+    0 & = g^{tt} p_t p_t + g^{rr} p_r p_r + g^{\phi\phi} p_\phi p_\phi - m_\chi^2 \\
+    & = \frac{E_\chi^2}{B(r)} - \frac{1}{A(r)} \left( g_{rr'} p^{r'} \right)\left( g_{rr'} p^{r'} \right) - \frac{L^2}{r^2} - m_\chi^2 \\
+    & = \frac{E_\chi^2}{B(r)} - m_\chi^2 A(r) \left( \frac{dr}{d\tau} \right)^2 - \frac{L^2}{r^2} - m_\chi^2.
+\end{align}
+
+To find $dt/d\tau$, we use
+\begin{align}
+    p^t & = m_\chi \frac{dt}{d\tau} = g^{tt}p_t = \frac{E_\chi}{B(r)}\\
+    \implies \frac{dt}{d\tau} & = \frac{1}{B(r)}\frac{E_\chi}{m_\chi}.
+\end{align}
+% \Mcomm{In the papers we have $d\tau = \sqrt{B(r)} dt$, so where is the inconsistency?}
+
+Finally, the orbit of the particle is described by the equation
+\begin{equation}
+    \left(\frac{dr}{dt} \right)^2 = \frac{B}{\tilde E_\chi^2 A} \left[\tilde E_\chi^2- B(r) \left(  1 + \frac{\tilde L^2}{r^2} \right) \right].
+    \label{eq:drdt2GR}
+\end{equation}
+
+% \Mcomm{with alternative $dt/d\tau$
+% \begin{equation}
+%     \left (\frac{dr}{dt} \right)^2 = \frac{1}{A} \left[ \tilde E_\chi - B(r) \left( 1 + \frac{\tilde L^2}{r^2} \right) \right]
+% \end{equation}
+% }
+
+For simplicity, we will consider orbits that are a straight line ($\tilde L = 0$), which has a radial extent $R$. This is related to $\tilde E_\chi$ through
+\begin{gather}
+    \tilde E_\chi^2 = B(R)\label{eq:maxradgeneral}\\
+    \implies R = \frac{2 G M_\star}{1 - \tilde E_\chi^2}, \quad R>R_\star
+    \label{eq:MaxRadius}
+\end{gather}
+using $B(r>R_\star) = 1 - 2 G M_\star /r$.
+
+It is important to note that $E_\chi$ so far has been the \textit{conserved} energy along the orbit, 
+which for the initial approach is $E_\chi = m_\chi + \frac{1}{2}m_\chi u^2\sim m_\chi$. 
+We now call this energy $E_\chi^{\rm orbit}$, which is related to the DM energy as seen by a distant observer, $E_\chi^{\rm int}$, 
+and is the energy used in calculating the interaction rates. These two quantities are related through 
+\begin{equation}
+    E_\chi^{\rm orbit} = \sqrt{g_{tt}} E_\chi^{\rm int} = \sqrt{B(r)}E_\chi^{\rm int},
+\end{equation}
+and as $E_\chi^{\rm orbit} < m_\chi$ for all subsequent scatters after capture, Eq.~\ref{eq:MaxRadius} is always positive.
+
+These ``orbits" are straight lines that pass through the star's centre and extend an amount $R - R_\star$ on either side. 
+Due to the symmetry of the motion, the period of the orbit is then
+\begin{equation}
+    T_{\rm orbit} = 4 \int_0^R \frac{1}{dr/dt}dr
+\end{equation}
+More relevant to this application is the time spent inside and outside the star, which is given by
+\begin{align}
+    T_{\rm inside} & = 4 \int_0^{R_\star} \frac{1}{dr/dt}dr\label{eq:timeinside}\\
+    T_{\rm outside} & = 4 \int_{R_\star}^R \frac{1}{dr/dt}dr\label{eq:timeoutside}
+\end{align}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Keeping Angular Dependence}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For $\tilde L \neq 0$, we need the equation of motion for the angular coordinate $\phi$,
+
+% \begin{align}
+%     \frac{d \phi}{d\tau } & = g^{\phi\phi}p_\phi = \frac{\tilde L}{r^2}\\
+%     \implies \frac{d\phi}{dt} & = \frac{B(r)}{\tilde E_\chi}\frac{\tilde L^2}{r^2}
+% \end{align}
+% The maximum value of  $\tilde L^2$ is  given by
+% \begin{equation}
+%     \tilde L^2_{\rm MAX} = \frac{ \tilde E_\chi^2 - B(r)}{B(r)}r^2
+% \end{equation}
+% and we parameterise the possible angular momentum along the orbit as 
+% \begin{equation}
+%     \tilde L^2 = y \tilde L^2_{\rm MAX} ,\quad 0<y<1.
+% \end{equation}
+% leading to the equation for $dr/dt$ simplifying to 
+% \begin{equation}
+%     \frac{dr}{dt} = \frac{B(r)}{\tilde E_\chi^2 A(r)}\left( \tilde E_\chi^2 - B(r) \right)(1 - y)
+% \end{equation}
+% showing that the maximum radius of the orbit does not change from the $\tilde L = 0$ case, only the time spent outside the star changes.
+
+% % \begin{align}
+% %     \frac{dt}{d\phi} & = \left( \frac{dt}{dr}\right)
+% % \end{align}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Checking Newtonian/Non-Relativistic Limit}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% In the Newtonian limit, we take 
+% \begin{align}
+% B - 1\approx2 \phi \ll 1,\\
+% A - 1 \approx - 2 G M(r) / r \equiv -2V(r)\ll 1,\\
+% \tilde L^2 /r^2 \ll 1,\\
+% \tilde E - 1 = \varepsilon \ll 1,
+% \end{align}
+% with $\varepsilon$ the non-relativistic energy per unit mass. Then expanding Eq.~\ref{eq:drdt2GR} we get
+% \begin{align}
+%     \left(\frac{dr}{dt}\right)^2 & = (1 + 2 \phi)(1 + 2V) - (1 + 2\phi)^2(1 + 2 V)(1 - 2 \varepsilon)\left(1 + \frac{\tilde L^2}{r^2}\right)\\
+%     & = 1 + 2 \phi + 2 V - \left(1 + 4 \phi + 2 V + \frac{\tilde L^2}{r^2} - 2 \varepsilon \right)\\
+%     & = -2 \phi - \frac{\tilde L^2}{r^2} + 2 \varepsilon\\
+%     \implies \frac{1}{2}\left(\frac{dr}{dt}\right)^2 & +\frac{\tilde L^2}{ 2 r^2} + \phi = \varepsilon
+% \end{align}
+% which is the standard result for a Newtonian orbit.

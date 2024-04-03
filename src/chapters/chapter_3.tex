@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Capture Part 1: Point Like Targets}
+\chapter{Improved Treatment of Dark Matter Capture in Compact Objects}
 \label{chapter:capture_1}
 
 \begin{synopsis}
@@ -13,15 +13,12 @@ Review capture in the Sun, move to what's needed for COs in general, then specif
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-One of the most essential quantities we will be interested in is the 
-the rate at which dark matter is captured with the star. 
+The capture rate of dark matter within celestial bodies is an essential quantity of interest throughout this work.
 In this chapter, we focus on building up the formalism of dark matter 
 capture within compact objects, outlining how this differs from the 
-the standard calculation for capture in the Sun. We restrict our analysis to 
+established formalism for capture in the Sun. We restrict our analysis to 
 scattering off of point-like targets relevant for leptonic species, 
-i.e. electrons in White Dwarfs and electrons and muons in Neutron Stars.
-The complications that arise due to the finite size of hadronic targets 
-will be discussed in the next chapter.
+i.e. electrons in White Dwarfs and electrons and muons in Neutron Stars, though much of the formalism is introduced with neutron targets.
 
 
 
@@ -29,6 +26,7 @@ will be discussed in the next chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dark Matter Capture in the Sun}
+\label{sec:solar_capture_full}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,9 +43,9 @@ where $\tilde u_\chi$ is the DM velocity in the halo, and $v_d$ is the DM halo v
 Taking into account the motion of the star through the halo and the thermal motion of the constituents, which are assumed to follow a Maxwell-Boltzmann distribution, gives the relative velocity between the DM and targets, $ u_\chi$. 
 The distribution function for the relative velocity can be expressed as~\cite{Busoni:2017mhe_oct_Evaporationscatteringmomentum}
 \begin{equation}
-    f_{\mathrm{MB}}(u_\chi)du_\chi = \frac{u_\chi}{v_\star} \sqrt{\frac{3 }{2 \pi (v_d^2 + 3 T_\star /m_T)}} \left( e^{-\frac{3(u_\chi - v_\star)^2}{2(v_d^2 + 3 T_\star /m_T)}} - e^{-\frac{3(u_\chi + v_\star)^2}{2(v_d^2 + 3 T_\star /m_T)}} \right),
+    f_{\mathrm{MB}}(u_\chi)du_\chi = \frac{u_\chi}{v_\star} \sqrt{\frac{3 }{2 \pi (v_d^2 + 3 T_\star /\mi)}} \left( e^{-\frac{3(u_\chi - v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} - e^{-\frac{3(u_\chi + v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} \right),
 \end{equation}
-where $v_\star$ is the star's velocity in the halo rest frame\footnote{This is the frame where the DM has an average velocity of zero.}, $T_\star$ is the temperature of the star, and $m_T$ is the mass of the target.
+where $v_\star$ is the star's velocity in the halo rest frame\footnote{This is the frame where the DM has an average velocity of zero.}, $T_\star$ is the temperature of the star, and $\mi$ is the mass of the target.
 
 Returning to the large spherical shell of radius $R$, given the velocity distribution function, we can obtain the flux of DM through this surface. The rate of DM particles passing through a surface element $d\tilde{A}$ with velocity between $u_\chi$ and $u_\chi + du_\chi$, with an angle to the normal of $d\tilde{A}$ between $\tilde\theta$ and $\tilde \theta + d\tilde \theta$ and an azimuthal angle between $\tilde \phi$ and $\tilde \phi + d\tilde \phi$ is given by~\cite{Press:1985ug_Capturesungalactic}
 \begin{align}
@@ -82,7 +80,7 @@ The geometry of the system is shown in Fig.~\ref{fig:capturegeometry} for clarit
 \begin{figure}
     \centering
     \includegraphics{img/chapter_3/capture_geometry.pdf}
-    \caption{Geometry of the capture process. The azimuthal angles are not shown for simplicity as they can be integrated over trivially.}
+    \caption{Geometry of the capture process, showing two elements of spheres with radii $r$ close to the star  }
     \label{fig:capturegeometry}
 \end{figure}
 
@@ -103,7 +101,7 @@ Finally, we obtain the capture rate by multiplying Eqs.~\ref{eq:shell_flux} and~
 \begin{equation}
     C =\int_0^{R_\star} \,dr\, 4\pi r^2 \int_0^\infty\,du_\chi\, \frac{\rho_\chi}{m_\chi} \frac{\fMB(u_\chi)}{u_\chi} w_\chi(r)\Omega^-(w_\chi).
 \end{equation}
-This result is rather generic, as the choice of DM model will only dictate the form of the differential cross section in  Eq.~\ref{eq:diff_int_NR_gen}. In fact, as written above, the distribution function for the relative velocity far from the star can be any isotropic distribution function. The MB form was chosen as it allows for a simple analytic form. 
+This result is rather generic, as the choice of DM model will only dictate the form of the differential cross-section in  Eq.~\ref{eq:diff_int_NR_gen}. As written above, the distribution function for the relative velocity far from the star can be any isotropic distribution function. The MB form was chosen as it allows for a simple analytic form of the total capture rate. 
 
 % To give a simple example, we neglect the thermal motion of the constituents, reducing the rate to
 % \begin{align}
@@ -111,7 +109,7 @@ This result is rather generic, as the choice of DM model will only dictate the f
 % \end{align}
 % where $n_T$ is the local number density of the targets, and we have introduced the useful quantities $\mu$, $\mu_\pm$ that are
 % \begin{equation}
-%     \mu = \frac{m_\chi}{m_T}, \quad  \mu_\pm = \frac{\mu \pm 1}{2}.
+%     \mu = \frac{m_\chi}{\mi}, \quad  \mu_\pm = \frac{\mu \pm 1}{2}.
 % \end{equation}
 % For the case of constant DM-target cross-section, we can compute the integral in Eq.~\ref{eq:down_rate_1}
 % \begin{align}
@@ -125,6 +123,7 @@ This result is rather generic, as the choice of DM model will only dictate the f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Capture in Compact Objects}
+\label{sec:captrue_new_full}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,11 +134,13 @@ Having reviewed the capture process in non-relativistic stars, we can begin disc
     \item Accounting for the relativistic and degenerate nature of the star's constituents in the interaction rate.
 \end{itemize}
 
-The former is generic to neutron stars and white dwarfs, while the latter is required for all NS constituents, but only the electrons in a WD are degenerate and relativistic. The ions of the WD are non-relativistic and non-degenerate and, hence, can be treated the same as the Sun's constituents. 
+The former is generic to neutron stars and white dwarfs, while the latter is required for all NS constituents, but only the electrons in a WD are degenerate and relativistic. The ions of the WD are non-relativistic and non-degenerate and, hence, can the solar capture formalism can be applied in this case. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{General Relativistic Corrections to the Capture Rate}
+\label{subsec:GR_corr_capture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Far from the star, the physics is the same as in the previous section. The deviations arise as the DM falls into he gravitational potential of the star. We begin by following the DM along its trajectory, moving from a distance $R\gg R_\star$ to a closer distance $r$. Hence, we are working in the DM rest frame and calculating the rate at which the DM passes through the shell \textit{per unit of proper time}, $\tau$. The proper time interval is related to the metric through
@@ -164,7 +165,7 @@ Now, the proper time that the DM spends inside a shell of thickness $dr$ will be
     d\tau = \left( \frac{d\tau}{dt}\right) dt = B(r) \frac{dr}{\dot r} = \frac{\sqrt{B(r)} dr}{\sqrt{\frac{1}{A(r)} \left[ 1 - B(r)\left( 1 + \frac{J_\chi^2}{m_\chi^2 r^2} \right) \right]}}.
 \end{equation}
 
-Combining everything together gives us the differential capture rate, 
+The differential capture rate can then be written as 
 \begin{equation}
     dC =  2\pi  \frac{\rho_\chi}{m_\chi}\frac{\fMB(u_\chi)}{u_\chi}\,du_\chi\,\frac{dJ^2_\chi}{m_\chi^2} \frac{\Omega^-(r)\sqrt{A(r)} \,dr}{\sqrt{1 - B(r)\left( 1 + \frac{J_\chi^2}{m_\chi^2 r^2} \right)}}.
 \end{equation}
@@ -178,6 +179,7 @@ As before, we have $w_\chi^2(r) = u_\chi^2 + v_e^2(r)$, however as the escape ve
 In the relativistic case, the escape velocity can be defined as
 \begin{equation}
     v_e^2(r) = \left(\frac{dl}{d\tau}\right)^2 = A(r) \left(\frac{dr}{d\tau}\right)^2 + r^2 \left(\frac{d\phi}{d\tau}\right)^2 = 1 - B(r),
+    \label{eq:vesceq}
 \end{equation}
 where $dl$ is a length element. 
 The large boost from the escape velocity also removes the $u_\chi$ dependence in the kinematics of the interactions and allows us to perform the integration over the initial DM velocity, yielding an overall factor of
@@ -202,26 +204,405 @@ The factor of $1/\sqrt{B}$ arises due to the gravitational focusing of the incom
 Putting everything together, and integrating over the radius of the star, we are left with the final result for the capture rate of
 \begin{equation}
     C =\frac{4\pi}{v_\star}\frac{\rho_\chi}{m_\chi} \erf\left(\sqrt{\frac{3}{2}}\frac{v_\star}{v_d}\right) \int_0^{R_\star}  r^2\frac{\sqrt{1 - B(r)}}{B(r)}\Omega^-(r)\,dr.
+    \label{eq:cap_rel_full_1}
+\end{equation}
+All that remains is determining the form of the interaction rates for relativistic energies.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Geometric Limit and Threshold Cross-Section}
+\label{subsec:geom_lim_threshold_xs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous section, we derived an expression for the capture rate assuming that the DM is captured after a single scatter, and that it only scatters once along its orbit through the NS. This first assumption is true for DM light enough to lose enough energy in this single interaction, which for nucleon targets turns out to be $m_\chi\lesssim 10^6\GeV$. The latter assumption is a statement that we are working in the optically thin regime, such that the cross-section is much less than the ``threshold cross-section'', $\sigmath$. The value of the threshold cross-section is defined as the cross-section for which the capture rate evaluated in the optically thin regime is equal to the geometric limit \cite{Bell:2018pkk_sep_HeatingNeutronStars},  
+%
+\begin{equation}
+C_\mathrm{geom} =  \frac{\pi R_\star^2(1-B(R_\star))}{v_\star B(R_\star)} \frac{\rho_\chi}{m_\chi} \erf\left(\sqrt{\frac{3}{2}}\frac{v_\star}{v_d}\right).
+\label{eq:capturegeom}
+\end{equation}
+% 
+This is the capture rate for which the entire flux of DM passing through the surface of the star is captured at the surface. Hence, it serves as an upper bound to the capture rate, with cross-sections greater than $\sigmath$ saturating the capture rate to this value.
+Note the $1/B(\Rstar)$ factor in the equation above. In stars and planets where classical Newtonian mechanics can be applied, gravitational focusing would result in a factor  $v_{esc}^2/\vstar =  (1-B(\Rstar))/\vstar$ in Eq.~\ref{eq:capturegeom}, where we have used Eqs.~\ref{eq:vesceq} and \ref{eq:B_boundary_condition}. 
+In neutron stars, on the other hand, general relativity introduces an additional factor of $1/B(\Rstar)$, which can be obtained from the derivation of the flux of DM particles accreted to a NS with a Schwarzschild metric (Eq.~\ref{eq:cap_rel_full_1})~\cite{Goldman:1989nd_WeaklyInteractingMassive,Kouvaris:2007ay_WIMPAnnihilationCooling}.
+
+For scattering on neutrons, the threshold cross-section is approximately
+\begin{align}
+\sigma_{th} =  \begin{cases}
+\, \sigma_\mathrm{ref} \frac{\GeV}{m_\chi} \quad &m_\chi \lesssim 1\GeV \quad \ \ \text{ Pauli blocking  regime}, \\
+\, \sigma_\mathrm{ref} \quad &1\GeV \lesssim m_\chi \lesssim 10^6\GeV,  \\
+\, \sigma_\mathrm{ref} \frac{m_\chi}{10^6\GeV} \quad &m_\chi\gtrsim 10^6\GeV \quad  \text{Multiscattering regime},
+\end{cases}
+\label{eq:sigmath}
+\end{align}
+where we take the canonical value of
+\begin{equation}
+    \sigma_\mathrm{ref}\sim 1.7 \times 10^{-45}\cm^2,
+\end{equation}
+which assumes the NS is a solid sphere such that $\sigmaref\sim m_n \pi \Rstar^2/\Mstar$ with $m_n$ the neutron mass.
+
+For scattering off other targets, Pauli blocking is relevant for $\qomax \lesssim  \mu_{\rm target}$ 
+while multi-scattering is relevant for $m_\chi \gtrsim \qomax/v_{\star}^2$, where $\qomax$ is the maximum energy transfered in a collision, as will be discussed later.  In addition, because the other target species have a lower abundance than neutrons, the reference cross-section, $\sigma_\mathrm{ref}$, will be higher. The values of $\sigma_{th}$ in Eq.~\ref{eq:sigmath}, and their regions of applicability, can thus be altered appropriately for other target species of interest.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Interaction Rate for Relativistic Energies and Degenerate Targets}
+\label{subsec:int_rate_degen_rel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Our next goal is to write down an interaction rate suitable for describing the interactions between relativistic particles and account for the degeneracy of the target species. This will be achieved by modifying the non-relativistic interaction rate of Eq.~\ref{eq:down_rate_1} through the use of relativistic kinematics and the use of Lorentz invariant quantities, and the correct distribution functions for degenerate fermion targets.
+
+As shown in Eqs.~\ref{eq:down_rate_1} and~\ref{eq:diff_int_NR_gen}, the interaction rate between non-relativistic, non-degenerate species $i$ can be expressed as
+\begin{equation}
+    \Omega^{-}(r) = \int dv \frac{d\sigma}{dv} |\vec{w}_\chi -\vec{u}_i| n_i(r) \fMB(u_i)d^3u_i.
+    \label{eq:NR_int_rate_simple}
+\end{equation}
+First, we address the degeneracy of the targets by exchanging the Maxwell-Boltzmann distribution function for a Fermi-Dirac (FD) distribution, $\fFD(\Ei,r)$, via the replacement
+\begin{equation}
+    n_i(r) \fMB(u_i)d^3 u_i \rightarrow \frac{g_s}{(2\pi)^3}\fFD(\Ei, r),
+    \label{eq:number_density_replacement}
+\end{equation}
+where $g_s = 2$ is the number of spin states of the target species, $p$ is the 3-momentum of the incoming target, and $\Ei$ is its corresponding energy. The radial dependence of the FD distribution stems from its implicit dependence on the chemical potential of the target. Rewriting this expression in a more computationally friendly manner in terms of the relevant kinematic quantities results in 
+\begin{equation}
+    \frac{g_s}{(2\pi)^3}\fFD(\Ei, r) = \frac{p \Ei}{2\pi^2}\fFD(\Ei, r) d\Ei d\cos\theta_{uw},
+    \label{eq:free_Fermi_number}
+\end{equation}
+where we have expressed the angular component of the $d^3 p$ differential in terms of the angle between the incoming DM and target. This angle can be traded for the more useful quantity $s$, the centre of mass energy through
+\begin{equation}
+    \frac{d\cos\theta_{uw}}{ds} = \frac{1}{2 p p_\chi} = \frac{1}{2 p \sqrt{E_\chi^2 - m_\chi^2}} = \frac{1}{2 p m_\chi}\sqrt{\frac{B(r)}{1 - B(r)}},
+\end{equation}
+as the initial DM energy is $E_\chi = m_\chi/\sqrt{B(r)}$.
+
+Next, we calculate the initial relative velocity, $|\vec{w}_\chi -\vec{u}_i|$, using relativistic kinematics, expressing it in terms of the Mandalstam $s$, 
+\begin{equation}
+    |\vec{w}_\chi -\vec{u}_i| = \frac{\sqrt{s^2 - 2 s (1 + \mu^2)\mi^2 + (1 - \mu^2)^2 \mi^4}}{s - (1 + \mu^2) \mi^2},
+\end{equation}
+where $\mu = m_\chi/\mi$.
+
+Given that it is most common to present the relativistic differential scattering cross-section $d\sigma/d\cos\thetacm$ as a function of the Mandalstam variables $s$ and $t$, with $\thetacm$ the centre of mass frame scattering angle, we make the replacement
+\begin{equation}
+    dv \frac{d\sigma}{dv} = dt\frac{d\sigma}{dt} = dt \frac{d\sigma}{d\cos\thetacm}\frac{d\cos\thetacm}{t}.
+\end{equation}
+The final Jacobian factor can be expressed as
+\begin{equation}
+    \frac{d\cos\thetacm}{dt} = \frac{2s}{s^2 - 2 s (1 + \mu^2)\mi^2 + (1 - \mu^2)^2 \mi^4}
+\end{equation}
+for the elastic scattering we consider here.
+
+Finally, we note that the first application of this capture formalism was for neutron targets, with the analysis completed before we had considered the additional effects from the form factors and strong interactions discussed in subsection~\ref{subsec:quark_to_nucleon_EFT}. These effects will be incorporated into this formalism in a self-consistent way next chapter. The initial approach that was taken to account for the fact that we are using realistic neutron number density profiles, despite the expression in Eq.~\ref{eq:number_density_replacement} being for a free Fermi gas, is to introduce a correction factor as in Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron},
+\begin{equation}
+    \zeta(r) = \frac{n_i(r)}{n_\mathrm{free}(r)},
+\end{equation}
+where $n_\mathrm{free}(r)$ is obtained by integrating Eq.~\ref{eq:free_Fermi_number} over all phase space. In the zero-temperature approximation, the result is
+
+\begin{equation}
+    n_\mathrm{free}(r) = \frac{1}{3\pi^2}\left[ \kinFi(r)(2\mi + \kinFi(r))\right]^{3/2}.
 \end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Interaction Rate for Degenerate Targets}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Compiling everything together leads to the final expression for the interaction rate being
+\begin{equation}
+    \begin{split}
+        \Omega^-(r) = \int dt\,d\Ei\,ds\,\zeta(r) \frac{d\sigma}{d\cos\thetacm}\frac{\Ei}{2\pi^2 \mi}&\sqrt{\frac{B(r)}{1 - B(r)}} \frac{s}{\beta(s)\gamma(s)}\\
+        &\times\fFD(\Ei, r)(1 - \fFD(\Ei', r)),
+    \end{split}
+    \label{eq:int_rate_capture_full}
+\end{equation}
+where we have introduced the helper functions
+\begin{align}
+    \beta(s) & = s - (\mi^2 + m_\chi^2),\\
+    \gamma(s) & = \sqrt{\beta^2(s) - 4 \mi^2 m_\chi^2}.
+\end{align}
+We have also introduced the Pauli blocking factor, $1 - \fFD(\Ei', r)$, to account for the phase space available to the final state target. The energy of this final state particle, $\Ei'$, is in general a messy function of $\Ei$, $t$, $s$, and $r$, and can be obtained from the kinematics of the scattering. This result is presented in Appendix~\ref{app:kinematics}.
+
+The integration intervals are 
+\begin{align}
+    t_\mathrm{min} & = - \frac{\gamma(s)}{s},\\
+    t_\mathrm{max} & = 0,\\
+    s_\mathrm{min} & = \mi^2 + m_\chi^2 + 2 \frac{\Ei \mchi}{\sqrt{B(r)}} - 2\mchi\sqrt{\frac{1 - B(r)}{B(r)}} \sqrt{\Ei^2 - \mi^2}, \\
+    s_\mathrm{max} & = \mi^2 + m_\chi^2 + 2 \frac{\Ei \mchi}{\sqrt{B(r)}} + 2\mchi\sqrt{\frac{1 - B(r)}{B(r)}} \sqrt{\Ei^2 - \mi^2}, \\
+    E_{i,\mathrm{min}} & = \mi,\\
+    E_{i,\mathrm{max}} & = \frac{\mi}{\sqrt{B(r)}}.
+\end{align}
+
+As we will be dealing with NSs at low temperatures, we can take the $\Tstar\rightarrow 0$ limit and replace the FD functions with step functions, 
+\begin{align}
+    \fFD(\Ei, r) &\rightarrow \Theta(\kinFi(r) +\mi - \Ei),\\
+    1 - \fFD(\Ei', r) & \rightarrow  \Theta(\Ei'-\mi - \kinFi(r) ).
+\end{align}
+The first step function can be used to further restrict the $\Ei$ integration interval to be $[\mi, \mi + \kinFi(r)]$. In practice, we work with the kinetic energies of the targets rather than their total energy, as this is the quantity that directly changed in the interactions. Therefore, unless otherwise specified, we will take $\Ei$ to mean the target kinetic energy, with the integration range being $0\le \Ei\le \kinFi$.
+
+This expression resembles that of Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}, but uses a relativistic formalism instead. In Appendix~\ref{sec:weakfieldlimit}, we show that Eq.~\ref{eq:int_rate_capture_full} reduces to the classical expression for the interaction rate in the non-relativistic limit. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{White Dwarfs: Electron Targets}
+\section{The Differential Interaction Rate}
+\label{sec:diff_int_rate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Neutron Stars: Leptoinc Targets}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In the previous section, we have calculated the interaction rate, $\Omega^-(r)$, assuming the initial DM energy takes its pre-capture value, $E_\chi = \mchi /B(r)$. However, we will also be interested in an expression for the interaction rate that is valid for arbitrary DM energy. This will be required when we consider capture via multiple scatterings, and will also be necessary for studying the subsequent scattering interactions that follow capture and lead to the DM thermalising within the NS.
+In principle, it is possible to calculate this rate numerically by binning $\Omega^-$, Eq.~\ref{eq:int_rate_capture_full}, in the energy loss, i.e. multiplying $\Omega^-$ by $\frac{1}{E_i-E_j}\Theta(E_i+\Ei-\Ei')\Theta(\Ei'-\Ei-E_j)$ and integrating over the bin $[E_j,E_i]$. 
+However, it is possible to derive analytic expressions for the differential rate, valid in the zero-temperature approximation. To do so, we use the definition of the scattering rate in Ref.~\cite{Reddy:1997yr_Neutrinointeractionshot,Bertoni:2013bsa_dec_DarkMatterThermalization} 
+\begin{equation}
+    \begin{split}
+        \Gamma^-(E_\chi) &= 2\int \frac{d^3k'}{(2\pi)^3}\int \frac{d^3p}{(2\pi)^3}\int \frac{d^3p'}{(2\pi)^3} \frac{|\overline{M}|^2}{(2E_\chi)(2E'_\chi)(2\Ei)(2\Ei')}\\
+        &\hspace{4em}\times(2\pi)^4\delta^4\left(k_\mu+p_\mu-k_\mu'-p_\mu'\right) \fFD(\Ei)(1-\fFD(\Ei')),
+    \end{split}
+\label{eq:scattrate}
+\end{equation}
+where $\Msq$ is the squared matrix element,
+$k^\mu=(E_\chi,\vec{k})$ and $k^{'\mu}=(E'_\chi,\vec{k'})$ are the DM initial and final momenta, and $p^\mu=(\Ei,\vec{p})$ and $p^{'\mu}=(\Ei',\vec{p'})$ are the target particle initial and final momenta, respectively.
+To see that $\Gamma^-$ is indeed the same as $\Omega^-$ in Eq.~\ref{eq:int_rate_capture_full}, multiply and divide by
+$v_{rel}=|\vec{w}-\vec{u}_i|$ to reintroduce the quantum field theoretic definition of differential cross-section, 
+\begin{align}
+    d\sigma & = \frac{\Msq}{2 E_\chi 2\Ei|\vec{w} - \vec{u}_i|}d^2\Pi_\mathrm{LIPS},\\
+    d^2\Pi_\mathrm{LIPS} &= \frac{1}{2E'_\chi}\frac{d^3 k'}{(2\pi)^3}\frac{1}{ 2\Ei'}\frac{d^3 p'}{(2\pi)^3}(2\pi)^4\delta^4(k_\mu + p_\mu - k'_\mu - p'_\mu),\\
+    \implies\frac{d\sigma}{d\cos\thetacm} &= \frac{1}{16 \pi}\frac{\beta(s)}{2 s \beta(s) - \gamma^2(s)}\Msq,
+\end{align}
+where $d^2\Pi_\mathrm{LIPS}$ is the 2-body Lorentz invariant phase space.
+
+The advantage of Eq.~\ref{eq:int_rate_capture_full} is that it can be used to calculate the capture rate for any interaction given the differential cross-section. The disadvantage is that this computation has to be evaluated numerically, which can be computationally intensive. For this reason, shall now use Eq.~\ref{eq:scattrate} to derive analytic expressions that will allow us to speed up computations and, in addition, calculate the shape of the interaction rate as a function of the energy loss. 
+
+The interaction rate for $d\sigma \propto s^m t^n$ is 
+\begin{align}
+    \begin{split}
+        \Gamma^{-}(E_\chi)- & = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int \frac{dt_E t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\\
+        &\hspace{4em}\times\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right),
+    \end{split}
+    \label{eq:gamma_full_text}
+\end{align}
+for elastic scattering with $t_E=-t=q^2-q_0^2$, where $q_0=\Ei'-\Ei$ is the DM energy loss, 
+\begin{equation}
+\Ei^{\, t^{-}} = -\left(m_n+\frac{q_0}{2}\right) + \sqrt{\left(m_n+\frac{q_0}{2}\right)^2+\left(\frac{\sqrt{q^2-q_0^2}}{2}-\frac{m_n q_0}{\sqrt{q^2-q_0^2}}\right)^2}, 
+\end{equation}
+is the minimum energy of the neutron before the collision, obtained from kinematics,  and $h_j(x)$ is a step function with a smooth transition, 
+\begin{equation}
+    h_j(x) = \begin{cases}
+        & 0, \quad x >0\\
+        & (-x)^{j+1},\quad -1<x <0\\
+        & 1,\quad x<-1
+    \end{cases}.
+\end{equation}
+The full derivation of this interaction rate can be found in Appendix~\ref{app:interaction_rates}. 
+Our result for $\Gamma^-$ is an extension of that presented in ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, where the interaction rate was calculated only in the case of low energy and a constant matrix element. It is valid at all energy ranges.
+The differential interaction rate $\frac{d\Gamma}{d q_0}(E_\chi,q_0)$ is then just the integrand of Eq.~\ref{eq:gamma_full_text}.
+We will use $\frac{d\Gamma}{d q_0}$ to obtain normalised shapes for the differential interaction spectrum, while we will use $\Omega^-$ when we need the total interaction rate, such as in the capture rate. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+    \centering
+    \includegraphics[width = 0.45\textwidth]{capture_1/q0max_mdm.pdf}
+    \includegraphics[width = 0.45\textwidth]{capture_1/q0max_B.pdf}
+
+    \caption{Left: $\qomax$ vs. $m_\chi$ for $\kinFn=200\MeV$ and different values of B. 
+    Right: $\qomax$ as a function of $B$ for different values of $\kinFi$ and $m_\chi=1\TeV$.}
+    \label{fig:q0max}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+    \centering
+    \includegraphics[width = 0.87\textwidth]{capture_1/norm_diff_intrate.pdf}    
+    \caption{Normalised differential interaction rates $\frac{1}{\Gamma}\frac{d\Gamma}{d\qonorm}$ as a function of $\qonorm$ for different values of $\kinFn$, $m_\chi=1\TeV$ (left) and $m_\chi=10\MeV$ (right), $B=0.5$ and  operators D1 (first row), D2 (second row), D3 (third row) and D4 (fourth row). Profiles do not depend on $m_\chi$ in the limits $m_\chi\gg m_n$ (left) and $m_\chi\ll m_n$ (right).  }
+    \label{fig:diffintratesd14}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Kinematics, and the phase space allowed by $h_j(x)$ in Eq.~\ref{eq:gamma_full_text}, determine the maximum energy that a DM particle can lose in a single scattering interaction, $\qomax$. The details of how to obtain $\qomax$ are given in Appendix~\ref{subsec:down_scatter_derivation}.
+For DM capture, the value of $\qomax$ depends primarily on the DM mass, as is illustrated in the left panel of Fig.~\ref{fig:q0max}. We can see that for low $m_\chi$, $\qomax\propto m_\chi$, while, for $m_\chi\gg m_n$, it plataues to values between $\qomax\sim 3 - 6 \GeV$. 
+%
+Both $\qomax$ and $\frac{d\Gamma}{dq_0}$ also depend on $\kinFn$ and $B$. Changing $\kinFn$ has a very mild effect on the value of $\qomax$ (see right panel of Fig.~\ref{fig:q0max}) and on the shape of the normalised spectrum (see Fig.~\ref{fig:diffintratesd14}). On the other hand, increasing $B$ has the main effect of reducing   $\qomax$ (see right panel of Fig.~\ref{fig:q0max}), but only a mild effect on the shape of the profile expressed as a function of the normalised energy loss 
+\begin{equation}
+    \qonorm = \frac{q_0}{\qomax}. 
+\end{equation}
+
+We apply our results for $\frac{d\Gamma}{d q_0}$ to DM-neutron interactions, and in particular those with differential cross-sections that depend only on the transferred momentum $t=(k^\mu-k^{'\mu})^2$ and not on the centre of mass energy $s=(p^\mu+k^\mu)^2$.
+
+In Fig.~\ref{fig:diffintratesd14} we show the normalised differential rates as a function of $\qonorm$ for the four operators D1-D4. The left-hand panels are in the limit $m_\chi\gg m_n$. We can observe that D1 has a softer spectrum, while the D2 and D4 spectra peak towards higher values of $q_0$. Varying the chemical potential $\kinFn$ has a very mild effect, shifting the spectrum to lower values of $q_0$ with increasing values of $\kinFn$.
+Note that at small values of $\qonorm$ there is a sudden change in the slope of the normalised differential rate, which occurs for all operators but is more evident in D1 (top left panel). This is due to the zero temperature approximation, implicit in Eq.~\ref{eq:gamma_full_text}, where Heaviside functions were used to approximate FD distributions (see Appendix~\ref{subsec:down_scatter_derivation}); using a finite temperature would produce a smoother spectrum at small $\qonorm$. 
+
+In the right-hand panels of Fig.~\ref{fig:diffintratesd14}, we explore the low DM mass region $m_\chi\ll m_n$. 
+In this case, all operators give rise to similar profiles, the sole difference being that the peak of the profile is now shifted to lower  $\qonorm$ for D4 in contrast to D1, with intermediate values for D2 and D3. This is a consequence of Pauli blocking, with this effect depending on the specific power of $t$ that dominates the spectrum. Profiles with lower $n$ ($d\sigma\propto t^n$) peak at higher $\qonorm$ (see Fig.~\ref{fig:diffgamma}, right panels). For D4 we have $\Msq\propto t^2$, while the matrix elements of D2 and D3 are linear combinations of $t$ and $t^2$, and D1 is a combination of all powers of $t$. Comparing the right panels of Fig.~\ref{fig:diffintratesd14} with Fig.~\ref{fig:diffgamma}, we observe that the lowest power of $t$ determines the shape of the final differential interaction rate. Finally, varying $\kinFn$ has a very mild effect, this time shifting the spectrum mostly to higher values of $q_0$ for higher $\kinFn$.
+
+The fact that the lowest power of $t$ dictates the features of the differential interaction rate is true also for the interactions that have a dependence on $s$. As such, by understanding the properties of the interaction rates with $\Msq\propto t^n$, we can understand the rates for all the operators in Table.~\ref{tab:opers_defn_full}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pauli Blocking}
+\label{subsec:PB_cap1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The DM interaction rate, Eq.~\ref{eq:scattrate}, is proportional to the number of target particles (nucleons/leptons) in the initial state with energy $\Ei$, and to the number of available final states with energy $\Ei+q_0$. 
+
+The DM interaction rate, Eq.~\ref{eq:scattrate}, will be proportional to the number of target particles available to scatter off. Classically, this is the total number of targets within the star. However, the quantum degeneracy of the species within compact objects, due to the extreme densities, leads to a reduction in the number of available initial state target particles the DM can scatter off.
+To understand this, consider the $T\rightarrow 0$ approximation, in which all initial states with energies $\Ei < \kinFi$ are occupied. These states are known as the ``Fermi sea". In order for the DM to scatter off one of these states, it must impart enough energy to kick the target out of the Fermi sea, such that 
+\begin{equation}
+    \Ei' = \Ei + q_0 > \kinFi,
+\end{equation}
+imposing a lower limit on the energy transfer required for an interaction to take place. This effectively reduces the number of available targets to only those with kinetic energies between $\kinFn - q_0$ and $\kinFi$. 
+This suppression of the initial state phase space is known as Pauli blocking (PB), and is a completely quantum phenomenon.
+In this limit, we necessarily have $\Gamma^-\rightarrow 0$ for $q_0\rightarrow 0$. 
+It is also worth noting that Pauli blocking only affects the interaction rate when $q_0\le \kinFn$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+    \centering
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm1GeV.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm1GeV.pdf}\\
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm100MeV.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm100MeV.pdf}\\
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm10MeV.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm10MeV.pdf}
+    \caption{Differential interaction rates $\frac{d\Gamma}{dq_0}$  
+    as a function of the energy loss $q_0$ for different values of $m_\chi$ and $\kinFn$, constant cross-section and $B=0.5$. Blue lines refer to the result that includes Pauli blocking, while the light blue dashed lines refer to the result without PB. Left column:  $\kinFn=100\MeV$, right column: $\kinFn=400\MeV$. Top: $m_\chi=1\GeV$, middle: $m_\chi=100\MeV$, bottom: $m_\chi=10\MeV$.  }
+    \label{fig:gammaNPBmu}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+To assess the impact of PB on the DM differential interaction rate, in Fig.~\ref{fig:gammaNPBmu} we compare the rate 
+with (blue solid lines) and without (light blue dashed lines) Pauli blocking, for $B=0.5$ and constant DM-neutron cross-section. When Pauli blocking can be neglected, the interaction rate is obtained straightforwardly from Eq.~\ref{eq:scattrate} by stripping away the $(1 - \fFD(\Ei'))$ factor. 
+The difference between the computations is shaded in light blue. In the top left panel, we see that the rate begins to be suppressed from PB at $q_0 \sim \kinFi = 100\MeV$ for a 1~GeV DM.
+% we can see how the differential rate changes by switching Pauli blocking on or off, for $\kinFn=100\MeV$.
+%  The rate calculated without PB is flat for $q_0\lesssim 200\MeV$, while when Pauli suppression is active it undergoes a smooth transition towards $0$ for $q_0<\kinFn$. 
+In the top right plot, we increase the neutron chemical potential from $\kinFn=100\MeV$ to $\kinFn=400\MeV$. Given that in this case $\qomax \sim 0.4 m_\chi \sim 400\MeV$, almost the whole energy range is affected by PB. The higher $\kinFn$ changes the spectra (both with and without PB) such that the unsuppressed rate is no longer flat at low $q_0$. The PB suppressed rate reaches a maximum at values of $q_0$ slightly below $\qomax$, and then decreases towards $0$ at lower $q_0$.
+In the middle panels, $m_\chi=100\MeV$, and $\qomax\sim40\MeV\ll\kinFn$. In this case, it is evident that PB affects the spectrum over the full $q_0=\qomax$ range. In the bottom row, we set $m_\chi=10\MeV$. As expected, for lighter DM,  the effects of PB are even more pronounced.
+
+
+
+To understand how the effect of PB varies throughout the star, we can analyse the radial profiles of the capture rates $dC/dr$.
+In Fig.~\ref{fig:diffcap} we plot the differential capture rate as a function of the NS radius, with and without Pauli blocking. We see that Pauli blocking is most significant at low DM mass, below about 1~GeV, and becomes insignificant for higher masses. Pauli blocking has a larger impact on the differential capture rate deeper into the NS interior and has a negligible effect at the surface. This is particularly apparent in the top left panel of Fig.~\ref{fig:diffcap}. This is because the chemical potential is higher in the NS interior than it is near the crust, as seen in the radial $\kinFi$ profile in the bottom left panel of Fig.~\ref{fig:BSk_profiles}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \includegraphics[width=.85\textwidth]{capture_1/diff_cap_rate.pdf}        
+    \caption{Differential capture rate as a function of the NS radius $r$, with (solid) and without (dashed) Pauli blocking, for the EoS benchmark BSk24-2. Top: constant cross-section, center: $d\sigma\propto t$, bottom: $d\sigma\propto t^2$.}
+    \label{fig:diffcap}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Capture in the Low, Intermediate and High Mass Regimes}
+\label{sec:capture_analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Having assembled all the required machinery, we are ready to explore the properties of the capture rate in the three mass regimes outlined in Eq.~\ref{eq:sigmath}.  Given the computational load required to evaluate Eq.~\ref{eq:cap_rel_full_1} in general, we aim to provide approximations that are numerically more efficient where possible. We also discuss the high DM mass regime where multiple scatterings are required for capture, and how this is affected by Pauli blocking. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Low and intermediate DM mass range}
+\label{sec:captureintermediate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In sections~\ref{sec:captrue_new_full} and \ref{sec:diff_int_rate}, we have derived general expressions to numerically calculate the DM capture and interaction rates,  
+Eqs.~\ref{eq:cap_rel_full_1} and \ref{eq:int_rate_capture_full} respectively.   
+Using these expressions, we can write 
+the complete expression for the capture rate as a function of the differential DM-neutron cross-section 
+\begin{equation}
+    \begin{split}
+        C = \frac{2\rho_\chi}{\pi \vstar m_\chi^2} {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  dr  \frac{r^2\zeta(r)}{\sqrt{B(r)}} &\int dt d\Ei ds \frac{d\sigma}{d\cos\thetacm}\frac{\Ei s}{\beta(s)\gamma(s)}\\
+        &\times \fFD(\Ei,r)(1-\fFD(\Ei',r)), 
+    \end{split}
+\label{eq:capturefinal}
+\end{equation}
+where the functions $\beta$ and $\gamma$ were given in section~\ref{subsec:int_rate_degen_rel}. Recall that in the limit $T\rightarrow0$,  $\fFD(\Ei,r)$ and $1-\fFD(\Ei',r)$  reduce to the step functions,  $\Theta(\kinFi(r)-\Ei)$ and  $\Theta(\Ei'-\kinFi(r))$, respectively. 
+
+
+Exchanging the differential cross-section for the squared matrix allows for easier examination of the operators in Table~\ref{tab:opers_defn_full}, and so we write the capture rate as
+\begin{equation}
+    \begin{split}
+        C &=  \frac{\rho_\chi}{8\pi^2 \vstar m_\chi^2} {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}   dr  \frac{r^2 \zeta(r) }{\sqrt{B(r)}} & \int dt d\Ei ds \frac{|\overline{M}|^2 \Ei}{2s\beta(s)-\gamma^2(s)} \frac{s}{\gamma(s)} \\
+        &\times \fFD(\Ei,r)(1-\fFD(\Ei',r)). 
+    \end{split}
+    \label{eq:capturefinalM2}
+\end{equation}
+This expression can be used to numerically calculate the single scatter capture rate of DM in compact objects, in the optically thin regime. In general, this must be used for low mass DM where PB is in effect.
+
+As discussed in section~\ref{subsec:PB_cap1}, PB eventually becomes negligable for DM with masses $\gtrsim \muFi$. Hence, between this mass and the point where multiple scattering becomes important, PB can be neglected and a simplified capture rate be obtained. For nucleon targets, this range is between $1\GeV\lesssim m_\chi\lesssim 10^6\GeV$, which we call the intermediate mass range.
+
+The resulting simplified capture rate differs slightly depending on whether the matrix element depends only on $t$, or if it has explicit $s$ dependence. We present the full derivations of these results in Appendix~\fixMV{ADD APPENDICIES}
+First, for $|\overline{M}|^2=a t^n$, the previous expression can be simplified to 
+\begin{gather}
+        C \sim C_\mathrm{approx} = \frac{4\pi}{\vstar} \frac{\rho_\chi}{m_\chi}{\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \langle\sigma(r)\rangle 
+\label{eq:csimplelargemtext}, \\
+\langle\sigma(r)\rangle = \left\langle\int dt \frac{d\sigma}{dt} \right\rangle_s =   \frac{a}{16\pi m_\chi^2 } \frac{1}{n+1}\left(\frac{4(1-B(r))m_\chi^2}{B(r)(1+\mu^2)}\right)^{n}. 
+\label{eq:xsecave}
+\end{gather}
+For the $s$-dependent matrix elements we have a very similar result, as for the $t$-dependent ones, with the only difference being that the cross-section is not averaged over $s$, and instead $s$ is fixed to a particular value as detailed in Appendix.~\fixMV{ADD APPENDIX}. Writing the matrix element as $\Msq \propto \bar{g}(s)t^n$, for with $g$ some function of $s$, we arrive at the result
+\begin{gather}
+    C \sim C_{\mathrm{approx}, s} = \frac{4\pi}{\vstar} \frac{\rho_\chi}{m_\chi}{\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \sigma(r)
+\label{eq:csimplelargemtext_sdep}, \\
+\begin{split}
+    \langle\sigma(r)\rangle = \int dt \frac{d\sigma}{dt} & =   \frac{1}{16\pi \left(\mi^2 \mchi^2 + 2\mi \mchi/\sqrt{B(r)}\right)}\frac{\bar{g}(s_0)}{(n+1)}\\
+    &\hspace{6em}\times\left[\frac{4(1 - B(r)) \mchi^2}{B(r)(1 + \mu^2) + 2\sqrt{B(r)}\mu}\right]^n,
+\label{eq:xsecave_sdep}
+\end{split}\\
+s_0 = \mi^2 + \mchi^2 + 2\frac{\Ei\mchi}{\sqrt{B(r)}}.
+\end{gather}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n0.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n1.pdf}\\
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n2.pdf}
+    \caption{Capture rate as a function of the DM mass for $\sigma=\sigma_{ref}\sim 1.7 \times 10^{-45} \cm^2$ and EoS BSk24-2, calculated with and without Pauli suppression. Top left: constant cross-section. Top right: $d\sigma\propto t$, bottom: $d\sigma\propto t^2$, where $t$ is the Mandelstam variable. NS opacity and multiple scattering effects are  neglected, and all rates are normalised to the geometric limit at large DM mass. }
+    \label{fig:approxc}
+\end{figure}
+
+
+In Fig.~\ref{fig:approxc}, we show the capture rate as a function of the DM mass for matrix elements proportional to $t^n$ for $n=0,1,2$ and the NS benchmark model BSk24-2. Numerical results obtained using Eq.~\ref{eq:capturefinalM2} are shown in solid magenta; results using the same equation but removing the theta function that enforces Pauli blocking are depicted in light blue; and the approximation for intermediate DM masses, Eq.~\ref{eq:csimplelargemtext}, in green. We show the geometric limit, Eq.~\ref{eq:capturegeom}, in orange for comparison. 
+The capture rates were all normalised to the geometric limit at large DM mass. 
+No correction for multiple scattering is implemented in these results. 
+In the same plots, we also show in brown the result obtained from using a modified version of Eq.~\ref{eq:csimplelargemtext}, where we add inside the integral the ratio between $\Gamma^-$ with and without Pauli blocking, which is obtained in section~\ref{sec:pauliblocking} for several values of $B$ and $\kinFi$. 
+From Fig.~\ref{fig:approxc}, we can see that Eq.~\ref{eq:csimplelargemtext} is a good approximation to the numerical results obtained without Pauli blocking, and can be safely used for DM masses from a few $\GeV$ up to $m_\chi\sim10^6\GeV$, where multiple scattering becomes relevant. 
+On the other hand, for $m_\chi\lesssim 100\MeV$ the brown line is no longer a good approximation to the numerical result with Pauli blocking, Eq.~\ref{eq:capturefinalM2}, as it always overestimates the capture rate by nearly an order of magnitude.  
+
+In Fig.~\ref{fig:Cratecomp}, we compare our full numerical capture rate calculation  Eq.~\ref{eq:capturefinalM2}, with that of ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}, which includes the stellar structure and Pauli blocking but not general relativity (GR) corrections, for a constant cross section $\sigma=10^{-45}\cm^2$. To that end, we have selected NS configurations that match those of Figs.~1 and 14 of ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron},  namely Model A (BSk20-1):  $\Mstar\simeq1.52\Msun$, $\Rstar\simeq11.6\km$ and Model D (BSk21-2): $\Mstar\simeq2.11\Msun$ and $\Rstar\simeq12.0\km$. We denote this new benchmark model as BSk26-1 (left panel of Fig.~\ref{fig:Cratecomp}) and BSk24-5 (right panel). Note that we were not able to use the BSk20 and BSk21 functionals, since there are no publicly available fits for chemical potentials and particle abundances for those EoS families. However, as discussed earlier in section \ref{sec:NSmodels}, BSk26 (BSk24) yields configurations which are almost indistinguishable from those obtained with BSk20 (BSk21)~\cite{Perot:2019gwl_Rolesymmetryenergy}. It is worth noting that BSk26 is disfavoured by observations \cite{Pearson:2018tkr_Unifiedequationsstate}.
+
+We can see in the left panel of Fig.~\ref{fig:Cratecomp} that in the non Pauli suppressed region, $m_\chi \gtrsim 1\GeV$, our capture rate calculation in the optical thin limit (solid magenta) exceeds that of ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron} (dot-dashed blue) by a factor of $\sim 4$. When Pauli blocking is active, our capture rate calculation is about one order of magnitude  higher than the classical calculation.  Recall that ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}  accounts for neither gravitational focusing nor relativistic kinematics. 
+We also show in dashed light blue the approximation given in ref.~\cite{McDermott:2010pa_TurningLightsHow}, which accounts for Pauli blocking with a suppression factor that depends on the neutron Fermi momentum $\sim m_\chi v_{esc}/p_{F,n}$ for $m_\chi < m_n$. Though this approximation fails to reproduce the capture rate shape due to Pauli blocking in the DM mass range $[0.1\GeV,10\GeV]$, it underestimates the capture rate by only a factor of 2 when the DM mass is below 0.1 GeV. 
+Finally, we compare the geometric limit of Eq.~\ref{eq:capturegeom}  (solid orange) that incorporates GR effects~\cite{Bell:2018pkk_sep_HeatingNeutronStars} with the non-relativistic expression in ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron} (dot-dashed brown). We observe that the former is $\sim 67 \%$ greater than the latter, mostly due to the $1/B(\Rstar)$ GR correction \cite{Goldman:1989nd_WeaklyInteractingMassive,Kouvaris:2007ay_WIMPAnnihilationCooling}. Similar conclusions are obtained when comparing capture rate calculations for Model D of ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron} (their Fig.~14) with our approach, as illustrated in the right panel of Fig.~\ref{fig:Cratecomp}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.495\textwidth]{capture_1/capture_rate_n0_comp1.pdf}
+    \includegraphics[width=.495\textwidth]{capture_1/capture_rate_n0_comp2.pdf}    
+    \caption{Left: Capture rate in the optically thin  (magenta) and geometric (orange) limits as a function of the DM mass for constant cross section $\sigma=10^{-45}\cm^2$,  $\rho_\chi=1\GeV\cm^{-3}$ and BSk26 functional for $\Mstar\simeq1.52\Msun$ and $\Rstar\simeq11.6\km$ denoted as BSk26-1. Capture rate calculations from ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron} for a NS configuration with EoS BSk20-1~\cite{Potekhin:2013qqa} equivalent to BSk26-1, are shown for comparison. Right: Same as left but for $\rho_\chi=10^3\GeV\cm^{-3}$ and the benchmark model BSk24-5 equivalent to BSk21-2 in ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}: $\Mstar\simeq2.11\Msun$ and  $\Rstar\simeq12.0\km$. 
+    }
+    \label{fig:Cratecomp}
+\end{figure}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{White Dwarfs: Electron Targets}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Neutron Stars: Leptoinc Targets}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

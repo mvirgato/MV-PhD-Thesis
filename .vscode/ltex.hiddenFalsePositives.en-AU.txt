@@ -9,3 +9,4 @@
 {"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\Q“Make it\" refers to dark matter being produced at colliders; “break it\" to searching for dark matter annihilation signals; and “shake it\" to direct detection of dark matter scattering.\\E$"}
 {"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\QThis jet could be of Standard Model or dark sector origin, with the latter commonly referred to as “mono-X\" searches.\\E$"}
 {"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\Q“Make it\" refers to the production of dark matter at colliders; “break it\" to dark matter annihilation signals; and “shake it\" to dark matter scattering.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QIn the bottom row, we set \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
