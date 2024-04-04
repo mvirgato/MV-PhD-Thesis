@@ -29,7 +29,7 @@ This chapter is dedicated to discussing the aspects of the structure, compositio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Structure Equations from General Relativity}
-\label{sec:CO_general_structure}
+\label{ch2:sec:CO_general_structure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,7 +39,7 @@ As such, modeling the structure of these objects falls into the domain of Genera
 First, the static nature of the star means that the components of the metric are functions only of the spatial coordinates and not of time. Together with the assumption that the mass distribution of the star is spherically symmetric, this leads to a Schwarzschild-like metric of the form
 \begin{equation}
     ds^2 = -d\tau^2 = -B(r) dt^2 + A(r) dr^2 + r^2 d\Omega^2,
-    \label{eq:general_Swch_metric}
+    \label{ch2:eq:general_Swch_metric}
 \end{equation}
 with $d\tau$ the proper time interval. The functions $A(r),\; B(r)$ depend only on the radial coordinate, and are often written as 
 \begin{equation}
@@ -50,9 +50,9 @@ These functions are subject to the condition that at distances far from the star
     \lim_{r\rightarrow \infty} A(r) = \lim_{r\rightarrow \infty} B(r)  = 1.
 \end{equation}
 
-The matter within the star can be modeled as a perfect fluid, meaning we are neglecting any shear stresses and energy transport within the star. Such a fluid is described by its pressure $P(r)$, density $\rho(r)$, and baryonic number density, $n_b(r)$, as well as the 4-velocity of the fluid $u^\mu(r)$. Being static, the only non-zero component of this velocity is the $\mu = 0$ component
+The matter within the star can be modeled as a perfect fluid, meaning we are neglecting any shear stresses and energy transport within the star. Such a fluid is described by its pressure $P(r)$, density $\rho(r)$, and baryonic number density, $n_b(r)$, as well as the 4-velocity of the fluid $u^\mu(r)$. Being static, the only non-zero component of this velocity is the $\mu = 0$ component,
 % \footnote{Here we are using the convention of labeling the components of a 4-vector by the coordinates of the metric. For spherical coordinates, these are $\mu = (t, r, \theta, \phi)$ as opposed to the more general convention of having $\mu = (0, 1,2,3)$.}
-, which is fixed by the normalisation condition $g_{\mu\nu}u^\mu u^\nu = -1$ to be $u^0 = 1/\sqrt{B(r)}$.
+which is fixed by the normalisation condition $g_{\mu\nu}u^\mu u^\nu = -1$ to be $u^0 = 1/\sqrt{B(r)}$.
 These quantities are used to construct the stress-energy tensor of the star, which takes the form
 \begin{equation}
     T^{\mu\nu} = (\rho + P)u^\mu u^\nu + P g^{\mu\nu}.
@@ -63,15 +63,15 @@ The physics describing the underlying microscopic interactions within matter are
 \end{equation}
 The dependence on $s$ turns out to be trivial in most scenarios involving compact objects, such as those considered througout this work. The pressure in these stars arises from the degeneracy of the nucleons in NSs or the electrons in WDs, rather than from the thermal motion of the constituents as in main sequence stars. These thermal degrees of freedom will be frozen out at temperatures lower than the Fermi energy of the system, which is typically around $E_F \sim 10\MeV$ in NSs or $\sim 1 \MeV$ in WDs, and correspond to temperatures of $T_\star\sim 10^{11}\K$ and $\sim 10^{10}\K$ respectively. As these objects are expected to cool well below these temperatures quickly after formation~\cite{Yakovlev:2004iq_Neutronstarcooling,Yakovlev:2004yr_Neutronstarcooling, Bedard_oct_Spectralevolutionhot}, the entropy can be taken to be zero throughout the star. This allows us to reduce the two-parameter EoS to a simpler one-parameter one,
 \begin{equation}
-    P=P(n_b, s = 0) = P(n_b), \quad \rho = \rho(n_b, s=0) = \rho(n_b).\label{eq:1_param_EoS}
+    P=P(n_b, s = 0) = P(n_b), \quad \rho = \rho(n_b, s=0) = \rho(n_b).\label{ch2:eq:1_param_EoS}
 \end{equation} 
 
 
-The structure of the star is therefore dictated by the quantities $A(r)$, $B(r)$, $P(r)$, $\rho(r)$, and $n_b(r)$. This system is determined by applying the Einstein field equations, $G^{\mu\nu} = 8\pi T^{\mu\nu}$, together with the energy-momentum conservation, $T^{\mu\nu}_{\quad;\nu}=0$, the EoS relations Eqs.~\ref{eq:1_param_EoS}, and the appropriate boundary conditions. The structure equations that come out of this analysis were first discovered concurrently by Tolman~\cite{Tolman:1939jz_StaticSolutionsEinstein} and by Oppenheimer and Volkoff~\cite{Oppenheimer:1939ne_MassiveNeutronCores}, and so are known as the TOV equations. They take the form
+The structure of the star is therefore dictated by the quantities $A(r)$, $B(r)$, $P(r)$, $\rho(r)$, and $n_b(r)$. This system is determined by applying the Einstein field equations, $G^{\mu\nu} = 8\pi T^{\mu\nu}$, together with the energy-momentum conservation, $T^{\mu\nu}_{\quad;\nu}=0$, the EoS relations Eqs.~\ref{ch2:eq:1_param_EoS}, and the appropriate boundary conditions. The structure equations that come out of this analysis were first discovered concurrently by Tolman~\cite{Tolman:1939jz_StaticSolutionsEinstein} and by Oppenheimer and Volkoff~\cite{Oppenheimer:1939ne_MassiveNeutronCores}, and so are known as the TOV equations. They take the form
 \begin{align}
-    \frac{dP}{dr} &= -\rho(r) c^2  \left[ 1 + \frac{P(r)}{\rho(r) c^2} \right]\frac{d\Phi}{dr},\label{eq:TOV_1}\\
-    \frac{d\Phi}{dr} & = \frac{G M(r)}{c^2 r^2} \left[ 1 + \frac{4\pi r^3 P(r)}{M(r)c^2} \right] \left[ 1 - \frac{2 G M(r)}{c^2 r}\right]^{-1}\label{eq:TOV_2},\\
-    \frac{dB}{dr} & = 2B(r) \frac{d\Phi}{dr},\label{eq:TOV_3}
+    \frac{dP}{dr} &= -\rho(r) c^2  \left[ 1 + \frac{P(r)}{\rho(r) c^2} \right]\frac{d\Phi}{dr},\label{ch2:eq:TOV_1}\\
+    \frac{d\Phi}{dr} & = \frac{G M(r)}{c^2 r^2} \left[ 1 + \frac{4\pi r^3 P(r)}{M(r)c^2} \right] \left[ 1 - \frac{2 G M(r)}{c^2 r}\right]^{-1}\label{ch2:eq:TOV_2},\\
+    \frac{dB}{dr} & = 2B(r) \frac{d\Phi}{dr},\label{ch2:eq:TOV_3}
 \end{align}
 where $M(r)$ is related to the metric factor $A(r)$ through
 \begin{equation}
@@ -80,16 +80,16 @@ where $M(r)$ is related to the metric factor $A(r)$ through
 and is interpreted as the mass contained within a radius $r$. It obeys the mass equation 
 \begin{equation}
     \frac{dM}{dr} = 4\pi r^2 \rho(r),\quad M(0) = 0,
-    \label{eq:mass_equation_TOV}
+    \label{ch2:eq:mass_equation_TOV}
 \end{equation}
 which arises from the $\mu = \nu = 0$ component of the Einstein field equiations. 
-These equations are the general relativistic versions of the hydrostatic equilibrium equations of regular stellar structure, with Eq.~\ref{eq:TOV_1} reducing to the familiar 
+These equations are the general relativistic versions of the hydrostatic equilibrium equations of regular stellar structure, with Eq.~\ref{ch2:eq:TOV_1} reducing to the familiar 
 \begin{equation}
     \frac{dP}{dr} = -\frac{GM(r)}{r^2}\rho(r),
 \end{equation}
 in the Newtonian limit, $GM(r)/c^2 r \ll 1$.
 
-The radius of the star, $\Rstar$, is identified as the point at which the pressure and density vanish, $P(\Rstar) = \rho(\Rstar) = 0$. In the region outside the star, $r>\Rstar$, the total mass remains constant at the total mass of the star, $M(r \geq  \Rstar) = \Mstar$, and so the only non-trivial structure functions in this region are the metric factors. Solving Eq.~\ref{eq:TOV_3} for $B(r)$ with $P(r)=0$ and constant $M(r) = M_\star$ leaves us with
+The radius of the star, $\Rstar$, is identified as the point at which the pressure and density vanish, $P(\Rstar) = \rho(\Rstar) = 0$. In the region outside the star, $r>\Rstar$, the total mass remains constant at the total mass of the star, $M(r \geq  \Rstar) = \Mstar$, and so the only non-trivial structure functions in this region are the metric factors. Solving Eq.~\ref{ch2:eq:TOV_3} for $B(r)$ with $P(r)=0$ and constant $M(r) = M_\star$ leaves us with
 \begin{equation}
     A(r) = \left[ 1 - \frac{G \Mstar}{c^2 r} \right]^{-1}, \quad B(r) = 1 - \frac{G \Mstar}{c^2 r} ,\quad\mathrm{for}\;r > \Rstar,
 \end{equation}
@@ -97,7 +97,7 @@ and the metric reduces to the familiar Schwarzschild metric outside the star.
 Continuity of the metric at $r= \Rstar$ enforces a second boundary condition for $B(r)$,
 \begin{equation}
     B(\Rstar) = 1 - \frac{G \Mstar}{c^2 \Rstar}.
-    \label{eq:B_boundary_condition}
+    \label{ch2:eq:B_boundary_condition}
 \end{equation}
 
 The final boundary condition required is the central pressure $P(0) = P_c$ or, equivalently the central density/baryon number density. This is the only free parameter in the system and hence, for a given EoS, uniquely determines the stellar structure. Therefore, all the stars that are predicted by solving the coupled TOV + EoS system can be represented by a one-parameter sequence, represented by the mass-radius relation for the EoS model.
@@ -107,8 +107,8 @@ Given all the above, we can write a simple recipe for constructing a model of a 
 \begin{enumerate}
     \item Model the constituent matter with an appropriate EoS.
     \item Specify the central pressure of the star, $P_c$.
-    \item Integrate the coupled system of differential equations \ref{eq:TOV_1}, \ref{eq:TOV_2}, \ref{eq:mass_equation_TOV} from the centre of the star outward until the pressure vanishes.
-    \item Use the boundary condition Eq.~\ref{eq:B_boundary_condition} to normalise the metric function $B(r)$. 
+    \item Integrate the coupled system of differential equations \ref{ch2:eq:TOV_1}, \ref{ch2:eq:TOV_2}, \ref{ch2:eq:mass_equation_TOV} from the centre of the star outward until the pressure vanishes.
+    \item Use the boundary condition Eq.~\ref{ch2:eq:B_boundary_condition} to normalise the metric function $B(r)$. 
 \end{enumerate}
 In general, additional quantities will be present in the EoS, such as chemical potentials and the speed of sound, which may be subject to additional constraints. These quantities will need to be calculated at each step of the integration alongside the other structure functions. 
 
@@ -116,6 +116,7 @@ In general, additional quantities will be present in the EoS, such as chemical p
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{White Dwarfs}
+\label{ch2:sec:white_dwarfs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,6 +133,7 @@ This atmosphere is non-degenerate and extremely opaque to radiation, with an EoS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The FMT Equation of State}
+\label{ch2:sec:FMT_EoS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -140,20 +142,20 @@ In the limit of zero temperature, the simplest way to obtain the WD EoS is to as
 
 More recently, it has been shown that the treatment of matter at high pressures presented by Feynman, Metropolis and Teller~\cite{Feynman:1949zz_Equationsstateelements} can be extended to consistently take into account weak interactions and relativistic effects \cite{Rotondo:2009cr_RelativisticThomasFermitreatment,Rotondo:2011zz_RelativisticFeynmanMetropolisTellertheory}, and incorporates Coulomb corrections in a more natural manner than the Salpeter EoS. The resulting Feynman-Metropolis-Teller (FMT) EoS is obtained by considering a relativistic Thomas-Fermi model within Wigner-Seitz cells of radius $R_{\mathrm WS}$. 
 For degenerate, relativistic, electrons, the equilibrium condition is that the Fermi energy, $E_e^F$, is constant within the cell,
-\begin{equation}\label{eq:rel_equil}
+\begin{equation}\label{ch2:eq:rel_equil}
 E_e^F=\sqrt{(p_e^F)^2+m_e^2}-m_e-eV(r) = \rm{constant},
 \end{equation}
 where $V(r)$ is the Coulomb potential inside the cell, $p_e^F$ is the electron Fermi momentum, $m_e$ is the electron mass and $e$ is the electric charge. To obtain an integrable solution for the energy density near the origin, it is necessary to introduce a finite size for the nucleus, with radius $ R_c = \Delta\lambda_{\pi} Z^{1/3}$, 
 where $\lambda_\pi$ is the pion Compton wavelength, $\Delta \approx (r_0 /\lambda_\pi)(A/Z)^{1/3}$, $Z$ is the proton number, $A$ is the atomic mass, and $r_0$ is an empirical constant $\sim 1.2\;\text{fm}$. The proton and electron number densities inside the cell are then given by
 \begin{align}
-    n_p &=  \frac{(p^F_p)^3}{3\pi^2} =\frac{3Z}{4\pi R_c^3}\theta( R_c - r ) = \frac{3}{4\pi} \left( \frac{1}{\Delta \lambda_\pi} \right)^3 \theta(R_c -r), \label{eq:prot_dens_FMT}\\
-    n_e &= \frac{(p^F_e)^3}{3\pi^2} = \frac{1}{3\pi^2}\left[ \hat{V}^2(r) + 2m_e \hat{V}(r)\right]^{3/2},\label{eq:elec_dens_FMT}\\
-    \hat{V}(r) &= eV(r) + E_e^F. \label{eq:vhat}
+    n_p &=  \frac{(p^F_p)^3}{3\pi^2} =\frac{3Z}{4\pi R_c^3}\theta( R_c - r ) = \frac{3}{4\pi} \left( \frac{1}{\Delta \lambda_\pi} \right)^3 \theta(R_c -r), \label{ch2:eq:prot_dens_FMT}\\
+    n_e &= \frac{(p^F_e)^3}{3\pi^2} = \frac{1}{3\pi^2}\left[ \hat{V}^2(r) + 2m_e \hat{V}(r)\right]^{3/2},\label{ch2:eq:elec_dens_FMT}\\
+    \hat{V}(r) &= eV(r) + E_e^F. \label{ch2:eq:vhat}
 \end{align}
 The Coulomb potential satisfies the Poisson equation 
 \begin{equation}
     \nabla^2 V(r) = -4\pi e[n_p(r) - n_e(r)],
-    \label{eq:poisson_WS_cell}
+    \label{ch2:eq:poisson_WS_cell}
 \end{equation} 
 with the requirement of global charge neutrality of the cell enforcing the boundary conditions
 \begin{equation}
@@ -162,23 +164,23 @@ with the requirement of global charge neutrality of the cell enforcing the bound
 In practice, it is beneficial to work with dimensionless quantities, and so we define $x = r/\lambda_\pi$ and $\chi(r) = r\hat{V}(r)$, such that $x_c = R_c/\lambda_\pi$ and $x_{\mathrm WS} = R_{\mathrm WS}/\lambda_\pi$.
 Using these expressions results in the relativistic Thomas-Fermi equation
 \begin{equation}
-    \frac{1}{3x}\frac{d^2\chi}{dx^2} = -\frac{\alpha_{\mathrm{EM}}}{\Delta^3}\theta(x_c -x) + \frac{4\alpha_\mathrm{EM}}{9\pi}\left[ \frac{\chi^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\chi(x)}{x}\right]^{3/2},\label{eq:FMT_DE}
+    \frac{1}{3x}\frac{d^2\chi}{dx^2} = -\frac{\alpha_{\mathrm{EM}}}{\Delta^3}\theta(x_c -x) + \frac{4\alpha_\mathrm{EM}}{9\pi}\left[ \frac{\chi^2(x)}{x^2} + 2\frac{m_e}{m_\pi}\frac{\chi(x)}{x}\right]^{3/2},\label{ch2:eq:FMT_DE}
 \end{equation}
 with the boundary conditions
 \begin{equation}
     \chi(0) = 0, \qquad
-    \left. \frac{d\chi}{dx}\right|_{x_{\mathrm{WS}}} = \frac{\chi(x_{\mathrm WS})}{x_{\mathrm{WS}}}. \label{eq:TF_bc}
+    \left. \frac{d\chi}{dx}\right|_{x_{\mathrm{WS}}} = \frac{\chi(x_{\mathrm WS})}{x_{\mathrm{WS}}}. \label{ch2:eq:TF_bc}
 \end{equation}
 
-By solving these equations, we can obtain the relevant thermodynamic quantities, namely the electron and proton number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression\footnote{We use the symbol $\varepsilon_{F,i}$ to represent the chemical potential minus the mass of a particle species $i$, reserving $\mu_{F,i}$ for the full chemical potential.}
+By solving these equations, we can obtain the relevant thermodynamic quantities, namely the electron and proton number densities, electron chemical potential, and the energy and pressure of the cell. The electron chemical potential is obtained by evaluating Eq.~\ref{ch2:eq:rel_equil} at the cell radius, noting that the Coulomb potential must vanish there, which results in the usual expression\footnote{We use the symbol $\varepsilon_{F,i}$ to represent the chemical potential minus the mass of a particle species $i$, reserving $\mu_{F,i}$ for the full chemical potential.}
 \begin{equation}
-    \varepsilon_{F,e} = \sqrt{(p_e^F)^2+m_e^2}-m_e.\label{eq:mufe}
+    \varepsilon_{F,e} = \sqrt{(p_e^F)^2+m_e^2}-m_e.\label{ch2:eq:mufe}
 \end{equation}
 The energy and pressure of the cell can then be obtained following the analysis presented in~ref.~\cite{Rotondo:2011zz_RelativisticFeynmanMetropolisTellertheory}. The cell energy gains contributions from the nuclear mass, electron kinetic energy, and Coulomb interactions, such that
 \begin{align}
-    E_\mathrm{tot} & = M_N + E_k + E_C,\label{eq:total_E_cell}\\
-    E_k & = \int_0^{R_{\mathrm WS}}4\pi r^2 [\mathcal{E}_e(r) - m_e n_e(r)]\;dr,\label{eq:kinetic_E_cell}\\
-    E_C & = \frac{1}{2}\int_{R_c}^{R_{\mathrm WS}}4\pi r^2 e[n_p(r) - n_e(r)]V(r)\;dr,\label{eq:Coulomb_E_cell}
+    E_\mathrm{tot} & = M_N + E_k + E_C,\label{ch2:eq:total_E_cell}\\
+    E_k & = \int_0^{R_{\mathrm WS}}4\pi r^2 [\mathcal{E}_e(r) - m_e n_e(r)]\;dr,\label{ch2:eq:kinetic_E_cell}\\
+    E_C & = \frac{1}{2}\int_{R_c}^{R_{\mathrm WS}}4\pi r^2 e[n_p(r) - n_e(r)]V(r)\;dr,\label{ch2:eq:Coulomb_E_cell}
 \end{align}
 where
 \begin{equation}
@@ -194,7 +196,7 @@ The only contribution to the internal cell pressure comes from the electrons,
     P_e(r) = \frac{1}{3\pi^2}\int_0^{p_e^F}\frac{p^4}{\sqrt{p^2+m_e^2}}\;dp,
 \end{equation}
 with the total pressure of the cell being $P_\mathrm{tot} = P_e(R_{\mathrm WS})$.
-Finally, the EoS is then obtained by solving Eq.~\ref{eq:FMT_DE} for various cell radii, yielding a relation between $E_\mathrm{tot}(R_\mathrm{WS})$ and $P_\mathrm{tot}(R_\mathrm{WS})$ parameterised by the radius of the Wigner-Seitz cell. 
+Finally, the EoS is then obtained by solving Eq.~\ref{ch2:eq:FMT_DE} for various cell radii, yielding a relation between $E_\mathrm{tot}(R_\mathrm{WS})$ and $P_\mathrm{tot}(R_\mathrm{WS})$ parameterised by the radius of the Wigner-Seitz cell. 
 
 
 \begin{table}[t]
@@ -210,23 +212,23 @@ Finally, the EoS is then obtained by solving Eq.~\ref{eq:FMT_DE} for various cel
       \bottomrule
     \end{tabular}
   \caption{Four configurations for white dwarfs composed of carbon, with an FMT EoS. Shown are the central densities, $\rho_c$, stellar mass $\Mstar$ and radius $\Rstar$, and escape velocity at the edge of the WD, $\vesc$. }
-    \label{tab:WDs}
+    \label{ch2:tab:WDs}
 \end{table}
  
 
 
 Different WD configurations can be obtained, assuming a non-rotating spherically symmetric star, by solving the
-Tolman-Oppenheimer-Volkoff (TOV) equations~\cite{Tolman:1939jz_StaticSolutionsEinstein,Oppenheimer:1939ne_MassiveNeutronCores} coupled to the FMT EoS with different initial conditions for the pressure at the centre of the star. In Fig.~\ref{fig:WDradprofs} we show radial profiles for $n_e$ (top left), $\kinFe$ (top right), and escape velocity $\vesc$ (bottom) for the carbon WDs in Table~\ref{tab:WDs}. Note that the difference in radius between the lightest and heaviest WD in Table~\ref{tab:WDs} spans almost one order of magnitude, while the electron number densities in the core can vary up to 4 orders of magnitude (see top left panel). As expected, electrons are more degenerate in more compact WDs and become relativistic (see top right panel). The escape velocity can reach ${\mathcal{O}}(0.1\,c)$ at the interior of the most compact WDs, while for very low mass WDs 
+Tolman-Oppenheimer-Volkoff (TOV) equations~\cite{Tolman:1939jz_StaticSolutionsEinstein,Oppenheimer:1939ne_MassiveNeutronCores} coupled to the FMT EoS with different initial conditions for the pressure at the centre of the star. In Fig.~\ref{ch2:fig:WDradprofs} we show radial profiles for $n_e$ (top left), $\kinFe$ (top right), and escape velocity $\vesc$ (bottom) for the carbon WDs in Table~\ref{ch2:tab:WDs}. Note that the difference in radius between the lightest and heaviest WD in Table~\ref{ch2:tab:WDs} spans almost one order of magnitude, while the electron number densities in the core can vary up to 4 orders of magnitude (see top left panel). As expected, electrons are more degenerate in more compact WDs and become relativistic (see top right panel). The escape velocity can reach ${\mathcal{O}}(0.1\,c)$ at the interior of the most compact WDs, while for very low mass WDs 
 it can be as low as $\sim0.003\,c$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!t]
+\begin{figure}[t!bp]
     \centering
     \includegraphics[width = 0.495\textwidth]{ne_prof.pdf}  
     \includegraphics[width = 0.495\textwidth]{muFe_prof.pdf}  
     \includegraphics[width = 0.67\textwidth]{vesc_prof.pdf}
-    \caption{Electron number density (top left), chemical potential (top right), and escape velocity (bottom) radial profiles for the carbon WDs with FMT EoS in Table~\ref{tab:WDs}. The radial distance of each profile has been normalised to the radius of the star.}
-    \label{fig:WDradprofs}
+    \caption{Electron number density (top left), chemical potential (top right), and escape velocity (bottom) radial profiles for the carbon WDs with FMT EoS in Table~\ref{ch2:tab:WDs}. The radial distance of each profile has been normalised to the radius of the star.}
+    \label{ch2:fig:WDradprofs}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -248,7 +250,7 @@ for a star at temperature $\Tstar$. The Thomas-Fermi equilibrium condition withi
 \begin{equation}
     \varepsilon_{F,e}(r) - e V(r) = \Tstar \eta(r) - e V(r) = \mathrm{constant},
 \end{equation}
-with the Coulpmb potential vanishing at the boundary of the cell as before. We now make the change of variables into the dimensionless quantities $\chi/r = \varepsilon_{F,e} / (\hbar c)$ and $x = x/x_\mathrm{WS}$ so that the Poisson equation~\ref{eq:poisson_WS_cell} becomes
+with the Coulpmb potential vanishing at the boundary of the cell as before. We now make the change of variables into the dimensionless quantities $\chi/r = \varepsilon_{F,e} / (\hbar c)$ and $x = x/x_\mathrm{WS}$ so that the Poisson equation~\ref{ch2:eq:poisson_WS_cell} becomes
 \begin{align}
     \begin{split}
         \frac{d^2 \chi}{dx^2} &= -4 \pi \alpha_\mathrm{EM} x \left( \frac{3}{4\pi \Delta^3} \theta(x_c - x) \right.\\
@@ -256,7 +258,7 @@ with the Coulpmb potential vanishing at the boundary of the cell as before. We n
     \end{split}\\
     \eta(x) & = \left(\frac{1}{\lambda_\pi \Tstar}\right)\frac{\chi(x)}{x},
 \end{align}
-with the same boundary conditions as in Eq.~\ref{eq:TF_bc}.
+with the same boundary conditions as in Eq.~\ref{ch2:eq:TF_bc}.
 
 The total energy of the cell remains very similar to the zero-temperature case, with the main differences being that it gains a contribution from the thermal motion of the nucleus, 
 \begin{equation}
@@ -274,7 +276,7 @@ The pressure of the cell will now gain contributions from the motion of the nucl
     P_e & = \frac{2^{3/2}}{3\pi} me^4 \beta^{5/2}\left[  F_{3/2}(\eta(x_\mathrm{WS}), \beta) + \beta F_{5/2}(\eta(x_\mathrm{WS}), \beta)  \right].
 \end{align}
 
-In Fig.~\ref{fig:WD_mass_radius} we show the Mass-Radius relations obtained from the zero temperature FMT EoS together with several finite temperature configurations. As can be seen, the deviations from the zero temperature approximation begin at rather high temperatures, $\Tstar\gtrsim 10^7\K$, for masses $\lesssim 0.6 \Msun$. Additionally, we show a random selection of 20,000 WDs presented in the Gaia early data release 2 (EDR2) report~\cite{GentileFusillo_feb_GaiaDataRelease} as the yellow-red dots. The colour of the dot represents the internal temperature of the corresponding WD. The core temperature must be determined from the observed effective surface temperature of the star\footnote{The effective temperature is the temperature that characterises the surface of the star. Assuming that WDs are perfect blackbody emitters, the luminosity will be $L_\gamma = 4\pi \sigma_{SB} \, \Rstar^2 \, \Teff^4$, where $\sigma_{SB}$ is the Stefan–Boltzmann constant.}, with the relation between the two depending on the composition of the WD atmosphere. To obtain the central temperature from the reported effective temperatures, we use the WD cooling sequences generated in Ref.~\cite{Bedard_oct_Spectralevolutionhot}\footnote{The cooling sequence data can be obtained from\\\href{http://www.astro.umontreal.ca/~bergeron/CoolingModels}{\texttt{http://www.astro.umontreal.ca/~bergeron/CoolingModels}}.} assuming a thin hydrogen atmosphere. In general, there is good agreement between the mass-radius relations derived from the finite temperature FMT EoS and the observed internal temperatures of the WDs.
+In Fig.~\ref{ch2:fig:WD_mass_radius} we show the Mass-Radius relations obtained from the zero temperature FMT EoS together with several finite temperature configurations. As can be seen, the deviations from the zero temperature approximation begin at rather high temperatures, $\Tstar\gtrsim 10^7\K$, for masses $\lesssim 0.6 \Msun$. Additionally, we show a random selection of 20,000 WDs presented in the Gaia early data release 2 (EDR2) report~\cite{GentileFusillo_feb_GaiaDataRelease} as the yellow-red dots. The colour of the dot represents the internal temperature of the corresponding WD. The core temperature must be determined from the observed effective surface temperature of the star\footnote{The effective temperature is the temperature that characterises the surface of the star. Assuming that WDs are perfect blackbody emitters, the luminosity will be $L_\gamma = 4\pi \sigma_{SB} \, \Rstar^2 \, \Teff^4$, where $\sigma_{SB}$ is the Stefan–Boltzmann constant.}, with the relation between the two depending on the composition of the WD atmosphere. To obtain the central temperature from the reported effective temperatures, we use the WD cooling sequences generated in Ref.~\cite{Bedard_oct_Spectralevolutionhot}\footnote{The cooling sequence data can be obtained from\\\href{http://www.astro.umontreal.ca/~bergeron/CoolingModels}{\texttt{http://www.astro.umontreal.ca/~bergeron/CoolingModels}}.} assuming a thin hydrogen atmosphere. In general, there is good agreement between the mass-radius relations derived from the finite temperature FMT EoS and the observed internal temperatures of the WDs.
 
 Given the non-linear nature of the differential equations that describe the FMT EoS (both at zero and finite temperatures), solving the system is a numerically challenging task. As there are no publically available resources to help solve these systems, a significant amount of time was put into solving this problem. As such, we have outlined in Appendix~\ref{app:FMT_solution} the method employed in numerically solving the differential equations. 
 
@@ -282,7 +284,7 @@ Given the non-linear nature of the differential equations that describe the FMT 
     \centering
     \includegraphics{WD_mass_radius.pdf}
     \caption{Mass-Radius relation of WDs calculated from the FMT EoS in the zero-temperature approximation (dark blue), at $10^{5}\K$ (yellow), $10^{7}\K$ (orange), and $10^{8}\K$ (red), together with observed WDs from Gaia EDR2 observations~\cite{GentileFusillo_feb_GaiaDataRelease} (yellow-red dots). The colour of the dots represents the surface temperature of the WD inferred from cooling models~\cite{Bedard_oct_Spectralevolutionhot}.}
-    \label{fig:WD_mass_radius}
+    \label{ch2:fig:WD_mass_radius}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -290,6 +292,7 @@ Given the non-linear nature of the differential equations that describe the FMT 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Observational Status}
+\label{ch2:subsec:WD_obs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -315,6 +318,7 @@ was converted into luminosities and effective temperatures in ref.~\cite{McCullo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Neutron Stars}
+\label{ch2:sec:neutron_stars}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -347,8 +351,8 @@ Charge neutrality dictates that the abundances of the charged particles obeys
 \end{equation}
 while beta-equilibrium refers to the balance between the weak decays of neutrons and the electron/muon capture by the protons,
 \begin{gather}
-    n \rightarrow p + \ell^- +\bar{\nu}_\ell,\label{eq:beta_decay}\\
-    p + \ell^- \rightarrow n + \nu_\ell,\label{eq:electron_capture}
+    n \rightarrow p + \ell^- +\bar{\nu}_\ell,\label{ch2:eq:beta_decay}\\
+    p + \ell^- \rightarrow n + \nu_\ell,\label{ch2:eq:electron_capture}
 \end{gather}
 with $\ell = e, \mu$. Muons will begin to replace electrons in these reactions once the electron chemical potential exceeds the mass of the muon, $\mu_{F,e} \gtrsim m_\mu = 105.7\MeV$. As neutrinos are assumed to escape the NS once produced, the relation between the chemical potential of the leptons is simply
 \begin{equation}
@@ -368,6 +372,7 @@ The densities within the inner cores of NSs extend between $2\rho_0 \lesssim \rh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Observational Status}
+\label{ch2:subsec:NS_obs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -384,14 +389,14 @@ This deformation will alter the waveform observed at the detectors, with the shi
 Furthermore, the electromagnetic emission from the remnant object provides information about the maximum mass an NS can achieve. 
 If the mass of the remnant object is too large, it will collapse into a black hole, and it is highly unlikely that a gamma-ray burst will occur. If the remnant does not immediately collapse, then its mass and how it is rotating determines whether it will be hydrodynamically stable, unstable, or metastable against gravitational collapse. A remnant that undergoes differential rotation\footnote{This is when components of the star at different latitudes have different angular velocities.} can support heavier masses than one that is uniformly rotating. Hence, the afterglow spectrum can inform us as to how the star is rotating. Comparing the maximum mass supported by this rotation to the initial mass after inspiral yields an upper bound on the maximum NS mass achievable. 
 
-To date, the only confirmed NS-NS merger is the merger event GW170817 observed at LIGO-VIRGO in 2017~\cite{LIGOScientific:2018cki_oct_GW170817MeasurementsNeutron,LIGOScientific:2018hze_Propertiesbinaryneutron}, with the gamma-ray burst counterpart signal observed at the Fermi Gamma-ray Burst Monitor and INTEGRAL satellite~\cite{LIGOScientific:2017zic_Gravitationalwavesgammarays}. These observations led to the constraint that the radius of a $1.4\Msun$ NS has an upper bound of $R_{1.4} < 13.3\km$~\cite{LIGOScientific:2018cki_oct_GW170817MeasurementsNeutrona, De:2018uhw_aug_TidalDeformabilitiesRadii}, and that the maximum NS mass must be $M_\mathrm{NS}^\mathrm{MAX} < 2.18\Msun$~\cite{LIGOScientific:2017zic_Gravitationalwavesgammarays}. These constraints on the neutron star mass-radius relation are shown as the shaded turquoise and red regions of Fig~\ref{fig:NS_mass_rad}. 
+To date, the only confirmed NS-NS merger is the merger event GW170817 observed at LIGO-VIRGO in 2017~\cite{LIGOScientific:2018cki_oct_GW170817MeasurementsNeutron,LIGOScientific:2018hze_Propertiesbinaryneutron}, with the gamma-ray burst counterpart signal observed at the Fermi Gamma-ray Burst Monitor and INTEGRAL satellite~\cite{LIGOScientific:2017zic_Gravitationalwavesgammarays}. These observations led to the constraint that the radius of a $1.4\Msun$ NS has an upper bound of $R_{1.4} < 13.3\km$~\cite{LIGOScientific:2018cki_oct_GW170817MeasurementsNeutrona, De:2018uhw_aug_TidalDeformabilitiesRadii}, and that the maximum NS mass must be $M_\mathrm{NS}^\mathrm{MAX} < 2.18\Msun$~\cite{LIGOScientific:2017zic_Gravitationalwavesgammarays}. These constraints on the neutron star mass-radius relation are shown as the shaded turquoise and red regions of Fig~\ref{ch2:fig:NS_mass_rad}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering
     \includegraphics{NS_mass_radius.pdf}
     \caption{Neutron Star Mass-Radius relation predicted by the BSk (blue lines) and QMC (red lines) EoSs. Constraints obtained from the gravitational wave event GW170817 are shown as the shaded regions, with the lower bound on the radius in turquoise, and the maximum NS mass possible in red. The line band labeled $R_{1.4}$ indicates the constraints on the radius of a $1.4\;\Msun$ NS.}
-    \label{fig:NS_mass_rad}
+    \label{ch2:fig:NS_mass_rad}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -400,6 +405,7 @@ To date, the only confirmed NS-NS merger is the merger event GW170817 observed a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Neutron Star Equations of State}
+\label{ch2:subsec:NS_EoS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -408,10 +414,10 @@ Given the scarce constraints that have been placed on the NS mass-radius relatio
 \subsubsection{The Brussels-Montreal EoS}
 The first family of EoSs adopted in this work are based on the Brussels-Montreal (BSk) energy density functionals~\cite{Chamel:2009yx_FurtherexplorationsSkyrmeHartreeFockBogoliubov, Goriely:2010bm_FurtherexplorationsSkyrmeHartreeFockBogoliubov, Pearson:2011zz_jun_Propertiesoutercrust, Pearson:2012hz_Innercrustneutron, Potekhin:2013qqa_Analyticalrepresentationsunified, Pearson:2018tkr_Unifiedequationsstate}, for cold, non-accreting NSs. In these models, the density-dependent nucleon interactions are accounted for via a mean-field approximation in either the Hartree-Fock (HF) or Hartree-Fock-Bogoliubov (HFB) formalism\footnote{The HF method accounts for the energy associated with nucleon pairings, while the HFB method neglects this contribution.}, through effective Skyrme type forces~\cite{Bender:2003jk_Selfconsistentmeanfieldmodels, Stone:2006fn_Skyrmeinteractionfinite}. The BSk EoS family are unified EoSs, meaning they describe all the regions of the NS interior using the single effective Hamiltonian. Furthermore, the authors provide public \texttt{FORTRAN} subroutines that implement fits to the EoS quantities such as the pressure and density as functions of the baryon number density, allowing straightforward implementation of the EoS. 
 
-The authors provide these fits to eight configurations of the BSk EoS, labeled BSK19-26. Of these, the older BSK19-21  functionals were fitted to older atomic mass data that has since been updated in the newer models, BSk22-26. The mass-radius relation predicted by a selection of these models is shown in Fig.~\ref{fig:NS_mass_rad} by the blue lines. Missing are the BSk20 and 21 models, as they give very similar results to the 26 and 24 models respectively. The BSk19 EoS is partially ruled out from the lower bound on NS radii obtained from the electromagnetic counterpart of the GW170817 event~\cite{Koppel:2019pys_Generalrelativisticdeterminationthreshold}, while BSk22 is ruled out from constraints on the tidal deformability from the same event~\cite{Perot:2019gwl_Rolesymmetryenergy}. Additionally, BSk22 does not support the presence of direct Urca\footnote{This is another name given to the reactions in Eqs.~\ref{eq:beta_decay},~\ref{eq:electron_capture}.} processes in NSs described by this EoS. These processes are required to explain observations of a small population of NSs that have cooled to temperatures below those predicted by the ``minimal cooling paradigm''~\cite{Gusakov:2004se_Enhancedcoolingneutron, Page:2004fy_MinimalCoolingNeutron}. On the other hand, the BSk26 functional predicts that all stable NSs will support direct Urac processes. This goes against the current observational evidence that a majority of NSs are well modeled by the minimal cooling paradigm, ruling the EoS out. Of the remaining two models, BSk24 and 25, we choose to adopt BSk24 as it gives slightly better fits to NS mass data than that of BSk25. 
+The authors provide these fits to eight configurations of the BSk EoS, labeled BSK19-26. Of these, the older BSK19-21  functionals were fitted to older atomic mass data that has since been updated in the newer models, BSk22-26. The mass-radius relation predicted by a selection of these models is shown in Fig.~\ref{ch2:fig:NS_mass_rad} by the blue lines. Missing are the BSk20 and 21 models, as they give very similar results to the 26 and 24 models respectively. The BSk19 EoS is partially ruled out from the lower bound on NS radii obtained from the electromagnetic counterpart of the GW170817 event~\cite{Koppel:2019pys_Generalrelativisticdeterminationthreshold}, while BSk22 is ruled out from constraints on the tidal deformability from the same event~\cite{Perot:2019gwl_Rolesymmetryenergy}. Additionally, BSk22 does not support the presence of direct Urca\footnote{This is another name given to the reactions in Eqs.~\ref{ch2:eq:beta_decay},~\ref{ch2:eq:electron_capture}.} processes in NSs described by this EoS. These processes are required to explain observations of a small population of NSs that have cooled to temperatures below those predicted by the ``minimal cooling paradigm''~\cite{Gusakov:2004se_Enhancedcoolingneutron, Page:2004fy_MinimalCoolingNeutron}. On the other hand, the BSk26 functional predicts that all stable NSs will support direct Urac processes. This goes against the current observational evidence that a majority of NSs are well modeled by the minimal cooling paradigm, ruling the EoS out. Of the remaining two models, BSk24 and 25, we choose to adopt BSk24 as it gives slightly better fits to NS mass data than that of BSk25. 
 
-We use the BSk24 EoS to generate four benchmark NSs with masses of $1$, 1.5, 1.9 an 2.16$\;\Msun$, with the central density $\rho_c$, stellar mass, radius, metric factor $B(\Rstar)$ and central speed of sound $c_s(0)$ in Table~\ref{tab:BSk_configs}. 
-Radial profiles of the baryon number density $n_b(r)$, metric factor $B(r)$, neutron chemical potential $\kinFn(r)$, and neutron abundance  $Y_n(r)$, are shown in Fig.~\ref{fig:BSk_profiles}. 
+We use the BSk24 EoS to generate four benchmark NSs with masses of $1$, 1.5, 1.9 an 2.16$\;\Msun$, with the central density $\rho_c$, stellar mass, radius, metric factor $B(\Rstar)$ and central speed of sound $c_s(0)$ in Table~\ref{ch2:tab:BSk_configs}. 
+Radial profiles of the baryon number density $n_b(r)$, metric factor $B(r)$, neutron chemical potential $\kinFn(r)$, and neutron abundance  $Y_n(r)$, are shown in Fig.~\ref{ch2:fig:BSk_profiles}. 
 
 
 
@@ -429,7 +435,7 @@ Radial profiles of the baryon number density $n_b(r)$, metric factor $B(r)$, neu
     \bottomrule
     \end{tabular} 
     \caption{Benchmark NSs, for four different configurations of the equations of state (EoS) for cold non-accreting neutron stars with Brussels–Montreal functionals BSk24 \cite{Pearson:2018tkr_Unifiedequationsstate}. EoS configurations are determined by the central mass-energy density $\rho_c$.}
-    \label{tab:BSk_configs}
+    \label{ch2:tab:BSk_configs}
 \end{table} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -440,8 +446,8 @@ Radial profiles of the baryon number density $n_b(r)$, metric factor $B(r)$, neu
     \includegraphics[width=0.495\textwidth]{B_BSk_prof.pdf}
     \includegraphics[width=0.495\textwidth]{epsFn_BSk_prof.pdf}
     \includegraphics[width=0.495\textwidth]{Yn_BSk_prof.pdf}
-    \caption{Radial profiles of the baryon number density (top left), metric factor $B(r)$ (top right), neutron chemical potential (bottom left), and neutron abundance (bottom right) for the four benchmark NS of the BSk24 EoS in Table~\ref{tab:BSk_configs}.}
-    \label{fig:BSk_profiles}
+    \caption{Radial profiles of the baryon number density (top left), metric factor $B(r)$ (top right), neutron chemical potential (bottom left), and neutron abundance (bottom right) for the four benchmark NS of the BSk24 EoS in Table~\ref{ch2:tab:BSk_configs}.}
+    \label{ch2:fig:BSk_profiles}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -454,9 +460,9 @@ While BSk24 and 25 lie well within current observational constraints, they are m
 
 The second EoS adopted is based on the QMC model of Refs.~\cite{Guichon:1987jp_Possiblequarkmechanism,Guichon:1995ue_Rolenucleonstructure, Saito:2005rv_Nucleonhadronstructure,Guichon:2018uew_QuarkMesonCouplingQMC}, in which baryons are described as bags of three valence quarks, with the bags themselves modeled by the MIT bag model~\cite{Chodos:1974pn_Baryonstructurebag}. The interactions among the baryons are described by the exchange of mesons between the valence non-strange quarks and are formulated within a relativistic mean-field Lagrangian. The exchange of the vector mesons acts as an overall shift to the energy of the baryons\footnote{A simple analogy for this is how the force of an electron in an electromagnetic field is due to the exchange of photons, which are vector fields. The total energy of the electron is a shift relative to the free electron energy.}. The scalar mean fields play a significantly more important role, modifying the effective mass of the baryons. The scalar (and also vector) couplings are density-dependent, leading to an effective mass of the baryons that varies throughout the NS. The density dependence of these couplings is equivalent to including repulsive three-body forces between the baryons and arises naturally in the QMC model through the in-medium modification of the baryonic structure~\cite{Guichon:2004xg_Quarkstructurenuclear,Thomas:2021kio_jul_Rolequarksnuclear}. Additional details on the energy density and couplings of the QMC model adopted in this work are given in Appendix~\ref{app:QMC_details}.
 
-The mass-radius relation of three different configurations of the QMC EoS, namely three different choices of the isovector coupling constant, are shown as the red lines in Fig.~\ref{fig:NS_mass_rad}, obtained from Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron}. Of these, QMCb (orange solid line in Fig.~\ref{fig:NS_mass_rad}) lies within the constraints on the radius of a $1.4\;\Msun$ NS from GW170817, and can produce an NS of mass $1.908 \pm 0.016\;\Msun$, the currently preferred mass of PSR J1614-2230 obtained by the NANOGrav collaboration~\cite{NANOGrav:2017wvv_apr_NANOGrav11yearData}\footnote{As mentioned above, the current heaviest NS has a mass of $2.08\pm 0.07\Msun$ though the implications of this on the QMC EoS are beyond the scope of this work.}.
+The mass-radius relation of three different configurations of the QMC EoS, namely three different choices of the isovector coupling constant, are shown as the red lines in Fig.~\ref{ch2:fig:NS_mass_rad}, obtained from Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron}. Of these, QMCb (orange solid line in Fig.~\ref{ch2:fig:NS_mass_rad}) lies within the constraints on the radius of a $1.4\;\Msun$ NS from GW170817, and can produce an NS of mass $1.908 \pm 0.016\;\Msun$, the currently preferred mass of PSR J1614-2230 obtained by the NANOGrav collaboration~\cite{NANOGrav:2017wvv_apr_NANOGrav11yearData}\footnote{As mentioned above, the current heaviest NS has a mass of $2.08\pm 0.07\Msun$ though the implications of this on the QMC EoS are beyond the scope of this work.}.
 
-The QMCb EoS data was provided by the authors of Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron} for use in this work and will be referred to as simply the QMC EoS from here on. From this, we calculate the internal structure of four benchmark QMC NSs, similar to the BSk models of Table~\ref{tab:BSk_configs}, with the central baryon density replacing the central density and the speed of sound omitted. The relevant parameters are shown in Table~\ref{tab:QMC_configs}. The top four plots in Fig.~\ref{fig:QMC_profiles} show the radial profiles for the number densities of the neutrons and protons for each configuration on the left, with their effective masses shown on the right. The bottom two plots of the same figure show the number densities for each species within the heaviest star on the left, including leptons in dashed lines, with the effective masses for each of the baryons on the right. The replacement of high-momentum neutrons with low-momentum hyperons is clearly seen in the bottom left plot, as the neutron number density dips towards the centre of the massive star. As the densities are high enough for the charged hyperon $\Xi^-$ to appear, the abundance of leptons decreases due to the requirement of charge neutrality, also seen in this plot. 
+The QMCb EoS data was provided by the authors of Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron} for use in this work and will be referred to as simply the QMC EoS from here on. From this, we calculate the internal structure of four benchmark QMC NSs, similar to the BSk models of Table~\ref{ch2:tab:BSk_configs}, with the central baryon density replacing the central density and the speed of sound omitted. The relevant parameters are shown in Table~\ref{ch2:tab:QMC_configs}. The top four plots in Fig.~\ref{ch2:fig:QMC_profiles} show the radial profiles for the number densities of the neutrons and protons for each configuration on the left, with their effective masses shown on the right. The bottom two plots of the same figure show the number densities for each species within the heaviest star on the left, including leptons in dashed lines, with the effective masses for each of the baryons on the right. The replacement of high-momentum neutrons with low-momentum hyperons is clearly seen in the bottom left plot, as the neutron number density dips towards the centre of the massive star. As the densities are high enough for the charged hyperon $\Xi^-$ to appear, the abundance of leptons decreases due to the requirement of charge neutrality, also seen in this plot. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[t!bp]
@@ -473,7 +479,7 @@ The QMCb EoS data was provided by the authors of Ref.~\cite{Motta:2019tjc_Isovec
     \caption{Benchmark NSs for four different configurations of the QMC equation of state. 
     EoS configurations are determined by the central number density $n_{\cal B}^c$.
     }
-    \label{tab:QMC_configs}
+    \label{ch2:tab:QMC_configs}
 \end{table} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -486,7 +492,7 @@ The QMCb EoS data was provided by the authors of Ref.~\cite{Motta:2019tjc_Isovec
     \includegraphics[width=0.495\textwidth]{meff_p_QMC_profs.pdf}
     \includegraphics[width=0.495\textwidth]{ni_QMC_profs.pdf}
     \includegraphics[width=0.495\textwidth]{meff_B_QMC_profs.pdf}
-    \caption{Number density profiles (left) and the ratio of the effective mass to the bare mass (right) for neutrons (top) and protons (middle) for benchmark configurations of the QMC EoS in Table~\ref{tab:QMC_configs}. In the bottom panels, we show the same profiles for all species in the heaviest NS considered, QMC-4, which contains hyperonic matter.}
-    \label{fig:QMC_profiles}
+    \caption{Number density profiles (left) and the ratio of the effective mass to the bare mass (right) for neutrons (top) and protons (middle) for benchmark configurations of the QMC EoS in Table~\ref{ch2:tab:QMC_configs}. In the bottom panels, we show the same profiles for all species in the heaviest NS considered, QMC-4, which contains hyperonic matter.}
+    \label{ch2:fig:QMC_profiles}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

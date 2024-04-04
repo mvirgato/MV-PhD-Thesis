@@ -33,13 +33,13 @@ After this, the final state target energy is fixed to
     \Ei'(\Ei,q,\theta) &= \sqrt{\mi^2+(\vec{p}+\vec{q})^2}\\
     &= \sqrt{\Ei^2+q^2+2qp\cos\theta} > \mi, \quad\forall p,q,\theta, |\cos\theta|<1,
 \end{align}
-where $\theta$ is the angle between the target initial momentum and the transferred momentum, $\vec{q}$, that is defined below. To perform the remaining integrals, we write $d^3 p  = p \Ei d\Ei\, d\cos\theta\,d\phi$. The kinematics of this interaction are depicted in Fig.~\ref{fig:kin_int_rates}, where the incoming momenta are defined relative to the momentum transfer that is set to lie along the $z$-axis.  In doing so, we must account for the fact that in this frame we cannot assume all three of the vectors are coplanar, and assign the additional azimuthal angle $\phi$ to the target momentum. 
+where $\theta$ is the angle between the target initial momentum and the transferred momentum, $\vec{q}$, that is defined below. To perform the remaining integrals, we write $d^3 p  = p \Ei d\Ei\, d\cos\theta\,d\phi$. The kinematics of this interaction are depicted in Fig.~\ref{app:fig:kin_int_rates}, where the incoming momenta are defined relative to the momentum transfer that is set to lie along the $z$-axis.  In doing so, we must account for the fact that in this frame we cannot assume all three of the vectors are coplanar, and assign the additional azimuthal angle $\phi$ to the target momentum. 
 
 In general, the squared matrix elements we are interested in can be expressed as polynomials in the Mandalstam variables $s$ and $t$, such that
 \begin{equation}
     \Msq = \sum_{n,m}\alpha_{n,m} t^n s^m.
 \end{equation}
-Writing $s = m_\chi^2 + \mi^2 + 2E_\chi \Ei - 2\vec{p}\cdot \vec{k}$, the quantity $\vec{k}\cdot\vec{p}$ is obtained by analysing the kinematics of the interaction. From the diagram in Fig.~\ref{fig:kin_int_rates}, we can write the inital momenta as
+Writing $s = m_\chi^2 + \mi^2 + 2E_\chi \Ei - 2\vec{p}\cdot \vec{k}$, the quantity $\vec{k}\cdot\vec{p}$ is obtained by analysing the kinematics of the interaction. From the diagram in Fig.~\ref{app:fig:kin_int_rates}, we can write the inital momenta as
 \begin{align}
     \vec{k} & = (k\sin\theta_\chi, 0, k\cos\theta_\chi),\\
     \vec{p} & = (p\sin\theta \cos\phi, p\sin\theta \sin\phi, p\cos\theta).
@@ -72,7 +72,7 @@ Writing $s = m_\chi^2 + \mi^2 + 2E_\chi \Ei - 2\vec{p}\cdot \vec{k}$, the quanti
       "$\theta_{\chi}$"] {angle = s--O--t};
     \end{tikzpicture}
     \caption{Schematic of kinematics for dark matter interacting with a target in the frame of the star. We set the momentum transfer to lie along the $z$-axis with the initial momenta defined relative to it. }
-    \label{fig:kin_int_rates}
+    \label{app:fig:kin_int_rates}
 \end{figure}
 
 The angles can then be expressed in terms of the other kinematic quantities by noting that
@@ -85,7 +85,7 @@ The angles can then be expressed in terms of the other kinematic quantities by n
 for the dark matter angle, and 
 \begin{align}
   \implies (\Ei + q_0)^2  & = \mi^2 + (p^2 +q^2 +2 p q \cos\theta)\\
-  \implies \cos\theta &= \frac{q_0^2 - q^2 +2 \Ei q_0}{2 q \sqrt{\Ei^2 - \mi^2}}\label{eq:cosn}
+  \implies \cos\theta &= \frac{q_0^2 - q^2 +2 \Ei q_0}{2 q \sqrt{\Ei^2 - \mi^2}}\label{app:eq:cosn}
 \end{align}
 for the target angle.
 These result in
@@ -149,12 +149,12 @@ where the final line holds in the zero-temperature approximation in which the FD
 %     \int d\Ei \Ei^2 \fFD(\Ei)(1 - \fFD(\Ei + q_0)) & = F_2(\Ei -\kinFi, q_0) + 2\kinFi F_1(\Ei -\kinFi, q_0) + \kinFi^2 F_0(\Ei -\kinFi, q_0)
 % \end{align}
 
-The integration range for $\Ei$ is obtained from the two $\Theta$-functions. There are two cases to be considered, $t<0$ and $t>0$. In the former case, the range become $\Ei^{t^-}<\Ei<\infty$ and for the latter $0<\Ei<\Ei^{t^+}$. These integration bounds are obtained from Eq.~\ref{eq:cosn}, by settting $\cos\theta = 1$, and are given by
+The integration range for $\Ei$ is obtained from the two $\Theta$-functions. There are two cases to be considered, $t<0$ and $t>0$. In the former case, the range become $\Ei^{t^-}<\Ei<\infty$ and for the latter $0<\Ei<\Ei^{t^+}$. These integration bounds are obtained from Eq.~\ref{app:eq:cosn}, by settting $\cos\theta = 1$, and are given by
 \begin{align}
     \Ei^{t^-} & = -\left( \mi+\frac{q_0}{2}\right) + \sqrt{\left( \mi+\frac{q_0}{2}\right)^2 + \left( \frac{\sqrt{q^2 - q_0^2}}{2} - \frac{\mi q_0}{\sqrt{q^2 - q_0^2}}\right)^2}\\
     \Ei^{t^+} & = -\left( \mi+\frac{q_0}{2}\right) + \sqrt{\left( \mi+\frac{q_0}{2}\right)^2 - \left( \frac{\sqrt{q_0^2 - q^2}}{2} + \frac{\mi q_0}{\sqrt{q_0^2 - q^2}}\right)^2}.
 \end{align}
-These are both the same root of Eq.~\ref{eq:cosn}, but with an interchange of $t\leftrightarrow -t$. We denote the response function for $t<0$ as $S^-$ and for $t>0$ as $S^+$. For $S^-$ we have
+These are both the same root of Eq.~\ref{app:eq:cosn}, but with an interchange of $t\leftrightarrow -t$. We denote the response function for $t<0$ as $S^-$ and for $t>0$ as $S^+$. For $S^-$ we have
 \begin{align}
     S^-_m & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r}\int_{\Ei^{t^-}}^\infty d\Ei \Ei^r \fFD(\Ei)(1 - \fFD(\Ei +q_0))\\
     & = \alpha t^n \frac{\mi^2}{\pi q^{2m + 1}}\sum_{r=0}^m \mathcal{V}_{m,r} \sum_{j = 0}^r \binom{r}{j} \kinFi^{r-j}\int_{\Ei^{t^-}}^\infty d\Ei (\Ei - \kinFi)^j \fFD(\Ei)\fFD(-\Ei - q_0)\\
@@ -193,13 +193,13 @@ For matrix elements that are polynomials in $s$ and $t$, the full response funct
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Elsatic Scattering}
-\label{sec:elastic_scatter_full}
+\label{app:sec:elastic_scatter_full}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Down-scattering Rate}
-\label{subsec:down_scatter_derivation}
+\label{app:subsec:down_scatter_derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Returning to the scattering rate, we first look at the case of down-scattering, where the DM loses energy, $q_0 > 0$. In this case, the interaction rate is given by
@@ -254,7 +254,7 @@ The full interaction rate is then written as
          \times & \left[ \mathcal{I}_{n,m}\left(f_1^{(m,n)}(t),t_E^+,t_{\mu^-}^+,t_E^-,t_{\mu^-}^-\right)\Theta(\kinFi-q_0)\right.\\
         + & \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^-}^+\right)\Theta(\kinFi-q_0) \\
         + & \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^-}^-,t_E^-,t_{\mu^+}^-\right)\Theta(\kinFi-q_0) \\
-        + & \left. \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{eq:gammafull_app}
+        + & \left. \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{app:eq:gammafull_app}
     \end{split}
 \end{align}
 where the $t_E$ integration limits are
@@ -271,7 +271,7 @@ where the $t_E$ integration limits are
 \end{align}
 
 All interaction rate spectra will have an endpoint at $q_0 = \qomax$, the maximum amount of energy that can be lost in a single interaction.
-The value of $\qomax$ is shown in the left panel of Fig.~\ref{fig:q0max} as a function of $B$ in the case of large DM mass ($m_\chi = 1\TeV$), for several values of $\kinFn$. The endpoint can be found as the minimum between the DM kinetic energy and the root of one of the following two equations 
+The value of $\qomax$ is shown in the left panel of Fig.~\ref{ch3:fig:q0max} as a function of $B$ in the case of large DM mass ($m_\chi = 1\TeV$), for several values of $\kinFn$. The endpoint can be found as the minimum between the DM kinetic energy and the root of one of the following two equations 
 \begin{eqnarray}
     t_E^- = t_{\mu^+}^+,\\
     t_E^+ = t_{\mu^+}^-.
@@ -280,19 +280,19 @@ Only one of these equations will have a positive root for a given choice of $m_\
 For $m_\chi\gg \mi$, the second equation never has a solution, and the solution of the first equation is always much lower than the kinetic energy. This results in the value of $\qomax$ becoming independent of $m_\chi$ in this mass range.
 
 
-The shape of the differential interaction rate depends very weakly on $m_\chi$ and $B$ for $m_\chi\gg \mi$ and $m_\chi \ll \mi$, as seen by plotting it as a function of $\qonorm=q_0/\qomax$. Therefore, we use as a reference $m_\chi=1\TeV$ (left) and $m_\chi=10\MeV$ (right),  $B=0.5$, and show the normalised differential interaction rates in Fig.~\ref{fig:diffgamma} for $n=0,1,2$, and neutron targets.
+The shape of the differential interaction rate depends very weakly on $m_\chi$ and $B$ for $m_\chi\gg \mi$ and $m_\chi \ll \mi$, as seen by plotting it as a function of $\qonorm=q_0/\qomax$. Therefore, we use as a reference $m_\chi=1\TeV$ (left) and $m_\chi=10\MeV$ (right),  $B=0.5$, and show the normalised differential interaction rates in Fig.~\ref{app:fig:diffgamma} for $n=0,1,2$, and neutron targets.
 We observe in the left panels that for $n=0$ interaction rates are flat (or peaked, depending on $\kinFn$) at low energy and suppressed at high energies, while for $n=1,2$ the profiles become peaked at higher and higher energies. Conversely, for $m_\chi=10\MeV$ the peak of the spectrum is shifted to lower energies with increasing power of $t$ ($d\sigma\propto t^n$).
 
 \begin{figure}
     \centering
-    \includegraphics{img/chapter_3/capture_1/norm_diff_intrate_n.pdf}
+    \includegraphics[width = 0.85\textwidth]{img/chapter_3/capture_1/norm_diff_intrate_n.pdf}
     \caption{Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$. Top row: $n=0$, middle row: $n=1$, bottom row: $n=2$.}
-    \label{fig:diffgamma}
+    \label{app:fig:diffgamma}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Up-scattering Rate}
-\label{subsec:up_scatter_derivation}
+\label{app:subsec:up_scatter_derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We now treat the case of $q_0<0$ applicable to up scattering and evaporation. Focusing on $s$-independent matrix elements for the moment, the response function is
@@ -354,7 +354,7 @@ This result applies generally to all matrix elements, not just the ones $\propto
 %     \item For $g_0 = 0$, we require $\Ei^{t^-} > \kinFi +|q_0|$, translating to
 %     \begin{equation}
 %         \frac{\mi^2q_0^2}{t_E} + \frac{t_E}{4} + \mi(q_0 - 2\kinFi) + (q_0 -\kinFi)>0,
-%         \label{eq:hp1}
+%         \label{app:eq:hp1}
 %     \end{equation}
 %     and since $t_E>0$, we look for values not between the roots of Eq.~\ref{eq:hp1}, which are the $\tmpm$ from before. 
     
@@ -387,7 +387,7 @@ This result applies generally to all matrix elements, not just the ones $\propto
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{Inelastic Scattering }
-% \label{sec:inelastic_scatter_full}
+% \label{app:sec:inelastic_scatter_full}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % For $t>0$, we instead have
@@ -415,7 +415,7 @@ This result applies generally to all matrix elements, not just the ones $\propto
 % \commMV{Remove $q_0<0$, make it > 0}
 % We now consider how to split the integral over the ranges of $h_j(x)$. For the case $h_j(x) = 0$, we require $\Ei^{t^+}-\kinFi <0$, as $q_0<0$, which translates to
 % \begin{equation}
-%     \frac{(2\mi q_0 + t)^2}{4t} +(2\mi +q_0)\kinFi +\kinFi^2 < 0\label{eq:tpp1}
+%     \frac{(2\mi q_0 + t)^2}{4t} +(2\mi +q_0)\kinFi +\kinFi^2 < 0\label{app:eq:tpp1}
 % \end{equation}
 % As $t>0$, this is the case when $t$ is between the two roots of Eq.~\ref{eq:tpp1}, given by
 % \begin{equation}
@@ -444,7 +444,7 @@ This result applies generally to all matrix elements, not just the ones $\propto
 % % \Gamma^{-}(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0  & \left[ \mathcal{I}_{n,m}\left(f_1^{(m,n)}(t),t_E^+,t_{\mu^-}^+,t_E^-,t_{\mu^-}^-\right)\Theta(\kinFi-q_0)\right. \nonumber\\
 % % \;&\;+ \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^-}^+\right)\Theta(\kinFi-q_0)  \nonumber\\
 % % \;&\;+\mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^-}^-,t_E^-,t_{\mu^+}^-\right)\Theta(\kinFi-q_0)  \nonumber\\
-% % \;&\;\left. + \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{eq:gammafull}
+% % \;&\;\left. + \mathcal{I}_{n,m}\left(f_2^{(m,n)}(t),t_E^+,t_{\mu^+}^+,t_E^-,t_{\mu^+}^-\right)\Theta(q_0-\kinFi) \right], \label{app:eq:gammafull}
 % % \end{align}
 
 
@@ -453,7 +453,7 @@ This result applies generally to all matrix elements, not just the ones $\propto
 \section{Interaction Rate for Low Energies}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Need to consider the case where $T_\chi = E_\chi - m_\chi <\mu_{F}$, with $0<q_0<T_\chi<\kinFi$. Then the $t_E$ integration limits follow the hierarchy; $t_{\mu^{+}}^{+} \sim t_{\mu^{-}}^{+} \ge t_{\mu^{-}}^{-} \sim t_{\mu^{+}}^{-} \gtrsim 0$, and $t_{\mu^{-}}^{+} \gg t_E^+ \ge t_E^- \gg t_{\mu^{-}}^{-}$. Then the only term in \ref{eq:gammafull} that remains is the first term, and only the $i=j=1$ term contributes, leaving
+Need to consider the case where $T_\chi = E_\chi - m_\chi <\mu_{F}$, with $0<q_0<T_\chi<\kinFi$. Then the $t_E$ integration limits follow the hierarchy; $t_{\mu^{+}}^{+} \sim t_{\mu^{-}}^{+} \ge t_{\mu^{-}}^{-} \sim t_{\mu^{+}}^{-} \gtrsim 0$, and $t_{\mu^{-}}^{+} \gg t_E^+ \ge t_E^- \gg t_{\mu^{-}}^{-}$. Then the only term in \ref{app:eq:gammafull_app} that remains is the first term, and only the $i=j=1$ term contributes, leaving
 \begin{equation}
     \Gamma^-(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int_{t_E^-}^{t_E^+} d t_E\; f_1^{(m,n)}(t_E)
 \end{equation}
@@ -580,7 +580,7 @@ Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have th
 %     \Msq & = a_0 + a_1 t + a_2 t^2\\
 %     \Gamma^- &=  a_0\left.\Gamma^-_{0,0}\right|_{\alpha_{0,0}=1} + a_1 \left.\Gamma^-_{1,0}\right|_{\alpha_{1,0}=1} + a_2
 %     \left.\Gamma^-_{2,0}\right|_{\alpha_{2,0}=1}\\
-%     \frac{1}{\tth}  & = \left.\frac{a_0}{\tth^{0,0}}\right|_{\alpha_{0,0}=1} + \left.\frac{a_1}{\tth^{1,0}}\right|_{\alpha_{1,0}=1} + \left.\frac{a_2}{\tth^{2,0}}\right|_{\alpha_{2,0}=1} \label{eq:reicptherm}
+%     \frac{1}{\tth}  & = \left.\frac{a_0}{\tth^{0,0}}\right|_{\alpha_{0,0}=1} + \left.\frac{a_1}{\tth^{1,0}}\right|_{\alpha_{1,0}=1} + \left.\frac{a_2}{\tth^{2,0}}\right|_{\alpha_{2,0}=1} \label{app:eq:reicptherm}
 % \end{align}
 % For the operators D1-10, $a_i \propto \Lambda^{-4}$, and we set $\Lambda$ such that the total cross-section is equal to $\sigma_{surf}\sim 2\times10^{-45}\cm^2$, i.e.
 % \begin{equation}
