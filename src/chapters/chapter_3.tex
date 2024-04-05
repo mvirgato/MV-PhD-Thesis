@@ -43,20 +43,21 @@ where $\tilde u_\chi$ is the DM velocity in the halo, and $v_d$ is the DM halo v
 Taking into account the motion of the star through the halo and the thermal motion of the constituents, which are assumed to follow a Maxwell-Boltzmann distribution, gives the relative velocity between the DM and targets, $ u_\chi$. 
 The distribution function for the relative velocity can be expressed as~\cite{Busoni:2017mhe_oct_Evaporationscatteringmomentum}
 \begin{equation}
-    f_{\mathrm{MB}}(u_\chi)du_\chi = \frac{u_\chi}{v_\star} \sqrt{\frac{3 }{2 \pi (v_d^2 + 3 T_\star /\mi)}} \left( e^{-\frac{3(u_\chi - v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} - e^{-\frac{3(u_\chi + v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} \right),
+    f_{\mathrm{MB}}(u_\chi, \Tstar)du_\chi = \frac{u_\chi}{v_\star} \sqrt{\frac{3 }{2 \pi (v_d^2 + 3 T_\star /\mi)}} \left( e^{-\frac{3(u_\chi - v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} - e^{-\frac{3(u_\chi + v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} \right)du_\chi,
+    \label{ch3:eq:MB_finit_T}
 \end{equation}
 where $v_\star$ is the star's velocity in the halo rest frame\footnote{This is the frame where the DM has an average velocity of zero.}, $T_\star$ is the temperature of the star, and $\mi$ is the mass of the target.
 
 Returning to the large spherical shell of radius $R$, given the velocity distribution function, we can obtain the flux of DM through this surface. The rate of DM particles passing through a surface element $d\tilde{A}$ with velocity between $u_\chi$ and $u_\chi + du_\chi$, with an angle to the normal of $d\tilde{A}$ between $\tilde\theta$ and $\tilde \theta + d\tilde \theta$ and an azimuthal angle between $\tilde \phi$ and $\tilde \phi + d\tilde \phi$ is given by~\cite{Press:1985ug_Capturesungalactic}
 \begin{align}
-    \frac{dN_\chi}{dt} &= \frac{\rho_\chi}{m_\chi}f_{\mathrm{MB}}(u_\chi) \vec{u}\cdot d\vec{\tilde{A}}\, d u_\chi\, \frac{d\tilde \Omega}{4\pi}\\
-    & = \frac{\rho_\chi}{m_\chi}\fMB(u_\chi)u_\chi \cos\tilde\theta \,d\tilde{A}\, d u_\chi\,  \frac{d\cos\tilde\theta \,d\tilde\phi}{4\pi}\\
-    & = \frac{1}{4}\frac{\rho_\chi}{m_\chi}\fMB(u_\chi)u_\chi d\tilde{A}\, d u_\chi\,d\cos^2\tilde\theta,
+    \frac{dN_\chi}{dt} &= \frac{\rho_\chi}{m_\chi}f_{\mathrm{MB}}(u_\chi, \Tstar) \vec{u}\cdot d\vec{\tilde{A}}\, d u_\chi\, \frac{d\tilde \Omega}{4\pi}\\
+    & = \frac{\rho_\chi}{m_\chi}\fMB(u_\chi, \Tstar)u_\chi \cos\tilde\theta \,d\tilde{A}\, d u_\chi\,  \frac{d\cos\tilde\theta \,d\tilde\phi}{4\pi}\\
+    & = \frac{1}{4}\frac{\rho_\chi}{m_\chi}\fMB(u_\chi, \Tstar)u_\chi d\tilde{A}\, d u_\chi\,d\cos^2\tilde\theta,
 \end{align}
 where we have integrated over the azimuthal angle $\tilde \phi$ due to the isotropy of the system. The number density of the DM is included through the $\rho_\chi/m_\chi$ factor. 
 Integrating over the area of the sphere is trivial due to isotropy, leaving us with 
 \begin{align}
-    \frac{dN_\chi}{dt} &= \pi \frac{\rho_\chi}{m_\chi} f(u_\chi)u_\chi\, d u_\chi \, d\cos^2\tilde\theta,
+    \frac{dN_\chi}{dt} &= \pi \frac{\rho_\chi}{m_\chi} f(u_\chi, \Tstar)u_\chi\, d u_\chi \, d\cos^2\tilde\theta,
 \end{align}
 with the integration interval for $\cos^2\tilde\theta$ being $(0, 1)$.
 
@@ -73,7 +74,7 @@ where $\theta$ is the incident angle of the DM at the closer distance $r$, and w
 
 Changing integration variables from $\cos^2\tilde \theta$ to $J_\chi$ allows us to write the number of DM particles passing through the shell per unit volume as
 \begin{equation}
-    \frac{dN_\chi}{dt} = 2\pi \frac{\rho_\chi}{m_\chi} \frac{\fMB(u_\chi)}{u_\chi} r^2 w_\chi^2(r) \frac{J_\chi dJ_\chi}{J^2_\mathrm{max}}\,du_\chi.\label{ch3:eq:shell_flux}
+    \frac{dN_\chi}{dt} = 2\pi \frac{\rho_\chi}{m_\chi} \frac{\fMB(u_\chi, \Tstar)}{u_\chi} r^2 w_\chi^2(r) \frac{J_\chi dJ_\chi}{J^2_\mathrm{max}}\,du_\chi.\label{ch3:eq:shell_flux}
 \end{equation}
 The geometry of the system is shown in Fig.~\ref{ch3:fig:capturegeometry} for clarity.
 
@@ -99,7 +100,7 @@ with $R^-(w_\chi \rightarrow v)$ being the differential interaction rate, $n_T$ 
 
 Finally, we obtain the capture rate by multiplying Eqs.~\ref{ch3:eq:shell_flux} and~\ref{ch3:eq:int_prob_1} and integrate over the angular momentum to give the result
 \begin{equation}
-    C =\int_0^{R_\star} \,dr\, 4\pi r^2 \int_0^\infty\,du_\chi\, \frac{\rho_\chi}{m_\chi} \frac{\fMB(u_\chi)}{u_\chi} w_\chi(r)\Omega^-(w_\chi).
+    C =\int_0^{R_\star} \,dr\, 4\pi r^2 \int_0^\infty\,du_\chi\, \frac{\rho_\chi}{m_\chi} \frac{\fMB(u_\chi, \Tstar)}{u_\chi} w_\chi(r)\Omega^-(w_\chi).
 \end{equation}
 This result is rather generic, as the choice of DM model will only dictate the form of the differential cross-section in  Eq.~\ref{ch3:eq:diff_int_NR_gen}. As written above, the distribution function for the relative velocity far from the star can be any isotropic distribution function. The MB form was chosen as it allows for a simple analytic form of the total capture rate. 
 
@@ -153,7 +154,12 @@ Following the same arguments as in the non-relativistic case, the flux of DM pas
 \begin{equation}
     \frac{d N_\chi}{d\tau} = 2\pi \frac{\rho_\chi}{m_\chi}\frac{\fMB(u_\chi)}{u_\chi}\,du_\chi\,\frac{J_\chi \, dJ_\chi}{m_\chi^2},
 \end{equation}
-which takes the same form as Eq.~\ref{ch3:eq:shell_flux}, with the physical difference being that this is the rate with respect to the proper time.
+which takes the same form as Eq.~\ref{ch3:eq:shell_flux}, with the physical difference being that this is the rate with respect to the proper time. Additionally, as we will be considering cold stars, we take the $\Tstar\rightarrow 0$ limit of the DM-target relative velocity distribution, such that 
+\begin{align}
+    f_{\mathrm{MB}}(u_\chi) & = \lim_{\Tstar\rightarrow 0}f_{\mathrm{MB}}(u_\chi, \Tstar)\\
+    & = \frac{u_\chi}{v_\star} \sqrt{\frac{3 }{2 \pi (v_d^2 + 3 T_\star /\mi)}} \left( e^{-\frac{3(u_\chi - v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} - e^{-\frac{3(u_\chi + v_\star)^2}{2(v_d^2 + 3 T_\star /\mi)}} \right),
+    \label{ch3:eq:MB}
+\end{align}
 
 The probability that DM scatters within the shell and is captured is $2\hat{\Omega}^-(r) d\tau$,
 where $\hat{\Omega}^-(r)$ is the interaction rate with respect to the proper time, and $d\tau$ is the proper time taken to move from coordinate $r$ to $r + dr$. The factor of 2 once again accounts for the DM crossing the shell twice per orbit. For calculation purposes, we need to relate this to the interaction rate seen by a distant observer, $\Omega^-(r)$, that is done through
@@ -230,9 +236,9 @@ In neutron stars, on the other hand, general relativity introduces an additional
 For scattering on neutrons, the threshold cross-section is approximately
 \begin{align}
 \sigma_{th} =  \begin{cases}
-\, \sigma_\mathrm{ref} \frac{\GeV}{m_\chi} \quad &m_\chi \lesssim 1\GeV \quad \ \ \text{ Pauli blocking  regime}, \\
-\, \sigma_\mathrm{ref} \quad &1\GeV \lesssim m_\chi \lesssim 10^6\GeV,  \\
-\, \sigma_\mathrm{ref} \frac{m_\chi}{10^6\GeV} \quad &m_\chi\gtrsim 10^6\GeV \quad  \text{Multiscattering regime},
+\, \sigma_\mathrm{ref} \frac{\GeV}{m_\chi}, \quad &m_\chi \lesssim 1\GeV \quad \ \ \text{ (Pauli blocking  regime)}, \\
+\, \sigma_\mathrm{ref}, \quad &1\GeV \lesssim m_\chi \lesssim 10^6\GeV,  \\
+\, \sigma_\mathrm{ref} \frac{m_\chi}{10^6\GeV}, \quad &m_\chi\gtrsim 10^6\GeV \quad  \text{(Multiscattering regime)},
 \end{cases}
 \label{ch3:eq:sigmath}
 \end{align}
@@ -397,8 +403,8 @@ We will use $\frac{d\Gamma}{d q_0}$ to obtain normalised shapes for the differen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering
-    \includegraphics[width = 0.45\textwidth]{capture_1/q0max_mdm.pdf}
-    \includegraphics[width = 0.45\textwidth]{capture_1/q0max_B.pdf}
+    \includegraphics[width = 0.495\textwidth]{capture_1/q0max_mdm.pdf}
+    \includegraphics[width = 0.495\textwidth]{capture_1/q0max_B.pdf}
 
     \caption{Left: $\qomax$ vs. $m_\chi$ for $\kinFn=200\MeV$ and different values of B. 
     Right: $\qomax$ as a function of $B$ for different values of $\kinFi$ and $m_\chi=1\TeV$.}
@@ -455,12 +461,12 @@ It is also worth noting that Pauli blocking only affects the interaction rate wh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm1GeV.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm1GeV.pdf}\\
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm100MeV.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm100MeV.pdf}\\
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm10MeV.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm10MeV.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm1GeV.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm1GeV.pdf}\\
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm100MeV.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm100MeV.pdf}\\
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_100MeV_mdm10MeV.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/diff_intrate_n0_mu_400MeV_mdm10MeV.pdf}
     \caption{Differential interaction rates $\frac{d\Gamma}{dq_0}$  
     as a function of the energy loss $q_0$ for different values of $m_\chi$ and $\kinFn$, constant cross-section and $B=0.5$. Blue lines refer to the result that includes Pauli blocking, while the light blue dashed lines refer to the result without PB. Left column:  $\kinFn=100\MeV$, right column: $\kinFn=400\MeV$. Top: $m_\chi=1\GeV$, middle: $m_\chi=100\MeV$, bottom: $m_\chi=10\MeV$.  }
     \label{ch3:fig:gammaNPBmu}
@@ -562,9 +568,9 @@ As with the differential interaction rates, it is the $t$-dependence of the matr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n0.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n1.pdf}\\
-    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n2.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/capture_rate_n0.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/capture_rate_n1.pdf}\\
+    \includegraphics[width=.48\textwidth]{capture_1/capture_rate_n2.pdf}
     \caption{Capture rate as a function of the DM mass with cross-sections normalised to $\sigma=\sigmaref\sim 1.7 \times 10^{-45} \cm^2$, for EoS BSk24-2, calculated with and without Pauli blocking. Top left: constant cross-section. Top right: $d\sigma\propto t$, bottom: $d\sigma\propto t^2$, where $t$ is the Mandelstam variable. All rates are normalised to the geometric limit at large DM mass. }
     \label{ch3:fig:approxc}
 \end{figure}
@@ -588,8 +594,8 @@ Finally, we compare the geometric limit of Eq.~\ref{ch3:eq:capturegeom}  (solid 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=.495\textwidth]{capture_1/capture_rate_n0_comp1.pdf}
-    \includegraphics[width=.495\textwidth]{capture_1/capture_rate_n0_comp2.pdf}    
+    \includegraphics[width=.48\textwidth]{capture_1/capture_rate_n0_comp1.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/capture_rate_n0_comp2.pdf}    
     \caption{Left: Capture rate in the optically thin  (magenta) and geometric (orange) limits as a function of the DM mass for constant cross-section $\sigma=10^{-45}\cm^2$, $\rho_\chi=1\GeV\cm^{-3}$ and BSk26 functional for $\Mstar\simeq1.52\Msun$ and $\Rstar\simeq11.6\km$ denoted as BSk26-1. Capture rate calculations from Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron} for a NS configuration with EoS BSk20-1~\cite{Potekhin:2013qqa_Analyticalrepresentationsunified} equivalent to BSk26-1, are shown for comparison. Right: Same as left but for $\rho_\chi=10^3\GeV\cm^{-3}$ and the benchmark model BSk24-5 equivalent to BSk21-2 in Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}: $\Mstar\simeq2.11\Msun$ and $\Rstar\simeq12.0\km$. 
     }
     \label{ch3:fig:Cratecomp}
@@ -598,117 +604,208 @@ Finally, we compare the geometric limit of Eq.~\ref{ch3:eq:capturegeom}  (solid 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Multiple Scattering}
+\subsection{Large Mass Regime: Multiple Scattering}
 \label{sec:largemassandsigma}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 The capture rate expressions obtained in the previous section assume that the cross-section is small enough that the star is in the ``optically thin'' regime, and that a single scatter is sufficient to capture the DM. These assumptions break down if the DM-target cross-section is $\gtrsim\mathcal{O}(\sigmath)$, or if the DM mass exceeds $m_\chi \sim 10^6\GeV$, respectively. 
-In this section, we focus on addressing the latter concern, relegating the discussion on the NS opacity in \fixMV{Appendix~\ref{app:NS_ocacity}} as it is not required for the remainder of this work. 
+In this section, we focus on addressing the latter concern as we work in the optically thin regime for the remainder of this work\footnote{The discussion on the effect of the NS opacity in $\sigma\sim \sigmath$ regime can be found in Ref.~\cite{Bell:2020jou_sep_ImprovedTreatmentDark}.}. 
 To that end, we now explain how to modify our previous capture rate expressions to account for multiple scattering in a degenerate media\footnote{For a recent discussion on multiple scattering within non-relativistic stars, or with ions in WDs, see Ref.~\cite{Dasgupta:2019juq_Darkmattercapture}.}
 
 
-In deriving Eq.~\ref{ch3:eq:capturefinal} we had assumed that the DM velocity at infinity, $u_\chi$, can be neglected, such that any interaction where the DM loses energy resulted in its capture. If we instead keep the leading order $u_\chi$ contribution to the total DM energy, the DM energy at infinity is instead
+In deriving Eq.~\ref{ch3:eq:capturefinal} we had assumed that the DM velocity at infinity, $u_\chi$, can be neglected, such that any interaction where the DM loses energy resulted in its capture. If we instead keep the leading order $u_\chi$ contribution to the total DM energy, the DM energy at infinity is
 \begin{equation}
     E^\infty_\chi \sim m_\chi \left(1+\frac{1}{2}u_\chi^2\right), 
 \end{equation}
-and at a distance $r$ from the star it gets boosted to
+and at a distance $r$ from the star, it gets boosted to
 \begin{equation}
     E_\chi(r) = \frac{m_\chi}{\sqrt{B(r)}} \left(1+\frac{1}{2}u_\chi^2\right).
-    \label{eq:Echir}
+    \label{ch3:eq:Echir}
 \end{equation}
-Therefore, the amount of energy that must be lost in order for the DM to be captured is 
+Therefore, the amount of energy that the DM must lose to be captured is
 \begin{align}
     E_\chi^C(r) & =  \frac{1}{2}u_\chi^2 \frac{m_\chi}{\sqrt{B(r)}}. \\
-                & \sim 6\times 10^{-7}\GeV \left(\frac{u_\chi}{270\km\s^-1}\right)^2 \left(\frac{m_\chi}{1\GeV}\right)\left(\frac{0.5}{B(r)}\right)^{1/2},
+                & \sim 0.6\GeV \left(\frac{u_\chi}{270\km\s^{-1}}\right)^2 \left(\frac{m_\chi}{10^6\GeV}\right)\left(\frac{0.5}{B(r)}\right)^{1/2}.
 \end{align} 
+Hence, DM with a mass of $10^6\GeV$ is required to lose 0.6 GeV for it to be captured. This is of the same order as the maximum amount of energy that can be lost in a single scatter as seen in Fig.~\ref{ch3:fig:q0max}. Given that $\qomax$ plates for $\mchi \gg \mi$, it will be highly improbable that DM heavier than $\sim 10^6\GeV$ loses enough energy in a single scatter to be captured. Single scatter capture is still possible as the DM velocity at infinity is not a fixed value, rather it follows by some distribution function. Therefore, the heavy DM could have a velocity close to zero at infinity, significantly reducing the amount of energy it needs to lose.
 
-For DM masses $m_\chi\gtrsim 10^6\GeV$ that scatters on nucleon targets, the capture probability is smaller than $1$ and becomes tiny as we increase the DM mass to large values. To account for this effect, we proceed in the following way. First, instead of setting the DM speed at infinity to $0$, as we did in the previous section, we now assume that the DM particles have a speed $u_\chi\ll 1$ that follows a Maxwell-Boltzmann (MB) distribution, Eq.~\ref{eq:DMveldist}. 
-The probability density function of the energy lost by a DM particle is 
-\begin{eqnarray}
-\xi(q_0,E_\chi,\muFn) &=& \frac{1}{\Gamma(E_\chi)}\frac{d\Gamma}{dq_0}(q_0,E_\chi,\muFn),\label{eq:normintrate}
-\end{eqnarray}
-where $\frac{d\Gamma}{dq_0}$ is the DM differential interaction rate, calculated in Appendix~\ref{sec:intrate}. 
-The function $\xi$ is defined for any $q_0\ge 0$, however, due to kinematics, the function is non-zero only for $q_0\le\qomax$. $\xi$ depends on $B(r)$ through the ratio $E_\chi/m_\chi$, and for brevity we will simply write $\xi(q_0)$.
+To account for this effect, we assume that the DM particles have a speed $u_\chi\ll 1$ at infinity that follows a Maxwell-Boltzmann (MB) distribution, Eq.~\ref{ch3:eq:MB}. 
+We can then define the probability density function (PDF) of the energy lost by the DM using the differential interaction rate through
+\begin{equation}
+\xi(q_0,E_\chi,\kinFi) = \frac{1}{\Gamma(E_\chi)}\frac{d\Gamma}{dq_0}(q_0,E_\chi,\kinFi),\label{ch3:eq:normintrate}
+\end{equation}
+where $\frac{d\Gamma}{dq_0}$ is the DM differential interaction rate, calculated in Appendix~\ref{ch3:sec:diff_int_rate}. 
+The function $\xi$ is defined for any $q_0\ge 0$, however, kinematics dicatates that the function is non-zero only for $q_0\le\qomax$. Additionally, note that $\xi$ depends on $B(r)$ through the ratio $E_\chi/m_\chi$, and for brevity we will simply write $\xi(q_0)$.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
     \centering
-    \includegraphics[width=.45\textwidth]{capture_1/probs_n0.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/probs_n1.pdf}\\
-    \includegraphics[width=.45\textwidth]{capture_1/probs_n2.pdf}
-    \caption{Probabilities to lose an energy $\delta q_0$  after $1,...,5$ scatterings,  $P_1,...,P_5$, as a function of the energy loss $q_0$,  assuming $B=0.5$ and $\muFn=400\MeV$. Results are shown for different dependence on the cross-section on the Mandelstam variable $t$: constant DM-neutron cross-section (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom). }
-    \label{fig:pn}
+    \includegraphics[width=.48\textwidth]{capture_1/probs_n0.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/probs_n1.pdf}\\
+    \includegraphics[width=.48\textwidth]{capture_1/probs_n2.pdf}
+    \caption{Probabilities to lose at least an amount of energy $\delta q_0$  after $1,...,5$ scatterings,  $P_1,...,P_5$, as a function of the energy loss $q_0$,  assuming $B=0.5$ and $\kinFn=400\MeV$. Results are shown for different dependence on the cross-section on the Mandelstam variable $t$: constant DM-neutron cross-section (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom). }
+    \label{ch3:fig:pn}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We can define the probability to lose an amount of energy of at least $\delta q_0$ in a single collision as
+We can define the probability of losing at least an amount of energy $q_0 = \delta q_0$ in a single collision as
 \begin{equation}
     P_1(\delta q_0) = \int_{\delta q_0}^\infty dx \xi(x).
+    \label{ch3:eq:P1}
 \end{equation}
-In the same way, the probability to lose at least the same amount of energy after 2 collisions is
-\begin{eqnarray}
- P_2(\delta q_0) &=& P_1(\delta q_0) + \int_{\delta q_0}^\infty dy \int_0^y dx \xi(x)\xi(y-x) = P_1(\delta q_0) + \int_0^{\delta q_0} dz P_1(\delta q_0-z)\xi(z).
-\end{eqnarray}
-Thus, we obtain the following recursive relation for  $P_N$, 
-\begin{eqnarray}
- P_{N+1}(\delta q_0) &=& P_N(\delta q_0) + \int_0^{\delta q_0} dz P_N(\delta q_0-z)\xi(z).\label{eq:pnrecurrent}
-\end{eqnarray} 
-Fig.~\ref{fig:pn} shows how the probability functions $P_1,...,P_5$ depend on the Mandelstam variable $t$ through the differential cross-section. We show results for $\sigma=const.$ (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom), with the values $B=0.5$, $\muFn=400\MeV$.
+The probability of losing at least the same amount of energy after 2 collisions will then be
+\begin{align}
+ P_2(\delta q_0) &= \int_{\delta q_0}^\infty dy \int_0^\infty dx\;\xi(x) \xi(y-x)\\
+    & =  P_1(\delta q_0) + \int_{\delta q_0}^\infty dy \int_0^y dx\; \xi(x)\xi(y-x)\\
+    & = P_1(\delta q_0) + \int_0^{\delta q_0} dz \;P_1(\delta q_0-z)\xi(z).
+\end{align}
+From this, we obtain the following recursive relation for the probabilities, $P_N$, of losing at least $q_0 = \delta q_0$ in $N$ scatters,
+\begin{equation}
+ P_{N+1}(\delta q_0) = P_N(\delta q_0) + \int_0^{\delta q_0} dz P_N(\delta q_0-z)\xi(z).\label{ch3:eq:pnrecurrent}
+\end{equation} 
+In Fig.~\ref{ch3:fig:pn} we show how the probability functions $P_1,...,P_5$ changes based on the $t$ dependence of the differential cross-section. We show results for $\sigma=$const. (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom), for fixed values of $B=0.5$, $\kinFn=400\MeV$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
     \includegraphics[width=.6\textwidth]{capture_1/cumprobN_n0.pdf}
-    \caption{Cumulative probability $\hat{P}_N$ for $B=0.5$,  $\muFn=400\MeV$ for constant $|\overline{M}|^2$ as a function of the number of scatterings $N$ for several DM masses. }
-    \label{fig:pnofn}
+    \caption{Cumulative probability $\hat{P}_N$ for $B=0.5$,  $\kinFn=400\MeV$ and for $\sigma = \mathrm{const.}$ as a function of the number of scatterings $N$ for several DM masses.}
+    \label{ch3:fig:pnofn}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To connect this back to the capture probability, we define the probability for a DM particle to be captured after exactly $N$ interactions, $c_N$, to be $P_N(E^C_\chi) - P_{N-1}(E^C_\chi)$ averaged over the MB distribution of the initial velocity,
+\begin{equation}
+    \begin{split}
+        c_N(r) &= \frac{1}{\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi}\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi \left[P_N\left(\frac{1}{2}\frac{m_\chi u_\chi^2}{\sqrt{B(r)}}\right)\right.\\
+        &\hspace{18em}\left. -P_{N-1}\left(\frac{1}{2}\frac{m_\chi u_\chi^2}{\sqrt{B(r)}}\right)\right], 
+    \end{split}
+\end{equation}
+where $c_N$ depends on $r$ through the dependence of $P_N$  on $B(r)$ and $\kinFn(r)$. Note that although our results will assume a Maxwell-Boltzmann velocity distribution, it is straightforward to generalise the results to any other DM velocity distribution. The cumulative probability $\hat{P}_N$ that a DM particle is captured after $N$ interactions with a total energy loss  $\delta q_0=E_\chi^C$ is then
+\begin{equation}
+\hat{P}_N(r) = \sum_{i=1}^N c_i = \frac{1}{\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi}\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi P_N\left(\frac{1}{2}\frac{m_\chi}{\sqrt{B(r)}} u_\chi^2\right).
+\end{equation}
+%
+The resulting cumulative probability is shown as a function of the number of scatterings $N$ in Fig.~\ref{ch3:fig:pnofn}, for constant cross-section and several DM masses. 
+
+The cumulative probability $\hat{P}_N$ for the above values of $B,\kinFn$ is well approximated by the function\footnote{Further discussion of the multi-scattering regime, and justification of this fitting function, can be found in Appendix~C of Ref.~\cite{Bell:2020jou_sep_ImprovedTreatmentDark}.}
+\begin{equation}
+\hat{P}_N \sim  1-e^{-\frac{N \mstar}{m_\chi}}.\label{ch3:eq:pncum}
+\end{equation}
+In particular, the probability that the DM is captured in a single scatter is 
+\begin{equation}
+c_1=\hat{P}_1 \sim  1-e^{-\frac{\mstar}{m_\chi}}.
+\label{ch3:eq:c1}
+\end{equation}
+From this, we see that $c_1$ will begin to significantly fall below unity for $\mchi \gtrsim \mstar$, and hence multiple scattering will only significantly reduce the capture rate for DM masses above $\mstar$. 
+
+To give an idea for how large the value of $\mstar$ will be, for neutron targets and the values $B=0.5$ and $\kinFn=400$~MeV, we find
+\begin{align}
+m^{*} &=1.08 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^0,\\
+m^{*} &=1.62 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^1,\\
+m^{*} &=2.01 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^2.
+\end{align}
+We illustrate how $m^*_n$ varies with $B$ and $\kinFn$ in Fig.~\ref{ch3:fig:mstarbmu}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+    \centering
+    \includegraphics[width=.48\textwidth]{capture_1/mstar_B_n0.pdf}
+    \includegraphics[width=.48\textwidth]{capture_1/mstar_B_n1.pdf}    
+    \includegraphics[width=.48\textwidth]{capture_1/mstar_B_n2.pdf}      
+    \caption{Value of $m^*_n$ as a function of $B$ for different values of $\kinFn$, $\sigma=const.$ (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom).}
+    \label{ch3:fig:mstarbmu}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When the cross-section is small, $\sigma\ll\sigmath$, such that we are in the optically thin regime, if the DM does not get captured in its initial scatter, then it will leave the star without interacting again. To account for this, the factor of $c_1$ should be included in the capture rate calculation, Eq.~\ref{ch3:eq:cap_rel_full_1}. However, as we have jsut seen, $c_1\ll1$ only for $\mchi\gtrsim\mstar$, which will always be significantly larger than the target mass and chemical potential. Therefore, multiple scattering is only important in the regime where PB is negligible, and so a suitable approximation for the capture rate in this regime is
+\begin{equation}
+    C_\mathrm{approx}^* = \frac{4\pi}{\vstar}\frac{\rho_\chi}{m_\chi}{\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)  \int  r^2 dr  \frac{\sqrt{1-B(r)}}{B(r)}\Omega^{-}(r) c_1(r).
+    \label{ch3:eq:capturesimplelargem}
+\end{equation}
+    
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+\label{ch3:sec:results}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In this section, we present our results for the capture rate of fermionic DM scattering from neutrons within a NS in the zero temperature approximation. We calculate the capture rate only for scalar/pseudoscalar-scalar/pseudoscalar interactions between DM and neutrons, i.e. effective operators D1-D4 in Table~\ref{ch1:tab:opers_defn_full}, whose differential cross-sections depend only on the Mandelstam variable $t$ and not on $s$. 
+We assume realistic radial profiles for the neutron number density, chemical potential, and relativistic corrections encoded in $B(r)$ as explained in section~\ref{ch2:subsec:NS_EoS} for the configurations of the EoS BSk24 in Table~\ref{ch2:tab:BSk_configs}. 
+
+\fixMV{Fix to include the s-dep changes made}
+Most of our results apply generally to other operators or to other targets (with the mass ranges adjusted appropriately).  Specifically, Eqs.~\ref{eq:captureclsimplrel},~\ref{eq:omegampaulitext}, which are to be evaluated numerically, are applicable to all operators and targets, and work until multiple scattering becomes relevant, when $m_\chi\gtrsim \qomax/v_{\star}^2$.
+The optical factor of Eq.~\ref{eq:optfactor} for the intermediate mass range is also applicable to all operators and targets. The optical factor of Eq.~\ref{eq:optfactorlargem} and the value of $m^*$, which are used to include multiple scattering effects in the large mass range, $m_\chi\gtrsim \qomax/v_{\star}^2$, can be easily computed for operators D1-D4 (or any other operator that depends only on $t$) for all targets. For other operators it can be used only by numerically solving the shape of the differential rate, a task that may be computationally intensive to achieve with high precision.
+Our approximated formulas, Eqs.~\ref{eq:csimplelargemtext},~\ref{eq:capturesimplelargem} and \ref{eq:captureopticaldepth} have been checked to be accurate only for nucleon targets, but can be applied to any operator (for $s$-dependent ones, see Appendix~\ref{sec:capratesimple} on how to remove the $s$ dependence). In any case, one can substitute the relevant factors ($\eta,m^*$) into Eqs.~\ref{eq:captureclsimplrel},~\ref{eq:omegampaulitext} to calculate the capture rate, in the appropriate mass range, for other targets.
+
+
+
+
+
+
+
+In order to estimate the NS EoS impact on the DM capture rate computation,  we numerically calculate it using the exact expression in the optically thin limit, Eq.~\ref{eq:capturefinal}, that properly accounts for gravitational focusing and Pauli blocking but neglects the star opacity.  In this approximation, the capture rate is proportional to the differential DM-neutron cross-section. 
+Fig.~\ref{ch3:fig:captureEOS} shows how this rate varies with the NS  EoS  for operators D1-D4 and the EoS configurations given in Table~\ref{tab:eos}, and in turn with the NS mass and radius. 
+The value of the cross-section was chosen so that at large DM mass the capture rate is equal to the geometric limit. 
+Note that properly including the optical depth factor $\eta$ would have given a lower value of $C$ (see section~\ref{sec:largemassandsigma}). It is worth remarking that we  should not use larger values of the cross-section in the optically thin approximation, as this would lead to capture rates exceeding the geometric limit.
+Depending on the operator considered, going from the lightest to the heaviest NS can change the capture rate by a minimum of one order of magnitude, such as in the case of operators D1, D2 and D3 (at low DM mass), and up to 2 orders of magnitude, as in the case of operators D2 (only at large DM mass) and D4. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_numeric_EOS_D1.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_numeric_EOS_D2.pdf}\\
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_numeric_EOS_D3.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_numeric_EOS_D4.pdf}
+    \caption{Capture rate in the optically thin limit as a function of the DM mass for $\sigma=\sigma_{ref}\sim 1.7 \times 10^{-45} \cm^2$ and the configurations of the EoS BSk24 given in Table~\ref{tab:eos}. Rate calculated using the 4-dimensional integral in Eq.~\ref{eq:capturefinal}, which includes Pauli blocking and neglects the  NS opacity and multiple scattering for the EFT operators D1 (top left), D2 (top right), D3 (bottom left) and D4 (bottom right) in Table~\ref{tab:operatorshe}.}
+    \label{ch3:fig:captureEOS}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We  define the probability of a DM particle to be captured after exactly $N$ scatterings by averaging over the MB energy distribution   
-\begin{eqnarray}
-c_N(r) &=& \frac{1}{\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi}\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi \left[P_N\left(\frac{1}{2}\frac{m_\chi u_\chi^2}{\sqrt{B(r)}}\right)-P_{N-1}\left(\frac{1}{2}\frac{m_\chi u_\chi^2}{\sqrt{B(r)}}\right)\right], 
-\end{eqnarray}
-where $c_N$ depends on $r$ through the dependence  of $P_1$  on $B(r)$. Note that although our results will assume a Maxwell-Boltzmann velocity distribution, it is straightforward to repeat the calculations with any other DM velocity distribution. The cumulative probability 
- $\hat{P}_N$ that a DM particle is captured after $N$ interactions with a total energy loss  $\delta q_0=E_\chi^C$ is 
-\begin{eqnarray}
-\hat{P}_N(r) = \sum_{i=1}^N c_i = \frac{1}{\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi}\int_0^\infty \frac{\fMB(u_\chi)}{u_\chi}du_\chi P_N\left(\frac{1}{2}\frac{m_\chi}{\sqrt{B(r)}} u_\chi^2\right).
-\end{eqnarray}
-%
-The resulting cumulative probability is shown as a function of the number of scatterings $N$ in Fig.~\ref{fig:pnofn}, for constant cross-section and several DM masses. 
-The cumulative probability $\hat{P}_N$ for the above values of $B,\muFn$ is well approximated by the function
-\begin{eqnarray}
-\hat{P}_N \sim  1-e^{-\frac{N m^*}{m_\chi}}.\label{eq:pncum}
-\end{eqnarray}
-In particular, for single scattering
-\begin{equation}
-c_1=\hat{P}_1 \sim  1-e^{-\frac{m^*}{m_\chi}}.\label{eq:c1}
-\end{equation}
-Further discussion of the multi-scattering regime, and justification of this fitting function, can be found in Appendix~\ref{sec:opticalfactors}.
-For the values $B=0.5$ and $\muFn=400$~MeV, we find
-\begin{eqnarray}
-m^{*} &=&1.08 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^0,\\
-m^{*} &=&1.62 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^1,\\
-m^{*} &=&2.01 \times 10^6 \GeV,\quad |\overline{M}|^2\propto t^2.
-\end{eqnarray}
-We illustrate how $m^*$ varies with $B$ and $\muFn$ in Fig.~\ref{fig:mstarbmu}.
+
+
+At large DM mass, all operators  show the same scaling with the DM mass. At  $m_\chi\lesssim1\GeV$, a different picture arises as Pauli blocking leads to different suppressions of the capture rate for the different operators. However, we observe that the four operators give very similar results to those of Fig.~\ref{ch3:fig:approxc}, where we analysed the dependence of the capture rate on the momentum transfer $t$.  We note that  operator D1, which contains in its squared matrix element, $|\overline{M}|^2$, a term independent of $t$, gives a result that is very similar to that of $\sigma=const$. Operators D2 and D3, for which $|\overline{M}|^2$ does not include terms independent of $t$, but rather terms proportional to $t$ and $t^2$, yield  very similar results to that of $d\sigma\propto t$. 
+Overall, we conclude that the lowest power of the transferred momentum determines the mass scaling of the capture rate at low DM  mass.
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n0.pdf}
-    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n1.pdf}    
-    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n2.pdf}      
-    \caption{Value of $m^*$ as a function of $B$ for different values of $\muFn$, $\sigma=const.$ (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom).}
-    \label{fig:mstarbmu}
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n0_fullmassrange.pdf}    
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n0_largemass.pdf} %\\
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n1_fullmassrange.pdf}       
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n1_largemass.pdf} \\
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n2_fullmassrange.pdf}       
+    \includegraphics[width=.45\textwidth]{capture_1/capture_rate_n2_largemass.pdf}        
+    \caption{Capture rate for constant cross-section (top row), $d\sigma\propto t$ (middle row) and $d\sigma\propto t^2$ (bottom row),  for  $\sigma=\sigma_{ref}\sim 1.7 \times 10^{-45}\cm^2$ and NS EoS configuration BSk24-2. We extend the plot in the top left panel of Fig.~\ref{ch3:fig:approxc} to large DM masses. Left: Full mass range. Right: Same as before but only for large DM mass range. 
+    }
+    \label{ch3:fig:capturelargemass}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{ch3:fig:capturelargemass}, we show the capture rate for a broad DM mass range, spanning 13 orders of magnitude from $m_\chi=10\keV$ to $m_\chi=10^8\GeV$, including all the regimes identified in Table~\ref{tab:caprecap}, for $d\sigma\propto const.$ (first row), $t^1$ (second row) and $t^2$ (third row).
+In the left panels, we show the full mass range.  As in previous figures, the magenta line indicates the capture rate calculated in the optically thin limit using the 4-dimensional integration in Eq.~\ref{eq:captureclsimplrel} that accounts for Pauli blocking. 
+At large DM masses, Pauli suppression plays no role and the capture rate approaches the geometric limit (dashed orange line). 
+We also show in Fig.~\ref{ch3:fig:capturelargemass} three new lines, portraying the effect of the inclusion of the NS optical depth and multiple scattering, which become relevant at $m_\chi\sim10^6\GeV$. 
+The difference among these calculations is better shown in the right panels, where only the large DM mass range is considered. The brown dashed line indicates the result that includes the optical depth factor $\eta$ but neglects multiple scattering, obtained using Eq.~\ref{eq:optfactor} in Eq.~\ref{eq:captureopticaldepth}.   
+As we can see, for $\sigma=\sigma_{ref}$ this causes a small suppression of the capture rate, when compared to the result where the optical depth factor is ignored (light blue dot dashed line). For larger $\sigma$, neglecting the optical depth would result in a capture rate that exceeds the geometric limit (orange dashed line), while the inclusion of the optical depth factor $\eta$ causes the capture rate to saturate, tending to  $C_{geom}$ for large cross-sections. 
+The light blue dot dashed line indicates the capture rate calculated by neglecting the optical depth factor, but including multiple scattering, given by Eq.~\ref{eq:capturesimplelargem}. At $m_\chi\sim 10^5\GeV$ that line matches the geometric limit, due to the chosen value of the cross-section $\sigma=\sigma_{ref}$. On the other hand, at larger DM masses $m_\chi\gtrsim10^6\GeV$, multiple scattering is required to capture DM particles, hence an additional suppression factor of $1/m_\chi$ arises, as given in Eq.~\ref{eq:capturesimplelargem}. Therefore the capture rate becomes increasingly smaller than $C_{geom}$ (orange and brown shaded areas). Finally, the capture rate calculated including both effects is depicted in blue. At $m_\chi\sim10^5\GeV$, we can observe the suppression produced by the optical depth factor $\eta$ (light blue shaded region), while at larger DM masses the proper additional suppression $1/m_\chi$ emerges. 
+
+Comparing the plots for different $t^n$ dependence, we can see that increasing the power of $n$ has a small effect on the mass scale where the various suppressions become relevant. For example, comparing the blue and light blue lines, which both include multiple scattering effects, we see that the change of slope moves further to the right for larger $n$. This is a consequence of the fact that larger powers of $n$ result in larger energy transfer (see, for example, Fig.~\ref{ch3:fig:diffgamma}) and therefore a larger capture probability $c_1$ and larger $m^*$.
+However, the qualitative behaviour is the same for all choices of $d\sigma$: the suppression of the capture rate is primarily due to Pauli blocking at low mass, opacity effects in the $1$--$10^6$~GeV mass range, and multiscattering effects (i.e. a low capture probability) at the largest masses.
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
