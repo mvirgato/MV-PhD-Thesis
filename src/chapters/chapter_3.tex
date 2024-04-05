@@ -345,7 +345,7 @@ This expression resembles that of Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the previous section, we have calculated the interaction rate, $\Omega^-(r)$, assuming the initial DM energy takes its pre-capture value, $E_\chi = \mchi /B(r)$. However, we will also be interested in an expression for the interaction rate that is valid for arbitrary DM energy. This will be required when we consider capture via multiple scatterings, and will also be necessary for studying the subsequent scattering interactions that follow capture and lead to the DM thermalising within the NS.
+In the previous section, we have calculated the interaction rate, $\Omega^-(r)$, assuming the initial DM energy takes its pre-capture value, $E_\chi = \mchi /B(r)$. However, we are also interested in an expression for the interaction rate valid for arbitrary DM energy. This will be required when we consider capture via multiple scatterings, and it will also be necessary to study the subsequent scattering interactions that follow capture and lead to the DM thermalising within the NS.
 In principle, it is possible to calculate this rate numerically by binning $\Omega^-$, Eq.~\ref{ch3:eq:int_rate_capture_full}, in the energy loss, i.e. multiplying $\Omega^-$ by $\frac{1}{E_i-E_j}\Theta(E_i+\Ei-\Ei')\Theta(\Ei'-\Ei-E_j)$ and integrating over the bin $[E_j,E_i]$. 
 However, it is possible to derive analytic expressions for the differential rate, valid in the zero-temperature approximation. To do so, we use the definition of the scattering rate in Ref.~\cite{Reddy:1997yr_Neutrinointeractionshot,Bertoni:2013bsa_dec_DarkMatterThermalization} 
 \begin{equation}
@@ -604,7 +604,9 @@ Finally, we compare the geometric limit of Eq.~\ref{ch3:eq:capturegeom}  (solid 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The capture rate expressions obtained in the previous section assume that the cross-section is small enough that the star is in the ``optically thin'' regime, and that DM  capture by multiple scattering is negligible. These assumptions break down if the DM-target cross-section is of order the threshold cross-section or larger, or if the DM mass exceeds $m_\chi \sim 10^6\GeV$, respectively. In this section, we explain how to modify our previous capture rate expressions to account for the NS optical depth and multiple scattering.  See Ref.~\citep{Dasgupta:2019juq_Darkmattercapture} for a recent treatment of multi-scatter capture in white dwarfs.
+The capture rate expressions obtained in the previous section assume that the cross-section is small enough that the star is in the ``optically thin'' regime, and that a single scatter is sufficient to capture the DM. These assumptions break down if the DM-target cross-section is of order the threshold cross-section, or larger, or if the DM mass exceeds $m_\chi \sim 10^6\GeV$, respectively. 
+In this work we focus on addressing the later concern, 
+This section explains how to modify our previous capture rate expressions to account for the NS optical depth and multiple scattering.  See Ref.~\cite{Dasgupta:2019juq_Darkmattercapture} for a recent treatment of multi-scatter capture in white dwarfs.
 
 
 For DM of mass $m_\chi\gtrsim 10^6\GeV$ scattering on nucleon targets, the capture probability is smaller than $1$ and becomes tiny as we increase the DM mass to large values. To account for this effect, we proceed in the following way. First, instead of setting the DM speed at infinity to $0$, as we did in the previous section, we now assume that the DM particles have a speed $u_\chi\ll 1$ that follows a Maxwell-Boltzmann (MB) distribution, Eq.~\ref{eq:DMveldist}. 
