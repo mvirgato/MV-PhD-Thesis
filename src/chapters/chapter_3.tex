@@ -604,25 +604,27 @@ Finally, we compare the geometric limit of Eq.~\ref{ch3:eq:capturegeom}  (solid 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The capture rate expressions obtained in the previous section assume that the cross-section is small enough that the star is in the ``optically thin'' regime, and that a single scatter is sufficient to capture the DM. These assumptions break down if the DM-target cross-section is of order the threshold cross-section, or larger, or if the DM mass exceeds $m_\chi \sim 10^6\GeV$, respectively. 
-In this work we focus on addressing the later concern, 
-This section explains how to modify our previous capture rate expressions to account for the NS optical depth and multiple scattering.  See Ref.~\cite{Dasgupta:2019juq_Darkmattercapture} for a recent treatment of multi-scatter capture in white dwarfs.
+The capture rate expressions obtained in the previous section assume that the cross-section is small enough that the star is in the ``optically thin'' regime, and that a single scatter is sufficient to capture the DM. These assumptions break down if the DM-target cross-section is $\gtrsim\mathcal{O}(\sigmath)$, or if the DM mass exceeds $m_\chi \sim 10^6\GeV$, respectively. 
+In this section, we focus on addressing the latter concern, relegating the discussion on the NS opacity in \fixMV{Appendix~\ref{app:NS_ocacity}} as it is not required for the remainder of this work. 
+To that end, we now explain how to modify our previous capture rate expressions to account for multiple scattering in a degenerate media\footnote{For a recent discussion on multiple scattering within non-relativistic stars, or with ions in WDs, see Ref.~\cite{Dasgupta:2019juq_Darkmattercapture}.}
 
 
-For DM of mass $m_\chi\gtrsim 10^6\GeV$ scattering on nucleon targets, the capture probability is smaller than $1$ and becomes tiny as we increase the DM mass to large values. To account for this effect, we proceed in the following way. First, instead of setting the DM speed at infinity to $0$, as we did in the previous section, we now assume that the DM particles have a speed $u_\chi\ll 1$ that follows a Maxwell-Boltzmann (MB) distribution, Eq.~\ref{eq:DMveldist}. 
-Then, the DM energy at infinity is 
+In deriving Eq.~\ref{ch3:eq:capturefinal} we had assumed that the DM velocity at infinity, $u_\chi$, can be neglected, such that any interaction where the DM loses energy resulted in its capture. If we instead keep the leading order $u_\chi$ contribution to the total DM energy, the DM energy at infinity is instead
 \begin{equation}
     E^\infty_\chi \sim m_\chi \left(1+\frac{1}{2}u_\chi^2\right), 
 \end{equation}
-and at a distance $r$ from the star it becomes
+and at a distance $r$ from the star it gets boosted to
 \begin{equation}
     E_\chi(r) = \frac{m_\chi}{\sqrt{B(r)}} \left(1+\frac{1}{2}u_\chi^2\right).
     \label{eq:Echir}
 \end{equation}
-The energy that the DM particle should lose in order to be captured is therefore
-\begin{equation}
-    E_\chi^C(r) =  \frac{1}{2}u_\chi^2 \frac{m_\chi}{\sqrt{B(r)}}. 
-\end{equation} 
+Therefore, the amount of energy that must be lost in order for the DM to be captured is 
+\begin{align}
+    E_\chi^C(r) & =  \frac{1}{2}u_\chi^2 \frac{m_\chi}{\sqrt{B(r)}}. \\
+                & \sim 6\times 10^{-7}\GeV \left(\frac{u_\chi}{270\km\s^-1}\right)^2 \left(\frac{m_\chi}{1\GeV}\right)\left(\frac{0.5}{B(r)}\right)^{1/2},
+\end{align} 
+
+For DM masses $m_\chi\gtrsim 10^6\GeV$ that scatters on nucleon targets, the capture probability is smaller than $1$ and becomes tiny as we increase the DM mass to large values. To account for this effect, we proceed in the following way. First, instead of setting the DM speed at infinity to $0$, as we did in the previous section, we now assume that the DM particles have a speed $u_\chi\ll 1$ that follows a Maxwell-Boltzmann (MB) distribution, Eq.~\ref{eq:DMveldist}. 
 The probability density function of the energy lost by a DM particle is 
 \begin{eqnarray}
 \xi(q_0,E_\chi,\muFn) &=& \frac{1}{\Gamma(E_\chi)}\frac{d\Gamma}{dq_0}(q_0,E_\chi,\muFn),\label{eq:normintrate}
@@ -635,9 +637,9 @@ The function $\xi$ is defined for any $q_0\ge 0$, however, due to kinematics, th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
     \centering
-    \includegraphics[width=.45\textwidth]{figs/probs_n0.pdf}
-    \includegraphics[width=.45\textwidth]{figs/probs_n1.pdf}\\
-    \includegraphics[width=.45\textwidth]{figs/probs_n2.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/probs_n0.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/probs_n1.pdf}\\
+    \includegraphics[width=.45\textwidth]{capture_1/probs_n2.pdf}
     \caption{Probabilities to lose an energy $\delta q_0$  after $1,...,5$ scatterings,  $P_1,...,P_5$, as a function of the energy loss $q_0$,  assuming $B=0.5$ and $\muFn=400\MeV$. Results are shown for different dependence on the cross-section on the Mandelstam variable $t$: constant DM-neutron cross-section (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom). }
     \label{fig:pn}
 \end{figure}
@@ -661,7 +663,7 @@ Fig.~\ref{fig:pn} shows how the probability functions $P_1,...,P_5$ depend on th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=.6\textwidth]{figs/cumprobN_n0.pdf}
+    \includegraphics[width=.6\textwidth]{capture_1/cumprobN_n0.pdf}
     \caption{Cumulative probability $\hat{P}_N$ for $B=0.5$,  $\muFn=400\MeV$ for constant $|\overline{M}|^2$ as a function of the number of scatterings $N$ for several DM masses. }
     \label{fig:pnofn}
 \end{figure}
@@ -700,9 +702,9 @@ We illustrate how $m^*$ varies with $B$ and $\muFn$ in Fig.~\ref{fig:mstarbmu}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=.45\textwidth]{figs/mstar_B_n0.pdf}
-    \includegraphics[width=.45\textwidth]{figs/mstar_B_n1.pdf}    
-    \includegraphics[width=.45\textwidth]{figs/mstar_B_n2.pdf}      
+    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n0.pdf}
+    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n1.pdf}    
+    \includegraphics[width=.45\textwidth]{capture_1/mstar_B_n2.pdf}      
     \caption{Value of $m^*$ as a function of $B$ for different values of $\muFn$, $\sigma=const.$ (top left), $d\sigma\propto t$ (top right) and $d\sigma\propto t^2$ (bottom).}
     \label{fig:mstarbmu}
 \end{figure}
