@@ -285,7 +285,7 @@ We observe in the left panels that for $n=0$ interaction rates are flat (or peak
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.85\textwidth]{img/chapter_3/capture_1/norm_diff_intrate_n.pdf}
+    \includegraphics[width = 0.85\textwidth]{img/capture_intro/capture_1/norm_diff_intrate_n.pdf}
     \caption{Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$. Top row: $n=0$, middle row: $n=1$, bottom row: $n=2$.}
     \label{app:fig:diffgamma}
 \end{figure}
@@ -448,6 +448,112 @@ This result applies generally to all matrix elements, not just the ones $\propto
 % % \end{align}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-degenerate weak field limit}
+\label{app:sec:weakfieldlimit}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+When setting up the centre of mass energy interval in section~\ref{ch3:sec:diff_int_rate}, we have set the DM energy to 0 at infinity. This means that when taking the classical non-relativistic limit, the interaction rate would approach 
+\begin{equation}
+\Omega^{-}(r) \rightarrow n_i(r) v_{esc}(r) \sigma, \label{app:eq:OmegaClass}
+\end{equation}
+in the simple case of a constant cross-section. Taking Eq.~\ref{ch3:eq:int_rate_capture_full}, one can first strip out the Pauli blocking term $(1-\fFD)$, and then the integration in $t$ and $s$ can be performed analytically. Taking the limit $u_i\rightarrow0, \quad \Ei=\mi/\sqrt{1-u_i^2}$, and then the weak field approximation $B(r)\rightarrow1-v_\mathrm{esc}^2(r)$, for a constant cross-section $\frac{d\sigma}{d\cos\thetacm}=\frac{\sigma}{2}$, we find 
+\begin{align}
+\Omega^{-}(r) &\rightarrow \mi^2 \frac{\sigma}{2}\frac{2u_i v_{esc}(r) \fFD(\Ei,r)}{\pi^2}d\Ei \\
+& = \mi^3 \frac{\sigma}{2} \frac{2u_i v_{esc}(r)  \fFD(\Ei,r)}{\pi^2}u_i du_i  \\ 
+&= \mi^3 \frac{\sigma}{2}\frac{v_{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3u_i \\
+& = \frac{\sigma}{2} \frac{v_{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3p. 
+\end{align}
+Cases with $\sigma\propto t^n$ give similar results.
+Recall that
+\begin{equation}
+    \frac{2\fFD(\Ei)}{(2\pi)^3} d^3p,
+\end{equation}
+is the number density of neutron states. Then, following expression in \ref{ch3:eq:number_density_replacement} we substitute it with the classical number density $n_i(r)$, to obtain the expected classical limit given by Eq.~\ref{app:eq:OmegaClass}. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Intermediate DM mass range}
+\label{app:sec:capratesimple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The interaction rate in Eq.~\ref{ch3:eq:int_rate_capture_full} can be rewritten in terms of the DM momentum $p_\chi$, such that
+\begin{equation} 
+    \begin{split}
+        \Omega^{-}(r) &= \frac{\zeta(r)}{32\pi^3}\int dt d\Ei ds |\overline{M}|^2 \frac{\Ei}{2s\beta(s)-\gamma^2(s)} \frac{1}{p_\chi}\frac{s}{\gamma(s)}\\
+        &\hspace{12em}\times\fFD(\Ei,r)(1-\fFD(\Ei^{'},r)),
+    \end{split}
+\end{equation}
+where we have also used Eq.~\ref{ch3:eq:diffxsec}. We first consider the case where the squared matrix element depends only on $t$, i.e. $|\overline{M}|^2 \propto t^n$, 
+we can straightforwardly  perform the integral over $t$, 
+\begin{equation}
+    \begin{split}
+        \Omega^{-}(r) & = \frac{\zeta(r)}{32\pi^3}\int d\Ei ds \bar{g}(s) \frac{\Ei\gamma(s)}{2s\beta(s)-\gamma^2(s)}\frac{1}{n+1}\left(\frac{\gamma^2(s)}{s}\right)^n\\
+        & \hspace{12em} \times  \frac{1}{p_\chi}\fFD(\Ei,r)(1-\fFD(\Ei^{'},r)).
+    \end{split}
+\end{equation}
+
+We now assume that either $\mu\gg1$ or $\mu\ll1$. In both cases, the integration range for $s$ shrinks to $[s_0-\delta s, s_0+\delta s]$, with $\delta s \ll s_0$, and the following simplifications can be made;
+\begin{align}
+s_0 &= \mi^2+m_\chi^2 + 2\frac{\Ei m_\chi}{\sqrt{B(r)}} = \mi^2+m_\chi^2 + 2\Ei E_\chi,\\
+\delta s &= 2\sqrt{\frac{1-B(r)}{B(r)}}m_\chi\sqrt{\Ei^2-\mi^2} = 2p_\chi\sqrt{\Ei^2-\mi^2}, \\ 
+\frac{\gamma(s)}{2s\beta(s)-\gamma^2(s)} &\rightarrow \frac{\sqrt{1-B(r)}}{2\left(\mi^2+m_\chi^2\right)} =\frac{p_\chi}{2E_\chi\left(\mi^2+m_\chi^2\right)},\\
+\frac{\gamma^2(s)}{s} &\rightarrow \frac{4(1-B(r))m_\chi^2}{B(r)\left(1+\mu^2\right)} =\frac{4p_\chi^2}{1+\mu^2}. 
+\end{align}
+If $g(s)$ is regular in $s_0$, we can estimate the integral in $s$ to be $  2\delta s$, approximating the integrand as being constant in that range, which gives
+\begin{align}
+\Omega^{-}(r) \sim \zeta(r)\frac{1}{16\pi^3} \frac{\sqrt{E_\chi^2-m_\chi^2}}{E_\chi\left(\mi^2+m_\chi^2\right)}  \frac{\left[\frac{4\left(E_\chi^2-m_\chi^2\right)}{1+\mu^2}\right]^n}{n+1}\int d\Ei \Ei \sqrt{\Ei^2-\mi^2} \nonumber \\
+\times \fFD(\Ei,r)(1-\fFD(\Ei^{'},r)). 
+\end{align}
+To perform the integral in $\Ei$, we have to potentially deal with Pauli blocking. However, for $\mu\gg1$, Pauli blocking is not effective and we can drop the $1-\fFD$ term to obtain
+\begin{eqnarray}
+ \int_{\mi}^{\mi+\kinFi(r)} d\Ei \Ei \sqrt{\Ei^2-\mi^2}  \fFD(\Ei,r) = \frac{\left[\kinFi(r)(2\mi+\kinFi(r))\right]^{3/2}}{3} = \pi^2 n_\mathrm{free}(r).
+\end{eqnarray}
+This, together with $\zeta(r)$, result in an overall factor of $\pi^2 n_i(r)$, leaving 
+\begin{eqnarray}
+\Omega^{-}(r) &\sim& \frac{n_i(r)}{16\pi} \frac{\sqrt{E_\chi^2-m_\chi^2}}{   m_\chi^2 E_\chi} \frac{1}{n+1} 
+\left[\frac{4(1-B(r))m_\chi^2}{B(r) (1+\mu^2)}\right]^n,   
+\end{eqnarray}
+and the capture rate reads, 
+\begin{equation}
+C \sim \frac{1}{4 \vstar} \frac{\rho_\chi}{m_\chi^3}  {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \frac{1}{n+1} \left[\frac{4(1-B(r))m_\chi^2}{B(r) (1+\mu^2)}\right]^n.    
+\end{equation}
+We can now rewrite these expressions in terms of the cross-section which has been averaged over $s$, 
+\begin{align}
+\langle\sigma(r)\rangle=\left\langle\int dt \frac{d\sigma}{dt} \right\rangle_s &= \frac{1}{2\delta s}\int_{s_0-\delta s}^{s_0+\delta s} ds \int dt \frac{d\sigma}{dt} \\
+& = \frac{1}{64\pi m_\chi^2 \mi^2} \frac{B(r)}{(1-B(r))}   \int dt \, t^n \\
+&= \frac{1}{64\pi m_\chi^2 \mi^2} \frac{B(r)}{(1-B(r))} \frac{1}{(n+1)} \left[\frac{4(1-B(r))m_\chi^2}{B(r)(1+\mu^2)}\right]^{n+1}\\
+&= \frac{1}{16\pi \left(\mi^2+m_\chi^2\right)}  \frac{1}{(n+1)} \left[\frac{4(1-B(r))m_\chi^2}{B(r)(1+\mu^2)}\right]^{n}, 
+\end{align}
+which leads to, 
+\begin{align}
+\Omega^{-}(r) &\sim n_i(r) \langle\sigma(r)\rangle \frac{\sqrt{E_\chi^2-m_\chi^2}}{E_\chi}, \\
+C &\sim \frac{4\pi}{\vstar} \frac{\rho_\chi}{m_\chi}  {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \langle\sigma(r)\rangle\label{app:eq:csimplelargem}. 
+\end{align}
+From Eq.~\ref{app:eq:csimplelargem}, we can identify the typical $1/m_\chi$ scaling of the capture rate. This equation also looks very similar to the non-relativistic case, with $1-B(r)$ playing the role of the escape velocity, $v_\mathrm{esc}^2(r)$, and $1/B(r)$ being a relativistic correction.
+
+Turning to the case of $s$-dependent matrix elements, $\Msq = \bar{g(s)t^n}$ for $\bar{g}$ some function of $s$, the result is fairly similar. The main difference is that we must keep all terms in $\mi$ and $\mchi$, leading to the new substitutions
+\begin{align}
+    \frac{\gamma(s)}{s^2-[m_i^2-m_\chi^2]^2} 
+    &\sim \frac{\sqrt{1-B(r)}}{2\left(m_i^2+m_\chi^2+2m_i m_\chi/\sqrt{B(r)}\right)},\\
+    \frac{\gamma^2(s)}{s} &\rightarrow \frac{4(1-B(r))m_\chi^2}{B(r)\left(1+\mu^2\right)+2\sqrt{B(r)}\mu}. 
+\end{align}
+Now when we take the limit as $\kinFn\rightarrow 0$, the integrand over $s$ can be approximated as a $\delta$-function, resulting in $s$ being fixed to the value of $s_0$. As such, we no longer need to average the cross-section over $s$. The results are
+\begin{gather}
+    \begin{split}
+        \Omega^{-}(r) &\sim \frac{n_i(r)}{16\pi} \frac{\sqrt{E_\chi^2-m_\chi^2}}{E_\chi\left(m_i^2+m_\chi^2+2m_i E_\chi\right)} \frac{\bar{g}(s_0)}{n+1} \\
+        & \hspace{6em}\left[\frac{4(1-B(r))m_\chi^2}{B(r)\left(1+\mu^2\right)+2\sqrt{B(r)}\mu}\right]^n.
+    \end{split}\\
+    C \sim C_{\mathrm{approx}, s} = \frac{4\pi}{\vstar} \frac{\rho_\chi}{m_\chi}{\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \sigma(r)
+\label{app:eq:csimplelargemtext_sdep}, \\
+\begin{split}
+    \sigma(r) = \int dt \frac{d\sigma}{dt} & =   \frac{1}{16\pi \left(\mi^2 \mchi^2 + 2\mi \mchi/\sqrt{B(r)}\right)}\frac{\bar{g}(s_0)}{(n+1)}\\
+    &\hspace{6em}\times\left[\frac{4(1 - B(r)) \mchi^2}{B(r)(1 + \mu^2) + 2\sqrt{B(r)}\mu}\right]^n.
+\label{app:eq:xsecave_sdep}
+\end{split}
+\end{gather}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interaction Rate for Low Energies}
@@ -476,7 +582,7 @@ For single term matrix elements such that $\Msq = \alpha_{n,m}(-t)^n s^m$, the c
 \end{align}
 The $\alpha_{n,m}$ can be obtained at some reference point, taken to be the surface of the NS, from the differential cross-section,
 \begin{equation}
-    \frac{d \sigma }{d\cos\theta} = \frac{\alpha_{n,m}(-t)^n s^m}{32 \pi (\mi + m_\chi)^2}
+    \frac{d \sigma }{d\cos\thetacm} = \frac{\alpha_{n,m}(-t)^n s^m}{32 \pi (\mi + m_\chi)^2}
 \end{equation}
 which gives
 \begin{align}
@@ -489,23 +595,23 @@ which gives
 \end{align}
 where I have used 
 \begin{align}
-    t & = -\frac{t_{max}}{2}(1 - \cos\theta)\\
+    t & = -\frac{t_{max}}{2}(1 - \cos\thetacm)\\
     t_{max} & \sim \frac{4 \mi^2 m_\chi^2}{(\mi^2 + m_\chi^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\\
     s & \sim \mi^2 + m_\chi^2 + \frac{2\mchi (\mi +\kinFi)}{\sqrt{B(\Rstar)}}\\
     &\sim (\mi +\mchi)^2
 \end{align}
 Again introducing the correction 
 \begin{equation}
-    \zeta = \frac{n_n}{n_{free}} \sim \frac{3\pi^2}{(2\mi \kinFi)^{3/2}}n_n
+    \zeta = \frac{n_i}{n_{free}} \sim \frac{3\pi^2}{(2\mi \kinFi)^{3/2}}n_i
 \end{equation}
 Then the interaction rates can be expressed with respect to the surface of the star as
 \begin{align}
-    \Gamma_{0,0}^- (K_\chi) & = \frac{\sqrt{2}}{10}\frac{(1 +\mu)^2}{\mu} \frac{\mi}{(\mi \kinFi)^{3/2}}\sigma_{surf} n_n K_\chi^2\\
-    \Gamma_{1,0}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(1 + \mu)^2 (1 + \mu^2)}{\mu^2}\frac{1}{(\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_n K_\chi^3\\
-    \Gamma_{2,0}^- (K_\chi) & =\frac{\sqrt{2}}{7}\frac{(1 + \mu)^2 (1 + \mu^2)^2}{\mu^3}\frac{1}{\mi(\mi\kinFi)^{3/2}}\left( \frac{B(\Rstar)}{(1 - B(\Rstar)}\right)^2\sigma_{surf} n_n K_\chi^4\\
-    \Gamma^-_{0,1}(K_\chi) & = \frac{\sqrt{2}}{10} \frac{(\mi(1 + \mu)^2 + 2 \mu \kinFi)}{\mu(\mi\kinFi)^{3/2}}\sigma_{surf} n_n K_\chi^2\\
-    \Gamma_{1,1}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(\mi(1 + \mu)^2 +2\mu\kinFi) (1 + \mu^2)}{\mu^2\mi (\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_n K_\chi^3\\
-    \Gamma_{0,2}^- (K_\chi) & =\frac{\sqrt{2}}{10}\frac{(\mi(\mu +1)^2 + 2 \mu  \kinFi)^2}{\mu(\mu+1)^2 \mi (\kinFi\mi)^{3/2}}\sigma_{surf} n_n K_\chi^2
+    \Gamma_{0,0}^- (K_\chi) & = \frac{\sqrt{2}}{10}\frac{(1 +\mu)^2}{\mu} \frac{\mi}{(\mi \kinFi)^{3/2}}\sigma_{surf} n_i K_\chi^2\\
+    \Gamma_{1,0}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(1 + \mu)^2 (1 + \mu^2)}{\mu^2}\frac{1}{(\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_i K_\chi^3\\
+    \Gamma_{2,0}^- (K_\chi) & =\frac{\sqrt{2}}{7}\frac{(1 + \mu)^2 (1 + \mu^2)^2}{\mu^3}\frac{1}{\mi(\mi\kinFi)^{3/2}}\left( \frac{B(\Rstar)}{(1 - B(\Rstar)}\right)^2\sigma_{surf} n_i K_\chi^4\\
+    \Gamma^-_{0,1}(K_\chi) & = \frac{\sqrt{2}}{10} \frac{(\mi(1 + \mu)^2 + 2 \mu \kinFi)}{\mu(\mi\kinFi)^{3/2}}\sigma_{surf} n_i K_\chi^2\\
+    \Gamma_{1,1}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(\mi(1 + \mu)^2 +2\mu\kinFi) (1 + \mu^2)}{\mu^2\mi (\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_i K_\chi^3\\
+    \Gamma_{0,2}^- (K_\chi) & =\frac{\sqrt{2}}{10}\frac{(\mi(\mu +1)^2 + 2 \mu  \kinFi)^2}{\mu(\mu+1)^2 \mi (\kinFi\mi)^{3/2}}\sigma_{surf} n_i K_\chi^2
 \end{align}
 The average energy loss per collision is given by
 \begin{equation}
@@ -540,12 +646,12 @@ Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have th
 \end{align}
 % The resulting thermalisation times are then (setting $B(\Rstar)\sim 0.5$)
 % \begin{align}
-%     \tth^{0,0} & = \frac{49}{4\sqrt{2}}\frac{\mu}{(1 +\mu)^2}\frac{\sqrt{\mi \kinFi^3}}{n_n \sigma_{surf} \Teq^2}\\
-%     & \sim 1.427\times 10^8\yrs\frac{\mu}{(1 +\mu)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^2\\
-%     \tth^{1,0} & =  \frac{729}{76\sqrt{2}}\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\frac{(\mi \kinFi)^{3/2}}{n_n \sigma_{surf} \Teq^3}\\
-%     & \sim 1.217\times 10^{18}\yrs\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^3\\
-%     \tth^{2,0} & =  \frac{9150625}{1231312\sqrt{2}}\frac{\mu^3}{(1 +\mu)^2(1+\mu^2)^2}\left(\frac{1 - B(\Rstar)}{B(\Rstar)}\right)^2 \frac{\sqrt{\mi^5 \kinFi^3}}{n_n \sigma_{surf} \Teq^4}\\
-%     & \sim 1.027\times 10^{28}\yrs\frac{\mu^3}{(1 +\mu)^2(1 + \mu^2)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_n(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^4
+%     \tth^{0,0} & = \frac{49}{4\sqrt{2}}\frac{\mu}{(1 +\mu)^2}\frac{\sqrt{\mi \kinFi^3}}{n_i \sigma_{surf} \Teq^2}\\
+%     & \sim 1.427\times 10^8\yrs\frac{\mu}{(1 +\mu)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^2\\
+%     \tth^{1,0} & =  \frac{729}{76\sqrt{2}}\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\frac{(\mi \kinFi)^{3/2}}{n_i \sigma_{surf} \Teq^3}\\
+%     & \sim 1.217\times 10^{18}\yrs\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^3\\
+%     \tth^{2,0} & =  \frac{9150625}{1231312\sqrt{2}}\frac{\mu^3}{(1 +\mu)^2(1+\mu^2)^2}\left(\frac{1 - B(\Rstar)}{B(\Rstar)}\right)^2 \frac{\sqrt{\mi^5 \kinFi^3}}{n_i \sigma_{surf} \Teq^4}\\
+%     & \sim 1.027\times 10^{28}\yrs\frac{\mu^3}{(1 +\mu)^2(1 + \mu^2)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^4
 % \end{align}
 
 % Using Eq. 4.15 of the thermalisation paper, I get, for $\kinFi\sim 0.2$ GeV and $\mu = 10^{-3}$
