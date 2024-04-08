@@ -7,20 +7,11 @@
 \label{chapter:capture_1}
 
 \begin{synopsis}
-Review capture in the Sun, move to what's needed for COs in general, then specify to WDs (ions + electrons) and NS (interacting baryons)
+This chapter combines aspects of Refs.~\cite{Bell:2020jou_sep_ImprovedTreatmentDark,Bell:2020lmm_mar_ImprovedTreatmentDark,Anzuini:2021lnv_nov_Improvedtreatmentdark} to give a complete introduction to the formalism we have built for dark matter capture in compact objects. We begin by reviewing aspects of Gould's formalism for capture in the Sun~\cite{Gould:1987ir_ResonantEnhancementsWIMP,Gould:1987ju_WeaklyInteractingMassive}. We then build upon these results to incorporate relativistic corrections and the effects of Pauli Blocking due to scattering from a degenerate media in a self-consistent manner. Important aspects of both the interaction and capture rates are discussed, including Pauli blocking for low mass DM and the effects of multiple scatting in the high-mass regime. We then apply our results to the example DM scattering from neutron targets using the BSk24 EoS to model the neutron star.
 \end{synopsis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The capture rate of dark matter within celestial bodies is an essential quantity of interest throughout this work.
-In this chapter, we focus on building up the formalism of dark matter 
-capture within compact objects derived in Refs.~\cite{Bell:2020jou_sep_ImprovedTreatmentDark,Bell:2020lmm_mar_ImprovedTreatmentDark}, outlining how our results differs from the 
-established formalism for capture in the Sun. 
-
-
-We note that the main results presented in this chapter are given for DM scattering from neutron targets, and was completed before the additional complications to the capture rate that arise baryons haveing strong self-interactions and a finite size were realised in Refs.~\cite{Bell:2020obw_sep_NucleonStructureStrong, Anzuini:2021lnv_nov_Improvedtreatmentdark}. As such, these results serve to highlight the key features of the capture formalism we derive. The results of Refs.~\cite{Bell:2020obw_sep_NucleonStructureStrong, Anzuini:2021lnv_nov_Improvedtreatmentdark} will be discussed in Chapter~\ref{chapter:capture_baryons}.
-
 
 
 
@@ -168,7 +159,7 @@ where $\hat{\Omega}^-(r)$ is the interaction rate with respect to the proper tim
 \begin{equation}
     \hat{\Omega}^-(r) d\tau = \frac{1}{\sqrt{g_{tt}}}\Omega^-(r)d\tau= \frac{1}{\sqrt{B(r)}}\Omega^-(r)d\tau.
 \end{equation}
-Now, the proper time that the DM spends inside a shell of thickness $dr$ will be\footnote{See Appendix~\ref{appendix:kin_heating} for the derivation of $\dot r = \frac{dr}{dt}$.}
+Now, the proper time that the DM spends inside a shell of thickness $dr$ will be\footnote{See Appendix~\ref{app:kin_heating} for the derivation of $\dot r = \frac{dr}{dt}$.}
 \begin{equation}
     d\tau = \left( \frac{d\tau}{dt}\right) dt = B(r) \frac{dr}{\dot r} = \frac{\sqrt{B(r)} dr}{\sqrt{\frac{1}{A(r)} \left[ 1 - B(r)\left( 1 + \frac{J_\chi^2}{m_\chi^2 r^2} \right) \right]}}.
 \end{equation}
@@ -341,7 +332,7 @@ As we will be dealing with NSs at low temperatures, we can take the $\Tstar\righ
 \end{align}
 The first step function can be used to further restrict the $\Ei$ integration interval to be $[\mi, \mi + \kinFi(r)]$. In practice, we work with the kinetic energies of the targets rather than their total energy, as this is the quantity that directly changed in the interactions. Therefore, unless otherwise specified, we will take $\Ei$ to mean the target kinetic energy, with the integration range being $0\le \Ei\le \kinFi$.
 
-This expression resembles that of Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}, but uses a relativistic formalism instead. In Appendix~\ref{sec:weakfieldlimit}, we show that Eq.~\ref{ch3:eq:int_rate_capture_full} reduces to the classical expression for the interaction rate in the non-relativistic limit. 
+This expression resembles that of Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron}, but uses a relativistic formalism instead. In Appendix~\ref{app:sec:weakfieldlimit}, we show that Eq.~\ref{ch3:eq:int_rate_capture_full} reduces to the classical expression for the interaction rate in the non-relativistic limit. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -607,7 +598,7 @@ Finally, we compare the geometric limit of Eq.~\ref{ch3:eq:capturegeom}  (solid 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Large Mass Regime: Multiple Scattering}
-\label{ch4:subsec:largemassandsigma}
+\label{ch3:subsec:largemassandsigma}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

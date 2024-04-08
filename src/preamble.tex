@@ -80,8 +80,8 @@
 
 %   Original version (top and bottom values for \symmetricmargin and \bookmargin
 %   all the same)
-%   \usepackage[outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm]{geometry}
-\usepackage[outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm]{geometry}
+  \usepackage[outer=36.02988mm,inner=25.47697mm,top=36.0317mm,bottom=50.9565mm]{geometry}
+% \usepackage[outer=36.02988mm,inner=25.47697mm,top=21.8896mm,bottom=30.9565mm]{geometry}
 
 %% For pdf copy
 \newcommand*\symmetricmargin{
@@ -104,11 +104,12 @@
 % Eye candy
 % ---------
 \usepackage[
-labelfont={bf,singlespacing},
-textfont={singlespacing},
+labelfont={ bf, singlespacing},
+textfont={ singlespacing},
 % justification={justified,RaggedRight},
 singlelinecheck=false,
 margin=0pt,
+width=.9\textwidth,
 figurewithin=chapter,
 tablewithin=chapter]
 {caption}

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Derivation of Dark Matter Interaction Rates in Degenerate Media}
+\chapter{Dark Matter Interaction Rates}
 \label{app:interaction_rates}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,18 +9,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{General Interaction Rates}
+\section{General Interaction Rates for Scattering within a Degenerate Media}
+\label{app:sec:genral_int_rate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The most general form of the interaction rate, following Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, can be written as
+The most general form of the interaction rate, following Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, can be written in terms of the spin-averaged squared matrix element, $\Msq$, as
 \begin{align}
     \Gamma &= \int\frac{d^3 k'}{(2\pi)^3}\frac{1}{(2E_\chi)(2E_\chi')(2\mi)(2\mi)}\Theta(E_\chi' - \mchi)\Theta(\pm q_0)S(q_0, q),\\
     \begin{split}
         S(q_0, q) & = 2\int\frac{d^3 p}{(2\pi)^3}\int\frac{d^3 p'}{(2\pi)^3}\frac{\mi^2}{\Ei \Ei'}\Msq(2\pi)^4\delta^4\left( k_\mu + p_\mu - k_\mu' - p_\mu'\right)\\
-        &\hspace{5em}\times \fFD(\Ei)(1 - \fFD(\Ei'))\Theta(\Ei - \mi)\Theta(\Ei' - \mi),
+        &\hspace{5em}\times \fFD(\Ei)(1 - \fFD(\Ei'))\Theta(\Ei - \mi)\Theta(\Ei' - \mi),\label{app:eq:full_response_S}
     \end{split}
 \end{align}
+where $S(q_0, q)$ is the target response function that depends on the energy and momentum transfers, $q_0$ and $q$ respectively.  $E_\chi$ and $\Ei$ are the DM and target initial energies, with $k$ and $p$ their respective momenta. Primed variables represent final state quantities.  
+
 The $\delta$-function can be used to perform the $d^3p'$ integrations, leaving
 \begin{equation}
     \begin{split}
@@ -272,10 +275,10 @@ where the $t_E$ integration limits are
 
 All interaction rate spectra will have an endpoint at $q_0 = \qomax$, the maximum amount of energy that can be lost in a single interaction.
 The value of $\qomax$ is shown in the left panel of Fig.~\ref{ch3:fig:q0max} as a function of $B$ in the case of large DM mass ($m_\chi = 1\TeV$), for several values of $\kinFn$. The endpoint can be found as the minimum between the DM kinetic energy and the root of one of the following two equations 
-\begin{eqnarray}
-    t_E^- = t_{\mu^+}^+,\\
-    t_E^+ = t_{\mu^+}^-.
-\end{eqnarray}
+\begin{align}
+    t_E^- &= t_{\mu^+}^+,\\
+    t_E^+ &= t_{\mu^+}^-.
+\end{align}
 Only one of these equations will have a positive root for a given choice of $m_\chi$, $\kinFn$ and $E_\chi$.
 For $m_\chi\gg \mi$, the second equation never has a solution, and the solution of the first equation is always much lower than the kinetic energy. This results in the value of $\qomax$ becoming independent of $m_\chi$ in this mass range.
 
@@ -291,11 +294,11 @@ We observe in the left panels that for $n=0$ interaction rates are flat (or peak
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Up-scattering Rate}
+\subsection{Up-scattering Rate}
 \label{app:subsec:up_scatter_derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We now treat the case of $q_0<0$ applicable to up scattering and evaporation. Focusing on $s$-independent matrix elements for the moment, the response function is
+We now treat the case of $q_0<0$, applicable to up scattering and evaporation. Focusing on $s$-independent matrix elements for the moment, the response function is
 \begin{equation}
     S^{-}_\mathrm{up}(q_0, q) = \frac{\mi^2}{\pi q}\int_{\Ei^{t^-}}^\infty\fFD(\Ei)(1 - \fFD(\Ei -|q_0|))
 \end{equation}
@@ -310,7 +313,7 @@ where after taking $\Tstar \rightarrow 0$ we recognise three regions of interest
         \frac{|q_0| e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}},&\quad \Ei>\kinFi +|q_0|\\  
         \frac{(\Ei-\kinFi) e^{-|q_0|/\Tstar}}{1 - e^{-|q_0|/\Tstar}},&\quad \kinFi + |q_0| > \Ei > \kinFi\\
         0, & \quad \kinFi>\Ei
-    \end{dcases}
+    \end{dcases},
 \end{equation}
 and we can write this as
 \begin{equation}
@@ -456,14 +459,14 @@ This result applies generally to all matrix elements, not just the ones $\propto
 
 When setting up the centre of mass energy interval in section~\ref{ch3:sec:diff_int_rate}, we have set the DM energy to 0 at infinity. This means that when taking the classical non-relativistic limit, the interaction rate would approach 
 \begin{equation}
-\Omega^{-}(r) \rightarrow n_i(r) v_{esc}(r) \sigma, \label{app:eq:OmegaClass}
+\Omega^{-}(r) \rightarrow n_i(r) v_\mathrm{esc}(r) \sigma, \label{app:eq:OmegaClass}
 \end{equation}
 in the simple case of a constant cross-section. Taking Eq.~\ref{ch3:eq:int_rate_capture_full}, one can first strip out the Pauli blocking term $(1-\fFD)$, and then the integration in $t$ and $s$ can be performed analytically. Taking the limit $u_i\rightarrow0, \quad \Ei=\mi/\sqrt{1-u_i^2}$, and then the weak field approximation $B(r)\rightarrow1-v_\mathrm{esc}^2(r)$, for a constant cross-section $\frac{d\sigma}{d\cos\thetacm}=\frac{\sigma}{2}$, we find 
 \begin{align}
-\Omega^{-}(r) &\rightarrow \mi^2 \frac{\sigma}{2}\frac{2u_i v_{esc}(r) \fFD(\Ei,r)}{\pi^2}d\Ei \\
-& = \mi^3 \frac{\sigma}{2} \frac{2u_i v_{esc}(r)  \fFD(\Ei,r)}{\pi^2}u_i du_i  \\ 
-&= \mi^3 \frac{\sigma}{2}\frac{v_{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3u_i \\
-& = \frac{\sigma}{2} \frac{v_{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3p. 
+\Omega^{-}(r) &\rightarrow \mi^2 \frac{\sigma}{2}\frac{2u_i v_\mathrm{esc}(r) \fFD(\Ei,r)}{\pi^2}d\Ei \\
+& = \mi^3 \frac{\sigma}{2} \frac{2u_i v_\mathrm{esc}(r)  \fFD(\Ei,r)}{\pi^2}u_i du_i  \\ 
+&= \mi^3 \frac{\sigma}{2}\frac{v_\mathrm{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3u_i \\
+& = \frac{\sigma}{2} \frac{v_\mathrm{esc}(r)  \fFD(\Ei,r)}{2\pi^3} d^3p. 
 \end{align}
 Cases with $\sigma\propto t^n$ give similar results.
 Recall that
@@ -490,8 +493,8 @@ where we have also used Eq.~\ref{ch3:eq:diffxsec}. We first consider the case wh
 we can straightforwardly  perform the integral over $t$, 
 \begin{equation}
     \begin{split}
-        \Omega^{-}(r) & = \frac{\zeta(r)}{32\pi^3}\int d\Ei ds \bar{g}(s) \frac{\Ei\gamma(s)}{2s\beta(s)-\gamma^2(s)}\frac{1}{n+1}\left(\frac{\gamma^2(s)}{s}\right)^n\\
-        & \hspace{12em} \times  \frac{1}{p_\chi}\fFD(\Ei,r)(1-\fFD(\Ei^{'},r)).
+        \Omega^{-}(r) & = \frac{\zeta(r)}{32\pi^3}\int d\Ei ds \bar{g}(s) \frac{\Ei\gamma(s)}{2s\beta(s)-\gamma^2(s)}\frac{1}{n+1}\frac{1}{p_\chi}\left(\frac{\gamma^2(s)}{s}\right)^n\\
+        & \hspace{12em} \times  \fFD(\Ei,r)(1-\fFD(\Ei^{'},r)).
     \end{split}
 \end{equation}
 
@@ -508,21 +511,26 @@ If $g(s)$ is regular in $s_0$, we can estimate the integral in $s$ to be $  2\de
 \times \fFD(\Ei,r)(1-\fFD(\Ei^{'},r)). 
 \end{align}
 To perform the integral in $\Ei$, we have to potentially deal with Pauli blocking. However, for $\mu\gg1$, Pauli blocking is not effective and we can drop the $1-\fFD$ term to obtain
-\begin{eqnarray}
- \int_{\mi}^{\mi+\kinFi(r)} d\Ei \Ei \sqrt{\Ei^2-\mi^2}  \fFD(\Ei,r) = \frac{\left[\kinFi(r)(2\mi+\kinFi(r))\right]^{3/2}}{3} = \pi^2 n_\mathrm{free}(r).
-\end{eqnarray}
+\begin{align}
+ \int_{\mi}^{\mi+\kinFi(r)} d\Ei \Ei \sqrt{\Ei^2-\mi^2}  \fFD(\Ei,r) &= \frac{\left[\kinFi(r)(2\mi+\kinFi(r))\right]^{3/2}}{3} \\
+ & = \pi^2 n_\mathrm{free}(r).
+\end{align}
 This, together with $\zeta(r)$, result in an overall factor of $\pi^2 n_i(r)$, leaving 
-\begin{eqnarray}
-\Omega^{-}(r) &\sim& \frac{n_i(r)}{16\pi} \frac{\sqrt{E_\chi^2-m_\chi^2}}{   m_\chi^2 E_\chi} \frac{1}{n+1} 
+\begin{equation}
+\Omega^{-}(r) \sim \frac{n_i(r)}{16\pi} \frac{\sqrt{E_\chi^2-m_\chi^2}}{   m_\chi^2 E_\chi} \frac{1}{n+1} 
 \left[\frac{4(1-B(r))m_\chi^2}{B(r) (1+\mu^2)}\right]^n,   
-\end{eqnarray}
+\end{equation}
 and the capture rate reads, 
 \begin{equation}
-C \sim \frac{1}{4 \vstar} \frac{\rho_\chi}{m_\chi^3}  {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \frac{1}{n+1} \left[\frac{4(1-B(r))m_\chi^2}{B(r) (1+\mu^2)}\right]^n.    
+    \begin{split}
+        C &\sim \frac{1}{4 \vstar} \frac{\rho_\chi}{m_\chi^3}  {\rm Erf}\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}  r^2 dr \, n_i(r)  \frac{1-B(r)}{B(r)} \frac{1}{n+1}\\
+        &\hspace{16em}\times \left[\frac{4(1-B(r))m_\chi^2}{B(r) (1+\mu^2)}\right]^n.    
+    \end{split}
 \end{equation}
 We can now rewrite these expressions in terms of the cross-section which has been averaged over $s$, 
 \begin{align}
-\langle\sigma(r)\rangle=\left\langle\int dt \frac{d\sigma}{dt} \right\rangle_s &= \frac{1}{2\delta s}\int_{s_0-\delta s}^{s_0+\delta s} ds \int dt \frac{d\sigma}{dt} \\
+\langle\sigma(r)\rangle & =\left\langle\int dt \frac{d\sigma}{dt} \right\rangle_s \\
+&= \frac{1}{2\delta s}\int_{s_0-\delta s}^{s_0+\delta s} ds \int dt \frac{d\sigma}{dt} \\
 & = \frac{1}{64\pi m_\chi^2 \mi^2} \frac{B(r)}{(1-B(r))}   \int dt \, t^n \\
 &= \frac{1}{64\pi m_\chi^2 \mi^2} \frac{B(r)}{(1-B(r))} \frac{1}{(n+1)} \left[\frac{4(1-B(r))m_\chi^2}{B(r)(1+\mu^2)}\right]^{n+1}\\
 &= \frac{1}{16\pi \left(\mi^2+m_\chi^2\right)}  \frac{1}{(n+1)} \left[\frac{4(1-B(r))m_\chi^2}{B(r)(1+\mu^2)}\right]^{n}, 
@@ -554,6 +562,72 @@ Now when we take the limit as $\kinFn\rightarrow 0$, the integrand over $s$ can 
 \label{app:eq:xsecave_sdep}
 \end{split}
 \end{gather}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Kinematic phase space for DM-electron scattering}
+\label{app:sec:phasespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When deriving the interaction rate in the context of DM capture in NSs, we assumed that all the target phase space was available to scatter with DM. This is not necessarily true if the target is highly degenerate or if gravity is not particularly strong, like in NSs. In fact, for the scattering to occur, both the DM and target momenta should be in the inbound direction in the centre of mass frame. This is true in the whole phase space only when the 
+following condition is satisfied 
+\begin{equation}
+\frac{1}{\sqrt{B(r)}}>\frac{\kinFe}{m_e}.
+\end{equation}
+
+To clarify this point, we first derive this constraint using non-relativistic kinematics.
+The DM particle of mass $m_\chi$ has an initial speed
+\begin{equation}
+    v_\mathrm{esc}=\sqrt{1-B}, 
+\end{equation}
+while the target has a mass $m_e$ and an energy
+\begin{equation}
+    E_e= m_e+b\kinFe=m_e\left(1+b \frac{\kinFe}{m_e}\right),\quad b\in[0,1].
+\end{equation}
+Using non-relativistic kinematics, the speed of the target is 
+\begin{equation}
+    v_e=\sqrt{2b\frac{\kinFe}{m_e}}.
+\end{equation} 
+The centre of mass velocity is defined as
+\begin{equation}
+\vec{v}_{com} = \frac{1}{m_\chi+m_e} (m_\chi \vec{v}_{esc}+m_e \vec{v}_e), 
+\end{equation}
+so the DM speed in the CoM frame is $ \vec{v}_\chi^{'} = \vec{v}_\mathrm{esc}-\vec{v}_\mathrm{com}$. 
+To ensure that the DM and the target are not moving away from each other, the following condition should hold, $\vec{v}_\chi^{'}\cdot \vec{v}_\mathrm{esc} >0$, 
+i.e., the component of the DM velocity in the CoM frame is always parallel to the initial speed in the star frame. 
+This condition leads to
+\begin{equation}
+    \cos\theta < \sqrt{\frac{1-B}{2b (\kinFe/m_e)}}, \label{app:eq:condnonrel}
+\end{equation}
+where $\theta$ is the angle between the DM and the target speed in the star frame. If $\kinFe/m_e\gg1-B$, the condition reduces to 
+\begin{equation}
+    \cos\theta<0, 
+\end{equation}
+meaning that the collision is head-on only. 
+
+Repeating the same exercise with relativistic kinematics, 
+the variable whose parameter space is modified by the above mentioned condition is the centre of mass energy $s$,
+\begin{equation}
+s = m_\chi^2+m_e^2+\frac{2m_em_\chi}{\sqrt{B}}\left(1+b\frac{\kinFe}{m_e}-a\sqrt{1-B}\sqrt{2b\frac{\kinFe}{m_e}+b^2\frac{\kinFe^2}{m_e^2}}\right), \,  a\in[-1,1], 
+\end{equation}
+and the new condition becomes
+\begin{equation}
+a= \frac{s_\mathrm{max}+s_\mathrm{min}-2s}{s_\mathrm{max}-s_\mathrm{min}} <\left(1+b\frac{\kinFe}{m_e}\right)\sqrt{\frac{1-B}{2b\frac{\kinFe}{m_e}+b^2\frac{\kinFe^2}{m_e^2}}}
+= E_e\sqrt{\frac{1-B}{E_e^2-m_e^2}}.\label{app:eq:condrel}
+\end{equation}
+
+
+With the exception of the heaviest WDs, we have $\kinFe/m_e\lesssim 1$. Then, with $1-B\sim10^{-3}$, we can check that expanding Eq.~\ref{app:eq:condrel} leads to Eq.~\ref{app:eq:condnonrel} and that $a\lesssim 0$.
+This implies that approximately half of the phase space is not available for scattering. (For electrons in NSs we instead have $\kinFe/m_e\gg1$, and hence this does not occur.) 
+
+Taking the ultra-relativistic limit for electrons, Eq.~\ref{app:eq:condrel} reduces to
+\begin{equation}
+a <\sqrt{1-B}\label{app:eq:condurel}.
+\end{equation}
+This restriction of the available phase space results in variations of the order of $\mathcal{O}(10\%)$ for both the interaction and capture rates.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interaction Rate for Low Energies}
@@ -587,16 +661,16 @@ The $\alpha_{n,m}$ can be obtained at some reference point, taken to be the surf
 which gives
 \begin{align}
     \sigma_{0,0} & = \frac{\alpha_{0,0}}{16 \pi (\mi + m_\chi)^2}\\
-    \sigma_{1,0} & = \frac{\alpha_{1,0} }{32 \pi (\mi + m_\chi)^2}t_{max}\\
-    \sigma_{2,0} & = \frac{1}{3}\frac{\alpha_{2,0} }{16 \pi (\mi + m_\chi)^2}t_{max}^2\\
+    \sigma_{1,0} & = \frac{\alpha_{1,0} }{32 \pi (\mi + m_\chi)^2}t_\mathrm{max}\\
+    \sigma_{2,0} & = \frac{1}{3}\frac{\alpha_{2,0} }{16 \pi (\mi + m_\chi)^2}t_\mathrm{max}^2\\
     \sigma_{0,1} & = \frac{\alpha_{0,1}}{16 \pi (\mi + m_\chi)^2}s\\
-    \sigma_{1,1} & = \frac{\alpha_{1,1} }{32 \pi (\mi + m_\chi)^2}t_{max}s\\
+    \sigma_{1,1} & = \frac{\alpha_{1,1} }{32 \pi (\mi + m_\chi)^2}t_\mathrm{max}s\\
     \sigma_{0,2} & = \frac{\alpha_{0,2}}{16 \pi (\mi + m_\chi)^2}s^2
 \end{align}
 where I have used 
 \begin{align}
-    t & = -\frac{t_{max}}{2}(1 - \cos\thetacm)\\
-    t_{max} & \sim \frac{4 \mi^2 m_\chi^2}{(\mi^2 + m_\chi^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\\
+    t & = -\frac{t_\mathrm{max}}{2}(1 - \cos\thetacm)\\
+    t_\mathrm{max} & \sim \frac{4 \mi^2 m_\chi^2}{(\mi^2 + m_\chi^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\\
     s & \sim \mi^2 + m_\chi^2 + \frac{2\mchi (\mi +\kinFi)}{\sqrt{B(\Rstar)}}\\
     &\sim (\mi +\mchi)^2
 \end{align}
