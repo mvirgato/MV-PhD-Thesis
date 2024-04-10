@@ -290,7 +290,7 @@ The final Jacobian factor can be expressed as
 \end{equation}
 for the elastic scattering we consider here.
 
-Finally, we note that the first application of this capture formalism was for neutron targets, with the analysis completed before we had considered the additional effects from the form factors and strong interactions discussed in subsection~\ref{ch1:subsec:quark_to_nucleon_EFT}. These effects will be incorporated into this formalism in a self-consistent way next chapter. The initial approach that was taken to account for the fact that we are using realistic neutron number density profiles, despite the expression in Eq.~\ref{ch3:eq:number_density_replacement} being for a free Fermi gas, is to introduce a correction factor as in Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron},
+Finally, we note that the first application of this capture formalism was for neutron targets, with the analysis completed before we had considered the additional effects from the form factors and strong interactions discussed in subSection~\ref{ch1:subsec:quark_to_nucleon_EFT}. These effects will be incorporated into this formalism in a self-consistent way next chapter. The initial approach that was taken to account for the fact that we are using realistic neutron number density profiles, despite the expression in Eq.~\ref{ch3:eq:number_density_replacement} being for a free Fermi gas, is to introduce a correction factor as in Ref.~\cite{Garani:2018kkd_may_NewAnalysisNeutron},
 \begin{equation}
     \zeta(r) = \frac{n_i(r)}{n_\mathrm{free}(r)},
 \end{equation}
@@ -298,6 +298,7 @@ where $n_\mathrm{free}(r)$ is obtained by integrating Eq.~\ref{ch3:eq:free_Fermi
 
 \begin{equation}
     n_\mathrm{free}(r) = \frac{1}{3\pi^2}\left[ \kinFi(r)(2\mi + \kinFi(r))\right]^{3/2}.
+    \label{ch3:eq:n_free_Fermi}
 \end{equation}
 
 Compiling everything together leads to the final expression for the interaction rate being
@@ -368,16 +369,17 @@ where $d^2\Pi_\mathrm{LIPS}$ is the 2-body Lorentz invariant phase space.
 The advantage of Eq.~\ref{ch3:eq:int_rate_capture_full} is that it can be used to calculate the capture rate for any interaction given the differential cross-section. The disadvantage is that this computation has to be evaluated numerically, which can be computationally intensive. For this reason, shall now use Eq.~\ref{ch3:eq:scattrate} to derive analytic expressions that will allow us to speed up computations and, in addition, calculate the shape of the interaction rate as a function of the energy loss. 
 
 The interaction rate for $d\sigma \propto s^m t^n$ is 
-\begin{align}
+\begin{equation}
     \begin{split}
-        \Gamma^{-}(E_\chi)- & = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int \frac{dt_E t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\\
+        \Gamma^{-}(E_\chi) & \propto \sum_{n,m}  \frac{(-1)^n }{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int \frac{dt_E t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\\
         &\hspace{4em}\times\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right),
     \end{split}
     \label{ch3:eq:gamma_full_text}
-\end{align}
+\end{equation}
 for elastic scattering with $t_E=-t=q^2-q_0^2$, where $q_0=\Ei'-\Ei$ is the DM energy loss, 
 \begin{equation}
 \Ei^{\, t^{-}} = -\left(m_n+\frac{q_0}{2}\right) + \sqrt{\left(m_n+\frac{q_0}{2}\right)^2+\left(\frac{\sqrt{q^2-q_0^2}}{2}-\frac{m_n q_0}{\sqrt{q^2-q_0^2}}\right)^2}, 
+\label{ch3:eq:Etm_def}
 \end{equation}
 is the minimum energy of the neutron before the collision, obtained from kinematics,  and $h_j(x)$ is a step function with a smooth transition, 
 \begin{equation}
@@ -386,6 +388,7 @@ is the minimum energy of the neutron before the collision, obtained from kinemat
         & (-x)^{j+1},\quad -1<x <0\\
         & 1,\quad x<-1
     \end{cases}.
+    \label{ch3:eq:h_stepfn}
 \end{equation}
 The full derivation of this interaction rate can be found in Appendix~\ref{app:interaction_rates}. 
 Our result for $\Gamma^-$ is an extension of that presented in Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, where the interaction rate was calculated only in the case of low energy and a constant matrix element. It is valid at all energy ranges.
@@ -522,7 +525,7 @@ the complete expression for the capture rate as a function of the differential D
     \end{split}
 \label{ch3:eq:capturefinal}
 \end{equation}
-where the functions $\beta$ and $\gamma$ were given in section~\ref{ch3:subsec:int_rate_degen_rel}. Recall that in the limit $T\rightarrow0$,  $\fFD(\Ei,r)$ and $1-\fFD(\Ei',r)$  reduce to the step functions,  $\Theta(\kinFi(r)-\Ei)$ and  $\Theta(\Ei'-\kinFi(r))$, respectively. 
+where the functions $\beta$ and $\gamma$ were given in Section~\ref{ch3:subsec:int_rate_degen_rel}. Recall that in the limit $T\rightarrow0$,  $\fFD(\Ei,r)$ and $1-\fFD(\Ei',r)$  reduce to the step functions,  $\Theta(\kinFi(r)-\Ei)$ and  $\Theta(\Ei'-\kinFi(r))$, respectively. 
 
 
 Exchanging the differential cross-section for the squared matrix allows for easier examination of the operators in Table~\ref{ch1:tab:opers_defn_full}, and so we write the capture rate as
@@ -535,7 +538,7 @@ Exchanging the differential cross-section for the squared matrix allows for easi
 \end{equation}
 This expression can be used to numerically calculate the single scatter capture rate of DM in compact objects, in the optically thin regime. In general, this must be used for low-mass DM where PB is in effect.
 
-As discussed in section~\ref{ch3:subsec:PB_cap}, PB eventually becomes negligible for DM with masses $\gtrsim \muFi$. Hence, between this mass and the point where multiple scattering becomes important, PB can be neglected and a simplified capture rate be obtained. For nucleon targets, this range is between $1\GeV\lesssim m_\chi\lesssim 10^6\GeV$, which we call the intermediate mass range.
+As discussed in Section~\ref{ch3:subsec:PB_cap}, PB eventually becomes negligible for DM with masses $\gtrsim \muFi$. Hence, between this mass and the point where multiple scattering becomes important, PB can be neglected and a simplified capture rate be obtained. For nucleon targets, this range is between $1\GeV\lesssim m_\chi\lesssim 10^6\GeV$, which we call the intermediate mass range.
 
 The resulting simplified capture rate differs slightly depending on whether the matrix element depends only on $t$, or if it has explicit $s$ dependence. We present the full derivations of these results in Appendix~\refeq{app:sec:capratesimple}
 First, for $\Msq=a t^n$, the previous expression can be simplified to 
@@ -573,7 +576,7 @@ As with the differential interaction rates, it is the $t$-dependence of the matr
 In Fig.~\ref{ch3:fig:approxc}, we show the capture rate as a function of the DM mass for matrix elements proportional to $t^n$, for $n=0,1,2$ and the NS benchmark model BSk24-2. Numerical results obtained using Eq.~\ref{ch3:eq:capturefinalM2} are shown in solid red; results using the same equation but removing the theta function that enforces Pauli blocking are depicted in light blue; and the approximation for intermediate DM masses, Eq.~\ref{ch3:eq:csimplelargemtext}, in yellow. We show the geometric limit, Eq.~\ref{ch3:eq:capturegeom}, in blue for comparison. 
 The capture rates were all normalised to the geometric limit at large DM mass where PB is negligible. 
 In the same plots, we also show in brown the result obtained from using a modified version of Eq.~\ref{ch3:eq:csimplelargemtext} to include Pauli blocking.
-This is achieved by including the ratio between the differential the interaction rate, $\Gamma^-$, calculated with and without Pauli blocking. This comparison was done in section~\ref{ch3:subsec:PB_cap} for various values of $B$ and $\kinFn$.
+This is achieved by including the ratio between the differential the interaction rate, $\Gamma^-$, calculated with and without Pauli blocking. This comparison was done in Section~\ref{ch3:subsec:PB_cap} for various values of $B$ and $\kinFn$.
 
 From Fig.~\ref{ch3:fig:approxc}, we can see that Eq.~\ref{ch3:eq:csimplelargemtext} is indeed a good approximation to the numerical results obtained without Pauli blocking, and can be safely used for DM masses from a few $\GeV$ up to $m_\chi\sim10^6\GeV$, where multiple scattering becomes relevant. 
 On the other hand, for $m_\chi\lesssim 100\MeV$ the brown line is no longer a good approximation to the numerical result with Pauli blocking, as it always overestimates the capture rate by nearly an order of magnitude. Therefore, to accurately account for the effects of PB for low mass DM, the complete expression for the capture rate, Eq.~\ref{ch3:eq:capturefinalM2} must be used and evaluated numerically.
@@ -732,7 +735,7 @@ with $\Omega^-(r)$ calculated as outlined in sections~\ref{ch3:subsec:captureint
 
 
 In this section, we present our results for the capture rate of fermionic DM scattering from neutrons within a NS in the zero temperature approximation. We calculate the capture rate only for scalar/pseudoscalar-scalar/pseudoscalar interactions between DM and neutrons, i.e. effective operators D1-D4 in Table~\ref{ch1:tab:opers_defn_full}, whose differential cross-sections depend only on the Mandelstam variable $t$ and not on $s$. 
-We use realistic radial profiles for the neutron number density, chemical potential, and relativistic corrections encoded in $B(r)$ as explained in section~\ref{ch2:subsec:NS_EoS}, obtained from the BSk24 EoS for the configurations in Table~\ref{ch2:tab:BSk_configs}. 
+We use realistic radial profiles for the neutron number density, chemical potential, and relativistic corrections encoded in $B(r)$ as explained in Section~\ref{ch2:subsec:NS_EoS}, obtained from the BSk24 EoS for the configurations in Table~\ref{ch2:tab:BSk_configs}. 
 
 
 

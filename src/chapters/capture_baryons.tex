@@ -1,8 +1,153 @@
 \graphicspath{{img/capture_baryons/}}
-
-\chapter{Capture Rate for Strongly Interacting Baryonic Matter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Dark Matter Capture from Baryonic Matter in Neutron Stars}
 \label{chapter:capture_baryons}
 
 \begin{synopsis}
-   The capture formalism developed in the previous chapter is extended to baryonic targets inside neutron stars. Additional complications arise due to their finite size and strong interactions between the baryonic species.  
+   This chapter is based on the papers~\cite{Bell:2020obw_sep_NucleonStructureStrong,Anzuini:2021lnv_nov_Improvedtreatmentdark}, where we incorporate two important effects that are important when considering dark matter capture from baryons in neutron stars. 
+   % Up to this point, all the results presented have assumed that the DM is scattering off point-like particles that are treated as a free Fermi gas. 
+   As the momentum transfers involved in the scattering events leading to capture are large, one must account for the internal structure of the baryon. In addition, the high densities of neutron star matter require us to take into account the strong interactions experienced amongst the baryons. We discuss how to properly incorporate both of these effects into the capture formalism presented in this thesis in a self-consistent manner, and discuss their effects on the capture and interaction rates as well as on the threshold cross-sections that a future NS observation would be sensitive to. 
 \end{synopsis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Baryon Structure and Strong Interactions}
+\label{ch5:sec:baryons_in_NSs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Baryon Strong Interactions and Effective Masses}
+\label{ch5:subsec:strong_ints_meffs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+At the extremely high densities found in the interiors of neutron stars, the strong interactions amongst the baryons render the free Fermi gas approximation used in Chapter~\ref{chapter:capture_intro} to model the scattering targets invalid. To account for these interactions in a self-consistent way, they should be included in the Lagrangian used to model the nucleon-rich matter. This is often achieved by including effective Skyrme forces, or through a relativistic mean field theory.
+
+The QMC EoS, described in Section~\ref{ch2:subsec:NS_EoS}, adopts the latter approach. The forces mediated by the Lorentz scalars induce an effective mass for the baryons different from their vacuum value, such that $\mbeff \leq \mi$. In this model, the single particle energy for a baryon with momentum $\vec{p}_i$ can be expressed as
+\begin{equation}
+   \Ei(p_i) = \sqrt{p_i^2 + [\mbeff(n_b)]^2} + U_i(n_b),
+   \label{ch5:eq:}
+\end{equation}
+where $U_i(n_b)$ is the potential induced by the Lorentz vector forces, which depends on the baryon number density. This expression resembles the dispersion relation for a particle of mass $\mbeff$ under the influence of an external force with corresponding potential $U_i$. Hence, the single-particle energy spectrum of the interacting baryons must be expressed in terms of $\mbeff$ rather than the mass in vacuum, and it is this mass that will enter into the kinematics of the scattering processes.  
+
+Accounting for the strong interactions in this way leads to several modifications to the results obtained in Chapter~\ref{chapter:capture_intro}. Firstly, all appearances of the bare mass $\mi$ are replaced by $\mbeff$ in all the results. This will lead to non-trivial modifications of the capture and interaction rates throughout the star as the mass of the target will decrease deeper into the star (see right panels of Fig.~\ref{ch2:fig:QMC_profiles}).
+
+In addition, the Fermi energies, $\kinFi = \muFi - \mi$, are now calculated according to 
+\begin{equation}
+   \kinFi(r) = \sqrt{[p_{F,i}(n_i)]^2 + [\mbeff(r)]^2} - \mbeff(r),
+   \label{ch5:eq:kinFe_meff}
+\end{equation}
+where $p_{F,i}$ is the Fermi momentum of species $i$. This becomes the input to the Fermi-Dirac distributions for the capture and interaction rates. In doing this, the number density evaluated in the free Fermi gas apprioximation, Eq.~\ref{ch3:eq:n_free_Fermi}, becomes equal to the true number density, $n_i(r)$, provided by solving the EoS alongside the TOV equations. To see this, substitute Eq.~\ref{ch5:eq:kinFe_meff} into Eq.~\ref{ch3:eq:n_free_Fermi} and make the replacement $\mi\rightarrow \mbeff$ to gets
+\begin{align}
+   n_\mathrm{free}(\kinFi(r), \mbeff(r)) & = \frac{1}{3\pi^2}\left[ \kinFi(r)(2\mbeff + \kinFi(r))\right]^{3/2}\\
+   & = \frac{(p_{F,i}(r)^2 + [\mbeff]^2)^{3/2}}{3\pi^2}\\
+   & = \frac{p_{F, i}^3}{3\pi^2}\\
+   & = n_i(r)
+\end{align}
+for a Fermi gas, interacting or otherwise. 
+As such, the correction factor used to correct for usign realistic profiles for the target is now $\zeta(r) = 1$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+   \centering
+\includegraphics[width=0.495\textwidth]{capture_3/muFn_meff_r_QMC.pdf}
+\includegraphics[width=0.495\textwidth]{capture_3/muFp_meff_r_QMC.pdf}
+   \caption{Radial profiles of the Fermi energy for neutrons (left) and protons (right). Results are shown for the free Fermi gas (dashed) and interacting baryon (solid) approaches, for the benchmark NS configurations of Table~\ref{ch2:tab:QMC_configs}.
+   }
+   \label{ch5:fig:muradprofs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{ch5:fig:muradprofs} we show the values of the Fermi energies for neutrons (left panel) and protons (right panel). The dashed lines are the radial profiles used in the free Fermi gas approximation and the solid lines correspond to the calculation outlined above for the effective mass approach. We immediately notice that the profiles for the free Fermi gas approximation are steeper, having larger values in the core and decreasing more rapidly towards the surface, while those obtained with the effective mass approach are quite flat, especially in the core, and go to zero only very close to the surface.
+
+The difference between these two calculations is significantly more prominent for protons. Specifically, in the free Fermi gas approach, we find that protons are non-degenerate in the outer regions of the core and, for light NS configurations such as QMC-1, are non-degenerate throughout the whole star.\footnote{Not shown in Fig.~\ref{ch5:fig:muradprofs} because of the logarithmic scale.}
+In contrast, protons are degenerate throughout the entire star in the interacting baryon treatment. 
+As we shall see, these different Fermi energies will have important consequences when calculating DM capture and interaction rates, especially for proton targets.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Momentum Dependence of Hadronic Form Factors}
+\label{ch5:subsec:mom_dep_FF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the preceeding chapters, we had regarded the target as a point-like particle that the DM scattered off, which is perfectly valid for the leptonic species. Baryons on the other hand are composite particles, being composed of three valence quarks and hence having a finite size. When the momentum transfer exceeds the inverse Compton wavelength of the baryon, $\sim 1/\lambda_\mathcal{B} \sim m_\mathcal{B}$, the internal strucyre begins to be probed, and we must account for their finite size.
+
+As was discussed in Section.~\ref{ch1:subsec:quark_to_nucleon_EFT}, this is achieved by reintroducing the momentum dependence in the hadronic form factors, 
+\begin{align}
+   c_\mathcal{B}^I(t)  &= c_\mathcal{B}^{I}(0) F^2(t),\quad I\in\{S, P, V, A, T\},\\
+   F(t) & = \frac{1}{(1 - t/Q_0^2)^2},
+\end{align}
+where $t$ is the Mandelstam variable, $Q_0$ is an energy scale taken to be $0.9\GeV$, and $c_\mathcal{B}^I(0)$ are the form factors evaluated at zero momentum transfer, with their values given in Appendix~\ref{app:hadronic_matrix_elements}. This factor is included in the matrix elements of the operators in Table.~\ref{ch1:tab:opers_defn_full}, and as such modifies the analytic result for the interaction rate derived in Section~\ref{ch3:sec:diff_int_rate} to become
+\begin{equation}
+   \begin{split}
+       \Gamma^{-}(E_\chi) & \propto \sum_{n,m}  \frac{(-1)^n }{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int \, dt_E \frac{ t_E^n}{(t_E + q_0^2)^{m+\frac{1}{2}}}\frac{1}{(1 + t_E/Q_0^2)^4}\\
+       &\hspace{4em}\times\sum_{r=0}^m \mathcal{V}_{m,r}\sum_{j = 0}^r\binom{r}{j} \kinFi^{r-j}  \frac{(-1)^{j} q_0^{j+1}}{j+1} h_j\left( \frac{\Ei^{t^-} - \kinFi}{q_0}\right),
+   \end{split}
+   \label{ch5:eq:gammaFFfinaltext}
+\end{equation}
+where $E_i^{t^-}$ and $h_j(x)$ are given in Eqs.~\ref{ch3:eq:Etm_def} and~\ref{ch3:eq:h_stepfn} respectively.
+
+The main effect of these form factors is the suppression of high momentum transfer interactions. This will also increase the DM mass range over which Pauli blocking is expected to be active. We can see these effects by examining the kinematically allowed regions of phase space together with the differential interaction rate profiles.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t] 
+   \centering
+   \includegraphics[width=0.75\textwidth]{capture_3/C_int_domain_mdm.pdf}
+   \caption{Integration domain for the interaction rate, for different choices of DM mass, assuming   
+     $B=0.5$ and $\kinFn=0.4\GeV$. The kinematically allowed region is shaded in light blue and the Pauli suppressed region (PB) in dark blue. 
+   }
+   \label{fig:intC}
+   \end{figure}
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+   
+   In Fig.~\ref{ch5:fig:intC}, we show how Pauli blocking affects the integration domain of Eq.~\ref{ch5:eq:gammaFFfinaltext}, which is controlled by the smoothed step function $g_0(x)$, for some representative choices of DM mass and the benchmark values $\kinFn=0.4\GeV$ and $B=0.5$.  The region where $g_0(x)=1$ is not kinematically allowed and hence not shown in Fig.~\ref{ch5:fig:intC}.
+   The light blue area represents the region that is not affected by Pauli blocking (PB), i.e. $1-g_0(x)=-x$, while the dark blue shaded area indicates the PB region, where $g_0(x)=0$. 
+   We observe that for light DM masses such as  $m_\chi=0.1\GeV$ (top left panel), the whole domain lies in the PB region. For $m_\chi=1\GeV$ (top right panel), there is a tiny slice of the domain that is not Pauli suppressed. The picture changes dramatically when the DM mass is increased to $m_\chi=10\GeV$ (bottom left panel), where almost the whole integration domain is unaffected by PB. Increasing the DM mass even further, e.g., up to $m_\chi=1\TeV$ (bottom right panel) does not result in much further change to the shape of the domain, demonstrating that the transition between the Pauli blocked and non-PB regimes occurs between $m_\chi\sim1\GeV$ and $m_\chi\sim10\GeV$.
+   
+   
+   
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{figure}[t] 
+   \centering
+   \includegraphics[width=0.7\textwidth]{capture_3/norm_diff_intrate_q_D1-D4.pdf} 
+   \caption{Normalised differential DM-neutron interaction rate as a function of the DM energy loss, $q_0$, for the operators D1 (top left), D3 (top right), D2 (bottom left) and D4 (bottom right). The light blue lines denote the interaction rate calculated using constant neutron form factors $c_n^S(0)$, $c_n^P(0)$, while the magenta lines correspond to that for momentum-dependent couplings $c_n^S(t)$, $c_n^P(t)$. We have set $m_\chi=1\TeV$, $B=0.5$, $\kinFn=0.4\GeV$.
+   }
+   \label{fig:intrateqtr1}
+   \end{figure}
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+   
+   
+   In Fig.~\ref{fig:intrateqtr1} we show the normalised differential interaction rates for operators D1-D4 as a function of the energy loss $q_0$, calculated with (magenta) and without (light blue) momentum dependent couplings, for neutron targets and $m_\chi=1\TeV$. In all cases, we observe that the inclusion of $t$-dependent hadronic matrix elements shifts the peak of the spectrum towards lower energy transfers, $q_0$. 
+   Thus, the inclusion of $c_i^I(t)$ in Eq.~\ref{eq:gammaFFfinaltext} suppresses DM-neutron scatterings with large momentum transfer. 
+   Replacing the target mass with the corresponding effective mass $\mbeff\leq m_i$ also shifts  the average energy transfer to lower energies.  When both effects are present, a  lighter target mass reduces the suppression arising from $t$-dependent form factors. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Asside: Deep Inelastic Scattering}
+\label{ch5:subsubsec:DIS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Given that the momentum transfer in the DM-nucleon scattering process is sufficiently large that we cannot treat the nucleons as point particles (up to $\sim 10\GeV$ in the cores of the heaviest NSs), one may wonder if there are sizable contributions form Deep Inelastic Scattering (DIS).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reults from Capture on Baryons}
+\label{ch5:sec:capture_results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Threshold Cross-Sections for Nucleon Scattering}
+\label{ch5:sec:sigmath_results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
