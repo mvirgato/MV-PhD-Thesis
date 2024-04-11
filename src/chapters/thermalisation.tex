@@ -72,19 +72,19 @@ The most general expression for the DM down-scattering rate, expressed in terms 
 \end{equation} 
 where
 \begin{align}
-S(q_0,q)  =   2 & \int \frac{d^3p}{(2\pi)^3}\int \frac{d^3p'}{(2\pi)^3} \frac{m_i^2}{E_i E'_i}|\overline{M}(s,t,m_i)|^2 
+S(q_0,q)  =   2 & \int \frac{d^3p}{(2\pi)^3}\int \frac{d^3p'}{(2\pi)^3} \frac{m_i^2}{E_i E'_i}|\overline{\mathcal{M}}(s,t,m_i)|^2 
 (2\pi)^4\delta^4\left(k_\mu+p_\mu-k'_\mu-p'_\mu\right)\nonumber\\
  &\times\fFD(E_i)(1-\fFD(E'_i)) \Theta(E_i-m_i)\Theta(E'_i-m_i),
  \label{eq:responsefunc}
 \end{align}
-$k^\mu=(K_\chi$,$\vec{k})$ and $k'^{\mu}=(K'_\chi,\vec{k'})$ are the DM initial and final momenta,  $p^\mu=(E_i,\vec{p})$ and $p'^{\mu}=(E'_i,\vec{p'})$ are the target particle initial and final momenta, $q_0=E'_i-E_i$ is the DM energy loss, $\vec{q}=\vec{p}-\vec{p'}$ is the three-momentum exchanged in the scattering, $m_i$  is the mass of the target, $|\overline{M}(s,t,m_i)|^2$ is the  spin-averaged squared matrix element, and $\fFD$ is the Fermi Dirac distribution. Note that the purpose of $\Theta(q_0)$ is to select only the down-scattering interactions.
+$k^\mu=(K_\chi$,$\vec{k})$ and $k'^{\mu}=(K'_\chi,\vec{k'})$ are the DM initial and final momenta,  $p^\mu=(E_i,\vec{p})$ and $p'^{\mu}=(E'_i,\vec{p'})$ are the target particle initial and final momenta, $q_0=E'_i-E_i$ is the DM energy loss, $\vec{q}=\vec{p}-\vec{p'}$ is the three-momentum exchanged in the scattering, $m_i$  is the mass of the target, $|\overline{\mathcal{M}}(s,t,m_i)|^2$ is the  spin-averaged squared matrix element, and $\fFD$ is the Fermi Dirac distribution. Note that the purpose of $\Theta(q_0)$ is to select only the down-scattering interactions.
 
 
 When the energy transfer is small compared to the Fermi energy, Pauli blocking strongly suppresses the scattering rate.  Since the targets are in a highly degenerate Fermi plasma, we can take the target energy levels to be either full or empty in the zero temperature limit. Therefore, the interaction rate depends on the number of targets with energy $E_i$ in the initial state, and on the number of empty final states with energy $E_i+q_0$, where $q_0$ is the dark matter energy loss. As a result, the interaction rate necessarily vanishes in the limit that  $q_0\rightarrow 0$.  More generally,  Pauli blocking suppresses the differential interaction rate when $E_i+q_0\le \kinFi$. 
 
 
 
-To calculate the squared matrix elements, $|\overline{M}|^2$, we take the DM-quark couplings to be described by the four-fermion effective field theory (EFT) operators listed in Table~\ref{tab:opers_defn_full}, where the strength of the coupling is parameterized by a cutoff scale, $\Lambda_q$. For each of these operators, the corresponding $|\overline{M}|^2$ is expressed in terms of the Mandelstam variables $s$ and $t$, and the DM-target mass ratio 
+To calculate the squared matrix elements, $|\overline{\mathcal{M}}|^2$, we take the DM-quark couplings to be described by the four-fermion effective field theory (EFT) operators listed in Table~\ref{tab:opers_defn_full}, where the strength of the coupling is parameterized by a cutoff scale, $\Lambda_q$. For each of these operators, the corresponding $|\overline{\mathcal{M}}|^2$ is expressed in terms of the Mandelstam variables $s$ and $t$, and the DM-target mass ratio 
 \begin{equation}
   \mu=\frac{m_\chi}{m_i}.
 \end{equation}
@@ -720,8 +720,8 @@ For matrix elements independent of $t$ ($n=0$), we have $D_0(q_0^2,t_E^{\pm})=1$
 % 
 \begin{align}
 \Gamma_{n=0}^{-}(K_\chi) 
-&\sim  \frac{|\overline{M}|^2}{2^6\pi^3m_\chi}\int_{0}^{K_\chi} dq_0 q_0 \left[\sqrt{2\left(1+\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}-\sqrt{2\left(1-\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}\right] \nonumber \\
-&= \frac{|\overline{M}|^2}{120\pi^3m_\chi}K_\chi^2.
+&\sim  \frac{|\overline{\mathcal{M}}|^2}{2^6\pi^3m_\chi}\int_{0}^{K_\chi} dq_0 q_0 \left[\sqrt{2\left(1+\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}-\sqrt{2\left(1-\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}\right] \nonumber \\
+&= \frac{|\overline{\mathcal{M}}|^2}{120\pi^3m_\chi}K_\chi^2.
 \end{align}
 % 
 We can rewrite the previous expression in terms of the DM-baryon scattering cross-section using the following expression
@@ -773,14 +773,14 @@ The maximum energy transfer in this regime will always be $\qomax<K_\chi$, with
  \end{equation}
 Performing a similar analysis as the $m_\chi \lesssim \mcrit$ regime leads to the following expression for $\Gamma^-$,
 \begin{equation}
-\Gamma^{-}(K_\chi) \sim \frac{|\overline{M}|^2}{2^7\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{	\qomax}q_0 dq_0 \left(\int_{t_{E}^{-}}^{t_{\mu^-}^{+}} \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} \right),  
+\Gamma^{-}(K_\chi) \sim \frac{|\overline{\mathcal{M}}|^2}{2^7\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{	\qomax}q_0 dq_0 \left(\int_{t_{E}^{-}}^{t_{\mu^-}^{+}} \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} \right),  
 \end{equation} 
 where $t_{\mu^-}^+$ is defined in ref.~\cite{Bell:2020jou_sep_ImprovedTreatmentDark}. 
-For the simplest case of constant $|\overline{M}|^2$ this results in 
+For the simplest case of constant $|\overline{\mathcal{M}}|^2$ this results in 
 \begin{align}
 \Gamma^{-}_{n=0}(K_\chi) & \sim  
-\frac{K_\chi \kinFi |\overline{M}|^2}{24\pi^3\mu^2m_i}\left[\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi}}+\mathcal{O}\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)\right] \nonumber\\
-& = \frac{|\overline{M}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{eq:intraten0largem}
+\frac{K_\chi \kinFi |\overline{\mathcal{M}}|^2}{24\pi^3\mu^2m_i}\left[\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi}}+\mathcal{O}\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)\right] \nonumber\\
+& = \frac{|\overline{\mathcal{M}}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{eq:intraten0largem}
 \end{align}
 
 
