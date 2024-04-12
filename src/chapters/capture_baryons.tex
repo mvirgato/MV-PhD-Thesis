@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Dark Matter Capture from Baryonic Matter in Neutron Stars}
+\chapter{Capture on Baryonics in Neutron Stars}
 \label{chapter:capture_baryons}
 
 \begin{synopsis}
@@ -22,7 +22,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Baryon Strong Interactions and Effective Masses}
+\subsection{Baryon Effective Masses}
 \label{ch5:subsec:strong_ints_meffs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,7 +31,7 @@ At the extremely high densities found in the interiors of neutron stars, the str
 The QMC EoS, described in Section~\ref{ch2:subsec:NS_EoS}, adopts the latter approach. The forces mediated by the Lorentz scalars induce an effective mass for the baryons different from their vacuum value, such that $\mbeff \leq \mi$. In this model, the single particle energy for a baryon with momentum $\vec{p}_i$ can be expressed as
 \begin{equation}
    \Ei(p_i) = \sqrt{p_i^2 + [\mbeff(n_b)]^2} + U_i(n_b),
-   \label{ch5:eq:}
+   \label{ch5:eq:total_energy}
 \end{equation}
 where $U_i(n_b)$ is the potential induced by the Lorentz vector forces, which depends on the baryon number density. This expression resembles the dispersion relation for a particle of mass $\mbeff$ under the influence of an external force with corresponding potential $U_i$. Hence, the single-particle energy spectrum of the interacting baryons must be expressed in terms of $\mbeff$ rather than the mass in vacuum, and it is this mass that will enter into the kinematics of the scattering processes.  
 
@@ -76,12 +76,12 @@ As we shall see, these different Fermi energies will have important consequences
 \label{ch5:subsec:mom_dep_FF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the preceeding chapters, we had regarded the target as a point-like particle that the DM scattered off, which is perfectly valid for the leptonic species. Baryons on the other hand are composite particles, being composed of three valence quarks and hence having a finite size. When the momentum transfer exceeds the inverse Compton wavelength of the baryon, $\sim 1/\lambda_\mathcal{B} \sim m_\mathcal{B}$, the internal strucyre begins to be probed, and we must account for their finite size.
+In the preceding chapters, we had regarded the target as a point-like particle that the DM scattered off, which is perfectly valid for the leptonic species. Baryons, on the other hand, are composite particles made of three valence quarks and hence have a finite size. When the momentum transfer exceeds the inverse Compton wavelength of the baryon, $\sim 1/\lambda_\mathcal{B} \sim m_\mathcal{B}$, the internal strucyre begins to be probed, and we must account for their finite size.
 
 As discussed in Section.~\ref{ch1:subsec:quark_to_nucleon_EFT}, this is achieved by reintroducing the momentum dependence in the hadronic form factors, 
 \begin{align}
    c_\mathcal{B}^I(t)  &= c_\mathcal{B}^{I}(0) F^2(t),\quad I\in\{S, P, V, A, T\},\\
-   F(t) & = \frac{1}{(1 - t/Q_0^2)^2},
+   F(t) & = \frac{1}{(1 - t/Q_0^2)^2},\label{ch5:eq:FF_def}
 \end{align}
 where $t$ is the Mandelstam variable, $Q_0$ is an energy scale taken to be $0.9\GeV$, and $c_\mathcal{B}^I(0)$ are the form factors evaluated at zero momentum transfer, with their values given in Appendix~\ref{app:hadronic_matrix_elements}. This factor is included in the matrix elements of the operators in Table.~\ref{ch1:tab:opers_defn_full}, and as such modifies the analytic result for the interaction rate derived in Section~\ref{ch3:sec:diff_int_rate} for matrix elements $\Msq \propto t^n s^m$ to become
 \begin{equation}
@@ -180,7 +180,7 @@ to the total cross-section (TOT=DIS+EL),  as a function of the radial coordinate
 In both the $\mneff$ and free Fermi gas approaches, the DIS contribution (light blue and green lines, respectively) increases towards the centre of the star, where $B$ takes lower values and hence the DM kinetic energy is higher. The ratio $\sigma^{DIS}/\sigma^{TOT}$ is smaller in the $\mneff$ approach, compared to the free Fermi gas approach, due to a smaller neutron effective mass. In the correct interactive baryon approach, the ratio of the DIS contribution (light blue lines) to the total cross-section is at most ${\cal O}(40\%)$ at the centre of the star for D8, ${\cal O}(20\%)$ for D7, D9-D10, and much lower for the remaining operators.  
 
 As a result, for most operators, the elastic cross-section provides a very good approximation to the total cross-section (compare magenta with dashed blue lines).
-Note that these cross-sections are weighted by $r^2dr$ in the capture rate calculation of Eq.~\ref{ch5:eq:capturefinalM2text} (i.e. weighted by volume) which further reduces the importance of the DIS contribution. 
+Note that these cross-sections are weighted by $r^2dr$ in the capture rate calculation of Eq.~\ref{ch3:eq:cap_rel_full_1} (i.e. weighted by volume) which further reduces the importance of the DIS contribution. 
 
 It is worth noting that we have neglected the effect of Pauli blocking on the DIS cross-section. In deep inelastic scattering, one must have a baryon in the final state and with a nucleon target this is almost always a nucleon. As shown in both theoretical calculations~\cite{Melnitchouk:1992gd_Protonproductionbias} and direct experimental studies~\cite{BEBCWA59:1989ayi_Backwardparticleproduction}, this nucleon has low momentum in the laboratory frame, typically 300 MeV or less. Such nucleons will be totally Pauli blocked in the core of a NS, and hence the deep inelastic cross-section drastically reduced. 
 As a result, the contribution of the deep inelastic process to the capture rate will have a negligible effect on our conclusions. 
@@ -192,17 +192,210 @@ Even if Pauli blocking does not suppress the DIS final states, the contribution 
     \centering
     \includegraphics[width=\textwidth]{capture_3/DIS_xsectot_ratio_PeV.pdf}
     \caption{Ratios of the elastic (EL) and deep inelastic scattering (DIS) cross-sections to the total cross-section (TOT=EL+DIS) as a function of the NS radius, for neutron targets in the NS QMC-4 and six of the dimension-6 EFT operators.  We have taken $m_\chi=10^6\GeV$, and shown the comparison for both the interacting baryon and free Fermi gas approaches. Momentum-dependent form factors have been included in the elastic calculations.  }  
-    \label{fig:DISratio}
+    \label{ch5:fig:DISratio}
 \end{figure}
 
 In addition to DIS, there may, in principle, be a contribution from the excitation of baryon resonances.  However, the resonance excitation cross-section is also expected to be suppressed. In NSs, the mass of the $\Delta$ baryon, which gives the largest contribution to this cross-section, increases with the baryon number density by between $\sim100$ and $300 \MeV$~\cite{Motta:2019ywl_Deltabaryonsplay}. This will suppress the resonance excitation cross-section significantly. Therefore, we consider only elastic collisions. 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reults from Capture on Baryons}
+\subsection{Modifications to the Capture Rate}
+\label{ch5:subsection:capture_modification}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Low and Intermediate Mass Regime}
+We now incorporate the effects discussed above into the expressions for the capture rates derived in Chapter~\ref{chapter:capture_intro}. In the low mass regime, where Pauli blocking is relevant, the modifications are minor, and we simply replace $\mi\rightarrow \mbeff$ in Eqs.~\ref{ch3:eq:cap_rel_full_1} and~\ref{ch3:eq:int_rate_capture_full} and set $\zeta(r) = 1$, as the form factors are incorporated in the matrix elements. We write these explicitly here for clarity,
+% 
+\begin{align}
+   C & =\frac{4\pi}{v_\star}\frac{\rho_\chi}{m_\chi} \erf\left(\sqrt{\frac{3}{2}}\frac{v_\star}{v_d}\right) \int_0^{R_\star}  r^2\frac{\sqrt{1 - B(r)}}{B(r)}\Omega^-(r)\,dr,
+   \label{ch5:eq:cap_general}\\
+   \begin{split}
+      \Omega^-(r) & = \frac{1}{32\pi^3}\int dt\,d\Ei\,ds \frac{|\overline{\mathcal{M}}(s, t, \mbeff)|^2}{\beta(s, \mbeff)\gamma(s, \mbeff)}\frac{\Ei s}{m_\chi}\sqrt{\frac{B(r)}{1 - B(r)}}\\
+      &\hspace{14em} \times \fFD(\Ei, r)\left( 1 - \fFD(\Ei', r)\right),
+   \end{split}
+   \label{ch5:eq:omega_meff_low}
+\end{align}
+where we have made the $\mbeff$ dependence of the $\beta$ and $\gamma$ functions of Eqs.~\ref{ch3:eq:beta_func} and~\ref{ch3:eq:gamma_func} explicit. 
+
+In the intermediate mass range, where Pauli blocking no longer suppresses the capture rate, we derived the simplified expression Eq.~\ref{ch3:eq:csimplelargemtext_sdep} valid for matrix elements of the form $\Msq \propto \bar{g}(s) t^n$, with $\bar{g}(s)$ some function of the centre of the mass energy, and $n = 0, 1, 2$. While including the effective masses is simple, the inclusion of the momentum-dependent form factors, Eq.~\ref{ch5:eq:FF_def}, complicates the integration over the momentum transfer $t$. Fortunately, we can still write down an analytic expression for the capture rate in this regime, for matrix elements $\Msq \propto \bar{g}(s) t^n F^2(t)$, this being
+\begin{equation}
+   \begin{split}
+      C_\mathrm{appox.} &= \frac{1}{\vstar} \frac{\rho_\chi}{\mchi}\erf\left(\sqrt{\frac{3}{2}}\frac{\vstar}{v_d}\right)\int_0^{\Rstar}dr\,r^2n_i^2(r) \frac{\bar{g}(s_0)}{n+1}\left[2 \mbeff\right]^{2n} \\
+      & \hspace{14em}\times\left[\frac{1 - B(r)}{B(r)}\right]^{n+1} \mathcal{F}_n(|t_\mathrm{min}|),
+   \end{split}
+   \label{ch5:eq:capture_simple}
+\end{equation}
+with $s_0$ given in Eq.~\ref{ch3:eq:s0}, and the functions $\mathcal{F}_n(|t_\mathrm{min}|)$ are given by
+\begin{align}
+   \mathcal{F}_n(x) & = \frac{\int_0^x dt\,t^n F^2(t)}{\int_0^x dt\,t^n},\\
+   \mathcal{F}_0(x) & = \frac{Q_0^2}{x + Q_0^2},\\
+   \mathcal{F}_1(x) & = 2\frac{Q_0^2}{x^2} \left[\log\left(1 + \frac{x}{Q_0^2}\right) - \frac{x}{x + Q_0^2 }\right],\\
+   \mathcal{F}_2(x) & = 6 \frac{Q_0^3}{x^3}\left[ -\log\left(1 + \frac{x}{Q_0^2}\right) + \frac{x (x + 2Q_0^2)}{2 Q_0(x + Q_0^2)} ,\right]\\
+   |t_\mathrm{min}| & = \frac{\gamma^2(s, \mbeff)}{s} \approx\frac{4 \mchi^2( 1 - B(r))}{B(r)(1 + \mu^2) + 2 \mu\sqrt{B(r)}}.
+\end{align}
+Note that the $\mathcal{F}_n$ are decreasing functions fo both $n$ and $|t_\mathrm{min}|$, and hence are decreasing functions of the target mass.
+
+\subsubsection{Large Mass Regime}
+
+
+As discussed in Section~\ref{ch3:subsec:largemassandsigma}, the probability that a DM particle with a mass greater than the threshold value $\mstar$ loses enough energy in a single scatter such that it becomes captured becomes less than 1. The precise value of $\mstar$ depends both on the species the DM scatters with, and the nature of this interaction.  
+This reduced capture probability is accounted for by including the factor $c_1(r)$, Eq.~\ref{ch3:eq:c1}, in the expression for the capture rate Eq.~\ref{ch5:eq:capture_simple} for $\mchi\gg m_i$. 
+
+Note that $c_1$ depends on $\kinFi(r)$, $B(r)$ and $m_i$ through the interaction rate $\Gamma^-$.
+Aside from $B$, $\mstar$ depends only on 2 quantities that have dimension of energy: the mass of the target $m_i$ and its Fermi energy $\kinFi$. 
+Interestingly, if one rescales both $m_i$ and $\kinFi$ by the same factor, the resulting $\mstar$ will just acquire this factor. 
+This means that for baryon couplings at zero momentum transfer, we can calculate $\mstar$ for a generic target mass $\mbeff$ by rescaling the values obtained in the free Fermi gas approximation in the following way: 
+\begin{equation}
+\mstar(\mbeff, \kinFi)= \frac{\mbeff}{m_i} \mstar(m_i,\kinFi\frac{m_i}{\mbeff}).
+\end{equation}
+However, when including the dependence of the baryon couplings on the transferred momentum an additional energy scale comes into play, namely $Q_0$. Unfortunately, it is not possible to rescale the $\mstar$ values obtained with $c_i^I(0)$ to obtain the correct value required when using $c_i^I(t)$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{figure}[t!bp]
+    \centering
+\includegraphics[width=0.495\textwidth]{capture_3/mnstar_r_QMC4_free_Fermi.pdf}    
+\includegraphics[width=0.495\textwidth]{capture_3/mnstar_mn_QMC4.pdf}
+    \caption{Radial profiles of $\mnstar$ in the free Fermi gas approach (left) and $\mnstar$ as a function of the neutron effective mass (right) in the interacting baryon approach, for selected operators. We assume the NS configuration QMC-4 ($1.9\Msun$). In both cases, $\mnstar$ has been calculated using neutron couplings at zero momentum transfer (dashed lines) and including the dependence on $t$ (solid lines). }
+    \label{ch5:fig:mstar}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In the left panel of Fig.~\ref{ch5:fig:mstar}, we show radial profiles of $\mnstar$ for five representative operators in the case of a QMC-4 NS. These profiles have been calculated in the free Fermi gas approximation (i.e. the neutron mass remains constant throughout the star) both with (solid lines) and without (dashed lines) including the momentum-dependent neutron form factors $c_n^I(t)$. 
+The profiles illustrate the variation of $\mnstar$ with $B(r)$ and $\kinFn(r)$ in the stellar interior. Note that $\mnstar$ also depends on the  DM velocity distribution, which we have taken to be Maxwell-Boltzmann. We can see that the inclusion of $t$-dependent neutron couplings lowers $\mnstar$ by a factor of $\sim 1.2 - 4.5$, with D4 and D3 being less affected. 
+This is because of the suppression of large energy transfers when introducing  $c_i^I(t)$ (as illustrated in Fig.~\ref{ch5:fig:intrateqtr1}) which results in less energy being lost by the DM particle per collision.  A lower value of $\mnstar$ means that multiple scattering is relevant at smaller DM masses than those expected with $c_i^I(0)$. 
+
+In the interactive baryon approach, $\mnstar$ is also a function of $\mneff(r)$, as plotted in the right hand panel of Fig.~\ref{ch5:fig:mstar}. 
+The values of $B(r)$, $\kinFn(r)$, and $\mneff(r)$ used in the right-hand panel are those corresponding to the appropriate radial coordinate within the NS as in the left-hand panel. 
+In this case, when including the dependence on the transferred momentum (solid lines), $\mnstar$ is reduced by a factor of $\sim 1.2 - 2.5$ compared the result obtained with hadronic matrix elements at zero momentum transfer (dashed lines). Thus, multiple scattering is relevant at an even lower DM mass in the complete approach that accounts both for strong interactions and $t$-dependent nucleon couplings. 
+The remaining operators show a similar behaviour to those presented in Fig.~\ref{ch5:fig:mstar}.
+
+
+\section{Capture Rate Results}
 \label{ch5:sec:capture_results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we present our results for the capture rate, 
+for each EFT operator in Table~\ref{ch1:tab:opers_defn_full} and every baryonic species in the QMC family. The rates have been calculated in the optically thin limit using Eq.~\ref{ch5:eq:cap_general} for $m_\chi\lesssim \mstar$ and with same equation but including the capture probability $c_1(r)$ in the interaction rate for $m_\chi\gtrsim \mstar$ wherever the target is degenerate, and Eq.~\ref{ch5:eq:capture_simple} in the non-degenerate regime\footnote{We have numerically evaluated these equations using the \texttt{CUBA} libraries \cite{Hahn:2004fe_CUBALibrarymultidimensional,Hahn:2014fua_Concurrentcuba} linked to \texttt{Mathematica}~\cite{Mathematica}.}. We compute the capture rate for each target species individually as these can be summed to obtain the total capture rate. Since we shall always work in the optically thin limit (i.e., where the probability for more than one scattering interaction per DM orbit is very low) this procedure is a good approximation, even in the multi-scattering mass region.
+We assume a NS located in the Solar neighbourhood, thus $\rho_\chi=0.4\GeV\cm^{-3}$, $\vstar=230\km\s^{-1}$ and $v_d=270\km\s^{-1}$.  
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nucleons}
+\label{sec:capresnucleons}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp] 
+\centering
+\includegraphics[width=\textwidth]{capture_3/C_mDM_N_QMC_D1_D4_ratio.pdf}
+\caption{
+Capture rate in the optically thin limit for the operators D1 (top) and D4 (bottom) as a function of the DM mass $m_\chi$ for neutron (left) and proton (right) targets, for a QMC-2 NS configuration.  We compare the free Fermi gas approach with constant nucleon couplings (dashed blue) and momentum-dependent couplings (solid orange), and the interacting nucleon approach for constant couplings (dashed light blue) and momentum-dependent couplings (solid magenta). Note that these rates scale as $\Lambda^{-4}$. 
+The ratio of the capture rate compared to that for the free Fermi gas approximation for point-like targets (dashed dark blue, as computed in Chapter~\ref{chapter:capture_intro}) is shown in the lower panels. 
+}
+\label{ch5:fig:capratesD1D4}
+\end{figure} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp] 
+\centering
+\includegraphics[width=\textwidth]{capture_3/C_mDM_N_QMC_D5_D8_ratio.pdf}
+\caption{
+Capture rate in the optically thin limit for the operators D5 (top) and D8 (bottom) as a function of the DM mass $m_\chi$ for neutron (left) and proton (right) targets,
+using the free Fermi gas approach with constant nucleon couplings (dashed blue) and momentum-dependent couplings (solid orange), and the interacting nucleon approach for constant couplings (dashed light blue)  and momentum-dependent couplings (solid magenta), for a QMC-2 NS configuration. 
+Note that these rates scale as $\Lambda^{-4}$. 
+The ratio of the capture rate compared that for the free Fermi gas approximation for point-like targets (dashed dark blue) is shown in the lower panels. 
+}
+\label{ch5:fig:capratesD5D8}
+\end{figure} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To illustrate the effect of accounting for strong interactions and th emomentum dependence of the nucleon couplings, we show in  Figs.~\ref{ch5:fig:capratesD1D4} and \ref{ch5:fig:capratesD5D8} the capture rate for four representative operators, D1, D4, D5, and D8, for a QMC-2 NS configuration ($1.5\Msun$). 
+Note that in these figures we have not assumed a value of $\Lambda$, i.e. we plot $C \Lambda^4$. 
+Results are shown for the free Fermi gas approximation with constant nucleon couplings (dashed dark blue) and momentum dependent form factors (orange), and for the interacting baryon framework with (magenta) and without (dashed light blue) $t$-dependent nucleon couplings.
+ 
+
+For neutron targets in the free Fermi gas approach, we find that including momentum-dependent form factors in the scattering cross-section does not affect the capture rate for DM masses $m_\chi\lesssim0.2\GeV$, since the energy scale at which this effect comes into play is $Q_0\sim1\GeV$. For $m_\chi\gtrsim1\GeV$, the ratio of the calculation that accounts for $t$-dependent neutron couplings compared to that obtained with constant hadronic matrix elements is ${\cal O}(10^{-2})$ 
+for D4 in the large DM mass range; for the remaining operators the suppression exceeds one order of magnitude.
+
+The fact that this effect is stronger for operators whose matrix elements are a function of larger powers of $t$, such as D4, can be seen from  Eq.~\ref{ch5:eq:capture_simple}, where we note that 
+$\mathcal{F}_n$ is a decreasing function of $n$. 
+We also note that the suppression caused by the form factors is stronger in the multiple scattering regime, $m_\chi\gtrsim\mnstar$, because the values of $\mnstar$ become lower when $t$-dependent neutron couplings are introduced (see Fig.~\ref{ch5:fig:mstar}, left panel). As mentioned above, this is a consequence of the form factors imposing a cutoff on the 
+size of the momentum transfer in the capture process, hence lowering the average DM energy loss per scattering. 
+It is worth remarking that the suppression caused by the momentum dependence of the form factors is even more pronounced in heavier NSs where higher momentum transfers are possible~\cite{Bell:2020obw_sep_NucleonStructureStrong}. 
+
+Similar conclusions are obtained for DM capture associated with scattering from protons (right panels), where the suppression of the capture rate is slightly smaller than that for neutrons. 
+As previously stated, we have taken $Q_0=0.9\GeV$ as a conservative choice; smaller values of $Q_0$ will result in a stronger suppression of the capture rate. 
+
+
+We now turn to the effect of strong interactions on the capture process. For $m_\chi\lesssim 0.2\GeV$, the DM mass range where Pauli blocking is in effect, the capture rate due to DM-neutron scattering is almost identical for the free Fermi gas (dashed dark blue) and interacting baryon (dashed light blue) approaches, for operators D3-D10. This is because capture occurs very close to the NS surface. Operators D1 and D2 suffer a relatively small overall rescaling, because their interaction rates scale with the neutron mass, in this case $(\mneff)^2$. 
+
+
+For protons, however, there is a significant difference in the capture rate in the low DM mass range. In the free Fermi gas approach, protons are degenerate only in the innermost region of the NS core, with the exact extent of that region dependent on the NS configuration (see Fig.~\ref{ch5:fig:muradprofs}, dashed lines).  For the particular NS model QMC-2, proton targets are affected by Pauli blocking only within a radius of $\sim4\km$ from the NS centre. Consequently, in the free Fermi gas approach (dashed dark blue) the capture rate for scattering on protons is not Pauli suppressed at low DM mass, in contrast to that for neutrons; see the different slope of the capture rates at $m_\chi\lesssim m_p$.
+As a result, capture on proton targets surpasses the contribution of the dominant species, neutrons, in the free Fermi gas approximation and light DM mass regime. 
+
+However, in the interacting baryon approach, protons are degenerate over a much wider region of the stellar interior (see Fig.~\ref{ch5:fig:muradprofs}, solid lines). Therefore, the more accurate interacting baryon approach leads to much greater Pauli suppression of the capture rate for scattering on protons. Indeed, the proton contribution to the total capture rate is lower than that of neutrons in most cases. In the case of a QMC-2 NS configuration, the sole exception is for the operator D4. Therefore,  the ratio of capture rates for the free Fermi gas and interacting baryon approaches is largest for the scattering of light DM on protons, and exceeds 4 orders of magnitude at $m_\chi=10\keV$, for all operators. 
+
+
+For DM masses above $m_\chi\sim m_n$, the capture rate in the interacting baryon framework and with constant nucleon couplings is lower by up to one order of magnitude compared to that for the free Fermi gas approach, for both neutron and proton targets for operators D1-4.
+For the remaining operators, the suppression reaches the $\sim30\%$ level in the large DM mass region. 
+Note that the capture rate depends on the DM-target reduced mass, which for $m_\chi\gg m_i$ is approximately target mass. Furthermore, in this mass regime, DM capture can occur deep inside the star, where $\mbeff<m_i$, hence the capture rate is suppressed by a lower target mass.
+
+Introducing momentum-dependent form factors in the interacting baryon approach (magenta lines) results in a similar reduction of the capture rate to that of the ideal Fermi gas formalism (orange lines), especially for operators D5-D10. For operators D1-D4, the capture rate is lowered by $\sim3$ orders of magnitude in the multiple scattering regime for both neutron and proton targets. 
+
+
+It is worth noting that the combined effect of using the interacting baryon approach and including momentum-dependent form factors is smaller than the product of the two individual effects. This is because the form factor suppression $\mathcal{F}_n$ in Eq.~\ref{ch5:eq:capture_simple} is a decreasing function of the target mass, which can reach values as small as $\mneff\sim0.5m_n$ for nucleon targets, thereby resulting in a weaker reduction of the capture rate when compared to the free Fermi gas approach. 
+
+% In Appendix~\ref{sec:uncereos}, we have compared  our results for the QMC EoS with those for the BSk24 functional~\cite{Goriely:2013,Pearson:2018tkr}  (a Skyrme type EoS).  We find that the size of the effects described above are largely independent of the EoS.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Hyperons}
+\label{sec:capresexotic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t] 
+\centering
+\includegraphics[width=\textwidth]{capture_3/D1_D4_C_mDM_hyper_meff_ratio.pdf}
+\caption{Capture rate in the optically thin limit for operators D1-D4 as a function of the DM mass $m_\chi$ for nucleons and exotic targets in the NS benchmark configuration QMC-4 ($1.9\Msun$). All capture rates were calculated using the complete approach that accounts for strong interactions and momentum dependent form factors for baryons. Note that these rates scale as $\Lambda^{-4}$. The lower panels show the contribution of each baryonic species to the total capture rate associated with DM interactions with baryons (dashed blue line). 
+}
+\label{ch5:fig:capratesD1D4_Hyper}
+\end{figure}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t] 
+\centering
+\includegraphics[width=\textwidth]{capture_3/D5_D10_C_mDM_hyper_meff.pdf}
+\caption{Capture rate  in the optically thin limit for operators D5-D10 as a function of the DM mass $m_\chi$ for nucleons and exotic targets in the NS benchmark configuration QMC-4 ($1.9\Msun$). All capture rates were calculated using the complete approach that accounts for strong interactions and momentum dependent form factors for baryons. Note that these rates scale as $\Lambda^{-4}$. 
+}
+\label{ch5:fig:capratesD5D10_Hyper}
+\end{figure}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Figs.~\ref{fig:capratesD1D4_Hyper} and  \ref{fig:capratesD5D10_Hyper}, we show the capture rates $C \Lambda^4$ for all the  baryon targets in the  benchmark NS QMC-4, calculated using the interactive baryon framework with momentum dependent DM couplings for all the baryonic species. As outlined in section~\ref{sec:NSmodels}, the NS configuration QMC-4 contains $\Lambda^0$, $\Xi^-$ and $\Xi^0$ hyperons in the inner core.  
+The orange line represents the sum of the capture rate due to scattering on all of the hyperonic species. Their individual contributions are determined by their abundance in the NS core (see Fig.~\ref{fig:NSradprofs1}, bottom left panel) and hence $\Xi^-$ and $\Lambda^0$ give sizeable contributions to the capture rate while that of $\Xi^0$ is negligible. 
+
+
+For operators D1 and D5-D10, scattering on neutrons (magenta) clearly dominates the total capture rate (dashed dark blue) throughout the whole DM mass range considered here, as expected, followed by protons (light blue) and hyperons. 
+For D3 and D4, proton targets provide the largest contribution to the capture rate in the Pauli blocked region $m_\chi\lesssim0.2\GeV$. This  occurs because of the interplay of two facts. First, the  proton Fermi energy is lower than that of neutrons close to the surface (see Fig.~\ref{fig:muradprofs}, solid lines). In fact, the proton contribution to the total capture rate is largest in the light DM mass regime for all operators. 
+Second, operators whose matrix elements are a function of larger powers of $t$ (such as D3 and D4) are more greatly affected by Pauli blocking, i.e., the neutron contribution is more suppressed for these operators. 
+
+
+For D3 and D4, the capture rates due to scattering on the three species, neutrons, protons and hyperons, are all of similar magnitude when $m_\chi\gtrsim0.2\GeV$. In fact, hyperons surpass the neutron contribution for D4, especially in the multiple scattering regime.  Recall that hyperon effective masses are much larger than the nucleon masses in the inner core (see Fig.~\ref{fig:NSradprofs1}, bottom right panel). Thus, despite being under-abundant, their contribution to the capture rate is enhanced by a larger DM-target reduced mass and by the D4 matrix element being $\Msq\propto t^2$ ($n=2$ in  Eq.~\ref{eq:cnongenerateapproxfinal}). 
+For D2-D4, the capture rates due to scattering on neutrons and hyperons are almost identical for $m_\chi\lesssim0.1\GeV$, with hyperons once again surpassing neutrons in the particular case of D4.  This occurs because the depth of the Fermi sea of hyperons is much lower than that of the neutrons in the NS core, thus leading to less Pauli blocking. 
+
+In addition, we have compared these results with those for a NS configuration of very similar compactness to that of QMC-4, but obtained with a QMC model that does not contain hyperons. We have found that the total capture rate due to DM interactions with baryons for operators D2-D4 is actually enhanced by the presence of hyperonic matter in the NS core. For D3 and D4, this enhancement reaches a factor of $\sim 2$ and $\sim 3$, respectively.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

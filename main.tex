@@ -16,31 +16,31 @@
 %
 % Frontmatter
 %
-% \begin{frontmatter}
-%   \frontmatterheadings
-%   \input{src/frontmatter/metadata.tex}
-%   % The title page is centered horizontally
-%   \symmetricmargin
-%   \maketitle
-%   %% Toggle this for pdf vs book
-%   \bookmargin
-%   \input{src/frontmatter/abstract.tex}
-%   \input{src/frontmatter/publications.tex}
-%   \makedeclaration
-%   % \input{frontmatter/statementofcontribution.tex}
-%   \input{src/frontmatter/preface.tex}
-%   \input{src/frontmatter/acknowledgements.tex}
-%   % \input{frontmatter/dedication.tex}
-%   {\singlespacing
-%     \tableofcontents
-%     \clearpage
-%     \addcontentsline{toc}{chapter}{List of Figures}
-%     \listoffigures
-%     \clearpage
-%     \addcontentsline{toc}{chapter}{List of Tables}
-%     \listoftables
-%   }
-% \end{frontmatter}
+\begin{frontmatter}
+  \frontmatterheadings
+  % \input{src/frontmatter/metadata.tex}
+  % The title page is centered horizontally
+  \symmetricmargin
+  % \maketitle
+  %% Toggle this for pdf vs book
+  \bookmargin
+  % \input{src/frontmatter/abstract.tex}
+  % \input{src/frontmatter/publications.tex}
+  % \makedeclaration
+  % \input{frontmatter/statementofcontribution.tex}
+  % \input{src/frontmatter/preface.tex}
+  % \input{src/frontmatter/acknowledgements.tex}
+  % \input{frontmatter/dedication.tex}
+  {\singlespacing
+    \tableofcontents
+    \clearpage
+    % \addcontentsline{toc}{chapter}{List of Figures}
+    % \listoffigures
+    % \clearpage
+    % \addcontentsline{toc}{chapter}{List of Tables}
+    % \listoftables
+  }
+\end{frontmatter}
 
 %%
 %% Main matter
@@ -59,7 +59,7 @@
   \include{src/chapters/capture_intro}
 
   %% Capture on leptons: NS and WD
-  % \include{src/chapters/capture_leptons}
+  \include{src/chapters/capture_leptons}
   
   %% Capture from Baryons in Neutron Stars
   \include{src/chapters/capture_baryons}
