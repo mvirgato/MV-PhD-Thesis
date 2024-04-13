@@ -630,139 +630,103 @@ a <\sqrt{1-B}\label{app:eq:condurel}.
 This restriction of the available phase space results in variations of the order of $\mathcal{O}(10\%)$ for both the interaction and capture rates.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Interaction Rate for Low Energies}
+\section{Interaction rate in the zero temperature approximation}
+\label{app:sec:int_low_temp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Need to consider the case where $T_\chi = E_\chi - m_\chi <\mu_{F}$, with $0<q_0<T_\chi<\kinFi$. Then the $t_E$ integration limits follow the hierarchy; $t_{\mu^{+}}^{+} \sim t_{\mu^{-}}^{+} \ge t_{\mu^{-}}^{-} \sim t_{\mu^{+}}^{-} \gtrsim 0$, and $t_{\mu^{-}}^{+} \gg t_E^+ \ge t_E^- \gg t_{\mu^{-}}^{-}$. Then the only term in \ref{app:eq:gammafull_app} that remains is the first term, and only the $i=j=1$ term contributes, leaving
+In this section,  we calculate the interaction rate in the zero temperature approximation for $\Msq = \alpha \, t^n$, where $n=0,1,2$ and $\alpha$ is a constant, in the low energy, Pauli suppressed regime where $K_\chi=E_\chi-m_\chi<\kinFi$. 
+We assume the simplest scenario of constant target mass and point-like targets, as justified in Section~\ref{ch6:sec:thermstandard}.
+
+
+
+In this energy regime,  the $t_E$ integration limits follow the hierarchy; $t_{\mu^{+}}^{+} \sim t_{\mu^{-}}^{+} \ge t_{\mu^{-}}^{-} \sim t_{\mu^{+}}^{-} \gtrsim 0$, and $t_{\mu^{-}}^{+} \gg t_E^+ \ge t_E^- \gg t_{\mu^{-}}^{-}$. Hence, the only term in \ref{app:eq:gammafull_app} that remains non-zero is the $i=j=1$ component of the first term, leaving us with
 \begin{equation}
-    \Gamma^-(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int_{t_E^-}^{t_E^+} d t_E\; f_1^{(m,n)}(t_E)
+    \Gamma^-(E_\chi) = \sum_{n,m}  \frac{(-1)^n \alpha_{n,m}}{128\pi^3 E_\chi k }\int_0^{E_\chi -m_\chi} dq_0\int_{t_E^-}^{t_E^+} d t_E\; f_1^{(m,n)}(t_E).
+    \label{app:eq:gamma_low_1}
 \end{equation}
-At first order in $q_0$ and $K_\chi$, we have the following approximations
+As we shall see, the integration intervals in Eq.~\ref{app:eq:gamma_low_1} depend on whether or not Pauli blocking suppresses any part of the thermalization process.
+In both cases, we can find simple analytic approximations to these integrals. 
+The minimal DM mass for which Pauli blocking is never in effect is denoted by $\mcrit$. 
+
+
+
+We first consider the case where $m_\chi \lesssim \mcrit$. 
+For the cases of $\mu \ll \kinFi/K_\chi$ or $\mu \gg K_\chi/\kinFi$, at first order in $q_0$ and $K_\chi$, the following approximations hold
 \begin{align}
-    E_\chi &\approx m_\chi\\
-    k &\approx \sqrt{2m_\chi T_\chi}\\
-    t_E^\pm &\approx 4m_\chi T_\chi \left[ 1 - \frac{q_0}{2 K_\chi}\pm \sqrt{1 - \frac{q_0}{K_\chi}} \right]\\
-    \Gamma^- & \approx \sum_{n,m}\frac{(-1)^n \alpha_{n,m}}{128\sqrt{2} \pi^3 m_\chi^{3/2}K_\chi^{1/2}}\int_0^{K_\chi} dq_0\;\int_{t_E^-}^{t_E^+} dt_E\;f_1^{(m,n)}(t_E)
+    E_\chi &\approx m_\chi,\\
+    k &\approx \sqrt{2m_\chi K_\chi},\\
+    t_E^\pm &\approx 4m_\chi K_\chi \left[ 1 - \frac{q_0}{2 K_\chi}\pm \sqrt{1 - \frac{q_0}{K_\chi}} \right],\\
+    \Gamma^- (K_\chi) & \approx \sum_{n,m}\frac{(-1)^n \alpha_{n,m}}{128\sqrt{2} \pi^3 m_\chi^{3/2}K_\chi^{1/2}}\int_0^{K_\chi} dq_0\;\int_{t_E^-}^{t_E^+} dt_E\;f_1^{(m,n)}(t_E).
+    \label{app:eq:gamma_low_2}
+\end{align}
+Then, matrix elements of the form $\Msq = \alpha_{n,m} (-t)^n s^m$, the corresponding ineraction rates, $\Gamma_{n,m}^-(K_\chi)$, are
+\begin{align}
+    \Gamma^-_{0,0}(K_\chi) & = \frac{1}{120\pi^3 m_\chi}\alpha_{0,0} K_\chi^2,\\
+    \Gamma^-_{1,0}(K_\chi) & = \frac{2}{105\pi^3}\alpha_{1,0}K_\chi^3,\\
+    \Gamma^-_{2,0}(K_\chi) & = \frac{4m_\chi}{63\pi^3}\alpha_{2,0}K_\chi^4,\\
+    \Gamma^-_{0,1}(K_\chi) & = \frac{((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{120\pi^3}\alpha_{0,1}K_\chi^2,\\
+    \Gamma^-_{1,1}(K_\chi) & = \frac{2((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{105\pi^3}\alpha_{1,1}K_\chi^3,\\
+    \Gamma^-_{0,2}(K_\chi) & = \frac{((\mi + m_\chi)^2 + 2m_\chi \kinFi)^2}{120\pi^3}\alpha_{0,2}K_\chi^2.
+\end{align}
+It is clear from these expressions that the results for $s^m$-dependent interactions are rescaled versions of the $s$-independent interactions with the corresponding $t^n$ dependence, with $s$ replaced by $(m_i + m_\chi)^2 + 2 m_\chi \kinFi$. As such, we will focus on $s$-independent matrix elements, $\Msq = \alpha (-t)^n$, with $n= 0, 1, 2$.
+
+First we consider the simplest case of a constant cross-section,  $n = 0$.
+We can rewrite the previous expression in terms of the DM-baryon scattering cross-section using the following expression
+\begin{equation}
+\sigma_{i\chi}^{n=0} = \frac{\alpha}{16\pi m_i^2 (1+\mu)^2}, 
+\label{eq:intraten0}
+\end{equation}
+giving the interaction rate at first order in $K_\chi$
+\begin{equation}
+\Gamma_{n=0}^{-}(K_\chi)  \sim \frac{2 m_i}{15}\frac{(1+\mu)^2}{\mu}K_\chi^2 \sigma_{i\chi}^{n=0}.
+\end{equation}
+This result has the same $K_\chi$ and $\mu$ scaling as the result of Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}.
+
+
+
+Performing a similar analysis for $\Msq=\alpha (-t)^n$, $n=1,2$, 
+we find 
+\begin{equation}
+\Gamma_{n=1}^{-}(K_\chi) 
+\sim \frac{2\alpha }{105\pi^3}K_\chi^3,\qquad 
+\Gamma_{n=2}^{-}(K_\chi) 
+\sim \frac{4\alpha }{63\pi^3}m_\chi K_\chi^4. 
+\end{equation}
+The expressions for the cross sections for $n=1,2$ are 
+\begin{equation}
+\sigma^{n=1}_{i\chi} = \frac{\alpha}{16\pi m_i^2(1+\mu)^2}t_{max},\qquad
+\sigma^{n=2}_{i\chi} = \frac{4}{3}\frac{\alpha}{16\pi m_i^2(1+\mu)^2}t_{max}^2.   
+\end{equation}
+These cross-sections must be normalised to sensible momentum transfer. We take this reference point to be the surface of the star, such that 
+\begin{equation}
+      t_{max} \sim \frac{4m_\chi^2}{1+\mu^2}\frac{1-B(\Rstar)}{B(\Rstar)}.   
+\end{equation}
+The interaction rates for $n=1,2$ can then be written as
+\begin{align}
+    \Gamma_{n=1}^{-}(K_\chi) &\sim \frac{8}{105 \pi^2} \frac{(1+\mu)^2(1+\mu^2)}{\mu^2} \sigma_{\rm surf} \, K_\chi^3 \frac{B(\Rstar)}{1-B(\Rstar)}, \label{eq:intraten1}\\
+\Gamma_{n=2}^{-}(K_\chi) &\sim \frac{1}{21 \pi^2} \frac{(1+\mu)^2(1+\mu^2)^2}{\mu^3} \frac{\sigma_{\rm surf}}{m_i} \, K_\chi^4\left[\frac{B(\Rstar)}{1-B(\Rstar)}\right]^2.
+\label{eq:intraten2}
 \end{align}
 
-For single term matrix elements such that $\Msq = \alpha_{n,m}(-t)^n s^m$, the corresponding $\Gamma_{n,m}^-$ are
-\begin{align}
-    \Gamma^-_{0,0} & = \frac{\alpha_{0,0}}{120\pi^3 m_\chi}K_\chi^2\\
-    \Gamma^-_{1,0} & = \frac{2\alpha_{1,0}}{105\pi^3}K_\chi^3\\
-    \Gamma^-_{2,0} & = \frac{4\alpha_{2,0}m_\chi}{63\pi^3}K_\chi^4\\
-    \Gamma^-_{0,1} & = \frac{\alpha_{0,1}((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{120\pi^3}K_\chi^2\\
-    \Gamma^-_{1,1} & = \frac{2\alpha_{1,1}((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{105\pi^3}K_\chi^3\\
-    \Gamma^-_{0,2} & = \frac{\alpha_{0,2}((\mi + m_\chi)^2 + 2m_\chi \kinFi)^2}{120\pi^3}K_\chi^2
-\end{align}
-The $\alpha_{n,m}$ can be obtained at some reference point, taken to be the surface of the NS, from the differential cross-section,
-\begin{equation}
-    \frac{d \sigma }{d\cos\thetacm} = \frac{\alpha_{n,m}(-t)^n s^m}{32 \pi (\mi + m_\chi)^2}
-\end{equation}
-which gives
-\begin{align}
-    \sigma_{0,0} & = \frac{\alpha_{0,0}}{16 \pi (\mi + m_\chi)^2}\\
-    \sigma_{1,0} & = \frac{\alpha_{1,0} }{32 \pi (\mi + m_\chi)^2}t_\mathrm{max}\\
-    \sigma_{2,0} & = \frac{1}{3}\frac{\alpha_{2,0} }{16 \pi (\mi + m_\chi)^2}t_\mathrm{max}^2\\
-    \sigma_{0,1} & = \frac{\alpha_{0,1}}{16 \pi (\mi + m_\chi)^2}s\\
-    \sigma_{1,1} & = \frac{\alpha_{1,1} }{32 \pi (\mi + m_\chi)^2}t_\mathrm{max}s\\
-    \sigma_{0,2} & = \frac{\alpha_{0,2}}{16 \pi (\mi + m_\chi)^2}s^2
-\end{align}
-where I have used 
-\begin{align}
-    t & = -\frac{t_\mathrm{max}}{2}(1 - \cos\thetacm)\\
-    t_\mathrm{max} & \sim \frac{4 \mi^2 m_\chi^2}{(\mi^2 + m_\chi^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\\
-    s & \sim \mi^2 + m_\chi^2 + \frac{2\mchi (\mi +\kinFi)}{\sqrt{B(\Rstar)}}\\
-    &\sim (\mi +\mchi)^2
-\end{align}
-Again introducing the correction 
-\begin{equation}
-    \zeta = \frac{n_i}{n_{free}} \sim \frac{3\pi^2}{(2\mi \kinFi)^{3/2}}n_i
-\end{equation}
-Then the interaction rates can be expressed with respect to the surface of the star as
-\begin{align}
-    \Gamma_{0,0}^- (K_\chi) & = \frac{\sqrt{2}}{10}\frac{(1 +\mu)^2}{\mu} \frac{\mi}{(\mi \kinFi)^{3/2}}\sigma_{surf} n_i K_\chi^2\\
-    \Gamma_{1,0}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(1 + \mu)^2 (1 + \mu^2)}{\mu^2}\frac{1}{(\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_i K_\chi^3\\
-    \Gamma_{2,0}^- (K_\chi) & =\frac{\sqrt{2}}{7}\frac{(1 + \mu)^2 (1 + \mu^2)^2}{\mu^3}\frac{1}{\mi(\mi\kinFi)^{3/2}}\left( \frac{B(\Rstar)}{(1 - B(\Rstar)}\right)^2\sigma_{surf} n_i K_\chi^4\\
-    \Gamma^-_{0,1}(K_\chi) & = \frac{\sqrt{2}}{10} \frac{(\mi(1 + \mu)^2 + 2 \mu \kinFi)}{\mu(\mi\kinFi)^{3/2}}\sigma_{surf} n_i K_\chi^2\\
-    \Gamma_{1,1}^- (K_\chi) & =\frac{4\sqrt{2}}{35}\frac{(\mi(1 + \mu)^2 +2\mu\kinFi) (1 + \mu^2)}{\mu^2\mi (\mi\kinFi)^{3/2}}\frac{B(\Rstar)}{(1 - B(\Rstar)}\sigma_{surf} n_i K_\chi^3\\
-    \Gamma_{0,2}^- (K_\chi) & =\frac{\sqrt{2}}{10}\frac{(\mi(\mu +1)^2 + 2 \mu  \kinFi)^2}{\mu(\mu+1)^2 \mi (\kinFi\mi)^{3/2}}\sigma_{surf} n_i K_\chi^2
-\end{align}
-The average energy loss per collision is given by
-\begin{equation}
-    \langle \Delta T \rangle = \frac{1}{\Gamma^-}\int_0^{K_\chi} dq_0\; q_0 \frac{d \Gamma^-}{d q_0}
-\end{equation}
-which gives the results
-\begin{align}
-    \langle \Delta T^{0,0} \rangle & = \frac{4}{7}K_\chi \sim \langle \Delta T^{0,1} \rangle \sim \langle \Delta T^{0,2} \rangle \\
-    \langle \Delta T^{1,0} \rangle & = \frac{5}{9}K_\chi \sim \langle \Delta T^{1,1} \rangle\\
-    \langle \Delta T^{2,0} \rangle & = \frac{28}{55}K_\chi 
-\end{align}
-The DM will reach thermal equilibrium with the targets when $K_\chi =\Tstar$. There are two stages to this process; one where the interactions are not affected by Pauli blocking which takes $N_1$ collisions, and the next $N_2$ collisions where Pauli blocking is in effect. The time it takes for thermalisation to occur is given by the sum of the average times between collisions
-\begin{equation}
-    \tth = \sum_{n=0}^{N_2} \frac{1}{\Gamma^-(T_n)} \sim \sum_{n=N_1}^{N_2} \frac{1}{\Gamma^-(T_n)}
-\end{equation}
-where $T_n$ is the DM kinetic energy after $n$ collisions. If Pauli blocking is in effect for the entire process, then $T_n$ is related to the initial kinetic energy, $T_0$ through
-\begin{equation}
-    T_n = T_0\left( 1 - \frac{\Delta T}{T}\right)^n.
-\end{equation}
-This result implies the following relation;
-\begin{equation}
-    \frac{T_N}{T_0} = \frac{T_{eq}}{T_0} = \left( 1 - \frac{\Delta T}{T}\right)^N
-\end{equation}
-Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have that 
-\begin{align}
-    \tth & \propto \sum_{n=N_1}^{N_2} (T_n)^{-p}\\
-    & = \frac{1}{T_{N_1}^{p}}\sum_{n=N_1}^{N_2}\left(\left( 1 - \frac{\Delta T}{T}\right)^{-p}\right)^n\\
-    & = \frac{1}{T_{N_1}^{p}}\frac{(1 - \Delta T/T)^{p(1-N_1)} - (1 -\Delta T/T)^{-p N_2}}{-1 + (1 - \Delta T/T)^p}\\
-    & \sim  \frac{1}{T_{N_1}^{p}} \frac{(1 -\Delta T/T)^{-p N_2}}{1 - (1 - \Delta T/T)^p}\quad \text{for}\quad N_2 > N_1\\
-    & =  \frac{1}{T_{N_1}^{p}} \left( \frac{T_{eq}}{T_{N_1}}\right)^{-p}\frac{1}{1 - (1 - \Delta T/T)^p}\\
-    & = \frac{1}{\Teq^p}\frac{1}{1 - (1 - \Delta T/T)^p}
-\end{align}
-% The resulting thermalisation times are then (setting $B(\Rstar)\sim 0.5$)
-% \begin{align}
-%     \tth^{0,0} & = \frac{49}{4\sqrt{2}}\frac{\mu}{(1 +\mu)^2}\frac{\sqrt{\mi \kinFi^3}}{n_i \sigma_{surf} \Teq^2}\\
-%     & \sim 1.427\times 10^8\yrs\frac{\mu}{(1 +\mu)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^2\\
-%     \tth^{1,0} & =  \frac{729}{76\sqrt{2}}\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\frac{1 - B(\Rstar)}{B(\Rstar)}\frac{(\mi \kinFi)^{3/2}}{n_i \sigma_{surf} \Teq^3}\\
-%     & \sim 1.217\times 10^{18}\yrs\frac{\mu^2}{(1 +\mu)^2(1+\mu^2)}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^3\\
-%     \tth^{2,0} & =  \frac{9150625}{1231312\sqrt{2}}\frac{\mu^3}{(1 +\mu)^2(1+\mu^2)^2}\left(\frac{1 - B(\Rstar)}{B(\Rstar)}\right)^2 \frac{\sqrt{\mi^5 \kinFi^3}}{n_i \sigma_{surf} \Teq^4}\\
-%     & \sim 1.027\times 10^{28}\yrs\frac{\mu^3}{(1 +\mu)^2(1 + \mu^2)^2}\left(\frac{\kinFi(0)}{0.2\GeV}\right)^{3/2}\left(\frac{2\times10^{-45}\cm^2}{\sigma_{surf}}\right)\left(\frac{0.375\fm^{-3}}{n_i(0)}\right)\left(\frac{10^3\K}{\Teq}\right)^4
-% \end{align}
 
-% Using Eq. 4.15 of the thermalisation paper, I get, for $\kinFi\sim 0.2$ GeV and $\mu = 10^{-3}$
-% \begin{align}
-%     \tth^{D1} & \sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D2} & \sim \tth^{1,0}\\
-%     \tth^{D3} & \sim \frac{5}{3} \tth^{1,0}\sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D4} & \sim \tth^{2,0}\\
-%     \tth^{D5} & \sim \frac{13}{8} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\   
-%     \tth^{D6} & \sim 3 \tth^{0,0}\\
-%     \tth^{D7} & \sim 5 \tth^{0,0}\\
-%     \tth^{D8} & \sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D9} & \sim \frac{8}{5} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D10} & \sim  \frac{7}{2} \tth^{0,0}\\
-% \end{align}
-% High mass, $\mu = 10^{3}$;
-% \begin{align}
-%     \tth^{D1} & \sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D2} & \sim \frac{5}{3}\tth^{1,0}\sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D3} & \sim \tth^{1,0}\\
-%     \tth^{D4} & \sim \tth^{2,0}\\
-%     \tth^{D5} & \sim \frac{13}{8} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\   
-%     \tth^{D6} & \sim 5 \tth^{0,0}\\
-%     \tth^{D7} & \sim 3 \tth^{0,0}\\
-%     \tth^{D8} & \sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D9} & \sim \frac{8}{5} \tth^{0,0}\sim \frac{3}{2} \tth^{0,0}\\
-%     \tth^{D10} & \sim  \frac{7}{2} \tth^{0,0}\\
-% \end{align}
+We now look at the interaction rate in the super-heavy DM mass regime, $m_\chi \gtrsim \mcrit$.
+The exact value of $\mcrit$ will depend on the NS configuration. However, we can take some typical values relevant to thermalization to give an estimate of its value. Taking $K_\chi=10^3\K$, $\kinFi=200\MeV$, we see that
+\begin{equation}
+    m_\chi \ge \frac{2\kinFi(2m_i+\kinFi)}{ K_\chi} \sim \frac{4\kinFi m_i}{K_\chi} = m_\chi^{\rm crit}\sim 9.65\times10^9\GeV. 
+\end{equation}
+The maximum energy transfer in this regime will always be $\qomax<K_\chi$, with
+\begin{equation}
+    \qomax\sim K_\chi\left[2\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi }} - \frac{m_\chi^{\rm crit}}{m_\chi } +\mathcal{O}\left(\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)^{\frac{3}{2}}\right)\right].
+ \end{equation}
+Performing a similar analysis as the $m_\chi \lesssim \mcrit$ regime leads to the following expression for $\Gamma^-$,
+\begin{equation}
+\Gamma^{-}(K_\chi) \sim \frac{|\overline{M}|^2}{2^7\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{	\qomax}q_0 dq_0 \left(\int_{t_{E}^{-}}^{t_{\mu^-}^{+}} \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} \right),  
+\end{equation} 
+where $t_{\mu^-}^+$ is defined in Appendix~\ref{app:subsec:down_scatter_derivation}. 
+For the simplest case of constant $|\overline{M}|^2$ this results in 
+\begin{align}
+\Gamma^{-}_{n=0}(K_\chi) & \sim  
+\frac{K_\chi \kinFi |\overline{M}|^2}{24\pi^3\mu^2m_i}\left[\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi}}+\mathcal{O}\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)\right] \nonumber\\
+& = \frac{|\overline{M}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{eq:intraten0largem}
+\end{align}
 
-% For matrix elements that are linear combinations of $t^n$, we have
-% \begin{align}
-%     \Msq & = a_0 + a_1 t + a_2 t^2\\
-%     \Gamma^- &=  a_0\left.\Gamma^-_{0,0}\right|_{\alpha_{0,0}=1} + a_1 \left.\Gamma^-_{1,0}\right|_{\alpha_{1,0}=1} + a_2
-%     \left.\Gamma^-_{2,0}\right|_{\alpha_{2,0}=1}\\
-%     \frac{1}{\tth}  & = \left.\frac{a_0}{\tth^{0,0}}\right|_{\alpha_{0,0}=1} + \left.\frac{a_1}{\tth^{1,0}}\right|_{\alpha_{1,0}=1} + \left.\frac{a_2}{\tth^{2,0}}\right|_{\alpha_{2,0}=1} \label{app:eq:reicptherm}
-% \end{align}
-% For the operators D1-10, $a_i \propto \Lambda^{-4}$, and we set $\Lambda$ such that the total cross-section is equal to $\sigma_{surf}\sim 2\times10^{-45}\cm^2$, i.e.
-% \begin{equation}
-% \Lambda^4 = \frac{\sigma(\Lambda = 1)}{\sigma_{surf}}
-% \end{equation}

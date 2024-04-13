@@ -9,101 +9,49 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Interaction rate in the zero temperature approximation}
+\section{Thermalisation in the Pauli Blocked Regime}
 \label{sec:pauliblockingle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this section, we derive the analytic approximations for the thermalisation times in the low energy, zero temperature approximations.
 
-
-
-In this section,  we calculate the interaction rate in the zero temperature approximation for $\Msq = \alpha \, t^n$, where $n=0,1,2$ and $\alpha$ is a constant, in the low energy, Pauli suppressed regime where $K_\chi=E_\chi-m_\chi<\kinFi$. 
-We assume the simplest scenario of constant target mass and point-like targets, as justified in Section~\ref{sec:thermstandard}. 
-
-In this approximation, the interaction rate in the energy regime relevant for thermalization is given by~\cite{Bell:2020jou}
+The average energy lost in an interaction can be calculated as
 \begin{equation}
-\Gamma^{-}(K_\chi,\Tstar=0) \propto \, \frac{1}{2^7\pi^3 K_\chi k }  \int_0^{K_\chi} q_0 dq_0 \,\, \int \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}}\Theta(\kinFi-q_0),
-\label{eq:gammafinal}
+    \langle \Delta K_\chi \rangle = \frac{1}{\Gamma^-}\int_0^{K_\chi} dq_0\; q_0 \frac{d \Gamma^-}{d q_0},
+    \label{app:eq:avg_energy_loss}
 \end{equation}
-where $t_E=-t$,   and 
-\begin{equation}
-\int \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} = 2D_n(q_0^2,t_E)\sqrt{q_0^2+t_E}.
-\end{equation}
-The $D_n$  functions can be found in Appendix B of  ref.~\cite{Bell:2020jou}. 
-As we shall see, the integration intervals in Eq.~\ref{eq:gammafinal} depend on whether or not Pauli blocking suppresses any part of the thermalization process.
-In both cases, we can find simple analytic approximations to these integrals. 
-The minimal DM mass for which Pauli blocking is never in effect is denoted by $\mcrit$. 
-
-We first consider the case where $m_\chi \lesssim \mcrit$. 
-For the cases of $\mu \ll \kinFi/K_\chi$ or $\mu \gg K_\chi/\kinFi$, 
-$\Gamma^{-}$ at first order in $K_\chi$ is given by
-\begin{eqnarray}
-\Gamma^{-}(K_\chi) &\sim& \frac{\alpha}{2^7\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{K_\chi}q_0 dq_0 \left(\int_{t_{E}^{-}}^{t_{E}^{+}} \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} \right)\\
-&=& \frac{\alpha}{2^6\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{K_\chi}q_0 dq_0 \left(\sqrt{q_0^2+t_E^{+}}D_n(q_0^2,t_E^{+})-\sqrt{q_0^2+t_E^{-}}D_n(q_0^2,t_E^{-})\right), \label{eq:intratelowe}
-\end{eqnarray}
-where $t_E^\pm$ are defined in ref.~\cite{Bell:2020jou}. 
-For matrix elements independent of $t$ ($n=0$), we have $D_0(q_0^2,t_E^{\pm})=1$  and this result simplifies to
-\begin{eqnarray}
-\Gamma_{n=0}^{-}(K_\chi) 
-&\sim&  \frac{|\overline{M}|^2}{2^6\pi^3m_\chi}\int_{0}^{K_\chi} dq_0 q_0 \left[\sqrt{2\left(1+\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}-\sqrt{2\left(1-\sqrt{1-\frac{q_0}{K_\chi}}\right)-\frac{q_0}{K_\chi}}\right] \nonumber \\
-&=& \frac{|\overline{M}|^2}{120\pi^3m_\chi}K_\chi^2.
-\end{eqnarray}
-We can rewrite the previous expression in terms of the DM-baryon scattering cross-section using the following expression
-\begin{equation}
-\sigma_{i\chi}^{n=0} = \frac{\Msq}{16\pi m_i^2 (1+\mu)^2}, 
-\label{eq:intraten0}
-\end{equation}
-giving the interaction rate at first order in $K_\chi$
-\begin{equation}
-\Gamma_{n=0}^{-}(K_\chi)  \sim \frac{2 m_i}{15}\frac{(1+\mu)^2}{\mu}K_\chi^2 \sigma_{i\chi}^{n=0}.
-\end{equation}
-This result has the same $K_\chi$ and $\mu$ scaling as that of ref.~\cite{Bertoni:2013bsa}.
-
-
-
-Performing a similar analysis for $\Msq=\alpha (-t)^n$, $n=1,2$, 
-we find 
-\begin{equation}
-\Gamma_{n=1}^{-}(K_\chi) 
-\sim \frac{2\alpha }{105\pi^3}K_\chi^3,\qquad 
-\Gamma_{n=2}^{-}(K_\chi) 
-\sim \frac{4\alpha }{63\pi^3}m_\chi K_\chi^4. 
-\end{equation}
-The expressions for the cross sections for $n=1,2$ are 
-\begin{equation}
-\sigma^{n=1}_{i\chi} = \frac{\alpha}{16\pi m_i^2(1+\mu)^2}t_{max},\qquad
-\sigma^{n=2}_{i\chi} = \frac{4}{3}\frac{\alpha}{16\pi m_i^2(1+\mu)^2}t_{max}^2.   
-\end{equation}
-These cross sections must be normalized to sensible momentum transfer. We take this reference point to be the surface of the star, such that 
-\begin{equation}
-      t_{max} \sim \frac{4m_\chi^2}{1+\mu^2}\frac{1-B(\Rstar)}{B(\Rstar)}.   
-\end{equation}
-The interaction rates for $n=1,2$ can then be written as
-\begin{eqnarray}
-    \Gamma_{n=1}^{-}(K_\chi) &\sim& \frac{8}{105 \pi^2} \frac{(1+\mu)^2(1+\mu^2)}{\mu^2} \sigma_{\rm surf} \, K_\chi^3 \frac{B(\Rstar)}{1-B(\Rstar)}, \label{eq:intraten1}\\
-\Gamma_{n=2}^{-}(K_\chi) &\sim& \frac{1}{21 \pi^2} \frac{(1+\mu)^2(1+\mu^2)^2}{\mu^3} \frac{\sigma_{\rm surf}}{m_i} \, K_\chi^4\left[\frac{B(\Rstar)}{1-B(\Rstar)}\right]^2.
-\label{eq:intraten2}
-\end{eqnarray}
-
-
-We now look at the interaction rate in the super-heavy DM mass regime, $m_\chi \gtrsim \mcrit$.
-The exact value of $\mcrit$ will depend on the NS configuration. However, we can take some typical values relevant to thermalization to give an estimate of its value. Taking $K_\chi=10^3\K$, $\kinFi=200\MeV$, we see that
-\begin{equation}
-    m_\chi \ge \frac{2\kinFi(2m_i+\kinFi)}{ K_\chi} \sim \frac{4\kinFi m_i}{K_\chi} = m_\chi^{\rm crit}\sim 9.65\times10^9\GeV. 
-\end{equation}
-The maximum energy transfer in this regime will always be $\qomax<K_\chi$, with
-\begin{equation}
-    \qomax\sim K_\chi\left[2\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi }} - \frac{m_\chi^{\rm crit}}{m_\chi } +\mathcal{O}\left(\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)^{\frac{3}{2}}\right)\right].
- \end{equation}
-Performing a similar analysis as the $m_\chi \lesssim \mcrit$ regime leads to the following expression for $\Gamma^-$,
-\begin{equation}
-\Gamma^{-}(K_\chi) \sim \frac{|\overline{M}|^2}{2^7\sqrt{2}\pi^3m_\chi^{3/2}K_\chi^{1/2}}\int_0^{	\qomax}q_0 dq_0 \left(\int_{t_{E}^{-}}^{t_{\mu^-}^{+}} \frac{t_E^n dt_E }{\sqrt{q_0^2+t_E}} \right),  
-\end{equation} 
-where $t_{\mu^-}^+$ is defined in ref.~\cite{Bell:2020jou}. 
-For the simplest case of constant $|\overline{M}|^2$ this results in 
+where the differential interaction rates are the $q_0$ integrands of Eq.~\ref{app:eq:gamma_low_2}. Evaluating Eq.~\ref{app:eq:avg_energy_loss} for matrix elements $\Msq = \alpha (-t)^n$ yeilds
 \begin{align}
-\Gamma^{-}_{n=0}(K_\chi) & \sim  
-\frac{K_\chi \kinFi |\overline{M}|^2}{24\pi^3\mu^2m_i}\left[\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi}}+\mathcal{O}\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)\right] \nonumber\\
-& = \frac{|\overline{M}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{eq:intraten0largem}
+    \langle \Delta K_\chi^{ (n = 0)} \rangle & = \frac{4}{7}K_\chi,\\
+    \langle \Delta K_\chi^{ (n = 1)} \rangle & = \frac{5}{9}K_\chi,\\
+    \langle \Delta K_\chi^{ (n = 2)} \rangle & = \frac{28}{55}K_\chi.
 \end{align}
+
+The DM will reach thermal equilibrium with the targets when $K_\chi \leq \Tstar$. This process has two stages: one where the interactions are unaffected by Pauli blocking, which takes $N_1$ collisions, and the next $N_2$ collisions where Pauli blocking is in effect. The time it takes for thermalisation to occur is given by the sum of the average times between collisions
+\begin{equation}
+    \tth = \sum_{n=0}^{N_2} \frac{1}{\Gamma^-(K_{\chi, n})} \sim \sum_{n=N_1}^{N_2} \frac{1}{\Gamma^-(K_{\chi, n})}
+\end{equation}
+where $K_{\chi, n}$ is the DM kinetic energy after $n$ collisions. If Pauli blocking is in effect for the entire process, then $K_{\chi, n}$ is related to the initial kinetic energy, $K_{\chi, 0}$ through
+\begin{equation}
+    K_{\chi, n} = K_{\chi, 0}\left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^n.
+\end{equation}
+This result implies the following relation;
+\begin{equation}
+    \frac{K_{\chi, N}}{K_{\chi, 0}} = \frac{T_{eq}}{K_{\chi, 0}} = \left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^N
+\end{equation}
+Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have that 
+\begin{align}
+    \tth & \propto \sum_{n=N_1}^{N_2} (K_{\chi, n})^{-p}\\
+    & = \frac{1}{T_{N_1}^{p}}\sum_{n=N_1}^{N_2}\left(\left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^{-p}\right)^n\\
+    & = \frac{1}{T_{N_1}^{p}}\frac{(1 - \Delta K_\chi/K_{\chi})^{p(1-N_1)} - (1 -\Delta K_\chi/K_{\chi})^{-p N_2}}{-1 + (1 - \Delta K_\chi/K_{\chi})^p}\\
+    & \sim  \frac{1}{T_{N_1}^{p}} \frac{(1 -\Delta K_\chi/K_{\chi})^{-p N_2}}{1 - (1 - \Delta K_\chi/K_{\chi})^p}\quad \text{for}\quad N_2 > N_1\\
+    & =  \frac{1}{T_{N_1}^{p}} \left( \frac{T_{eq}}{T_{N_1}}\right)^{-p}\frac{1}{1 - (1 - \Delta K_\chi/K_{\chi})^p}\\
+    & = \frac{1}{\Teq^p}\frac{1}{1 - (1 - \Delta K_\chi/K_{\chi})^p}
+\end{align}
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
