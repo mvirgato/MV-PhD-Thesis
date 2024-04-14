@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Results for Thermalisation}
-\label{app:thermalisation_results}
+\label{appendix:thermalisation_results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10,45 +10,54 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thermalisation in the Pauli Blocked Regime}
-\label{sec:pauliblockingle}
+\label{app:sec:pauliblockingle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In this section, we derive the analytic approximations for the thermalisation times in the low energy, zero temperature approximations.
+In this section, we derive the analytic approximations for the thermalisation times in the low energy, zero temperature approximations, first for $m_\chi\lesssim \mcrit$.
 
 The average energy lost in an interaction can be calculated as
 \begin{equation}
-    \langle \Delta K_\chi \rangle = \frac{1}{\Gamma^-}\int_0^{K_\chi} dq_0\; q_0 \frac{d \Gamma^-}{d q_0},
+    \langle \Delta K_\chi \rangle = \frac{1}{\Gamma^-}\int_0^{\qomax} dq_0\; q_0 \frac{d \Gamma^-}{d q_0},
     \label{app:eq:avg_energy_loss}
 \end{equation}
-where the differential interaction rates are the $q_0$ integrands of Eq.~\ref{app:eq:gamma_low_2}. Evaluating Eq.~\ref{app:eq:avg_energy_loss} for matrix elements $\Msq = \alpha (-t)^n$ yeilds
+where the differential interaction rates are the $q_0$ integrands of Eq.~\ref{app:eq:gamma_low_2}. Evaluating Eq.~\ref{app:eq:avg_energy_loss} for matrix elements $\Msq = \alpha t^n$ yields
 \begin{align}
     \langle \Delta K_\chi^{ (n = 0)} \rangle & = \frac{4}{7}K_\chi,\\
     \langle \Delta K_\chi^{ (n = 1)} \rangle & = \frac{5}{9}K_\chi,\\
     \langle \Delta K_\chi^{ (n = 2)} \rangle & = \frac{28}{55}K_\chi.
 \end{align}
 
-The DM will reach thermal equilibrium with the targets when $K_\chi \leq \Tstar$. This process has two stages: one where the interactions are unaffected by Pauli blocking, which takes $N_1$ collisions, and the next $N_2$ collisions where Pauli blocking is in effect. The time it takes for thermalisation to occur is given by the sum of the average times between collisions
+We follow Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization} and define the thermalisation time as the sum of the avergae time between interactions, 
 \begin{equation}
-    \tth = \sum_{n=0}^{N_2} \frac{1}{\Gamma^-(K_{\chi, n})} \sim \sum_{n=N_1}^{N_2} \frac{1}{\Gamma^-(K_{\chi, n})}
+    \tth = \sum_{n=0}^{N_2} \frac{1}{\Gamma^-(K_{n})} \sim \sum_{n=N_1}^{N_2} \frac{1}{\Gamma^-(K_{\chi, n})},
+    \label{app:eq:therm_time_defn}
 \end{equation}
-where $K_{\chi, n}$ is the DM kinetic energy after $n$ collisions. If Pauli blocking is in effect for the entire process, then $K_{\chi, n}$ is related to the initial kinetic energy, $K_{\chi, 0}$ through
+where $K_{n}$ is the DM kinetic energy after $n$ collisions. 
+This process has two stages: one where the interactions are unaffected by Pauli blocking, which takes $N_1$ collisions, and the next $N_2$ collisions where Pauli blocking is in effect. 
+
+The DM will reach thermal equilibrium with the targets when $K_\chi \leq \Teq$, the equilibrium temperature of the star. 
+If Pauli blocking affects any part of the thermalisation process, then $K_{N_1 + N_2}$ is related to the kinetic energy after the initial $N_1$ interactions, $K_{N_1}$ though
 \begin{equation}
-    K_{\chi, n} = K_{\chi, 0}\left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^n.
+    K_{N_1 + N_2} = K_{N_1}\left( 1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^n = \Teq,
+    \label{app:eq:Kchi_Teq_rel}
 \end{equation}
-This result implies the following relation;
-\begin{equation}
-    \frac{K_{\chi, N}}{K_{\chi, 0}} = \frac{T_{eq}}{K_{\chi, 0}} = \left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^N
-\end{equation}
-Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have that 
+where we have used the fact that the fractional energy loss in the PB regime is independent of $K_\chi$.
+
+As shown in Appendix~\ref{app:sec:int_low_temp}, the interaction rates for matrix elements $\Msq = \alpha t^n$, are of the form $\Gamma^-\propto (K_\chi)^{n+2}$. Substituting this into Eq.~\ref{app:eq:therm_time_defn} and usign Eq.~\ref{app:eq:Kchi_Teq_rel} yields
 \begin{align}
-    \tth & \propto \sum_{n=N_1}^{N_2} (K_{\chi, n})^{-p}\\
-    & = \frac{1}{T_{N_1}^{p}}\sum_{n=N_1}^{N_2}\left(\left( 1 - \frac{\Delta K_\chi}{K_{\chi}}\right)^{-p}\right)^n\\
-    & = \frac{1}{T_{N_1}^{p}}\frac{(1 - \Delta K_\chi/K_{\chi})^{p(1-N_1)} - (1 -\Delta K_\chi/K_{\chi})^{-p N_2}}{-1 + (1 - \Delta K_\chi/K_{\chi})^p}\\
-    & \sim  \frac{1}{T_{N_1}^{p}} \frac{(1 -\Delta K_\chi/K_{\chi})^{-p N_2}}{1 - (1 - \Delta K_\chi/K_{\chi})^p}\quad \text{for}\quad N_2 > N_1\\
-    & =  \frac{1}{T_{N_1}^{p}} \left( \frac{T_{eq}}{T_{N_1}}\right)^{-p}\frac{1}{1 - (1 - \Delta K_\chi/K_{\chi})^p}\\
-    & = \frac{1}{\Teq^p}\frac{1}{1 - (1 - \Delta K_\chi/K_{\chi})^p}
+    \tth & \propto \sum_{i=N_1}^{N_2} (K_{i})^{-(n+2)}\\
+    & = \frac{1}{K_{N_1}^{n+2}}\sum_{i=N_1}^{N_2}\left(\left( 1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{-(n+2)}\right)^i\\
+    & = \frac{1}{K_{N_1}^{n+2}}\frac{\left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{(n+2)(1-N_1)} - \left(1 -\frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{-(n+2) N_2}}{-1 + \left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{n+2}}\\
+    & \sim  \frac{1}{K_{N_1}^{n+2}} \frac{\left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{-(n+2) N_2}}{1 - \left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{n+2}}\quad \text{for}\quad N_2 > N_1\\
+    & =  \frac{1}{K_{N_1}^{n+2}} \left( \frac{T_{eq}}{K_{N_1}}\right)^{-(n+2)}\frac{1}{1 - \left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{n+2}}\\
+  \implies \tth  & \propto \frac{1}{\Teq^{n+2}}\frac{1}{1 - \left(1 - \frac{\langle \Delta K_\chi \rangle}{K_{\chi}}\right)^{n+2}}.
 \end{align}
 
-
+The resulting thermalisation times for $n = 0, 1, 2$ in terms of the DM-target scattering cross-section $\sigma_{i\chi}$ are
+\begin{align}
+    \tthn{0} & = \frac{147}{16}\frac{\pi^2 m_\chi}{(\mi + \mchi)^2} \frac{1}{\sigmaichin{0}} \frac{1}{\Teq^2},\\
+    \tthn{1} & = \frac{2187}{304}\frac{\pi^2 m_\chi^2 \mi^2}{(\mi + \mchi)^2(\mi^2 + \mchi^2)} \frac{1}{\sigmaichin{1}} \frac{1}{\Teq^3}\frac{1 - B(\Rstar)}{B(\Rstar)},\\
+    \tthn{2} & = \frac{27451875}{4925248}\frac{\pi^2 m_\chi^3\mi^4}{(\mi + \mchi)^2(\mi^2 + \mchi^2)^2} \frac{1}{\sigmaichin{2}} \frac{1}{\Teq^4}\left[\frac{1 - B(\Rstar)}{B(\Rstar)}\right]^2.
+\end{align}
 
 
 
@@ -56,7 +65,7 @@ Then for interaction rates which follow $\Gamma^-\propto (K_\chi)^p$, we have th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thermalization of super-heavy DM}
-\label{sec:thermsuperheavy}
+\label{app:sec:thermsuperheavy}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -66,12 +75,12 @@ For DM that is heavier than the critical mass  $m_\chi\gtrsim m_\chi^{\rm crit}$
 the energy lost in each scatter is a tiny fraction of the total DM kinetic energy. Moreover, the average time between collisions is typically on the order of fractions of a second. This warrants the use of a continuous approximation in this regime rather than performing the discrete summation. The thermalization time is then found by integrating the rate at which the DM kinetic energy changes, 
 \begin{equation}
     \frac{dK_\chi}{dt} = -\Gamma^{-}(K_\chi) \langle\Delta K_\chi\rangle,  
-    \label{eq:contttherm}
+    \label{app:eq:contttherm}
 \end{equation}
 from the initial kinetic energy, $K_\chi=m_\chi\left(\frac{1}{\sqrt{B(r)}}-1\right)$, to the final value $T_{\rm eq}\ll m_\chi$. For a constant cross-section ($n=0$), we substitute  Eqs.~\ref{eq:intraten0largem} and \ref{eq:aveElossn0largem} into the expression above leading to
 \begin{equation}
     \tthn{0} \sim \frac{9 \pi^2 m_\chi}{8 (\mbeff)^2 \kinFi^2 \sigma_{i\chi}^{n=0}}\log\left[\frac{m_\chi}{T_{\rm eq}}\left(\frac{1}{\sqrt{B(\Rstar)}}-1\right)\right].
-    \label{eq:tthemheavy0}
+    \label{app:eq:tthemheavy0}
 \end{equation}
 Taking the final temperature to be $T_{\rm eq}=10^3\K$ and $B(\Rstar)=0.5$, this yields 
 \begin{equation}
@@ -97,53 +106,52 @@ and that for $n=2$ to be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thermalization time for $s$- and $t$-dependent interactions}
-\label{sec:sdeptherm}
+\label{app:sec:sdeptherm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In Section~\ref{sec:thermstandard}, we assumed $\Msq\propto t^n$ when deriving analytical approximations for the thermalization timescale. To understand the behavior of the thermalization time for the operators in Table.~\ref{tab:operatorshe}, we can make use of the results for $t^n$ dependent interactions. For cross sections that are linear combinations of different powers of $t$, we can approximate the thermalization time using the previous results in the following way
+In Section~\ref{ch6:sec:thermstandard}, we assumed $\Msq\propto t^n$ when deriving analytical approximations for the thermalization timescale. To understand the behavior of the thermalization time for the operators in Table.~\ref{ch1:tab:opers_defn_full}, we can make use of the results for $t^n$ dependent interactions. For cross-sections that are linear combinations of different powers of $t$, we can approximate the thermalization time using the previous results in the following way
 \begin{eqnarray}
 \Msq &=& a_0 + a_1 t + a_2 t^2,\\
 \sigma &=& a_0\sigma_0 + a_1 \sigma_1 + a_2 \sigma_2,\\
 \frac{1}{\tth} &\sim& \frac{a_0}{ \tthn{0}(\sigma_{i\chi}=\sigma_0)} + \frac{a_1} {\tthn{1}(\sigma_{i\chi}=\sigma_1)} 
  + \frac{a_2}{  \tthn{2}(\sigma_{i\chi}=\sigma_2)}. 
-\label{eq:ttherm_weighted}
+\label{app:eq:ttherm_weighted}
 \end{eqnarray}
-Hence, the inverse of the thermalization time will be given by a weighted linear combination of the inverse times for each contribution. As higher powers of $t$ require significantly longer thermalization times, for coefficients of similar size, the resulting sum will be dominated by the lowest power of $t$ appearing in  $\Msq$.  We can thus identify the dominant terms for operators D1-D4  based on power counting, which we have listed in Table~\ref{tab:operatorshe}.
+Hence, the inverse of the thermalization time will be given by a weighted linear combination of the inverse times for each contribution. As higher powers of $t$ require significantly longer thermalization times, for coefficients of similar size, the resulting sum will be dominated by the lowest power of $t$ appearing in  $\Msq$.  We can thus identify the dominant terms for operators D1-D4  based on power counting, which we have listed in Table~\ref{ch1:tab:opers_defn_full}.
 
- For $s$-dependent amplitudes, we can in principle use the interaction rates calculated  in Appendix A of ref.~\cite{Bell:2020lmm}, perform a series expansion in $K_\chi$  and repeat the same procedure outlined in Section~\ref{sec:thermstandard} for $s$-independent matrix elements. Interestingly, we find that for the purpose of calculating the thermalization time, there is an easier way to obtain the correct result. One can indeed check that, at zero order in $\kinFi/\mbeff$, the resulting time for $s^1, s^2$ is equivalent to the constant case, with the matrix element calculated by setting 
+ For $s$-dependent amplitudes, we can in principle use the interaction rates calculated in Appendix~\ref{app:sec:capratesimple}, perform a series expansion in $K_\chi$  and repeat the same procedure outlined in Section~\ref{ch6:sec:thermstandard} for $s$-independent matrix elements. Interestingly, we find that for the purpose of calculating the thermalization time, there is an easier way to obtain the correct result. One can indeed check that, at zero order in $\kinFi/\mbeff$, the resulting time for $s^1, s^2$ is equivalent to the constant case, with the matrix element calculated by setting 
 \begin{equation}
     s\rightarrow (m_\chi+\mbeff)^2,
-    \label{eq:ssubst}
+    \label{app:eq:ssubst}
 \end{equation}
 while the $s t $ case has a result equivalent to the $t$ case, with the matrix element calculated using the same substitution. This is, in practice, equivalent to setting both the DM and neutron targets at rest. There is, however, an important exception, when it comes to calculating the thermalization time of a linear combination of these terms. In particular, when the amplitudes at order $\mathcal{O}(t^0)$, are proportional to combinations of $1,s,s^2$ such as
-\begin{eqnarray}
+\begin{gather}
 s-(m_\chi+\mbeff)^2,\nonumber\\
 \left[s-(m_\chi+\mbeff)^2\right]^2,\nonumber\\
-\left[s-(\mbeff)^2-m_\chi^2\right]^2-4(\mbeff)^2 m_\chi^2.\label{eq:m2veldep}
-\end{eqnarray}
-All these combinations give a null result after applying substitution \ref{eq:ssubst}. In such a case, one may think that the dominant term is given by some remaining $t^n$ term. It is worth noting that the expressions in  Eq.~\ref{eq:m2veldep}  appear in operators that, at low energy, are known as  velocity-dependent, because their matrix elements are proportional to positive even powers of the DM-target relative speed. Consequently, it is important not to neglect the motion of the targets in the neutron star, moving at relativistic speeds that are of the order of the Fermi velocity $v_F^2=2\kinFi/\mbeff$. In those cases, one should instead set $s$ to\footnote{We assume that $\mu\gg \mbeff/m_\chi^{\rm crit}$ when making this substitution.}
+\left[s-(\mbeff)^2-m_\chi^2\right]^2-4(\mbeff)^2 m_\chi^2.\label{app:eq:m2veldep}
+\end{gather}
+All these combinations give a null result after applying substitution \ref{eq:ssubst}. In such a case, one may think that the dominant term is given by some remaining $t^n$ term. It is worth noting that the expressions in  Eq.~\ref{app:eq:m2veldep}  appear in operators that, at low energy, are known as velocity-dependent, because their matrix elements are proportional to positive even powers of the DM-target relative speed. Consequently, it is important not to neglect the motion of the targets in the neutron star, moving at relativistic speeds that are of the order of the Fermi velocity $v_F^2=2\kinFi/\mbeff$. In those cases, one should instead set $s$ to\footnote{We assume that $\mu\gg \mbeff/m_\chi^{\rm crit}$ when making this substitution.}
 \begin{equation}
     s\rightarrow (m_\chi+\mbeff)^2+2m_\chi\kinFi.
-    \label{eq:ssubstmu}
+    \label{app:eq:ssubstmu}
 \end{equation}
 
 
-
-In summary, operators D5, D8 and D9 can be safely expanded using \ref{eq:ssubst}, while operators D6, D7 and D10 have velocity-dependent amplitudes and require Eq.~\ref{eq:ssubstmu}. 
-The dominant terms for each operator can be found in Table~\ref{tab:operatorshe}. 
+In summary, operators D5, D8, and D9 can be safely expanded using Eq.~\ref{app:eq:ssubst}, while operators D6, D7, and D10 have velocity-dependent amplitudes and require Eq.~\ref{app:eq:ssubstmu}. 
+The dominant terms for each operator can be found in Table~\ref{ch1:tab:opers_defn_full}. 
 For equal values of the leading term in $\Msq$, the thermalization time for each operator will be the same as the relevant $t^n$ power law. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Temperature distribution of captured dark matter}
-\label{sec:minTempDerivation}
+\label{app:sec:minTempDerivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-As seen in Fig.~\ref{fig:thermtime}, interactions that depend on the momentum transfer, namely $d\sigma \propto t^n$ with $n = 1,2$, there are regions of the DM mass parameter space where thermalization does not occur within the age of the star. For the DM masses and NS temperatures of interest, this region of non-thermalization always occurs in the $m_\chi\ll \mcrit$ regime.
-From Eqs.~\ref{eq:thermtimen0}, \ref{eq:thermtimen1} and \ref{eq:thermtimen2},  we can estimate the time required for the DM to reach a kinetic energy $K_\chi$ 
+As seen in Fig.~\ref{ch6:ch6:}, interactions that depend on the momentum transfer, namely $d\sigma \propto t^n$ with $n = 1,2$, there are regions of the DM mass parameter space where thermalization does not occur within the age of the star. For the DM masses and NS temperatures of interest, this region of non-thermalization always occurs in the $m_\chi\ll \mcrit$ regime.
+From Eqs.~\ref{ch6:eq:thermtimen0}, \ref{ch6:eq:thermtimen1} and \ref{ch6:eq:thermtimen2},  we can estimate the time required for the DM to reach a kinetic energy $K_\chi$ 
 \begin{equation}
     t_{K_\chi} \propto \frac{1}{K_\chi^{n+2}}.
 \end{equation}
@@ -154,8 +162,8 @@ If the DM does not thermalize within the age of the star, it will instead reach 
 \end{equation}
 Accounting for the case where the DM reaches thermalization, we can write $K_\chi^\mathrm{min}$
 \begin{align}
-    K^{\rm min}_\chi & \sim \Teq \left(\max\left[ 1,\frac{\tth}{t_{K_\chi^\mathrm{min}}}\right ]\right)^{\frac{1}{n + 2}}\\
-           & \approx \Teq \left( 1 + \frac{\tth}{t_{K_\chi^\mathrm{min}}}\right )^{\frac{1}{n + 2}}. 
+    K^{\rm min}_\chi & \sim \Teq \left(\max\left[ 1,\frac{\tth}{t_{K_\chi^\mathrm{min}}}\right]\right)^{\frac{1}{n + 2}}\\
+           & \approx \Teq \left( 1 + \frac{\tth}{t_{K_\chi^\mathrm{min}}}\right)^{\frac{1}{n + 2}}. 
 \end{align}
 The population of captured DM will have a distribution of energies at any given time, with this distribution being peaked at this minimum energy.
 As the orbital periods of the DM will be much shorter than the average time between interactions, the DM will be able to virialize between each interaction. Therefore, we can treat the DM as being contained within an isothermal sphere with temperature $K^{\rm min}_\chi > \Teq$. 
@@ -164,3 +172,70 @@ Finally, it is worth noting that at times  $t>\tth$, even though the thermalizat
 \begin{equation}
     f_{\rm therm}(t) = \frac{t-t_{\rm therm}}{t}.
 \end{equation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Quark-level vs hadron-level annihilation cross-sections}
+\label{sec:quarkhadron}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The annihilation cross-sections shown in Table~\ref{ch6:tab:annCS} are for DM annihilation to quark final states.  More properly, we should consider the hadron-level annihilation cross-section.
+However, we are primarily concerned with the capture-annihilation equilibrium timescale, and not the details of the annihilation process. Therefore, if the annihilation rate to hadrons is not significantly different from the quark level result, this subtlety can be avoided. 
+
+To check the validity of the quark-level approximation, we estimate the annihilation rate to hadrons, working at lowest order in Chiral Perturbation Theory. We use couplings to the meson octet obtained from  ref.~\cite{Kumar:2018heq_dec_IndirectDetectionSubGeV}; for annihilation to baryons, the operators listed in Table~\ref{ch1:tab:opers_defn_full} are used. 
+For DM masses in the range $m_\pi < m_\chi \lesssim m_{\rm charm} = 1.27\GeV$, we find that the cross-section for annihilation to hadrons differs by less than an order of magnitude than that for annihilation to quarks. For larger DM mass, the difference is negligible. Therefore, to simplify the discussion, we consider DM annihilation to quark final states for DM masses above the pion mass.
+
+
+Below the pion mass, the only kinematically allowed DM annihilation channels would be to leptons or photons. The size of the DM couplings to these states would, in general, be unrelated to the DM-quark couplings we have assumed. (They are expected to be non-zero, because they would be induced at loop level~\cite{Bell:2019pyc_jun_CaptureLeptophilicDark}, even if absent at tree level.)
+However, due to the considerable Fermi energies of the electrons and muons near the centre of the NS, these channels will be Pauli blocked for the whole DM mass range below $m_\pi$, forbidding these annihilations from occurring. To remain as model-independent as possible, we will not consider lepton and photon annihilation channels.
+
+Figure~\ref{app:fig:ann_xs_plots} shows $t_{\rm eq}$ contour lines in the $\Lambda_q-m_\chi$ plane for the NS benchmark model QMC-2, $\Tstareq=1000\K$ and two representative operators D7 (left) and D8 (right). 
+Operators whose thermally averaged annihilation cross-section $\sigmav$ has a  $m_q/m_\chi$ leading order term, namely D1-D4 and D8 (see Table~\ref{ch6:tab:annCS}), exhibit a sudden change in the slope wherever a new annihilation channel opens (see dotted lines on the right panel of Fig.~\ref{app:fig:ann_xs_plots}). Note that the higher the cutoff scale $\Lambda_q$, the lower the scattering and annihilation cross-sections, resulting in a larger $t_{\rm eq}$ timescale. For lower $\Teq$ temperatures, DM requires more time to reach both equilibrium conditions, thermalization and capture-annihilation. The variation of these results with respect to the NS configuration amounts at most to a factor of $\sim2$ in the $t_{\rm eq}$ contours (see shaded regions in the left panels) from the lightest configuration (QMC-1, $1\Msun$) to the heaviest (QMC-3, $1.9\Msun$) for most operators, with the sole exception of D4 for which this factor rises up to $\sim 2.4$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+    \centering
+    \includegraphics[width = 0.496\textwidth]{img/thermalisation/D7_Lambda_mdm_teq.pdf}
+    \includegraphics[width = 0.496\textwidth]{img/thermalisation/D8_Lambda_mdm_teq.pdf}    
+    \caption[Contours of the capture annihilation timescale, $t_{\rm eq}$,  in the $\Lambda_q-m_\chi$ plane for operators D7 (left) and D8 (right) and $\Tstareq=1000\K$. ]{
+    Contours of the capture annihilation timescale, $t_{\rm eq}$,  in the $\Lambda_q-m_\chi$ plane for operators D7 (left) and D8 (right) and $\Tstareq=1000\K$. 
+    Solid lines represent the calculation for the NS benchmark model QMC-2, and shaded regions denote the variation with the NS choice for the QMC EoS family. 
+    Dotted lines in the right panel indicate the mass thresholds for various annihilation channels.  
+    }
+    \label{app:fig:ann_xs_plots}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Capture-annihilation equilibrium for the EFT operators}
+\label{app:sec:resultsEFTop}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=\textwidth]{img/thermalisation/ann_heat_sensitivity.pdf}    
+    \caption[Projected NS heating sensitivity for maximal capture efficiency, for the full set of DM-baryon interactions described by the EFT operators of Table~\ref{ch1:tab:opers_defn_full}.]{Projected NS heating sensitivity for maximal capture efficiency, for the full set of DM-baryon interactions described by the EFT operators of Table~\ref{ch1:tab:opers_defn_full}. We have used the QMC-2 ($1.5\Msun$) benchmark NS configuration.  
+    Color coding as in Fig.~\ref{ch6:fig:NS_heating}. 
+    }
+    \label{app:fig:NS_heating2}
+\end{figure*}
+
+
+
+In Fig.~\ref{app:fig:NS_heating2}, we show isocontours of maximal capture (yellow and light blue lines) and capture-annihilation equilibrium (magenta lines) timescale in the $\Lambda_q-m_\chi$ plane for all  EFT operators.  
+Values of $\Lambda_q$ below the $t_{\rm eq}$ lines result in smaller capture-annihilation equilibrium timescales. 
+We can see in Fig.~\ref{ch6:fig:NS_heating} that for all operators the $t_{\rm eq}$ timescale is always smaller than the time required for captured DM to thermalize. Captured DM achieves the steady state condition in a timescale as short as $\sim1\yr$ (D1, D6-D10) or as long as $10^5\yr$ (D3). 
+Note that the displayed values of $t_{\rm eq}$ are the values for which the entire parameter space relevant for capture reach equilibrium with annihilation. 
+
+For D1 and D6-D10, we observe that captured DM achieves thermal equilibrium in less than $\sim 1\Myr$ (grey lines). 
+On the other hand, as expected from Fig.~\ref{ch6:fig:thermtime} captured DM whose interactions are momentum suppressed, namely operators D2-D4, would never thermalize to the temperature expected from DM induced heating in $1\Gyr$, or even in less than the age of the 
+Universe,
+with the sole exception of the corner region of very light DM $m_\chi\lesssim 2\MeV$ and an even narrower corner of the parameter space for D4. 
+
+Therefore, for all EFT operators,  the energy released in the annihilation process adds up to the energy deposited via capture increasing the DM induced heating  
+for $m_\chi\gtrsim m_\pi$ (yellow shaded area). 
+Recall that we have made no assumptions about the energy scale that controls DM interactions with leptons. 
+For DM of mass below $m_\pi$ (light blue lines), at least kinetic heating is expected to contribute to the star luminosity.  

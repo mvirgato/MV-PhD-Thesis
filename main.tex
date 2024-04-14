@@ -18,27 +18,28 @@
 %
 \begin{frontmatter}
   \frontmatterheadings
-  % \input{src/frontmatter/metadata.tex}
+  %% Metadata information
+  \input{src/frontmatter/metadata.tex}
   % The title page is centered horizontally
   \symmetricmargin
-  % \maketitle
+  \maketitle
   %% Toggle this for pdf vs book
   \bookmargin
-  % \input{src/frontmatter/abstract.tex}
-  % \input{src/frontmatter/publications.tex}
-  % \makedeclaration
+  \input{src/frontmatter/abstract.tex}
+  \input{src/frontmatter/publications.tex}
+  \makedeclaration
   % \input{frontmatter/statementofcontribution.tex}
-  % \input{src/frontmatter/preface.tex}
-  % \input{src/frontmatter/acknowledgements.tex}
+  \input{src/frontmatter/preface.tex}
+  \input{src/frontmatter/acknowledgements.tex}
   % \input{frontmatter/dedication.tex}
   {\singlespacing
     \tableofcontents
     \clearpage
-    % \addcontentsline{toc}{chapter}{List of Figures}
-    % \listoffigures
-    % \clearpage
-    % \addcontentsline{toc}{chapter}{List of Tables}
-    % \listoftables
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
+    \clearpage
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables
   }
 \end{frontmatter}
 
@@ -49,7 +50,7 @@
   \mainmatterheadings
   % \symmetricmargin
 
-  %% General background
+  % General background
   \include{src/chapters/introduction}
   
   %% Compact Objects 
@@ -67,11 +68,11 @@
   %% Thermalisation
   \include{src/chapters/thermalisation}
 
-  %% Conclusion
-  % \include{src/chapters/conclusion}
+  % Conclusion
+  \include{src/chapters/conclusion}
 
-  %% Glossary
-  % \include{src/indices}
+  % Glossary
+  \include{src/indices}
 \end{mainmatter}
 
 %%
@@ -86,23 +87,23 @@
     % \include{src/backmatter/appendix_kin_heating}
     \include{src/backmatter/appendix_hadronic_matrix_elements}
     % \include{src/backmatter/appendix_non_linear_shooting}
-    % \include{src/backmatter/QMC_functionals}
+    \include{src/backmatter/QMC_functionals}
 \end{appendices}
 
-%%
-%% Back matter
-%%
-% \glsaddall
-% \begin{backmatter}
-%     % \symmetricmargin
-%     \frontmatterheadings
-%     \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
-%     \clearpage
-%     % \addcontentsline{toc}{chapter}{Index}
-%     % \printindex
-%     % \bibliographystyle{utphys}
-%     % \bibliography{src/refs_main}
-%     \printbibliography
-% \end{backmatter}
+%
+% Back matter
+%
+\glsaddall
+\begin{backmatter}
+    % \symmetricmargin
+    \frontmatterheadings
+    \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
+    \clearpage
+    % \addcontentsline{toc}{chapter}{Index}
+    % \printindex
+    % \bibliographystyle{utphys}
+    % \bibliography{src/refs_main}
+    \printbibliography
+\end{backmatter}
 
 \end{document}

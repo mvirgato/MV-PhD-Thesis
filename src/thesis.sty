@@ -166,6 +166,12 @@
 \newcommand{\submissionmonth}[1]{\def\@submissionmonth{#1}}
 \newcommand{\submissionyear}[1]{\def\@submissionyear{#1}}
 
+% Define supervisor
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+
+% Country
+\newcommand{\country}[1]{\def\@country{#1}}
+
 % 80 word summary+
 \newcommand{\summary}[1]{\def\@summary{#1}}
 
@@ -184,25 +190,40 @@
     \singlespacing
     \let\footnotesize\small
     \let\footnoterule\relax
-    \null\vfil
+    % \null\vfil
     \begin{center}
+      
       \large
+      % {\noindent\rule{\textwidth}{0.6pt}\vspace{-1.3\baselineskip}}
+      {\noindent\rule{\textwidth}{1.7pt}}
       {\Huge\bfseries\smallcapstitle {\@title} \par}
+      {\noindent\rule{\textwidth}{1.7pt}}
+      % {\noindent\rule{\textwidth}{1.7pt}\vspace{-0.7\baselineskip}}
+      % {\noindent\rule{\textwidth}{0.6pt}}
       \vspace{1cm}
+      % \bigskip
+
       {
-        {\@author}\\ 0000-0002-8396-0896\par
-        \vspace{3cm}
+        \bigskip
+        {\textit{Author} \\ \@author}\\ 0000-0002-8396-0896\par
+        % \bigskip
+        \vspace{1cm}
+        {\textit{Supervisor} \\ \@supervisor}\par
+        \vspace{1.5cm}
         Submitted in total fulfilment\\ of the requirements of the degree of \par
         \bigskip
         {Doctor of Philosophy} \par
+        \bigskip
+        % at the \par
       }
-      \vspace{2cm}
+      % \vspace{2cm}
       %\includegraphics[height=3cm]{\@univlogofile} \par
       \bigskip
       {\@department} \par
       {\@university} \par
-      \vspace{2cm}
-      {\@submissionmonth} {\@submissionyear} \par
+      {\@country} \par
+      \vspace{1cm}
+      {\@submissionmonth}, {\@submissionyear} \par
       \vspace{1cm}
       \ifx\archivalpapernote\undefined
         {\footnotesize
@@ -312,13 +333,13 @@
 %%
 
 \newcommand{\makedeclaration}{%
-  \chapter*{Declaration}
+  \chapter*{Declaration of Authorship}
 
-  This is to certify that
+  I, \@author, declare that
   \begin{enumerate}
     \item the thesis comprises only my original work towards the PhD except where indicated in the preface;
     \item due acknowledgement has been made in the text to all other material used;
-    \item the thesis is less than 100,000 words in length, exclusive of tables, maps, bibliographies and appendices. 
+    \item the thesis is less than 100,000 words in length, exclusive of Tables, Figures, Bibliographies and Appendices. 
   \end{enumerate}
   \vspace{5cm}
   % Ideally, this length should be changed so the line

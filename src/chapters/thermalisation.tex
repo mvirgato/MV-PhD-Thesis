@@ -155,11 +155,7 @@ First, we consider the regime in which Pauli blocking is negligible, $m_\chi \gt
   \sim 2 \sqrt{\frac{\kinFi}{\mu}} K_\chi^{1/2} \ll K_\chi, 
 \label{ch6:eq:aveElossn0largem}
 \end{equation}
-at first order in $m_\chi^{\rm crit}/m_\chi$. (See appendix 
-% \ref{sec:pauliblockingle} for the corresponding approximation of the interaction rate, Eq.~\ref{ch6:eq:intraten0largem}.) 
-~\fixMV{ADD APPENDIX} for the corresponding approximation of the interaction rate, Eq.~\fixMV{IN APPENDIX}) 
-For cross-sections proportional to $t^1$ and $t^2$, the average energy losses
-can be obtained in the same way, starting from the relevant expressions for  $\frac{d\Gamma}{d q_0}$.
+at first order in $m_\chi^{\rm crit}/m_\chi$. (See appendix ~\ref{app:sec:int_low_temp} for the corresponding approximation of the interaction rate, Eq.~\ref{app:eq:intraten0largem}) For cross-sections proportional to $t^1$ and $t^2$, the average energy losses can be obtained in the same way, starting from the relevant expressions for  $\frac{d\Gamma}{d q_0}$.
 
 Figure~\ref{ch6:fig:Taven0} shows the average energy loss fraction per collision. We see the  $\langle \Delta K_\chi^{(n=0)} \rangle/K_\chi \propto K_\chi^{-1/2}$ scaling of Eq.~\ref{ch6:eq:aveElossn0largem}
 in the $m_\chi \gtrsim m_\chi^{\rm crit}$ phase of the evolution, where the kinetic energy is driven down toward values where Pauli blocking eventually becomes active. The latter Pauli blocked phase is indicated by the horizontal arrows in Fig.~\ref{ch6:fig:Taven0}. 
@@ -199,8 +195,8 @@ For interactions with $t$-dependent matrix elements, the average energy loss per
   \langle \Delta K_\chi^{(n=2)} \rangle \sim \frac{28}{55}K_\chi ,
   \label{ch6:eq:aveElossn12}
 \end{equation}
-respectively, where we have used Eqs.~\fixMV{eq:intraten1} and \fixMV{eq:intraten2} for the interaction rates.
-Note that the average energy loss fraction per collision exhibits similar behavior for all the interaction types considered,  
+respectively, where we have used Eqs.~\ref{app:eq:intraten1} and~\ref{app:eq:intraten2} for the interaction rates.
+Note that the average fractional energy loss  per collision exhibits similar behavior for all the interaction types considered,  
 as seen by comparing the left and right panels of Fig.~\ref{ch6:fig:Taven0}. 
 This is true in both the Pauli-blocked and non-blocked regimes.
 
@@ -244,20 +240,44 @@ The thermalisation time can then be defined as the sum of the average time betwe
 For  $m_\chi \lesssim m_\chi^{\rm crit}$, the fraction of energy lost in the last few scatters is still a considerable fraction of the DM kinetic energy before the collision. Furthermore, these scatterings may take a considerably long time to occur, indicating that the process is discrete. 
 As an example, consider thermalisation to a temperature of $10^3$~K, for a DM particle of mass $m_\chi=1\TeV$ and constant cross-section $\sigma_{n\chi} \sim 10^{-45}\cm^2$.\footnote{ For a wide DM mass range (GeV--TeV), this value is comparable to the cross-section that results in maximal capture, and hence we will use this cross-section as a reference value in some of the estimates that follow.} Hundreds of collisions are required to fully thermalise; the last 10 or so are spaced longer than a second apart; and the last couple are longer than $10 \kyr$ apart.    
 
+Note that the analytic scattering rate expressions obtained in Section~\ref{ch3:sec:diff_int_rate} are valid for the collisions that result in capture because the DM kinetic energy is always significantly higher than the NS temperature, and hence the zero temperature $\Tstar\rightarrow0$ approximation holds. 
+During the thermalization process, however, the DM kinetic energy and NS temperature become comparable, and so finite temperature effects become important. 
+In Section~\ref{ch4:subsec:finite_temp_NS} we discussed how to incorporate the finite temperature effects into the interaction rate. As it is numerically intensive to calculate the interaction rate directly from Eq.~\ref{ch3:eq:gamma_full_text} for these low temperatures, we only keep the lowest order corrections.
+This amounts to a modification of the differential interaction rate, i.e. the $q_0$ integrand of Eq.~\ref{ch3:eq:gamma_full_text}, such that
+\begin{equation}
+    \frac{d }{d q_0}\Gamma^-(K_\chi, T_\star) = \frac{1}{1 - \exp(-q_0/T_\star)} \frac{d }{d q_0}\Gamma^-(K_\chi, T_\star = 0).
+    \label{ch4:eq:diffGammaFiniteTemp}
+\end{equation}
+As a result, we can no longer obtain fully analytic expressions for the interaction rate. Therefore, all the results we present below have been calculated numerically. 
+
+To compute the thermalisation time, we numerically integrate Eq.~\ref{ch4:eq:diffGammaFiniteTemp} to obtain the interaction rate and the average energy lost in each collision for each of the EFT operators in Table~\ref{ch1:tab:opers_defn_full}. We find that the thermalisation time for a particular interaction type scales according to the dominant power of the Mandelstam variable $t$ in the corresponding matrix element, which are given in Table~\ref{ch6:tab:dominanttn}. Thus, to understand how the thermalisation times scale, it is enough to consider differential cross-sections that are proportional to a given power of $t$, i.e. $d\sigma\propto t^n$, with $n=0,1,2$. 
+Below, we present results for operators that depend only on $t$ (D1-4 in Table~\ref{ch1:tab:opers_defn_full}), and not on the centre of mass energy, $s$. In Appendix~\ref{app:sec:sdeptherm}, we outline the procedure used to obtain analytic expressions for those operators with an explicit dependence on $s$ (operators D5-10). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[t!bp]
+  \centering
+  \begin{tabular}{c c c c c c c c c c c}
+    \toprule
+    \textbf{Operator} & D1 & D2 & D1 & D4 & D5 & D6 & D7 & D8 & D9 & D10\\
+    \midrule\midrule
+    \textbf{Dominant} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^2$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} \\
+    \textbf{term} \bm{$\tth$} & & & & & & & & & &\\
+    \bottomrule
+  \end{tabular}
+  \caption{Dominant $t^n$ term in the matrix elements for the dimension 6 EFT operators in Table~\ref{ch1:tab:opers_defn_full}. This term determines the behaviour of the thermalisation time for the operators.}
+  \label{ch6:tab:dominanttn}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-To compute the thermalisation time, we numerically integrate Eq.~\ref{ch6:eq:diffGammaFiniteTemp} to obtain the interaction rate and the average energy lost in each collision for each of the EFT operators in Table~\ref{ch6:tab:opers_defn_full}. We find that the thermalisation time for a particular interaction type scales according to the dominant power of the Mandelstam variable $t$ in the corresponding matrix element; see the last column of  Table~\ref{ch6:tab:opers_defn_full}. Thus, to understand how the thermalisation times scale, it is enough to consider differential cross-sections that are proportional to a given power of $t$, i.e. $d\sigma\propto t^n$, with $n=0,1,2$. 
-Below, we present results for operators that depend only on $t$ (D1-4 in Table~\ref{ch6:tab:opers_defn_full}), and not on the centre of mass energy, $s$. In Appendix~\fixMV{Add s dep appendix}, we outline the procedure used to obtain analytic expressions for those operators with an explicit dependence on $s$ (operators D5-10). 
-
-
-In Figure~\ref{ch6:fig:thermtime}, we show the full numerical results for the thermalisation time as a function of the DM mass for different equilibrium temperatures. It is clear that the power law scaling of the thermalisation time with DM mass depends on whether $m_\chi$ is larger or smaller than the nucleon mass. To understand these results, we make use of the analytic approximations for the average DM energy loss derived in Section~\ref{sec:energyloss} and valid in the zero temperature limit. 
+In Figure~\ref{ch6:fig:thermtime}, we show the full numerical results for the thermalisation time as a function of the DM mass for different equilibrium temperatures. It is clear that the power law scaling of the thermalisation time with DM mass depends on whether $m_\chi$ is larger or smaller than the nucleon mass. To understand these results, we make use of the analytic approximations for the average DM energy loss derived in Section~\ref{ch6:sec:energyloss} and valid in the zero temperature limit. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
 \centering 
   \includegraphics[width=\textwidth]{ttherm_mdm_n0_n1.pdf}
   \includegraphics[width=.525\textwidth]{ttherm_n2_eos.pdf}
-  \caption{thermalisation time as a function of the DM mass for constant cross-section (top left), $d\sigma \propto t$ (top right)  and $d\sigma\propto t^2$ (bottom). We have used the NS benchmark models in Table~\ref{ch6:tab:QMC_configs} and a reference cross-section of $\sigma_{\rm n\chi}= 10^{-45}\cm^2$ close to the NS surface. Shaded regions indicate the variation with the choice of EoS: QMC-1 (dot-dashed), QMC-2 (solid), and QMC-3 (dashed). 
+  \caption[Thermalisation time as a function of the DM mass for constant cross-section (top left), $d\sigma \propto t$ (top right)  and $d\sigma\propto t^2$ (bottom).]{Thermalisation time as a function of the DM mass for constant cross-section (top left), $d\sigma \propto t$ (top right)  and $d\sigma\propto t^2$ (bottom). We have used the NS benchmark models in Table~\ref{ch2:tab:QMC_configs} and a reference cross-section of $\sigma_{\rm n\chi}= 10^{-45}\cm^2$ close to the NS surface. Shaded regions indicate the variation with the choice of EoS: QMC-1 (dot-dashed), QMC-2 (solid), and QMC-3 (dashed). 
   }
   \label{ch6:fig:thermtime}
 \end{figure}
@@ -265,9 +285,9 @@ In Figure~\ref{ch6:fig:thermtime}, we show the full numerical results for the th
 
 
 We begin by studying the Pauli blocked regime, $m_\chi \lesssim m_\chi^{\rm crit}$. 
-In this case, the majority of the thermalisation time is dictated by the final few scatters, for which the form factors are close to their value at zero momentum transfer.  These last collisions occur close to the NS centre, so we can take the target mass as constant and equal to the value at the centre of the star, $\mbeff(0)$. For the case of a constant DM-neutron cross-section, $d\sigma \propto t^0$, the thermalisation time can thus be obtained by using  Eqs.~\fixMV{eq:intraten0}, \ref{ch6:eq:Teq} and \ref{ch6:eq:aveElossn0} in Eq.~\ref{ch6:eq:thermtime}. This leads to
+In this case, the majority of the thermalisation time is dictated by the final few scatters, for which the form factors are close to their value at zero momentum transfer.  These last collisions occur close to the NS centre, so we can take the target mass as constant and equal to the value at the centre of the star, $\mbeff(0)$. For the case of a constant DM-neutron cross-section, $d\sigma \propto t^0$, the thermalisation time can thus be obtained by using  Eqs.~\ref{app:eq:intraten0}, \ref{ch6:eq:Teq} and \ref{ch6:eq:aveElossn0} in Eq.~\ref{ch6:eq:thermtime}. This leads to
 %
-\footnotesize
+\small
 \begin{equation}
   \tthn{0} \sim   \frac{147}{16 }\frac{\pi^2 m_\chi}{ \left(\mbeff(0) + m_\chi\right)^2}\frac{1}{\sigma_{i\chi}^{n=0}}\frac{1}{T_{\rm eq}^2}, 
   \label{ch6:eq:thermtimen0}
@@ -278,7 +298,7 @@ where $\sigma_{i\chi}^{n=0}$ is the DM-baryon cross-section.
 The scaling of this expression with $\Tstareq$, DM mass, and DM-target cross-sections 
 agrees with Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}. 
 Numerically we obtain
-\footnotesize
+\small
 \begin{equation}
   \tthn{0} \sim \begin{dcases}
     4.4\times 10^{6}\yrs \, \left(\frac{m_\chi}{10\MeV}\right)\left(\frac{10^{-45}\cm^2}{\sigma_{i\chi}^{n=0}}\right)\left(\frac{10^3K}{T_{\rm eq}}\right)^{2},\quad m_\chi \ll \mbeff(0)\\
@@ -293,7 +313,7 @@ The $m_\chi$ dependence of these expressions explains the features observed in t
 
 
 
-We repeat the same analysis for cross-section proportional to higher powers of $t$, i.e., $d\sigma \propto t^n$ with $n=1,2$. Using Eqs.~\fixMV{eq:intraten1}, \fixMV{eq:intraten2} and \ref{ch6:eq:aveElossn12}, we find
+We repeat the same analysis for cross-section proportional to higher powers of $t$, i.e., $d\sigma \propto t^n$ with $n=1,2$. Using Eqs.~\ref{app:eq:intraten1}, \ref{app:eq:intraten2} and \ref{ch6:eq:aveElossn12}, we find
 % 
 \small
 \begin{align}
@@ -307,7 +327,7 @@ We repeat the same analysis for cross-section proportional to higher powers of $
 \normalsize
 % 
 where the factors involving $B(R_\star)$ arise from fixing the cross-section to its value at the surface; 
-see Appendix~\fixMV{sec:pauliblockingle} for details.
+see Appendix~\ref{app:sec:pauliblockingle} for details.
 
 
 To gain insight into the order of magnitude of these thermalisation times, we set  $B(\Rstar)=0.5$ and $\mbeff(0) = 0.5\,m_n$, yielding
@@ -347,7 +367,7 @@ In this regime, the energy lost in each collision is a tiny fraction of the init
 In this case, the momentum-dependent part of the form factor, $F(t)$, will be relevant only at the beginning of the thermalisation process and become less and less relevant as the average momentum transfer decreases in each subsequent scatter.\footnote{We have numerically verified that the $t$-dependent form factors do not alter the results in any significant manner.} It is these low momentum-transfer collisions that dominate the thermalisation time.
 %
 For a constant cross-section ($n=0$), in the zero temperature approximation, we obtain 
-(see Appendix~\fixMV{sec:thermsuperheavy} for details)
+(see Appendix~\ref{app:sec:thermsuperheavy} for details)
 \begin{equation}
     \tthn{0} \sim \frac{9 \pi^2 m_\chi}{8 (\mbeff(0))^2 \kinFi^2 \sigma_{i\chi}^{n=0} }\log\left[\frac{m_\chi}{T_{\rm eq}}\left(\frac{1}{\sqrt{B(\Rstar)}}-1\right)\right]. %\quad m_\chi\gtrsim m_\chi^{\rm crit}.
 \label{ch6:eq:tthemheavy0text}
@@ -443,7 +463,7 @@ and $\langle \sigma_{\rm ann} v_\chi \rangle$ is the
 thermally averaged DM annihilation cross-section. These are given in Table~\ref{ch6:tab:annCS} for the EFT interactions we consider, where $\langle v^2_\chi \rangle = v_{\rm th}^2 =  6 \Tstareq/ m_\chi$.
 
 
-We note that the cross-sections shown in Table~\ref{ch6:tab:annCS} are quark-level expressions. For most of the mass range of interest, these provide excellent approximations to the hadron-level annihilation cross-sections, provided we impose a lower bound on the DM mass for which an annihilation channel is open, taken to be the pion mass. See Appendix~\fixMV{sec:quarkhadron} for details.
+We note that the cross-sections shown in Table~\ref{ch6:tab:annCS} are quark-level expressions. For most of the mass range of interest, these provide excellent approximations to the hadron-level annihilation cross-sections, provided we impose a lower bound on the DM mass for which an annihilation channel is open, taken to be the pion mass. See Appendix~\ref{app:sec:resultsEFTop} for details.
 
 
 
@@ -469,7 +489,7 @@ We note that the cross-sections shown in Table~\ref{ch6:tab:annCS} are quark-lev
          D10 & $\bar \chi \sigma_{\mu\nu} \gamma^5\chi\; \bar q \sigma^{\mu\nu} q$ & \small $\frac{6 m_\chi^2}{\pi\Lambda^4} \sum_q \sqrt{1 - \frac{m_q^2}{m_\chi^2}} \left[ \left( 1 - \frac{m_q^2}{m_\chi^2}\right)  -\frac{1}{24}\left(2 -17\frac{m_q^2}{m_\chi^2}\right) v_{\rm th}^2 \right] $\\
          \bottomrule
     \end{tabular}
-    \caption{Thermally averaged annihilation cross-sections $\sigmav$ for the dimension 6 EFT operators, expanded to second order in $v_\chi$. The $y_q$ factors are the quark Yukawa couplings~\cite{Zheng:2010js_Constraininginteractionstrength}.}
+    \caption[Thermally averaged annihilation cross-sections $\sigmav$ for the dimension 6 EFT operators, expanded to second order in $v_\chi$.]{Thermally averaged annihilation cross-sections $\sigmav$ for the dimension 6 EFT operators, expanded to second order in $v_\chi$. The $y_q$ factors are the quark Yukawa couplings~\cite{Zheng:2010js_Constraininginteractionstrength}.}
     \label{ch6:tab:annCS} 
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -492,7 +512,8 @@ For earlier times, $ t < t_{\rm eq}$, one can neglect the loss of DM particles d
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Capture-annihilation equilibrium of partially\\ thermalised dark matter}
+\subsection[Capture-annihilation equilibrium of partially thermalised dark matter]{Capture-annihilation equilibrium of partially\\thermalised dark matter}
+\label{ch6:subsec:cap_ann_eq}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -505,7 +526,7 @@ K_\chi \sim T_{\rm eq} \left(\frac{\tth+\tstar}{\tstar}\right)^{\frac{1}{2+n}},
 \label{ch6:eq:lowtemp} 
 \end{equation}
 %
-where $n$ is the exponent of the dominant $t^n$ term in the differential cross-section, $d\sigma \propto t^n$, as given in the last column of Table~\ref{ch1:tab:opers_defn_full}. See Appendix~\fixMV{sec:minTempDerivation} for details. 
+where $n$ is the exponent of the dominant $t^n$ term in the differential cross-section, $d\sigma \propto t^n$, as given in the last column of Table~\ref{ch1:tab:opers_defn_full}. See Appendix~\ref{app:sec:minTempDerivation} for details. 
 We can then find the radius of the DM distribution (which is no longer isothermal) and the $\sigmav$ corresponding to the peak of the energy distribution $K_\chi$. 
 We obtain $A$ via the replacement  
 %
@@ -526,11 +547,13 @@ In fact, annihilation can occur efficiently even if complete thermalisation neve
 
 
 Assuming the DM is captured at the geometric limit, we arrive at the following result for our benchmark NS QMC-2
-\begin{eqnarray}
-    t_{\rm eq}  &\sim&  4\times10^{-6}\yr\left(\frac{100\GeV}{m_\chi}\right)^{\frac{1}{4}}\left(\frac{10^{-26}\cm^3 \s^{-1}}{\langle\sigma_\text{ann} v_\chi\rangle}\right)^{\frac{1}{2}} \left(\frac{1\GeV\cm^{-3}}{\rho_\chi}\right)^{\frac{1}{2}}\left(\frac{T_{\rm eq}}{10^3\K}\right)^{\frac{3}{4}} 
-    \nonumber \\ &&\times
+\begin{equation}
+  \begin{split}
+    t_{\rm eq}  &\sim  4\times10^{-6}\yr\left(\frac{100\GeV}{m_\chi}\right)^{\frac{1}{4}}\left(\frac{10^{-26}\cm^3 \s^{-1}}{\langle\sigma_\text{ann} v_\chi\rangle}\right)^{\frac{1}{2}} \left(\frac{1\GeV\cm^{-3}}{\rho_\chi}\right)^{\frac{1}{2}}
+     \\&\hspace*{14em} \times \left(\frac{T_{\rm eq}}{10^3\K}\right)^{\frac{3}{4}} 
     \left(\frac{t_{\rm therm}+\tstar}{\tstar}\right)^{\frac{\alpha}{2(2+n)}}.
-\end{eqnarray}
+  \end{split}
+\end{equation}
 Comparing this expression with the thermalisation times in the previous section, we anticipate that  $t_\text{eq}$ will typically be shorter than $t_\text{therm}$, often by many orders of magnitude.
 
 
@@ -562,7 +585,7 @@ Additionally, we randomize the radial position in the NS where the DM interacts 
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering  
-    \includegraphics{kinheattime_mdm.pdf}
+    \includegraphics[width = 0.65\textwidth]{kinheattime_mdm.pdf}
     \caption{Timescale on which the DM deposits $99\%$ of its initial kinetic energy in the NS. We have assumed an NS with configuration QMC-2, and a DM-neutron scattering cross-section of $\sigma_{n\chi}=10^{-45}\cm^2$ at the surface of the star. 
     }
     \label{ch6:fig:kinheattimes}
@@ -587,7 +610,7 @@ Fig.~\ref{ch6:fig:kinheattimes} illustrates two key facts. First, $t_{\rm kin}$ 
 \begin{figure}[t!bp]
 \centering    
 \includegraphics[width=\textwidth]{timescales_maxcap_n.pdf}
-    \caption{Timescales for kinetic heating (blue), thermalisation (orange), and capture-annihilation equilibrium (magenta), for operators D1 (left) and D4 (right). The operator D1 has an unsuppressed scattering cross-section and a $p$-wave suppressed annihilation cross-section, while $D4$ has a $q_\text{tr}^4$ suppressed scattering cross-section and an unsuppressed ($s$-wave) annihilation cross-section.
+    \caption[Timescales for kinetic heating (blue), thermalisation (orange), and capture-annihilation equilibrium (magenta), for operators D1 (left) and D4 (right). ]{Timescales for kinetic heating (blue), thermalisation (orange), and capture-annihilation equilibrium (magenta), for operators D1 (left) and D4 (right). The operator D1 has an unsuppressed scattering cross-section and a $p$-wave suppressed annihilation cross-section, while $D4$ has a $q_\text{tr}^4$ suppressed scattering cross-section and an unsuppressed ($s$-wave) annihilation cross-section.
     The interaction strength has been chosen to give maximal capture. (Specifically, we used $\Lambda_q$ values corresponding to a capture cross-section at the geometric limit, assuming scattering with the neutron targets in the QMC-2 NS.)   
     }
     \label{ch6:fig:timescales}
@@ -603,7 +626,7 @@ As anticipated, capture-annihilation equilibrium takes longer to achieve for the
 equilibrium (and hence maximal annihilation heating) is reached relatively quickly in both cases, on timescales of $10^4$ years for the scalar interaction, and even quicker for the pseudoscalar, well within the age of a typical NS. 
 
 
-For both interaction types, the kinetic and annihilation heating contributions are both realized on timescales much shorter than that required for full thermalisation. If the scattering cross-section is momentum suppressed (as with the $d\sigma \propto t^2=q_\text{tr}^4$ dependence for D4), the thermalisation time is increased; if the annihilation cross-section is velocity suppressed (as with the $p$-wave annihilation cross-section for D1) the capture-annihilation equilibrium time is increased.
+For both interaction types, the kinetic and annihilation heating contributions are both realized on timescales much shorter than that required for full thermalisation. If the scattering cross-section is momentum suppressed (as with the $d\sigma \propto t^2 \sim q_\text{tr}^4$ dependence for D4), the thermalisation time is increased; if the annihilation cross-section is velocity suppressed (as with the $p$-wave annihilation cross-section for D1) the capture-annihilation equilibrium time is increased.
 
 
  
@@ -620,7 +643,7 @@ Finally, note that there are parameters for which the annihilation timescale $\t
 \begin{figure}[t!bp]
     \centering
     \includegraphics[width=0.6\textwidth]{ann_heat_sensitivity_3ops.pdf}   
-    \caption{
+    \caption[Projected NS heating sensitivity for maximal capture efficiency, for DM-baryon interactions described by operators D1, D4 and D5.]{
     Projected NS heating sensitivity for maximal capture efficiency, for DM-baryon interactions described by operators D1, D4 and D5.  We have used the QMC-2 ($1.5\Msun$) benchmark NS configuration.
     We show the regions where DM kinetic and annihilation heating both contribute to the NS luminosity (yellow) and where kinetic heating alone contributes (light blue).
     Contour lines for capture-annihilation equilibrium (magenta) and thermalisation (grey) are shown for indicative timescales.    
@@ -630,7 +653,7 @@ Finally, note that there are parameters for which the annihilation timescale $\t
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We now examine the regions of parameter space where maximal heating can be achieved, for DM-hadron interactions described by the four-fermion operators of Table~\ref{ch6:tab:opers_defn_full}. As the extent of DM-induced heating depends on how efficiently the DM is captured, it is clear that maximal heating corresponds to the case of $f=1$ in Eqs.~\ref{ch6:eq:kinenergy} and~\ref{ch6:eq:massheating}, i.e., when the dark matter scattering cross-section is at or above the geometric limit. 
+We now examine the regions of parameter space where maximal heating can be achieved, for DM-hadron interactions described by the four-fermion operators of Table~\ref{ch1:tab:opers_defn_full}. As the extent of DM-induced heating depends on how efficiently the DM is captured, it is clear that maximal heating corresponds to the case of $f=1$ in Eqs.~\ref{ch6:eq:kinenergy} and~\ref{ch6:eq:massheating}, i.e., when the dark matter scattering cross-section is at or above the geometric limit. 
 
 
 In Figure~\ref{ch6:fig:NS_heating}, we show the parameters for which the DM deposits its entire kinetic and rest mass energy (yellow region) or only its full kinetic energy (light blue region).  Above these shaded regions, the value of $\Lambda_q$ is too large (and hence the scattering cross-section is too small) for maximal capture.
@@ -642,7 +665,7 @@ We do not show the contours for the kinetic heating timescale, $t_\mathrm{kin}$,
 For completeness, we include the contours of the thermalisation time (grey). We stress again that the DM does not need to fully thermalise to achieve maximal heating.
 
 
-To highlight how the sensitivity varies for different interaction types, we show results for operators D1, D4 and D5 in Figure~\ref{ch6:fig:NS_heating}, with the remaining operators presented in Figure~\fixMV{fig:NSheating2}. These operators were chosen because they allow us to compare interactions with and without momentum or velocity-suppressed scattering or annihilation cross-sections. Specifically: 
+To highlight how the sensitivity varies for different interaction types, we show results for operators D1, D4 and D5 in Figure~\ref{ch6:fig:NS_heating}, with the remaining operators presented in Figure~\ref{app:fig:NS_heating2}. These operators were chosen because they allow us to compare interactions with and without momentum or velocity-suppressed scattering or annihilation cross-sections. Specifically: 
 \begin{itemize}
 \item D1 (scalar): unsuppressed scattering cross-section; $p$-wave suppressed annihilation.
 \item D4 (pseudoscalar): $q_{\rm tr}^4$ suppressed scattering cross-section; unsuppressed $s$-wave annihilation.

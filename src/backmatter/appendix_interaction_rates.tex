@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Dark Matter Interaction Rates}
-\label{app:interaction_rates}
+\label{appendix:interaction_rates}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,7 +289,7 @@ We observe in the left panels that for $n=0$ interaction rates are flat (or peak
 \begin{figure}
     \centering
     \includegraphics[width = 0.85\textwidth]{img/capture_intro/capture_1/norm_diff_intrate_n.pdf}
-    \caption{Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$. Top row: $n=0$, middle row: $n=1$, bottom row: $n=2$.}
+    \caption[Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$.]{Normalised differential interaction rates, $\frac{1}{\Gamma}\frac{d\Gamma^-}{d\qonorm}$, as a function of $\qonorm$ for different values of $\kinFn$, with $m_\chi=1\TeV$ (left panels) $m_\chi=10\MeV$ (right panels) and $B=0.5$. Top row: $n=0$, middle row: $n=1$, bottom row: $n=2$.}
     \label{app:fig:diffgamma}
 \end{figure}
 
@@ -661,9 +661,9 @@ For the cases of $\mu \ll \kinFi/K_\chi$ or $\mu \gg K_\chi/\kinFi$, at first or
 \end{align}
 Then, matrix elements of the form $\Msq = \alpha_{n,m} (-t)^n s^m$, the corresponding ineraction rates, $\Gamma_{n,m}^-(K_\chi)$, are
 \begin{align}
-    \Gamma^-_{0,0}(K_\chi) & = \frac{1}{120\pi^3 m_\chi}\alpha_{0,0} K_\chi^2,\\
-    \Gamma^-_{1,0}(K_\chi) & = \frac{2}{105\pi^3}\alpha_{1,0}K_\chi^3,\\
-    \Gamma^-_{2,0}(K_\chi) & = \frac{4m_\chi}{63\pi^3}\alpha_{2,0}K_\chi^4,\\
+    \Gamma^-_{0,0}(K_\chi) & = \frac{1}{120\pi^3 m_\chi}\alpha_{0,0} K_\chi^2,\label{app:eq:gamman0}\\
+    \Gamma^-_{1,0}(K_\chi) & = \frac{2}{105\pi^3}\alpha_{1,0}K_\chi^3,\label{app:eq:gamman1}\\
+    \Gamma^-_{2,0}(K_\chi) & = \frac{4m_\chi}{63\pi^3}\alpha_{2,0}K_\chi^4,\label{app:eq:gamman2}\\
     \Gamma^-_{0,1}(K_\chi) & = \frac{((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{120\pi^3}\alpha_{0,1}K_\chi^2,\\
     \Gamma^-_{1,1}(K_\chi) & = \frac{2((\mi + m_\chi)^2 + 2m_\chi \kinFi)}{105\pi^3}\alpha_{1,1}K_\chi^3,\\
     \Gamma^-_{0,2}(K_\chi) & = \frac{((\mi + m_\chi)^2 + 2m_\chi \kinFi)^2}{120\pi^3}\alpha_{0,2}K_\chi^2.
@@ -674,7 +674,7 @@ First we consider the simplest case of a constant cross-section,  $n = 0$.
 We can rewrite the previous expression in terms of the DM-baryon scattering cross-section using the following expression
 \begin{equation}
 \sigma_{i\chi}^{n=0} = \frac{\alpha}{16\pi m_i^2 (1+\mu)^2}, 
-\label{eq:intraten0}
+\label{app:eq:intraten0}
 \end{equation}
 giving the interaction rate at first order in $K_\chi$
 \begin{equation}
@@ -703,9 +703,9 @@ These cross-sections must be normalised to sensible momentum transfer. We take t
 \end{equation}
 The interaction rates for $n=1,2$ can then be written as
 \begin{align}
-    \Gamma_{n=1}^{-}(K_\chi) &\sim \frac{8}{105 \pi^2} \frac{(1+\mu)^2(1+\mu^2)}{\mu^2} \sigma_{\rm surf} \, K_\chi^3 \frac{B(\Rstar)}{1-B(\Rstar)}, \label{eq:intraten1}\\
+    \Gamma_{n=1}^{-}(K_\chi) &\sim \frac{8}{105 \pi^2} \frac{(1+\mu)^2(1+\mu^2)}{\mu^2} \sigma_{\rm surf} \, K_\chi^3 \frac{B(\Rstar)}{1-B(\Rstar)}, \label{app:eq:intraten1}\\
 \Gamma_{n=2}^{-}(K_\chi) &\sim \frac{1}{21 \pi^2} \frac{(1+\mu)^2(1+\mu^2)^2}{\mu^3} \frac{\sigma_{\rm surf}}{m_i} \, K_\chi^4\left[\frac{B(\Rstar)}{1-B(\Rstar)}\right]^2.
-\label{eq:intraten2}
+\label{app:eq:intraten2}
 \end{align}
 
 
@@ -713,6 +713,7 @@ We now look at the interaction rate in the super-heavy DM mass regime, $m_\chi \
 The exact value of $\mcrit$ will depend on the NS configuration. However, we can take some typical values relevant to thermalization to give an estimate of its value. Taking $K_\chi=10^3\K$, $\kinFi=200\MeV$, we see that
 \begin{equation}
     m_\chi \ge \frac{2\kinFi(2m_i+\kinFi)}{ K_\chi} \sim \frac{4\kinFi m_i}{K_\chi} = m_\chi^{\rm crit}\sim 9.65\times10^9\GeV. 
+    \label{qpp:eq:mcrit_def}
 \end{equation}
 The maximum energy transfer in this regime will always be $\qomax<K_\chi$, with
 \begin{equation}
@@ -727,6 +728,6 @@ For the simplest case of constant $|\overline{M}|^2$ this results in
 \begin{align}
 \Gamma^{-}_{n=0}(K_\chi) & \sim  
 \frac{K_\chi \kinFi |\overline{M}|^2}{24\pi^3\mu^2m_i}\left[\sqrt{\frac{m_\chi^{\rm crit}}{m_\chi}}+\mathcal{O}\left(\frac{m_\chi^{\rm crit}}{m_\chi}\right)\right] \nonumber\\
-& = \frac{|\overline{M}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{eq:intraten0largem}
+& = \frac{|\overline{M}|^2(m_i\kinFi)^{3/2}}{12 \pi^3m_\chi^{5/2}}K_\chi^{1/2}.\label{app:eq:intraten0largem}
 \end{align}
 
