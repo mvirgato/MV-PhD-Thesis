@@ -1,7 +1,7 @@
 \graphicspath{{img/thermalisation/}}
 
-\chapter{Dark Matter Induced Heating of Neutron Stars}
-\label{chapter:heating}
+\chapter{Thermalisation and Annihilation of Dark Matter in Neutron Stars }
+\label{chapter:thermalisation}
 
 \begin{synopsis}
 This chapter is based on the results of Ref.~\cite{Bell:2023ysh_dec_ThermalizationAnnihilationDark}, which discusses the thermalisation and annihilation of dark matter in neutron stars. We consider the extent to which dark matter can heat up a neutron star through the scatterings and annihilations that occur after its capture.  We apply the formalism presented in the previous chapters for dark matter scattering in a degenerate media to determine the timescales required to kinetically heat the star by depositing 99\% of its initial energy and, in addition, the time required for it to thermalise. Furthermore, we compute the capture-annihilation equilibrium timescale, and hence determine the maximal heating that can be achieved within the lifetime of the star. In these calculations, we account for the population of the dark matter that has yet to fully thermalise. 
@@ -220,7 +220,7 @@ We shall also assume that up-scattering of the DM to larger kinetic energy does 
 If this were to be significant, our calculation below would underestimate the full thermalisation time. As we shall see, this does not impact our conclusions.}. These effects will become relevant as the DM approaches thermal equilibrium, increasing the thermalisation time. We estimate that up-scattering will, at most, increase the thermal equilibrium time by $\mathcal{O}(10\%)$, and thus we neglect this correction. 
 
 
-For DM of mass much larger than the target mass, $m_\chi\gg \mbeff$, there is an additional stage in the thermalisation process where either Pauli blocking plays no role, or the interaction rate has a different power law relationship with the temperature than those identified in Section~\ref{sec:energyloss}. These initial scatterings make a negligible contribution to the thermalisation time, as  $\Gamma^{-}$ is a sharply decreasing function of the DM kinetic energy $K_\chi$. 
+For DM with a mass much larger than the target mass, $m_\chi\gg \mbeff$, there is an additional stage in the thermalisation process where either Pauli blocking plays no role, or the interaction rate has a different power law relationship with the temperature than those identified in Section~\ref{ch6:sec:energyloss}. These initial scatterings make a negligible contribution to the thermalisation time, as  $\Gamma^{-}$ is a sharply decreasing function of the DM kinetic energy $K_\chi$. 
 
  
 Let us denote the number of initial collisions before reaching the Pauli blocked regime as $N_1$, and the number of additional collisions required for complete thermalisation as $N_2$. For light DM, $m_\chi\lesssim \mbeff$, Pauli blocking affects the entire thermalisation process, i.e. $N_1=0$. Let $K_N$ be the kinetic energy after $N$ scatterings. After $N_1+N_2$ collisions, the DM will reach the equilibrium temperature $T_{\rm eq}$, which can be written as
@@ -258,10 +258,10 @@ Below, we present results for operators that depend only on $t$ (D1-4 in Table~\
   \centering
   \begin{tabular}{c c c c c c c c c c c}
     \toprule
-    \textbf{Operator} & D1 & D2 & D1 & D4 & D5 & D6 & D7 & D8 & D9 & D10\\
+    Operator & D1 & D2 & D1 & D4 & D5 & D6 & D7 & D8 & D9 & D10\\
     \midrule\midrule
-    \textbf{Dominant} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^2$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} \\
-    \textbf{term} \bm{$\tth$} & & & & & & & & & &\\
+    Dominant & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^1$} & \multirow{2}{*}{$t^2$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} & \multirow{2}{*}{$t^0$} \\
+    term $\tth$ & & & & & & & & & &\\
     \bottomrule
   \end{tabular}
   \caption{Dominant $t^n$ term in the matrix elements for the dimension 6 EFT operators in Table~\ref{ch1:tab:opers_defn_full}. This term determines the behaviour of the thermalisation time for the operators.}
@@ -355,7 +355,7 @@ For $d\sigma\propto t^n$, the thermalisation time scales as $m_\chi^{n+1}$ for $
 
 
 The choice of EoS has a small but non-negligible impact on the thermalisation time, as indicated by the widths of the shaded regions in Fig.~\ref{ch6:fig:thermtime}. 
-For a constant cross-section, we observe almost no variation in $\tth$ with the NS configuration, except for the $m_\chi \lesssim m_n$ region. This is due to the dependence of $\mneff(0)$ on the NS model; see Table~\ref{ch6:tab:QMC_configs} and Eq.~\ref{ch6:eq:thermtimen0}.
+For a constant cross-section, we observe almost no variation in $\tth$ with the NS configuration, except for the $m_\chi \lesssim m_n$ region. This is due to the dependence of $\mneff(0)$ on the NS model; see Table~\ref{ch2:tab:QMC_configs} and Eq.~\ref{ch6:eq:thermtimen0}.
 For cross-sections $d\sigma\propto t^n$, with $n=1,2$, the dependence on $B(\Rstar)$ in Eqs.~\ref{ch6:eq:thermtimen1} and \ref{ch6:eq:thermtimen2} adds an extra dependence on the choice of NS model. For these momentum-suppressed interactions, DM requires more time to reach an equilibrium temperature in heavier NSs. This is due to the combination of two effects: the effective mass of the targets in the centre of the NS is smaller in more massive NS configurations, while $B(\Rstar)$ increases. Nonetheless, the dependence on NS configuration remains relatively mild. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -579,7 +579,7 @@ It has commonly been assumed that the DM kinetic energy deposition occurs instan
 
 
 To quantify the timescale on which kinetic heating takes place, we define $t_{\rm kin}$ to be the time required for a DM particle to lose 99\% of its maximum kinetic energy, $K_\chi = m_\chi (1/\sqrt{B(0)} - 1)$.  
-This time is calculated in the same way as the thermalisation time, while also keeping track of the time the DM spends outside the star along its orbit, i.e., the initial stage of the thermalisation process that was neglected in Section~\ref{sec:thermstandard}. For simplicity, the DM particle orbits are taken to be linear, passing through the centre of the star, with the radial extent calculated using the geodesic equations. We expect an ${\cal O}(1)$ correction to our results when considering circular orbits.
+This time is calculated in the same way as the thermalisation time, while also keeping track of the time the DM spends outside the star along its orbit, i.e., the initial stage of the thermalisation process that was neglected in Section~\ref{ch6:sec:thermstandard}. For simplicity, the DM particle orbits are taken to be linear, passing through the centre of the star, with the radial extent calculated using the geodesic equations. We expect an ${\cal O}(1)$ correction to our results when considering circular orbits.
 Additionally, we randomize the radial position in the NS where the DM interacts with a target. 
 
 %%%%%%%%%%%%%%%%%%%%%%%

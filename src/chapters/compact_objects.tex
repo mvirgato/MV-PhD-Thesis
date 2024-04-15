@@ -203,7 +203,7 @@ Finally, the EoS is then obtained by solving Eq.~\ref{ch2:eq:FMT_DE} for various
   \centering
     \begin{tabular}{ l c c c c}
     \toprule
-      \textbf{EoS} & \textbf{WD}$_\mathbf{1}$  & \textbf{WD}$_\mathbf{2}$&\textbf{WD}$_\mathbf{3}$ &\textbf{WD}$_\mathbf{4}$\\
+      EoS & WD$_1$  & WD$_2$ & WD$_3$ & WD$_4$\\
       \midrule\midrule
      $\rho_c\,[\g\cm^{-3}]$ &  $1.47\times 10^{6}$ & $3.84\times 10^{7} $ & $3.13\times 10^{8}$ & $2.31\times 10^{10}$\\
      $\Mstar\,[M_\odot]$ & $0.440$ &  $1.000 $ & $1.252$ & $1.384$\\
@@ -278,7 +278,7 @@ The pressure of the cell will now gain contributions from the motion of the nucl
 
 In Fig.~\ref{ch2:fig:WD_mass_radius} we show the Mass-Radius relations obtained from the zero temperature FMT EoS together with several finite temperature configurations. As can be seen, the deviations from the zero temperature approximation begin at rather high temperatures, $\Tstar\gtrsim 10^7\K$, for masses $\lesssim 0.6 \Msun$. Additionally, we show a random selection of 20,000 WDs presented in the Gaia early data release 2 (EDR2) report~\cite{GentileFusillo_feb_GaiaDataRelease} as the yellow-red dots. The colour of the dot represents the internal temperature of the corresponding WD. The core temperature must be determined from the observed effective surface temperature of the star\footnote{The effective temperature is the temperature that characterises the surface of the star. Assuming that WDs are perfect blackbody emitters, the luminosity will be $L_\gamma = 4\pi \sigma_{SB} \, \Rstar^2 \, \Teff^4$, where $\sigma_{SB}$ is the Stefan–Boltzmann constant.}, with the relation between the two depending on the composition of the WD atmosphere. To obtain the central temperature from the reported effective temperatures, we use the WD cooling sequences generated in Ref.~\cite{Bedard_oct_Spectralevolutionhot}\footnote{The cooling sequence data can be obtained from\\\href{http://www.astro.umontreal.ca/~bergeron/CoolingModels}{\texttt{http://www.astro.umontreal.ca/~bergeron/CoolingModels}}.} assuming a thin hydrogen atmosphere. In general, there is good agreement between the mass-radius relations derived from the finite temperature FMT EoS and the observed internal temperatures of the WDs.
 
-Given the non-linear nature of the differential equations that describe the FMT EoS (both at zero and finite temperatures), solving the system is a numerically challenging task. As there are no publically available resources to help solve these systems, a significant amount of time was put into solving this problem. As such, we have outlined in Appendix~\ref{app:FMT_solution} the method employed in numerically solving the differential equations. 
+Given the non-linear nature of the differential equations that describe the FMT EoS (both at zero and finite temperatures), solving the system is a numerically challenging task. As there are no publically available resources to help solve these systems, a significant amount of time was put into solving this problem. The system is solved numerically using the non-linear shooting technique.
 
 \begin{figure}[t!bp]
     \centering
@@ -426,7 +426,7 @@ Radial profiles of the baryon number density $n_b(r)$, metric factor $B(r)$, neu
     \centering
     \begin{tabular}{l c c c c}
     \toprule
-    \bf EoS & \bf BSk24-1 & \bf BSk24-2 & \bf BSk24-3 & \bf BSk24-4 \\ \midrule\midrule
+     EoS &  BSk24-1 &  BSk24-2 &  BSk24-3 &  BSk24-4 \\ \midrule\midrule
     $\rho_c$ $[\rm{g \, cm^{-3}}]$ & $5.94 \times 10^{14}$   & $7.76 \times 10^{14}$ & $1.04 \times 10^{15}$ & $1.42 \times 10^{15}$  \\
     $\Mstar$ $[\Msun]$ & 1.000 & 1.500 & 1.900 & 2.160  \\
     $\Rstar$ [km] & 12.215  & 12.593 & 12.419 & 11.965 \\
@@ -458,7 +458,7 @@ While BSk24 and 25 lie well within current observational constraints, they are m
 
 \subsubsection*{The Quark-Meson Coupling EoS}
 
-The second EoS adopted is based on the QMC model of Refs.~\cite{Guichon:1987jp_Possiblequarkmechanism,Guichon:1995ue_Rolenucleonstructure, Saito:2005rv_Nucleonhadronstructure,Guichon:2018uew_QuarkMesonCouplingQMC}, in which baryons are described as bags of three valence quarks, with the bags themselves modeled by the MIT bag model~\cite{Chodos:1974pn_Baryonstructurebag}. The interactions among the baryons are described by the exchange of mesons between the valence non-strange quarks and are formulated within a relativistic mean-field Lagrangian. The exchange of the vector mesons acts as an overall shift to the energy of the baryons\footnote{A simple analogy for this is how the force of an electron in an electromagnetic field is due to the exchange of photons, which are vector fields. The total energy of the electron is a shift relative to the free electron energy.}. The scalar mean fields play a significantly more important role, modifying the effective mass of the baryons. The scalar (and also vector) couplings are density-dependent, leading to an effective mass of the baryons that varies throughout the NS. The density dependence of these couplings is equivalent to including repulsive three-body forces between the baryons and arises naturally in the QMC model through the in-medium modification of the baryonic structure~\cite{Guichon:2004xg_Quarkstructurenuclear,Thomas:2021kio_jul_Rolequarksnuclear}. Additional details on the energy density and couplings of the QMC model adopted in this work are given in Appendix~\ref{app:QMC_details}.
+The second EoS adopted is based on the QMC model of Refs.~\cite{Guichon:1987jp_Possiblequarkmechanism,Guichon:1995ue_Rolenucleonstructure, Saito:2005rv_Nucleonhadronstructure,Guichon:2018uew_QuarkMesonCouplingQMC}, in which baryons are described as bags of three valence quarks, with the bags themselves modeled by the MIT bag model~\cite{Chodos:1974pn_Baryonstructurebag}. The interactions among the baryons are described by the exchange of mesons between the valence non-strange quarks and are formulated within a relativistic mean-field Lagrangian. The exchange of the vector mesons acts as an overall shift to the energy of the baryons\footnote{A simple analogy for this is how the force of an electron in an electromagnetic field is due to the exchange of photons, which are vector fields. The total energy of the electron is a shift relative to the free electron energy.}. The scalar mean fields play a significantly more important role, modifying the effective mass of the baryons. The scalar (and also vector) couplings are density-dependent, leading to an effective mass of the baryons that varies throughout the NS. The density dependence of these couplings is equivalent to including repulsive three-body forces between the baryons and arises naturally in the QMC model through the in-medium modification of the baryonic structure~\cite{Guichon:2004xg_Quarkstructurenuclear,Thomas:2021kio_jul_Rolequarksnuclear}. Additional details on the energy density and couplings of the QMC model adopted in this work are given in Appendix~\ref{appendix:QMC_details}.
 
 The mass-radius relation of three different configurations of the QMC EoS, namely three different choices of the isovector coupling constant, are shown as the red lines in Fig.~\ref{ch2:fig:NS_mass_rad}, obtained from Ref.~\cite{Motta:2019tjc_Isovectoreffectsneutron}. Of these, QMCb (orange solid line in Fig.~\ref{ch2:fig:NS_mass_rad}) lies within the constraints on the radius of a $1.4\;\Msun$ NS from GW170817, and can produce an NS of mass $1.908 \pm 0.016\;\Msun$, the currently preferred mass of PSR J1614-2230 obtained by the NANOGrav collaboration~\cite{NANOGrav:2017wvv_apr_NANOGrav11yearData}\footnote{As mentioned above, the current heaviest NS has a mass of $2.08\pm 0.07\Msun$ though the implications of this on the QMC EoS are beyond the scope of this work.}.
 
@@ -469,7 +469,7 @@ The QMCb EoS data was provided by the authors of Ref.~\cite{Motta:2019tjc_Isovec
     \centering
     \begin{tabular}{l c c c c}
     \toprule
-    \bf EoS & \bf QMC-1 & \bf QMC-2 & \bf QMC-3 & \bf QMC-4 \\ \midrule\midrule
+     EoS &  QMC-1 &  QMC-2 &  QMC-3 &  QMC-4 \\ \midrule\midrule
     $n_{\cal B}^c$ $[\fm^{-3}]$ & 0.325 & 0.447 & 0.540 & 0.872\\
     $\Mstar$ $[\Msun]$ & 1.000 & 1.500 & 1.750 & 1.900  \\
     $\Rstar$ [km] &  13.044 & 12.847 & 12.611 & 12.109 \\
