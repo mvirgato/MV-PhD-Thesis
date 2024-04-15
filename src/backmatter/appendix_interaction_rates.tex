@@ -9,7 +9,87 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{General Interaction Rates for Scattering within a Degenerate Media}
+\section{Final State Energy of the Target}
+\label{app:sec:finalstateenergy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we present a derivation for the final state energy of the target in the rest frame if the star. In this frame, the target velocity is non-zero, as we need to take into account its Fermi motion and/or the thermal motion. The kinematics of the system is shown in Fig.~\ref{app:fig:2-2kin}. We take the incoming and outgoing DM particles to be 1 and 3 respectivly, with the incoming and outgoing targets labelled as 2 and 4. As we only consider elastic scattering in this thesis, we take $m_1 = m_3$ and $m_2 = m_4$. 
+
+Simple energy and momentum conservation implies
+
+\begin{align}
+    E_1 + E_2 & = E_3 + E_4,\label{app:eq:enconserrv}\\
+    \vec{p}_1 + \vec{p}_2 & = \vec{p}_3 + \vec{p}_4.\label{app:eq:momentumconserv}\\
+\end{align}
+Using Eq.~\ref{app:eq:momentumconserv}, we solve for $p_4$ through
+\begin{align}
+    \vec{p}_4 & = \vec{p}_3 - \vec{p}_1 - \vec{p}_2,\\
+    \implies p^2_4 & = p^2_1 + p^2_2 + p^2_3 + 2\vec{p}_1\cdot \vec{p}_2 - 2\vec{p}_1\cdot \vec{p}_3 - 2\vec{p}_2\cdot \vec{p}_3.
+\end{align}
+The first two dot products can be replaced using the Mandelstam variables through
+\begin{align}
+    2\vec{p}_1\cdot \vec{p}_2 & = m_1^2 + m_2^2 + 2E_1 E_2 - s,\\
+    2\vec{p}_1\cdot \vec{p}_3 & = t - m_1^2-m_3^2 + 2E_1 E_3.
+\end{align}
+For the remaining dot product, $\vec{p}_2\cdot \vec{p}_3$, some care is needed. We start by writing the angle between $\vec{p}_2$ and $\vec{p}_3$ as 
+\begin{equation}
+    \cos(\theta_{23}) = \cos(\theta - \phi) = \cos\theta\cos\phi - \sin\theta\sin\phi,
+\end{equation}
+then, again using the Mandelstam variables above, we have
+\begin{align}
+    \cos\phi & = \frac{1}{2p_1 p_2}(m_1^2 + m_2^2 + 2E_1 E_2 - s),\\
+    \cos\theta & = \frac{1}{2p_1 p_3}(t - m_1^2 - m_3^2 + 2E_1 E_3).
+\end{align}
+Replacing the momentum with their corresponding energies, $p_i = \sqrt{\Ei^2 + \mi^2}$, it is then possible to solve the resulting quadratic equation for $E_3$, the final state energy of the DM particle. Once this is known, $E_4$ can be obtained straightforwardly from Eq.~\ref{app:eq:enconserrv}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!bp]
+    \centering
+    \begin{tikzpicture}
+        \node (a) at (0,0) {$\vec{p}_1$};
+        \node (b) at ($(a) + (3,0)$) {};
+        \node (a2) at ($(b) + (-140:3)$) {$\vec{p}_2$};
+        \node (c) at ($(b) + (50:3)$) {$\vec{p}_3$};
+        \node (d) at ($(b) + (-30:3)$) {$\vec{p}_4$};
+        \node (e) at ($(b) + (-160:1.5)$) {$\phi$};
+        \node (e2) at ($(b) + (25:1.5)$) {$\theta$};
+        \node (e3) at ($(b) + (-15:1.2)$) {$\alpha$};
+        
+        \draw[thick, ->] (a) -- (b);
+        \draw[thick, ->] (a2) -- (b);
+        \draw[thick, ->] (b) -- (c);
+        \draw[thick, ->] (b) -- (d);
+        \draw[dashed] ($(b) +(-140:1.2)$) arc(-140:-180:1.2);
+        \draw[dashed] ($(b) +(50:1.2)$) arc(50:0:1.2);
+        \draw[dashed] ($(b) +(-30:0.9)$) arc(-30:0:0.9);
+        \draw[dashed] (b) -- ($(b) + (2, 0)$);
+    \end{tikzpicture}
+    \caption{Kinematics of a general $2\rightarrow 2$ scattering.}
+    \label{app:fig:2-2kin}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The solution for $E_3$ can be expressed assumptions
+\begin{align}
+    E_3 & = \frac{-\mathcal{B} \pm \sqrt{\mathcal{B}^2 - 4 \mathcal{A}\mathcal{C}}}{2\mathcal{A}},\\
+    \mathcal{A} & = -4(E_1^2 - m_1^2)(m_1^4 + (m_2^2 - s)^2 - 2m_1^2(m_2^2 + s))\\
+    \begin{split}
+        \mathcal{B} & = 8(E_1^2 - m_1^2)[E_1(m_1^4 + m_2^4 + m_2^2(-2s + t) \\
+        & \hspace{2em}+ s(s + t) - m_1^2(2m_2^2 + 2s + t))-(E_2(m_1^2 - m_2^2 + s)t)],
+    \end{split}\\
+    \begin{split}
+        \mathcal{C} & = -4(E_1^2 - m_1^2)[2E_1E_2t(-3m_1^2 - m_2^2 + s + t) \\
+        &\hspace{2em} - t(m_1^4 + m_2^4 - 2m_2^2s + s^2 - 2m_1^2(m_2^2 + s)  \\
+        &\hspace{4em} + E_2^2(4m_1^2 - t) + st) + E_1^2(m_1^4 + (-m_2^2 + s + t)^2 \\
+        &\hspace{8em} - 2m_1^2(m_2^2 + s + t))].
+    \end{split}
+\end{align}
+The positive root is taken when $s < m_1^2 + m_2^2 + 2 E1 E2$, and the negative otherwise. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[General Interaction Rates for Scattering within a Degenerate Media]{General Interaction Rates for Scattering\\within a Degenerate Media}
 \label{app:sec:genral_int_rate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -620,7 +700,7 @@ a= \frac{s_\mathrm{max}+s_\mathrm{min}-2s}{s_\mathrm{max}-s_\mathrm{min}} <\left
 \end{equation}
 
 
-With the exception of the heaviest WDs, we have $\kinFe/m_e\lesssim 1$. Then, with $1-B\sim10^{-3}$, we can check that expanding Eq.~\ref{app:eq:condrel} leads to Eq.~\ref{app:eq:condnonrel} and that $a\lesssim 0$.
+With the exception of the heaviest WDs, we have $\kinFe/m_e\lesssim 1$. Then, with $1-B\sim_10^{-3}$, we can check that expanding Eq.~\ref{app:eq:condrel} leads to Eq.~\ref{app:eq:condnonrel} and that $a\lesssim 0$.
 This implies that approximately half of the phase space is not available for scattering. (For electrons in NSs we instead have $\kinFe/m_e\gg1$, and hence this does not occur.) 
 
 Taking the ultra-relativistic limit for electrons, Eq.~\ref{app:eq:condrel} reduces to

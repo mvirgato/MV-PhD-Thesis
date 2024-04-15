@@ -159,7 +159,7 @@ where $\hat{\Omega}^-(r)$ is the interaction rate with respect to the proper tim
 \begin{equation}
     \hat{\Omega}^-(r) d\tau = \frac{1}{\sqrt{g_{tt}}}\Omega^-(r)d\tau= \frac{1}{\sqrt{B(r)}}\Omega^-(r)d\tau.
 \end{equation}
-Now, the proper time that the DM spends inside a shell of thickness $dr$ will be\footnote{See Appendix~\ref{appendix:kin_heating} for the derivation of $\dot r = \frac{dr}{dt}$.}
+Now, the proper time that the DM spends inside a shell of thickness $dr$ will be\footnote{See Appendix~\ref{app:sec:DM_orbits} for the derivation of $\dot r = \frac{dr}{dt}$.}
 \begin{equation}
     d\tau = \left( \frac{d\tau}{dt}\right) dt = B(r) \frac{dr}{\dot r} = \frac{\sqrt{B(r)} dr}{\sqrt{\frac{1}{A(r)} \left[ 1 - B(r)\left( 1 + \frac{J_\chi^2}{m_\chi^2 r^2} \right) \right]}}.
 \end{equation}
@@ -314,7 +314,7 @@ where we have introduced the helper functions
     \beta(s) & = s - (\mi^2 + m_\chi^2), \label{ch3:eq:beta_func}\\
     \gamma(s) & = \sqrt{\beta^2(s) - 4 \mi^2 m_\chi^2}.\label{ch3:eq:gamma_func}
 \end{align}
-We have also introduced the Pauli blocking factor, $1 - \fFD(\Ei', r)$, to account for the phase space available to the final state target. The energy of this final state particle, $\Ei'$, is in general a messy function of $\Ei$, $t$, $s$, and $r$, and can be obtained from the kinematics of the scattering. This result is presented in Appendix~\ref{appendix:kinematics}.
+We have also introduced the Pauli blocking factor, $1 - \fFD(\Ei', r)$, to account for the phase space available to the final state target. The energy of this final state particle, $\Ei'$, is in general a messy function of $\Ei$, $t$, $s$, and $r$, and can be obtained from the kinematics of the scattering. This result is presented in Appendix~\ref{app:sec:finalstateenergy}.
 
 The integration intervals are 
 \begin{align}
@@ -393,9 +393,9 @@ is the minimum energy of the neutron before the collision, obtained from kinemat
 The full derivation of this interaction rate can be found in Appendix~\ref{appendix:interaction_rates}. 
 Our result for $\Gamma^-$ is an extension of that presented in Ref.~\cite{Bertoni:2013bsa_dec_DarkMatterThermalization}, where the interaction rate was calculated only in the case of low energy and a constant matrix element. It is valid at all energy ranges.
 The differential interaction rate $\frac{d\Gamma}{d q_0}(E_\chi,q_0)$ is then just the integrand of Eq.~\ref{ch3:eq:gamma_full_text}.
+
+
 We will use $\frac{d\Gamma}{d q_0}$ to obtain normalised shapes for the differential interaction spectrum, while we will use $\Omega^-$ when we need the total interaction rate, such as in the capture rate. 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering
@@ -411,7 +411,7 @@ We will use $\frac{d\Gamma}{d q_0}$ to obtain normalised shapes for the differen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
     \centering
-    \includegraphics[width = 0.87\textwidth]{capture_1/norm_diff_intrate.pdf}    
+    \includegraphics[width = 0.85\textwidth]{capture_1/norm_diff_intrate.pdf}    
     \caption[Normalised differential interaction rates $\frac{1}{\Gamma}\frac{d\Gamma}{d\qonorm}$ as a function of $\qonorm$.]{Normalised differential interaction rates $\frac{1}{\Gamma}\frac{d\Gamma}{d\qonorm}$ as a function of $\qonorm$ for different values of $\kinFn$, $m_\chi=1\TeV$ (left) and $m_\chi=10\MeV$ (right), $B=0.5$ and  operators D1 (first row), D2 (second row), D3 (third row) and D4 (fourth row). Profiles do not depend on $m_\chi$ in the limits $m_\chi\gg m_n$ (left) and $m_\chi\ll m_n$ (right).  }
     \label{ch3:fig:diffintratesd14}
 \end{figure}

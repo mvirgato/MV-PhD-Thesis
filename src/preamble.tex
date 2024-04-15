@@ -17,8 +17,9 @@
 %Change to biblatex?
 % \usepackage[numbers,sort&compress]{natbib}
 \usepackage[backend=biber, style = numeric, url=false, isbn = false, sorting=none, citestyle=numeric-comp, defernumbers=true]{biblatex} 
-% \addbibresource{references_zotero.bib}
-\addbibresource{src/refs_main.bib}
+\renewcommand{\bibfont}{\normalfont\footnotesize}
+\addbibresource{src/references_zotero.bib}
+% \addbibresource{src/refs_main.bib}
 \usepackage{color}
 \usepackage{hyperref}
 
