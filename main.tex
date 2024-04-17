@@ -97,12 +97,17 @@
 \begin{backmatter}
     % \symmetricmargin
     \frontmatterheadings
-    \printglossary[style=mcolindex, title=Definition of Symbols and Abbreviations]
+    \chapter*{Definitions of Symbols and Acronyms}
+    \vspace{1cm}
+    \printglossary[style=mcolindex, type = \acronymtype,title=\normalsize\vspace*{-6\baselineskip}, toctitle=]
+    \vspace{2cm}
+    \printglossary[style=mcolindex,title=\normalsize\vspace*{-6\baselineskip}, toctitle=]
     \clearpage
     % \addcontentsline{toc}{chapter}{Index}
     % \printindex
     % \bibliographystyle{utphys}
     % \bibliography{src/refs_main}
+    \emergencystretch=1em
     \printbibliography
 \end{backmatter}
 
