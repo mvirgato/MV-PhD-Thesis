@@ -6,8 +6,7 @@
 \label{chapter:capture_baryons}
 
 \begin{synopsis}
-   This chapter is based on the papers~\cite{Bell:2020obw_sep_NucleonStructureStrong,Anzuini:2021lnv_nov_Improvedtreatmentdark}, where we consider two important effects that are important when considering dark matter capture due to scattering on baryons in neutron stars. 
-   % Up to this point, all the results presented have assumed that the DM is scattering off point-like particles that are treated as a free Fermi gas. 
+   This chapter is based on the paper~\cite{Anzuini:2021lnv_nov_Improvedtreatmentdark}, where we consider two important effects that are important when considering dark matter capture due to scattering on baryons in neutron stars. 
    As the momentum transfers involved in the scattering events leading to capture can be large, one must account for the internal structure of the baryon. In addition, the high densities of neutron star matter require us to take into account the strong interactions experienced amongst the baryons. Both of these effects are incorporated into the capture formalism presented in this thesis in a self-consistent manner.
    We then study these effects on the capture and interaction rates, as well as the threshold cross-sections that a future NS observation would be sensitive to. 
 \end{synopsis}
@@ -49,7 +48,7 @@ where $p_{F,i}$ is the Fermi momentum of species $i$. This becomes the input to 
    n_\mathrm{free}(\kinFi(r), \mbeff(r)) & = \frac{1}{3\pi^2}\left[ \kinFi(r)(2\mbeff + \kinFi(r))\right]^{3/2}\\
    & = \frac{(p_{F,i}(r)^2 + [\mbeff]^2)^{3/2}}{3\pi^2}\\
    & = \frac{p_{F, i}^3}{3\pi^2}\\
-   & = n_i(r)
+   & = n_i(r),
 \end{align}
 for a Fermi gas, interacting or otherwise. 
 As such, the correction factor used to correct for using realistic profiles for the target is now $\zeta(r) = 1$.
@@ -103,7 +102,7 @@ The main effect of these form factors is the suppression of high momentum transf
    \centering
    \includegraphics[width=0.75\textwidth]{capture_3/C_int_domain_mdm.pdf}
    \caption{Integration domain for the interaction rate, for different choices of DM mass, assuming   
-     $B=0.5$ and $\kinFn=0.4\GeV$. The kinematically allowed region is shaded in light blue and the Pauli suppressed region (PB) in dark blue. 
+     $B=0.5$ and $\kinFn=0.4\GeV$. The kinematically allowed region is shaded in light blue, and the Pauli suppressed region (PB) in dark blue. 
    }
    \label{ch5:fig:intC}
    \end{figure}
@@ -158,15 +157,15 @@ We then use the parton distribution functions (PDFs), $f_i$, to obtain the nucle
     \frac{d^2\sigma}{dx\, dy} =(\hat{s} - m_\chi^2-x^2m_n^2) \frac{\hat{s}}{8\pi\hat{\gamma}^2}\frac{\hat{s}-(m_\chi^2+x^2m_n^2)}{\hat{s}^2-(m_\chi^2-x^2m_n^2)^2}\sum_i f_i(x, Q^2)|\overline{\mathcal{M}}(\hat{s},\hat{t},x m_n)|^2.
 \end{equation}
 \normalsize
-The integration bounds for the DIS cross-section are generically $0<x<1$ and $0<y<y_{max}$, where $y_{max}$ is set by imposing $\cos\theta\leq 1$, and in general $y_{max}\neq 1$~\cite{Agashe:2014yua_Directdetectionboosted}.  The value of $y_{max}$ is set by
+The integration bounds for the DIS cross-section are in general $0<x<1$ and $0<y<y_\mathrm{max}$, where $y_\mathrm{max}$ is set by imposing $\cos\theta\leq 1$, and in general $y_\mathrm{max}\neq 1$~\cite{Agashe:2014yua_Directdetectionboosted}. The value of $y_\mathrm{max}$ is set by
 \begin{equation}
-    y_{max} = \frac{-\hat{t}_{min}}{\hat{s} - m_\chi^2 - x^2 m_n^2}
+    y_\mathrm{max} = \frac{-\hat{t}_\mathrm{min}}{\hat{s} - m_\chi^2 - x^2 m_n^2}
      = \frac{(\hat{s} -m_\chi^2 -x^2m_n^2)^2 - 4 x^2 m_\chi^2 m_n^2}{\hat{s}(\hat{s} -m_\chi^2 - x^2m_n^2)}. 
 \end{equation}
-
+% 
 The capture rate requires integrating the differential cross-section over $\hat{s}$, which must be done at the parton level, i.e., before integrating over $x$. We perform this integration over the centre of mass energy by following the same procedure performed for capture in the intermediate mass regime outlined in Section.~\ref{ch3:subsec:captureintermediate}. The differential capture rate will then scale as 
 \begin{align}
-   \frac{dC}{dr}\propto \int_0^1 dx\int_{\hat{s}_0-\delta\hat{s}}^{\hat{s}_0+\delta\hat{s}}d\hat{s}\int_0^{y_{max}}dy  \frac{d^2\sigma}{dx\, dy} \,\Theta(Q^2 -1\GeV^2), \label{eq:DIS}
+   \frac{dC}{dr}\propto \int_0^1 dx\int_{\hat{s}_0-\delta\hat{s}}^{\hat{s}_0+\delta\hat{s}}d\hat{s}\int_0^{y_\mathrm{max}}dy  \frac{d^2\sigma}{dx\, dy} \,\Theta(Q^2 -1\GeV^2), \label{eq:DIS}
 \end{align}
 where the step function enforces the momentum transfer to be above the $1\GeV$ threshold where the PDFs are reliable, and 
 \begin{align}
@@ -267,9 +266,9 @@ However, when including the dependence of the baryon couplings on the transferre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In the left panel of Fig.~\ref{ch5:fig:mstar}, we show radial profiles of $\mnstar$ for five representative operators in the case of a QMC-4 NS. These profiles have been calculated in the free Fermi gas approximation (i.e. the neutron mass remains constant throughout the star) both with (solid lines) and without (dashed lines) including the momentum-dependent neutron form factors $c_n^I(t)$. 
+In the left panel of Fig.~\ref{ch5:fig:mstar}, we show radial profiles of $\mnstar$ for five representative operators in the case of a QMC-4 NS. These profiles have been calculated in the free Fermi gas approximation (i.e. the neutron mass remains constant throughout the star) both with (solid lines) and without (dashed lines), including the momentum-dependent neutron form factors $c_n^I(t)$. 
 The profiles illustrate the variation of $\mnstar$ with $B(r)$ and $\kinFn(r)$ in the stellar interior. Note that $\mnstar$ also depends on the  DM velocity distribution, which we have taken to be Maxwell-Boltzmann. We can see that the inclusion of $t$-dependent neutron couplings lowers $\mnstar$ by a factor of $\sim 1.2 - 4.5$, with D4 and D3 being less affected. 
-This is because of the suppression of large energy transfers when introducing  $c_i^I(t)$ (as illustrated in Fig.~\ref{ch5:fig:intrateqtr1}) which results in less energy being lost by the DM particle per collision.  A lower value of $\mnstar$ means that multiple scattering is relevant at smaller DM masses than those expected with $c_i^I(0)$. 
+This is because of the suppression of large energy transfers when introducing  $c_i^I(t)$ (as illustrated in Fig.~\ref{ch5:fig:intrateqtr1}), which results in less energy being lost by the DM particle per collision.  A lower value of $\mnstar$ means that multiple scattering is relevant at smaller DM masses than those expected with $c_i^I(0)$. 
 
 In the interacting baryon approach, $\mnstar$ is also a function of $\mneff(r)$, as plotted in the right-hand panel of Fig.~\ref{ch5:fig:mstar}. 
 The values of $B(r)$, $\kinFn(r)$, and $\mneff(r)$ used in the right-hand panel are those corresponding to the appropriate radial coordinate within the NS as in the left-hand panel. 
@@ -313,7 +312,7 @@ The ratio of the capture rate compared to that for the free Fermi gas approximat
 Capture rate in the optically thin limit for the operators D5 (top) and D8 (bottom) as a function of the DM mass $m_\chi$ for neutron (left) and proton (right) targets,
 using the free Fermi gas approach with constant nucleon couplings (dashed blue) and momentum-dependent couplings (solid orange), and the interacting nucleon approach for constant couplings (dashed light blue)  and momentum-dependent couplings (solid magenta), for a QMC-2 NS configuration. 
 Note that these rates scale as $\Lambda^{-4}$. 
-The ratio of the capture rate compared to that for the free Fermi gas approximation for point-like targets (dashed dark blue) is shown in the lower panels. 
+The lower panels show the capture rate compared to the free Fermi gas approximation for point-like targets (dashed dark blue). 
 }
 \label{ch5:fig:capratesD5D8}
 \end{figure} 
@@ -355,7 +354,6 @@ Introducing momentum-dependent form factors in the interacting baryon approach (
 
 It is worth noting that the combined effect of using the interacting baryon approach and including momentum-dependent form factors is smaller than the product of the two individual effects. This is because the form factor suppression $\mathcal{F}_n$ in Eq.~\ref{ch5:eq:capture_simple} is a decreasing function of the target mass, which can reach values as small as $\mneff\sim0.5m_n$ for nucleon targets, thereby resulting in a weaker reduction of the capture rate when compared to the free Fermi gas approach. 
 
-% In Appendix~\ref{sec:uncereos}, we have compared  our results for the QMC EoS with those for the BSk24 functional~\cite{Goriely:2013,Pearson:2018tkr}  (a Skyrme type EoS).  We find that the size of the effects described above are largely independent of the EoS.
 
 
 
@@ -399,7 +397,7 @@ For D3 and D4, the capture rates due to scattering on the three species, neutron
 
 For D2-D4, the capture rates due to scattering on neutrons and hyperons are almost identical for $m_\chi\lesssim0.1\GeV$, with hyperons once again surpassing neutrons in the particular case of D4.  This occurs because the depth of the Fermi sea of hyperons is much lower than that of the neutrons in the NS core, thus leading to less Pauli blocking. 
 
-In addition, we have compared these results with those for a NS configuration of very similar compactness to that of QMC-4, but obtained with a QMC model that does not contain hyperons. We have found that the total capture rate due to DM interactions with baryons for operators D2-D4 is enhanced by the presence of hyperonic matter in the NS core. For D3 and D4, this enhancement reaches a factor of $\sim 2$ and $\sim 3$, respectively.
+In addition, we have compared these results with those for a NS configuration of very similar compactness to that of QMC-4 but obtained with a QMC model that does not contain hyperons. We have found that the total capture rate due to DM interactions with baryons for operators D2-D4 is enhanced by the presence of hyperonic matter in the NS core. For D3 and D4, this enhancement reaches a factor of $\sim 2$ and $\sim 3$, respectively.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -411,12 +409,12 @@ In addition, we have compared these results with those for a NS configuration of
 
 
 
-In Section~\ref{ch3:subsec:geom_lim_threshold_xs}, we defined the threshold cross-section $\sigmathi$ for a given target, $i$, as the cross-section for which the capture rate in the optically thin regime $C(m_\chi,\sigma(m_\chi,\Lambda))$ reaches the geometric limit, $C_\mathrm{geom}$. Above this threshold, the capture rate saturates to $C_\mathrm{geom}$, and hence $\sigma = \sigmathi$ cannot be distinguished from $\sigma\ge\sigmathi$. For the intermediate DM mass range where NS capture is most efficient, i.e., where neither Pauli blocking nor multiscattering are relevant, a value of $\sigmathn = \textrm{few}\times10^{-45}\cm^2$ is commonly assumed in the literature.  However, as we shall see, the combined effects of nucleon interactions and momentum dependence of the hadronic matrix elements imply that the true value is somewhat larger. 
+In Section~\ref{ch3:subsec:geom_lim_threshold_xs}, we defined the threshold cross-section $\sigmathi$ for a given target, $i$, as the cross-section for which the capture rate in the optically thin regime $C(m_\chi,\sigma(m_\chi,\Lambda))$ reaches the geometric limit, $C_\mathrm{geom}$. Above this threshold, the capture rate saturates to $C_\mathrm{geom}$, and hence $\sigma = \sigmathi$ cannot be distinguished from $\sigma\ge\sigmathi$. For the intermediate DM mass range where NS capture is most efficient, i.e., where neither Pauli blocking nor multi-scattering are relevant, a value of $\sigmathn \sim \textrm{few}\times10^{-45}\cm^2$ is commonly assumed in the literature.  However, as we shall see, the combined effects of nucleon interactions and momentum dependence of the hadronic matrix elements imply that the true value is somewhat larger. 
 
 
-In Fig.~\ref{ch5:fig:sigmathcomp}, we show the impact of accounting for both strong interactions and nucleon structure on the threshold cross-section for both neutrons (left) and protons (right). This is done for operators D1 (top) and D8 (bottom) in the benchmark NS QMC-2 ($1.5\Msun$). The dashed lines represent the results obtained in the free Fermi gas approximation, which yields $\sigmathn\simeq2\times10^{-45}\cm^2$ in the $1\GeV\lesssim m_\chi\lesssim 4\times 10^5\GeV$ range and $\sigmathp\simeq2\times10^{-44}\cm^2$ in a similar DM mass range for both operators. Below $m_\chi\sim1\GeV$ the NS sensitivity is suppressed by Pauli blocking, while multiple scattering comes into effect above $m_\chi\sim4\times10^5\GeV$. 
+In Fig.~\ref{ch5:fig:sigmathcomp}, we show the impact of accounting for both strong interactions and nucleon structure on the threshold cross-section for both neutrons (left) and protons (right). This is done for operators D1 (top) and D8 (bottom) in the benchmark NS QMC-2 ($1.5\Msun$). The dashed lines represent the results obtained in the free Fermi gas approximation, which yields $\sigmathn\simeq2\times10^{-45}\cm^2$ in the $1\GeV\lesssim m_\chi\lesssim 4\times 10^5\GeV$ range and $\sigmathp\simeq2\times10^{-44}\cm^2$ in a similar DM mass range for both operators. Below $m_\chi\sim1\GeV$, the NS sensitivity is suppressed by Pauli blocking, while multiple scattering comes into effect above $m_\chi\sim4\times10^5\GeV$. 
 
-When the corrections for nucleon structure and strong interaction are introduced (solid lines), the region of maximum sensitivity is reduced to $100\GeV\lesssim m_\chi\lesssim  10^5\GeV$, and the value of the threshold cross-section is no longer the same for D1 and D8. This discrepancy is due to the nucleon couplings for the scalar operators (D1-4) being proportional to the nucleon mass, while the couplings for the other operators are independent of the target mass. This induces a larger suppression in the capture rate for D1 compared to D8. In this DM mass regime, we find $\sigmathn\simeq3.6\times10^{-44}\cm^2$ for D1 and $\sigmathn\simeq1.4\times10^{-44}\cm^2$  for D8. For protons, the DM sensitivity is also lowered by a similar amount. In the multi-scattering regime, for both targets, we observe an even more pronounced effect, with $\sigmathn$ reaching a factor of $\sim52 \,(20)$ larger than in the ideal Fermi gas approach for D1 (D8), and $\sigmathp$  a factor of $\sim 35 \,(16)$. 
+When the corrections for nucleon structure and strong interaction are introduced (solid lines), the region of maximum sensitivity is reduced to $100\GeV\lesssim m_\chi\lesssim  10^5\GeV$, and the value of the threshold cross-section is no longer the same for D1 and D8. This discrepancy is due to the nucleon couplings for the scalar operators (D1-4) being proportional to the nucleon mass, while the couplings for the other operators are independent of the target mass. This induces a larger suppression in the capture rate for D1 compared to D8. In this DM mass regime, we find $\sigmathn\simeq3.6\times10^{-44}\cm^2$ for D1 and $\sigmathn\simeq1.4\times10^{-44}\cm^2$  for D8. For protons, the DM sensitivity is also lowered by a similar amount. In the multi-scattering regime, for both targets, we observe an even more pronounced effect, with $\sigmathn$ reaching a factor of $\sim52 \,(20)$ larger than in the ideal Fermi gas approach for D1 (D8) and $\sigmathp$ a factor of $\sim 35 \,(16)$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!bp]
