@@ -21,7 +21,7 @@
   %% Metadata information
   \input{src/frontmatter/metadata.tex}
   % The title page is centered horizontally
-  \symmetricmargin
+  % \symmetricmargin
   \maketitle
   %% Toggle this for pdf vs book
   \bookmargin
@@ -88,7 +88,7 @@
     \include{src/backmatter/appendix_hadronic_matrix_elements}
     % \include{src/backmatter/appendix_non_linear_shooting}
     \include{src/backmatter/QMC_functionals}
-\end{appendices}
+  \end{appendices}
 
 %
 % Back matter
@@ -98,17 +98,20 @@
     % \symmetricmargin
     \frontmatterheadings
     \chapter{Definitions of Symbols and Acronyms}
+
     \vspace{1cm}
     \printglossary[style=mcolindex, type = \acronymtype,title=\normalsize\vspace*{-6\baselineskip}, toctitle=]
     \vspace{2cm}
     \printglossary[style=mcolindex,title=\normalsize\vspace*{-6\baselineskip}, toctitle=]
     \clearpage
+    \markboth{}{}
     % \addcontentsline{toc}{chapter}{Index}
     % \printindex
     % \bibliographystyle{utphys}
     % \bibliography{src/refs_main}
     \emergencystretch=1em
     \printbibliography
+    \newpage
 \end{backmatter}
 
 \end{document}
